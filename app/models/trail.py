@@ -1,3 +1,4 @@
+from tkinter import CASCADE
 from .db import db
 
 
@@ -17,10 +18,11 @@ class Trail(db.Model):
     elevation = db.Column(db.Integer, nullable=False)
     routeType = db.Column(db.String(100), nullable=False)
     previewImg = db.Column(db.String(255), nullable=False)
-    userId = db.Column(db.Integer, nullable=False)
+    userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     # Relationships
     user = db.relationship('User', back_populates='trails')
+    review = db.relationship('Review', back_populates='trails', cascade = 'all,delete')
 
     def to_dict(self):
         return {
