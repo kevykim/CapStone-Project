@@ -1,6 +1,5 @@
-from tkinter.tix import Select
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, DecimalField, IntegerField
+from wtforms import StringField, SelectField, DecimalField, IntegerField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError
 from app.models import Trail
 
@@ -24,7 +23,7 @@ class TrailForm(FlaskForm):
     mountain = SelectField('mountain', choices = mountain_choices, validators=[DataRequired()])
     resort = SelectField('resort', choices = resort_choices, validators=[DataRequired()])
     skill = SelectField('skill', choices = skill_choices, validators=[DataRequired()])
-    description = StringField('description', validators=[DataRequired()])
+    description = TextAreaField('description', validators=[DataRequired()])
     length = DecimalField('length', validators=[DataRequired()])
     elevation = IntegerField('elevation', validators=[DataRequired()])
     routeType = SelectField('routeType', choices = routeType_choices, validators=[DataRequired()])
