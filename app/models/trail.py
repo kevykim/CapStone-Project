@@ -2,7 +2,7 @@ from .db import db
 
 
 
-class Trails(db.Model):
+class Trail(db.Model):
     __tablename__ = 'trails'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -18,6 +18,9 @@ class Trails(db.Model):
     routeType = db.Column(db.String(100), nullable=False)
     previewImg = db.Column(db.String(255), nullable=False)
     userId = db.Column(db.Integer, nullable=False)
+
+    # Relationships
+    user = db.relationship('User', back_populates='trails')
 
     def to_dict(self):
         return {
