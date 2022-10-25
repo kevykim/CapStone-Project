@@ -1,3 +1,4 @@
 from .db import db
 from .user import User
-from .trails import Trails
+from .trail import Trails
+from .review import Reviews

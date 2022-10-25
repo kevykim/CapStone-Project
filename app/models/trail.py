@@ -17,6 +17,7 @@ class Trails(db.Model):
     elevation = db.Column(db.Integer, nullable=False)
     routeType = db.Column(db.String(100), nullable=False)
     previewImg = db.Column(db.String(255), nullable=False)
+    userId = db.Column(db.Integer, nullable=False)
 
     def to_dict(self):
         return {
@@ -31,5 +32,6 @@ class Trails(db.Model):
             'length': self.length,
             'elevation': self.elevation,
             'routeType': self.routeType,
-            'previewImg': self.previewImg
+            'previewImg': self.previewImg,
+            'userId': self.userId
         }
