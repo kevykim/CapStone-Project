@@ -12,7 +12,7 @@ mountain_choices = ["Come back to this again later tonight"]
 
 resort_choices = ["Mammoth, Big Bear later tonight"]
 
-skill_choices = ["COME BACK TO THIS AGAIN later tonight"]
+difficulty_choices = ["COME BACK TO THIS AGAIN later tonight"]
 
 routeType_choices = ["Park", "Mountain later tonight"]
 
@@ -22,7 +22,7 @@ class TrailForm(FlaskForm):
     state = SelectField('state', choices = state_choices, validators=[DataRequired()])
     mountain = SelectField('mountain', choices = mountain_choices, validators=[DataRequired()])
     resort = SelectField('resort', choices = resort_choices, validators=[DataRequired()])
-    skill = SelectField('skill', choices = skill_choices, validators=[DataRequired()])
+    difficulty = SelectField('difficulty', choices = difficulty_choices, validators=[DataRequired()])
     description = TextAreaField('description', validators=[DataRequired()])
     length = DecimalField('length', validators=[DataRequired()])
     elevation = IntegerField('elevation', validators=[DataRequired()])

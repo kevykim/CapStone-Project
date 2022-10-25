@@ -12,7 +12,7 @@ class Trail(db.Model):
     state = db.Column(db.String(100), nullable=False)
     mountain = db.Column(db.String(100), nullable=False)
     resort = db.Column(db.String(100), nullable=False)
-    skill = db.Column(db.String(100), nullable=False)
+    difficulty = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
     length = db.Column(db.Float, nullable=False)
     elevation = db.Column(db.Integer, nullable=False)
@@ -32,7 +32,7 @@ class Trail(db.Model):
             'state': self.state,
             'mountain': self.mountain,
             'resort': self.resort,
-            'skill': self.skill,
+            'difficulty': self.difficulty,
             'description': self.description,
             'length': self.length,
             'elevation': self.elevation,
