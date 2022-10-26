@@ -63,4 +63,29 @@ def get_trail_by_id(id):
     return trails.to_dict()
 # UPDATE
 
+# UPDATE A TRAIL
+@trail_routes.route('/<int:id>', methods=["PUT"])
+@login_required
+def update_trail(id):
+    trailform = TrailForm()
+    trailform['csrf_token'].data = request.cookies['csrf_token']
+    updated_trail = Trail.query.get(id)
+    if updated_trail is None:
+        return {'errors': 'Trail not found'}, 404
+    if trailform.validate_on_submit():
+        updated_trail.name = trailform.data['name']
+        updated_trail.country = trailform.data['country']
+        updated_trail.state = trailform.data['state']
+        updated_trail.resort = trailform.data['resort']
+        updated_trail.difficulty = trailform.data['difficulty']
+        updated_trail.description = trailform.data['description']
+        updated_trail.length = trailform.data['length']
+        updated_trail.elevation = trailform.data['elevation']
+        updated_trail.routeType = trailform.data['routeType']
+        updated_trail.previewImg = trailform.data['previewImg']
+        db.session.commit()
+        return updated_trail.to_dict()
+    return {'errors': validation_errors_to_error_messages(trailform.errors)}, 400
+
+
 # DELETE
