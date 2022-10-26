@@ -11,9 +11,9 @@ state_choices = ["California"]
 
 resort_choices = ["Mammoth, Big Bear later tonight"]
 
-difficulty_choices = ["COME BACK TO THIS AGAIN later tonight"]
+difficulty_choices = ["Beginner", "Intermediate", "Black Diamond", "Double Black Diamond"]
 
-routeType_choices = ["Park", "Mountain later tonight"]
+routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"]
 
 class TrailForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
