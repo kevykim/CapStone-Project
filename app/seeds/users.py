@@ -1,3 +1,5 @@
+import email
+from app.forms.login_form import password_matches
 from app.models import db, User
 
 
@@ -5,14 +7,38 @@ from app.models import db, User
 def seed_users():
     demo = User(
         username='Demo', firstName='Demo', lastName='User', email='demo@aa.io', password='password', profileImg='test')
+        #BOREAL
     marnie = User(
         username='Marnie', firstName='Marnet', lastName='Hart', email='marnie@aa.io', password='password', profileImg='test')
+        #HEAVENLY
     bobbie = User(
         username='Bobbie', firstName='Bob', lastName='Hart', email='bobbie@aa.io', password='password', profileImg='test')
+    jeff = User(
+        username='Jeffellow', firstName='Jeff', lastName='Campbell', email='jeffcamp@mail.com', password='password', profileImg='test')
+    ted = User(
+        username='Tedster', firstName='Ted', lastName='Baker', email='thebaker@mail.com', password='password', profileImg='test')
+    christy = User(
+        username='AznxChrissyx', firstName='Christy', lastName='Kim', email='christine314@yahoo.com', password='password', profileImg='test')
+    peter = User(
+        username='Spiderman321', firstName='Peter', lastName='Parker', email='therealspiderguy@mail.com', password='password', profileImg='test')
+    ron = User(
+        username='Lagavulin501', firstName='Ron', lastName='Swanson', email='steakisthebest@mail.net', password='passowrd', profileImg='test')
+    corey = User(
+        username='Radsk8ter', firstName='Corey', lastName='Birch', email='birchwall@mail.com', password='password', profileImg='test')
+    eddy = User(
+        username='thebesteddy', firstName='Eddy', lastName='Smith', email='cartonnetworkyyy@mail.com', password='password', profileImg='test')
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
+    db.session.add(jeff)
+    db.session.add(ted)
+    db.session.add(christy)
+    db.session.add(peter)
+    db.session.add(ron)
+    db.session.add(corey)
+    db.session.add(eddy)
+
 
     db.session.commit()
 

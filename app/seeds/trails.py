@@ -134,7 +134,7 @@ def seed_trails():
         userId = 2
     )
     # HEAVENLY TAHOE
-    trail1 = Trail(
+    heavenly1 = Trail(
         name = "Killerbrew Canyon",
         country = "United States of America",
         state = "California", 
@@ -147,7 +147,7 @@ def seed_trails():
         previewImg = "https://images.pexels.com/photos/3600569/pexels-photo-3600569.jpeg",
         userId = 2
     )
-    trail2 = Trail(
+    heavenly2 = Trail(
         name = "Milky Way Bowl",
         country = "United States of America",
         state = "California", 
@@ -267,6 +267,19 @@ def seed_trails():
 
     
     db.session.add(boreal1)
+    db.session.add(boreal2)
+    db.session.add(boreal3)
+    db.session.add(boreal4)
+    db.session.add(boreal5)
+    db.session.add(boreal6)
+    db.session.add(boreal7)
+    db.session.add(boreal8)
+    db.session.add(boreal9)
+    db.session.add(boreal10)
+    db.session.add(heavenly1)
+    db.session.add(heavenly2)
+
+
     db.session.commit()
 
 def undo_trails():
