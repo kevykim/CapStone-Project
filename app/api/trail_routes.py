@@ -9,6 +9,31 @@ trail_routes = Blueprint('trails', __name__)
 
 # CREATE
 
+# CREATE A TRAIL
+@trail_routes.route('/', methods=["POST"])
+@login_required
+def create_trail():
+    trailform = TrailForm()
+    trailform['csrf_token'].data = request.cookies['csrf_token']
+    if trailform.validate_on_submit():
+        created_trail = Trail(
+            name = trailform.data['name'],
+            country = trailform.data['country'],
+            state = trailform.data['state'],
+            resort = trailform.data['resort'],
+            difficulty = trailform.data['difficulty'],
+            description = trailform.data['description'],
+            length = trailform.data['length'],
+            elevation = trailform.data['elevation'],
+            routeType = trailform.data['routeType'],
+            previewImg = trailform.data['previewImg'],
+            userId = current_user.id
+        )
+
+        db.session.add(created_trail)
+        db.session.commit()
+        return created_trail.to_dict()
+    return {'errors': validation_errors_to_error_messages(trailform.errors)}, 400
 # READ
 
 # GET ALL TRAILS

@@ -15,10 +15,10 @@ def descriptionchecker(form, field):
     if len(description) < 20:
         raise ValidationError('Please enter a description longer than 20 characters.')
 
-def elevationchecker(form, field):
-    elevation = field.data
-    if '.' in elevation:
-        raise ValidationError('Only whole numbers are allowed.')
+# def elevationchecker(form, field):
+#     elevation = field.data
+#     if '.' in elevation:
+#         raise ValidationError('Only whole numbers are allowed.')
 
 def imagechecker(form, field):
     image = field.data
@@ -31,7 +31,7 @@ country_choices = ["United States of America"]
 
 state_choices = ["California"]
 
-resort_choices = ["Mammoth, Big Bear later tonight"]
+resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe"]
 
 difficulty_choices = ["Beginner", "Intermediate", "Black Diamond", "Double Black Diamond"]
 
@@ -45,6 +45,6 @@ class TrailForm(FlaskForm):
     difficulty = SelectField('difficulty', choices = difficulty_choices, validators=[DataRequired('Please select a difficulty.')])
     description = TextAreaField('description', validators=[DataRequired(), descriptionchecker])
     length = DecimalField('length', validators=[DataRequired()], places=1)
-    elevation = IntegerField('elevation', validators=[DataRequired(), elevationchecker])
+    elevation = IntegerField('elevation', validators=[DataRequired()])
     routeType = SelectField('routeType', choices = routeType_choices, validators=[DataRequired('Please select a route type.')])
     previewImg = StringField('previewImg', validators=[DataRequired(), imagechecker])
