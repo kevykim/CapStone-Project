@@ -11,6 +11,14 @@ review_routes = Blueprint('reviews', __name__)
 
 #READ
 
+# GET ALL REVIEWS FROM TRAIL
+@review_routes.route('/trails/<int:id>')
+def get_trail_reviews(id):
+    reviews = Review.query.filter(Review.trailId == id)
+    if reviews is None:
+        return {'errors': 'Review not found'}, 404
+    return {'review': [review.to_dict() for review in reviews]}
+
 # GET CURRENT USER'S REVIEWS
 @review_routes.route('/current')
 @login_required
@@ -19,6 +27,8 @@ def get_currentuser_review():
     if reviews is None:
         return {'errors': 'Review not found'}, 404
     return {'review': [review.to_dict() for review in reviews]}
+
+
 
 
 #UPDATE
