@@ -1,3 +1,4 @@
+from app.models import trail
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -8,8 +9,15 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
-    email = db.Column(db.String(255), nullable=False, unique=True)
+    firstName = db.Column(db.String(40), nullable=False)
+    lastName = db.Column(db.String(40), nullable=False)
     hashed_password = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    profileImg = db.Column(db.String(255))
+
+    # Relationships
+    trails = db.relationship('Trail', back_populates='users')
+    reviews = db.relationship('Review', back_populates='users')
 
     @property
     def password(self):
@@ -26,5 +34,8 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'firstName': self.firstName,
+            'lastName': self.lastName,
+            'email': self.email,
+            'profileImg': self.profileImg
         }
