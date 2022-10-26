@@ -89,3 +89,14 @@ def update_trail(id):
 
 
 # DELETE
+
+# DELETE A TRAIL
+@trail_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_trail(id):
+    deleted_trail = Trail.query.get(id)
+    if deleted_trail is None:
+        return {'errors': 'Trail not found'}, 404
+    db.session.delete(deleted_trail)
+    db.session.commit()
+    return {'message': f'Trail {id} has been deleted successfully.'}
