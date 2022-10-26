@@ -13,7 +13,8 @@ def seed_trails():
         length = "1.1", 
         elevation = "2,000",
         routeType = "Park",
-        previewImg = "testimg"
+        previewImg = "testimg",
+        userId = 1
     )
     # trail2 = Trail(
     #     name = "",
@@ -26,12 +27,13 @@ def seed_trails():
     #     length = "", 
     #     elevation = "",
     #     routeType = "",
-    #     previewImg = ""
+    #     previewImg = "",
+    #     userId = ""
     # )
 
     
     db.session.add(trail1)
-    db.commit()
+    db.session.commit()
 
 def undo_trails():
     db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')

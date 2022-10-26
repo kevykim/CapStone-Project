@@ -21,8 +21,8 @@ class Trail(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     # Relationships
-    user = db.relationship('User', back_populates='trails')
-    review = db.relationship('Review', back_populates='trails', cascade = 'all,delete')
+    users = db.relationship('User', back_populates='trails')
+    reviews = db.relationship('Review', back_populates='trails', cascade = 'all,delete')
 
     def to_dict(self):
         return {

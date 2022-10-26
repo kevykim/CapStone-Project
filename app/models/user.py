@@ -16,8 +16,8 @@ class User(db.Model, UserMixin):
     profileImg = db.Column(db.String(255))
 
     # Relationships
-    trail = db.relationship('Trail', back_populates='users')
-    review = db.relationship('Review', back_populates='users')
+    trails = db.relationship('Trail', back_populates='users')
+    reviews = db.relationship('Review', back_populates='users')
 
     @property
     def password(self):
