@@ -7,29 +7,29 @@ def seed_reviews():
         userId = 1,
         review = 'Hello this is a test',
         stars = 4,
-        reviewImg = "This is a test image"
+        reviewImg = "https.test.jpg"
     )
     reviewDemo2 = Review(
         trailId = 4,
         userId = 1,
-        review = "test",
+        review = "Hello this is a test",
         stars = 3,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     # MARNIE OWNS BOREAL
     reviewMarnie1 = Review(
         trailId = 1,
         userId = 2,
-        review = "test",
+        review = "Hello this is a test",
         stars = "4",
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewMarnie2 = Review(
         trailId = 2,
         userId = 2,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     # reviewMarnie3 = Review(
     #     trailId = "",
@@ -90,87 +90,87 @@ def seed_reviews():
     reviewMarnie11 = Review(
         trailId = 11,
         userId = 2,
-        review = "test",
+        review = "Hello this is a test",
         stars = 3,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewMarnie12 = Review(
         trailId = 12,
         userId = 2,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     #BOBBIE OWNS HEAVENLY
     reviewBobbie1 = Review(
         trailId = 1,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 5,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie2 = Review(
         trailId = 2,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie3 = Review(
         trailId = 3,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 2,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie4 = Review(
         trailId = 4,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie5 = Review(
         trailId = 5,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie6 = Review(
         trailId = 6,
         userId = 3,
-        review = "nice",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie7 = Review(
         trailId = 7,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie8 = Review(
         trailId = 8,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 5,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie9 = Review(
         trailId = 9,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 4,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     reviewBobbie10 = Review(
         trailId = 10,
         userId = 3,
-        review = "test",
+        review = "Hello this is a test",
         stars = 5,
-        reviewImg = "test"
+        reviewImg = "https.test.jpg"
     )
     # reviewBobbie = Review(
     #     trailId = "",
