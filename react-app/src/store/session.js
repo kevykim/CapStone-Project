@@ -29,6 +29,25 @@ export const authenticate = () => async (dispatch) => {
   }
 }
 
+export const thunkDemoUser = (email, password) => async (dispatch) => {
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: "demo@aa.io",
+      password: "password2",
+    }),
+  });
+  // console.log(response, "thunk");
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(setUser(data));
+    return response
+  }
+};
+
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
     method: 'POST',
@@ -99,20 +118,7 @@ export const signUp = (username, firstName, lastName, email, password) => async 
   }
 }
 
-export const thunkDemoUser = () => async (dispatch) => {
-  const response = await fetch("/api/auth/login", {
-    method: "POST",
-    body: JSON.stringify({
-      email: "demo@aa.io",
-      password: "password2"
-    })
-  });
-  if (response.ok) {
-    const data = await response.json()
-    dispatch(setUser(data.user))
-    return response
-  }
-}
+
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
