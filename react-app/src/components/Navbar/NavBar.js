@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import './NavBar.css'
+import logo from "./WinterTrail_logo.png"
 
 const NavBar = () => {
   return (
@@ -10,7 +11,7 @@ const NavBar = () => {
           <NavLink className='winter_trail_text' exact to="/">
         <div className="winter_trail_div">
             <div>
-            <img className="winter_trail_image" src="./assets/WinterTrail_logo.png" alt="Home"></img>
+            <img className="winter_trail_image" src={logo} alt="Home"></img>
             </div>
             <div>WinterTrails</div>
         </div>
