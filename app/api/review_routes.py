@@ -49,4 +49,22 @@ def get_currentuser_review():
 
 #UPDATE
 
+# UPDATE A REVIEW
+@review_routes.route('/<int:id>', methods=["PUT"])
+@login_required
+def update_review(id):
+    reviewform = ReviewForm()
+    reviewform['csrf_token'].data = request.cookies['csrf_token']
+    updated_review = Review.query.get(id)
+    if updated_review is None:
+        return {'errors': f'Review {id} not found'}, 404
+    if reviewform.validate_on_submit():
+        updated_review.review = reviewform.data['review']
+        updated_review.stars = reviewform.data['stars']
+        updated_review.reviewImg = reviewform.data['reviewImg']
+        db.session.commit()
+        return updated_review.to_dict()
+    return {'errors': validation_errors_to_error_messages(reviewform.errors)}, 400
+
+
 #DELETE
