@@ -99,6 +99,21 @@ export const signUp = (username, firstName, lastName, email, password) => async 
   }
 }
 
+export const thunkDemoUser = () => async (dispatch) => {
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
+    body: JSON.stringify({
+      email: "demo@aa.io",
+      password: "password2"
+    })
+  });
+  if (response.ok) {
+    const data = await response.json()
+    dispatch(setUser(data.user))
+    return response
+  }
+}
+
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:
