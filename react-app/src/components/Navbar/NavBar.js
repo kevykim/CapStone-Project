@@ -7,24 +7,32 @@ const NavBar = () => {
   return (
     <div>
       <div className="navbar_div">
-        <div>
-          <NavLink to="/" exact={true} activeClassName="active">
-            Home
-          </NavLink>
+          <NavLink className='winter_trail_text' exact to="/">
+        <div className="winter_trail_div">
+            <div>
+            <img className="winter_trail_image" src="./assets/WinterTrail_logo.png" alt="Home"></img>
+            </div>
+            <div>WinterTrails</div>
         </div>
-        <div>
-          <NavLink to="/login" exact={true} activeClassName="active">
-            Login
           </NavLink>
-        </div>
-        <div>
-          <NavLink to="/signup" exact={true} activeClassName="active">
+        <div className="sign_log_div">
+        <button className="demo_user_button">
+          Demo User
+        </button>
+          <NavLink className="navlink_signup_text" exact to="/signup">
+        <button className="sign_up_button">
             Sign Up
+        </button>
+          </NavLink>
+          <NavLink className="navlink_text" exact to="/login">
+        <button className="log_in_button">
+            Log In
+        </button>
           </NavLink>
         </div>
-        <div>
+        {/* <div>
           <LogoutButton />
-        </div>
+        </div> */}
       </div>
     </div>
   );
