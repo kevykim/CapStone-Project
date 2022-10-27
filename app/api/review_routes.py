@@ -68,3 +68,14 @@ def update_review(id):
 
 
 #DELETE
+
+# DELETE A REVIEW
+@review_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_review(id):
+    deleted_review = Review.query.get(id)
+    if deleted_review is None:
+        return {'errors': f'Review {id} not found'}, 404
+    db.session.delete(deleted_review)
+    db.session.commit()
+    return {'message': f'Review {id} has been deleted successfully.'}
