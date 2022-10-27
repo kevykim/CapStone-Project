@@ -25,6 +25,53 @@
 }
 
 .homepage_trail_image {
-    width: 250px;
-    height: 250px;
+    width: 296px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.homepage_empty_div {
+    height: 50px;
+
+}
+
+.local_favorites_text {
+    font-size: 40pt;
+    margin-right: 900px;
+
+}
+
+.homepage_arr_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1265px;
+    background: rgb(243,242,243);
+}
+
+.homepage_arr_div_inner {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+}
+
+
+.homepage_trail_firstline {
+    display: flex;
+    flex-direction: row;
+    padding: 2px 0px 2px 0px;
+}
+
+.homepage_trail_name {
+    font-weight: bold;
+    padding: 2px 0px 2px 0px;
+}
+
+.homepage_trail_othertext {
+    color: rgb(109, 109, 109);
+    font-size: 10pt;
+    padding: 2px 0px 2px 0px;
 }
