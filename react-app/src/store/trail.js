@@ -88,6 +88,38 @@ export const thunkGetCurrentTrail = () => async dispatch => {
     }
 }
 
+export const thunkGetSingleTrail = (id) => async dispatch => {
+  const response = await fetch(`/api/trails/${id}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(actionGetSingleTrail(data));
+  }
+};
+
+export const thunkUpdateTrail = (payload) => async dispatch => {
+  const response = await fetch(`/api/trails/${payload.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(actionUpdateTrail(data));
+    return data;
+  }
+};
+
+export const thunkDeleteTrail = (id) => async dispatch => {
+    const response = await fetch(`/api/trails/${id}`, {
+        method: "DELETE"
+    });
+    if (response.ok) {
+        dispatch(actionDeleteTrail(id))
+    }
+}
+
 
 
 const initialState = {}
