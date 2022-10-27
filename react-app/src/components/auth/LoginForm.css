@@ -1,0 +1,74 @@
+.log_in_main {
+    display: flex;
+    justify-content: center;
+}
+
+.log_in_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   position: absolute;
+   padding: 16px;
+   background-color: white;
+   border-radius: 16px;
+   z-index: 10;
+   width: 400px;
+   height: 500px;
+    box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
+    top: 300px;
+}
+
+.log_in_image_div {
+    position: relative;
+}
+
+.log_in_image {
+    position: relative;
+    width: 100%;
+        height: 1025px;
+}
+
+.log_in_error {
+    color: red;
+    height: 2px;
+    margin-bottom: 35px;
+}
+
+.let_going_text {
+    font-size: 21pt;
+}
+
+.log_in_bottom_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.sign_up_free_text {
+    text-decoration: none;
+    color:rgb(60, 103, 148);
+    font-weight: bold;
+}
+
+.log_in_inputs_div {
+    margin-top: 10px;
+}
+
+.log_in_inputs {
+    height: 47px;
+    width: 370px;
+    border-radius: 4px;
+    margin: 4px 0px;
+    padding: 10px 16px;
+    border: 1px solid lightgrey;
+}
+
+.log_in_button_form {
+    height: 47px;
+        width: 370px;
+        border-radius: 4px;
+    border: 1px solid lightgrey;
+    background: rgb(60, 103, 148);
+    color: white;
+    cursor: pointer;
+}
