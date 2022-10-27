@@ -81,6 +81,31 @@ const initialState = {}
 const trailReducer = (state = initialState, action) => {
     let newState = {...state}
     switch (action.type) {
+        case createTrail:
+            newState[action.trail.id] = action.trail;
+            return newState
+        case getTrail:
+            newState = {};
+            action.trails.forEach((trail) => {
+                newState[trail.id] = trail;
+            })
+            return newState
+        case getCurrentTrail:
+            newState = {};
+            action.trails.forEach((trail) => {
+                newState[trail.id] = trail;
+            })
+            return newState
+        case getSingleTrail:
+            newState = {};
+            newState[action.trail.id] = action.trail
+            return newState
+        case updateTrail:
+            newState[action.trail.id] = action.trail
+            return newState
+        case deleteTrail:
+            delete newState[action.id]
+            return newState
         default:
             return state
     }
