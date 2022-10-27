@@ -1,11 +1,11 @@
 # WinterTrails 🗻
 
-WinterTrails is a web-application clone inspired by [AllTrails](https://www.alltrails.com/), that allows users to find snowboarding/skiing trails across all resorts in a state.
+WinterTrails is a web-application clone inspired by [AllTrails](https://www.alltrails.com/), that allows users to find snowboarding/skiing trails across all resorts in a state across the U.S.A.
 
 ####  [WinterTrails](https://winter-trails-capstone.herokuapp.com/)
 
 ### Please see below links to Project Wiki:
-##### [API Documentation]()
+##### [API Documentation](https://github.com/kevykim/CapStone-Project/wiki/API-Documentation)
 ##### [Database Schema](https://github.com/kevykim/CapStone-Project/wiki/DB-Schema)
 ##### [Features](https://github.com/kevykim/CapStone-Project/wiki/Features)
 ##### [Redux State](https://github.com/kevykim/CapStone-Project/wiki/Redux-State)
