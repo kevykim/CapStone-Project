@@ -1,0 +1,25 @@
+.homepage_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homepage_image_div {
+    position: relative;
+}
+
+.homepage_image {
+    position: relative;
+}
+
+.homepage_text {
+    position: absolute;
+    z-index: 10;
+    /* top: 300px;
+    left: 500px; */
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+
+}

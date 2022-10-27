@@ -6,6 +6,8 @@ import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/Navbar/NavBar';
 // import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
+import HomePage from './components/Trail/HomePage';
+import TrailDetail from './components/Trail/TrailDetail';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -27,13 +29,19 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <h1>My Home Page</h1>
+          <HomePage />
         </Route>
         <Route exact path="/login">
           <LoginForm />
         </Route>
         <Route exact path="/signup">
           <SignUpForm />
+        </Route>
+        <Route exact path='/trail/:id'>
+          <TrailDetail />
+        </Route>
+        <Route>
+          <h1>Page Not Found</h1>
         </Route>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
