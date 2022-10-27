@@ -43,7 +43,7 @@ def get_all_trails():
     if trails is None:
         return {'errors': 'Trail not found'}, 404
 
-    return {'trail': [trail.to_dict() for trail in trails]}
+    return {'trails': [trail.to_dict() for trail in trails]}
 
 # GET CURRENT USER'S TRAILS
 @trail_routes.route('/current')

@@ -23,6 +23,8 @@
     right: 0px;
     border: 1px solid lightgrey;
     border-radius: 10px;
+    z-index: 11;
+    background: white;
 
 }
 
@@ -33,6 +35,7 @@
     align-items: center;
     cursor: pointer;
     padding: 10px;
+    background: white;
 }
 
 .profile_dropdown_box:hover {
