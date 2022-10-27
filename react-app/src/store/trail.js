@@ -1,16 +1,11 @@
 // TYPES
 
-
 const createTrail = '/trail/createTrail'
 const getTrail = '/trail/getTrail'
 const getCurrentTrail = '/trail/getCurrentTrail'
 const getSingleTrail = '/trail/getSingleTrail'
 const updateTrail = '/trail/updateTrail'
 const deleteTrail = '/trail/deleteTrail'
-
-
-
-
 
 // ACTION CREATORS
 
@@ -56,23 +51,42 @@ const actionDeleteTrail = (id) => {
     }
 }
 
-
-
-
-
-
 // THUNKS
 
+export const thunkCreateTrail = (payload) => async dispatch => {
+    const response = await fetch('/api/trails/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+    })
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(actionCreateTrail(data))
+        return data
+    }
+}
 
+export const thunkGetTrail = () => async dispatch => {
+    const response = await fetch("/api/trails/", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
+    });
+    if(response.ok) {
+        const data = await response.json()
+        dispatch(actionGetTrail(data))
+    }
+}
 
-
-
-
-
-
-
-
-
+export const thunkGetCurrentTrail = () => async dispatch => {
+    const response = await fetch("/api/trails/current", {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+    });
+    if(response.ok) {
+        const data = await response.json()
+        dispatch(actionGetCurrentTrail(data))
+    }
+}
 
 
 
