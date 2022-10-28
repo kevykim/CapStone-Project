@@ -8,6 +8,7 @@ import NavBar from './components/Navbar/NavBar';
 import { authenticate } from './store/session';
 import HomePage from './components/Trail/HomePage';
 import TrailDetail from './components/Trail/TrailDetail';
+import Trails from './components/Trail/Trail';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route exact path='/trail/:id'>
           <TrailDetail />
+        </Route>
+        <Route exact path='/trails'>
+          <Trails />
         </Route>
         <Route>
           <h1>Page Not Found</h1>

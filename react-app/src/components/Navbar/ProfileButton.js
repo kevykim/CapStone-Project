@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { logout }  from "../../store/session";
 import './ProfileButton.css'
 
@@ -40,7 +41,9 @@ function ProfileButton({ user }) {
         {showMenu && user && (
           <div className="profile-dropdown">
             <div className="profile_dropdown_box">{user.username}</div>
-            <div className="profile_dropdown_box">trails</div>
+            <div className="profile_dropdown_box">
+              <NavLink exact to='/trails'>Trails</NavLink>
+            </div>
             <div className="profile_dropdown_box">reviews</div>
             <div className="profile_dropdown_box">create trails</div>
             <div className="profile_dropdown_box">
