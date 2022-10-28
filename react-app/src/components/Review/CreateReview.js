@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
+import { thunkCreateTrailReview } from '../../store/review'
 
 
 import './CreateReview.css'
@@ -32,15 +33,91 @@ function CreateReview({setShowModal}) {
           (!reviewImg.includes("https") && !reviewImg.includes("http"))
         )
           errors.push("Please enter a valid url image");
+        
+          setValidations(errors)
     }, [stars, reviews, reviewImg])
 
-    return (
-        <div>
-            <form>
+    const closeModal = (event) => {
+        setShowModal(false)
+    };
 
-            </form>
+    const onSubmit = async event => {
+        event.preventDefault();
+        setSubmitted(!submitted)
+        const payload = {
+            trailId: id,
+            stars,
+            review: reviews,
+            reviewImg
+        }
+        
+        let createdReviewData = await dispatch(thunkCreateTrailReview(payload))
+
+        if (createdReviewData) {
+            history.push(`/trails/${payload.trailId}`)
+            setShowModal(false)
+        }
+    }
+
+    let ratings = [1, 2, 3, 4, 5]
+
+    return (
+      <div>
+        <div>
+          <div>
+            <button onClick={closeModal}>X</button>
+          </div>
+          <form style={{height:'500px', width:"500px"}} onSubmit={onSubmit}>
+            <div>
+                <select
+                name='stars'
+                value={stars}
+                onChange={(event) => setStars(event.target.value)}
+                > 
+                    {ratings.map((rating, i) => (
+                        <option key={i} value={rating}>
+                            {rating}
+                        </option>
+                    ))}  
+                </select>
+            </div>
+            <div>
+              <textarea
+                type="text-area"
+                name="review"
+                placeholder="Give back to the community. Let people know what you think of the trail so they can prepare."
+                value={reviews}
+                onChange={(event) => setReviews(event.target.value)}
+              ></textarea>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="reviewImg"
+                placeholder='Share a picture of your experience.'
+                value={reviewImg}
+                onChange={(event) => setReviewImg(event.target.value)}
+              />
+            </div>
+            {validations.length > 0 && submitted && (
+              <div>
+                {validations.map((error, i) => (
+                  <div key={i}>{error}</div>
+                ))}
+              </div>
+            )}
+            <div>
+              <button
+                type="submit"
+                disabled={validations.length > 0 && submitted}
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-    )
+      </div>
+    );
 }
 
 
