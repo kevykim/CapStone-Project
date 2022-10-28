@@ -1,0 +1,86 @@
+.trail_detail_main {
+    display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+}
+
+.trail_detail_image_div {
+    position: relative;
+}
+
+.trail_detail_previewImg {
+    width: 1100px;
+    height: 350px;
+    position: relative;
+}
+
+.trail_detail_top_text {
+    display: flex;
+    flex-direction: row;
+}
+
+.trail_detail_image_text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    color: white;
+    margin-right: 750px;
+}
+
+.trail_detail_image_firstline {
+    font-weight: bold;
+    font-size: 40pt;
+    padding: 3px;
+}
+
+.trail_detail_image_secondline {
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+}
+
+.trail_detail_image_thirdline {
+    padding: 3px;
+}
+
+.trail_detail_bluebar {
+    position: absolute;
+    background: rgb(60, 103, 148);
+    height: 50px;
+    z-index: 10;
+    width: 1100px;
+    bottom: 5px;
+    color: rgb(60, 103, 148);;
+}
+
+.trail_detail_circle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    z-index: 11;
+    width: 1100px;
+    bottom: 10px;
+}
+
+.trail_detail_circle_text {
+    color: white;
+}
+
+.trail_detail_white_circle {
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 35px;
+    margin-bottom: 5px;
+    box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
+}
+
+.trail_detail_circle_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
