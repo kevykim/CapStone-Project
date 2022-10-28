@@ -1,6 +1,10 @@
 // TYPES
 
-
+const createTrailReview = '/review/createReview'
+const getTrailReview = '/review/getTrailReview'
+const getCurrentReview = '/review/getCurrentReview'
+const updateTrailReview = '/review/updateTrailReview'
+const deleteTrailReview = '/review/deleteTrailReview'
 
 
 
