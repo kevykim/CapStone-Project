@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { thunkGetCurrentTrail, thunkGetTrail } from "../../store/trail";
+import { thunkGetCurrentTrail } from "../../store/trail";
 import "./Trail.css";
 
 function Trails() {
@@ -17,7 +17,6 @@ function Trails() {
   );
 
   useEffect(() => {
-    dispatch(thunkGetTrail());
     dispatch(thunkGetCurrentTrail());
   }, [dispatch]);
 

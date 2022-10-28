@@ -20,38 +20,38 @@ function UpdateTrail() {
     // console.log(oldTrail)
   const user = useSelector((state) => state.session.user);
 
-  const [name, setName] = useState(oldTrail.name);
-  const [country, setCountry] = useState(oldTrail.country);
-  const [state, setState] = useState(oldTrail.state);
-  const [resort, setResort] = useState(oldTrail.resort);
-  const [difficulty, setDifficulty] = useState(oldTrail.difficulty);
-  const [description, setDescription] = useState(oldTrail.description);
-  const [length, setLength] = useState(oldTrail.length);
-  const [elevation, setElevation] = useState(oldTrail.elevation);
-  const [routeType, setRouteType] = useState(oldTrail.routeType);
-  const [previewImg, setPreviewImg] = useState(oldTrail.previewImg);
+  const [name, setName] = useState(oldTrail?.name);
+  const [country, setCountry] = useState(oldTrail?.country);
+  const [state, setState] = useState(oldTrail?.state);
+  const [resort, setResort] = useState(oldTrail?.resort);
+  const [difficulty, setDifficulty] = useState(oldTrail?.difficulty);
+  const [description, setDescription] = useState(oldTrail?.description);
+  const [length, setLength] = useState(oldTrail?.length);
+  const [elevation, setElevation] = useState(oldTrail?.elevation);
+  const [routeType, setRouteType] = useState(oldTrail?.routeType);
+  const [previewImg, setPreviewImg] = useState(oldTrail?.previewImg);
   const [submitted, setSubmitted] = useState(false);
   const [validations, setValidations] = useState([]);
 
   useEffect(() => {
     let errors = [];
-    if (name.length < 5 || name.length === 0)
+    if (name?.length < 5 || name?.length === 0)
       errors.push("Please enter a trail name longer than 5 characters");
     if (!country) errors.push("Please select a country");
     if (!state) errors.push("Please select a state");
     if (!resort) errors.push("Please select a resort");
     if (!difficulty) errors.push("Please select a difficulty");
-    if (description.length < 20 || description.length === 0)
+    if (description?.length < 20 || description?.length === 0)
       errors.push("Please enter a description longer than 20 characters.");
     if (!length) errors.push("Please enter a valid length number");
     if (!elevation) errors.push("Please enter a valid elevation number");
     if (!routeType) errors.push("Please select a route type");
     if (
-      (!previewImg.includes("jpg") &&
-        !previewImg.includes("png") &&
-        !previewImg.includes("jpeg") &&
-        !previewImg.includes("svg")) ||
-      (!previewImg.includes("https") && !previewImg.includes("http"))
+      (!previewImg?.includes("jpg") &&
+        !previewImg?.includes("png") &&
+        !previewImg?.includes("jpeg") &&
+        !previewImg?.includes("svg")) ||
+      (!previewImg?.includes("https") && !previewImg?.includes("http"))
     )
       errors.push("Please enter a valid url image");
     setValidations(errors);
@@ -71,9 +71,9 @@ function UpdateTrail() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setSubmitted(!submitted);
+    // setSubmitted(!submitted);
     const payload = {
-      id: id,
+      id,
       name,
       country,
       state,
@@ -88,7 +88,7 @@ function UpdateTrail() {
 
     let updatedTrailData = await dispatch(thunkUpdateTrail(payload));
 
-    if (updatedTrailData) history.push(`/trails`);
+    if (updatedTrailData) history.push(`/trail/${updatedTrailData.id}`);
   };
 
   if (!user) {
@@ -115,22 +115,22 @@ function UpdateTrail() {
       <form onSubmit={onSubmit}>
         <div>Update trail</div>
         <div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <input
               name="name"
               type="text"
               placeholder="Name"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             />
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <select
               name="country"
               value={country}
               onChange={(event) => setCountry(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             >
               <option value="" disabled>
                 Select a country
@@ -142,12 +142,12 @@ function UpdateTrail() {
               ))}
             </select>
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <select
               name="state"
               value={state}
               onChange={(event) => setState(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             >
               <option value="" disabled>
                 Select a state
@@ -159,12 +159,12 @@ function UpdateTrail() {
               ))}
             </select>
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <select
               name="resort"
               value={resort}
               onChange={(event) => setResort(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             >
               <option value="" disabled>
                 Select a resort
@@ -176,12 +176,12 @@ function UpdateTrail() {
               ))}
             </select>
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <select
               name="difficulty"
               value={difficulty}
               onChange={(event) => setDifficulty(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             >
               <option value="" disabled>
                 Select a difficulty
@@ -193,42 +193,42 @@ function UpdateTrail() {
               ))}
             </select>
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <textarea
               name="description"
               type="text-area"
               placeholder="Description"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             ></textarea>
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <input
               name="length"
               type="number"
               placeholder="Length"
               value={length}
               onChange={(event) => setLength(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             />
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <input
               name="elevation"
               type="number"
               placeholder="Elevation"
               value={elevation}
               onChange={(event) => setElevation(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             />
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <select
               name="routeType"
               value={routeType}
               onChange={(event) => setRouteType(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             >
               <option value="" disabled>
                 Select a Route Type
@@ -240,28 +240,28 @@ function UpdateTrail() {
               ))}
             </select>
           </div>
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <input
               name="previewImg"
               type="text"
               placeholder="Trail Image"
               value={previewImg}
               onChange={(event) => setPreviewImg(event.target.value)}
-              className="create_trail_inputs"
+              className="update_trail_inputs"
             />
           </div>
-          {validations.length > 0 && submitted === true && (
-            <div className="create_trail_error">
+          {validations.length > 0 && (
+            <div className="update_trail_error">
               {validations.map((error, ind) => (
                 <div key={ind}>{error}</div>
               ))}
             </div>
           )}
-          <div className="create_trail_inputs_div">
+          <div className="update_trail_inputs_div">
             <button
-              className="create_trail_button_form"
+              className="update_trail_button_form"
               type="submit"
-              disabled={validations.length > 0 && submitted}
+              disabled={validations.length > 0}
             >
               Update Trail
             </button>
