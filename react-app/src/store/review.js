@@ -58,6 +58,27 @@ const initialState = {}
 const reviewReducer = (state = initialState, action) => {
     let newState = {...state}
     switch (action.type) {
+        case createTrailReview:
+            newState[action.review.id] = action.review
+            return newState
+        case getTrailReview:
+            newState = {};
+            action.reviews.review.forEach((review) => {
+                newState[review.id] = review;
+            })
+            return newState
+        case getCurrentReview:
+            newState = {};
+            action.reviews.review.forEach((review) => {
+                newState[review.id] = review;
+            })
+            return newState
+        case updateTrailReview:
+            newState[action.review.id] = action.review
+            return newState
+        case deleteTrailReview:
+            delete newState[action.id]
+            return newState
         default:
             return state
     }
