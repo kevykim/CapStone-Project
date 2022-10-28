@@ -71,7 +71,7 @@ function UpdateTrail() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    // setSubmitted(!submitted);
+    setSubmitted(!submitted);
     const payload = {
       id,
       name,
@@ -88,7 +88,7 @@ function UpdateTrail() {
 
     let updatedTrailData = await dispatch(thunkUpdateTrail(payload));
 
-    if (updatedTrailData) history.push(`/trail/${updatedTrailData.id}`);
+    if (updatedTrailData) history.push(`/trails/${updatedTrailData.id}`);
   };
 
   if (!user) {
@@ -250,7 +250,7 @@ function UpdateTrail() {
               className="update_trail_inputs"
             />
           </div>
-          {validations.length > 0 && (
+          {validations.length > 0 && submitted === true && (
             <div className="update_trail_error">
               {validations.map((error, ind) => (
                 <div key={ind}>{error}</div>
@@ -261,7 +261,7 @@ function UpdateTrail() {
             <button
               className="update_trail_button_form"
               type="submit"
-              disabled={validations.length > 0}
+              disabled={validations.length > 0 && submitted}
             >
               Update Trail
             </button>
