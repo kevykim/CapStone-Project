@@ -5,6 +5,7 @@ import { thunkGetSingleTrail } from "../../store/trail"
 import CreateReviewModal from "../Review/CreateReviewModal"
 
 import './TrailDetail.css'
+import { thunkGetTrailReview } from "../../store/review"
 
 function TrailDetail() {
     const {id} = useParams()
@@ -12,10 +13,14 @@ function TrailDetail() {
 
     const user = useSelector(state => state.session.user)
     const trail = useSelector(state => state.trail[id])
+    const review = useSelector(state => state.review)
+    const reviewArr = Object.values(review)
+    console.log(reviewArr)
 
 
     useEffect(() => {
         dispatch(thunkGetSingleTrail(id))
+        dispatch(thunkGetTrailReview(id))
     }, [dispatch, id])
 
     return (
@@ -81,6 +86,19 @@ function TrailDetail() {
                 </div>
                 <div>
                     <CreateReviewModal />
+                </div>
+                <div>firstname and lastname profile here</div>
+                <div>
+                  {reviewArr.map((review, i) => (
+                    <div key={i}>
+                      <div>
+                        {review.stars}
+                        </div>
+                        <div>
+                          {review.review}
+                        </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
