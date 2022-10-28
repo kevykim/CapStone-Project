@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { thunkGetSingleTrail } from "../../store/trail"
+import CreateReviewModal from "../Review/CreateReviewModal"
 
 import './TrailDetail.css'
 
@@ -75,7 +76,12 @@ function TrailDetail() {
                 <div>{trail?.routeType}</div>
               </div>
               <div>
-                <div>review stuff here</div>
+                <div>
+                  review avg and review total
+                </div>
+                <div>
+                    <CreateReviewModal />
+                </div>
               </div>
             </div>
             <div>
