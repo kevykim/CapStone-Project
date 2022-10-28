@@ -103,6 +103,7 @@ export const thunkUpdateTrail = (payload) => async dispatch => {
   const response = await fetch(`/api/trails/${payload.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
   });
   if (response.ok) {
     const data = await response.json();

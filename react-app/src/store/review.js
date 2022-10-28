@@ -69,6 +69,39 @@ export const thunkGetTrailReview = (id) => async dispatch => {
     }
 }
 
+export const thunkGetCurrentReview = () => async dispatch => {
+    const response = await fetch('/api/reviews/current', {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+    });
+    if(response.ok) {
+        const data = await response.json()
+        dispatch(actionGetCurrentReview(data))
+    }
+}
+
+export const thunkUpdateTrailReview = (payload) => async dispatch => {
+    const response = await fetch(`/api/reviews/${payload.id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    });
+    if(response.ok) {
+        const data = await response.json()
+        dispatch(actionUpdateTrailReview(data))
+        return data
+    }
+}
+
+export const thunkDeleteTrailReview = (id) => async dispatch => {
+    const response = await fetch(`/api/reviews/${id}`, {
+        method: "DELETE"
+    });
+    if(response.ok) {
+        dispatch(actionDeleteTrailReview(id))
+    }
+}
+
 
 
 
