@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { thunkGetCurrentTrail } from "../../store/trail";
+import DeleteTrail from "./DeleteTrail";
 import "./Trail.css";
 
 function Trails() {
@@ -53,7 +54,7 @@ function Trails() {
                   </div>
                   <div className="my_trail_circle_inner">
                     <div className="my_trail_white_circle"></div>
-                    <div className="my_trail_circle_text">Delete</div>
+                    <div className="my_trail_circle_text"><DeleteTrail trail={trail}/></div>
                   </div>
                 </div>
               </div>
