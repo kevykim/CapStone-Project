@@ -8,7 +8,7 @@ from app.models import Trail
 def namechecker(form, field):
     name = field.data
     if len(name) < 5:
-        raise ValidationError('Please enter a trail name longer than 7 characters.')
+        raise ValidationError('Please enter a trail name longer than 5 characters.')
 
 def descriptionchecker(form, field):
     description = field.data

@@ -132,13 +132,13 @@ const trailReducer = (state = initialState, action) => {
             return newState
         case getTrail:
             newState = {};
-            action.trails.forEach((trail) => {
+            action.trails.trails.forEach((trail) => {
                 newState[trail.id] = trail;
             })
             return newState
         case getCurrentTrail:
             newState = {};
-            action.trails.forEach((trail) => {
+            action.trails.trails.forEach((trail) => {
                 newState[trail.id] = trail;
             })
             return newState

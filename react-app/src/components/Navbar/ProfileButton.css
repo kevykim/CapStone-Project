@@ -1,0 +1,60 @@
+.profile_button_main {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    position: relative;
+
+}
+
+.profile_img_main {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 260px;
+    position: absolute;
+    right: 0px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    z-index: 11;
+    background: white;
+
+}
+
+.profile_dropdown_box {
+    display: flex;
+    width: 200px;
+    height: 42px;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background: white;
+}
+
+.profile_dropdown_box:hover {
+    background: lightgrey;
+}
+
+.log_out_button {
+    display: flex;
+    width: 210px;
+    height: 42px;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding: 0px 0px 0px 0px;
+}
+
+.log_out_button:hover {
+    background: lightgray;
+}
+
