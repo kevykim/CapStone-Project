@@ -66,7 +66,7 @@ function CreateTrail() {
         let createdTrailData = await dispatch(thunkCreateTrail(payload))
 
         if (createdTrailData) 
-        history.push(`/trail/${createdTrailData.id}`)
+        history.push(`/trails/${createdTrailData.id}`)
 
     }
 

@@ -38,7 +38,7 @@ function HomePage() {
           {trailArr.map((trail, i) => (
             <div className="homepage_arr_div_inner" key={i}>
               <div>
-                <NavLink exact to={`/trail/${trail.id}`}>
+                <NavLink exact to={`/trails/${trail.id}`}>
                   <img
                     className="homepage_trail_image"
                     src={trail.previewImg}
