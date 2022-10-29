@@ -44,7 +44,9 @@ function ProfileButton({ user }) {
             <div className="profile_dropdown_box">
               <NavLink exact to='/trails'>Trails</NavLink>
             </div>
-            <div className="profile_dropdown_box">reviews</div>
+            <div className="profile_dropdown_box">
+              <NavLink exact to='/reviews'>Reviews</NavLink>
+            </div>
             <div className="profile_dropdown_box">
               <NavLink exact to='/trails/new'>New trail</NavLink>
             </div>

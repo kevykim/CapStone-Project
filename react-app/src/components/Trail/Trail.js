@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { thunkGetCurrentTrail } from "../../store/trail";
 import DeleteTrail from "./DeleteTrail";
 import "./Trail.css";
 
 function Trails() {
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const user = useSelector((state) => state.session.user);
 
@@ -21,13 +22,17 @@ function Trails() {
     dispatch(thunkGetCurrentTrail());
   }, [dispatch]);
 
+  if (!user) {
+    history.push('/')
+  }
+
   return (
     <div className="my_trail_main">
       {currentTrailOwned.length === 0 ? (
         <div>
           <div>Plan your perfect trail</div>
           <div>
-            <NavLink exact to="/"></NavLink>
+            <NavLink exact to="/trails/new">Here</NavLink>
           </div>
         </div>
       ) : (
