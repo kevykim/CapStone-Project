@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { thunkGetCurrentReview } from '../../store/review'
+import DeleteReviewModal from './DeleteReviewModal'
 import './Review.css'
 import UpdateReviewModal from './UpdateReviewModal'
 
@@ -42,7 +43,7 @@ const history = useHistory()
                   <div>{review.stars}</div>
                   <div>{review.review}</div>
                   <div>
-                    <div>Delete</div>
+                    <div><DeleteReviewModal review={review} /></div>
                     <div><UpdateReviewModal review={review} /></div>
                   </div>
                 </div>
