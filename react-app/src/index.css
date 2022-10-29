@@ -1,5 +1,22 @@
 /* TODO Add site wide styles */
 
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url('./fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url('./fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url('./fonts/Roboto/Roboto-Bold.ttf');
+}
+
 * {
     box-sizing: border-box;
+    font-family: "Roboto-Regular";
+    margin: 0;
 }
