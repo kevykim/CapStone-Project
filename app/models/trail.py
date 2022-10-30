@@ -36,5 +36,8 @@ class Trail(db.Model):
             'elevation': self.elevation,
             'routeType': self.routeType,
             'previewImg': self.previewImg,
-            'userId': self.userId
+            'userId': self.userId,
+            'firstname' : self.users.firstName if self.users else None,
+            'lastname' : self.users.lastName if self.users else None,
+            'reviews' : [review.to_dict() for review in self.reviews]
         }

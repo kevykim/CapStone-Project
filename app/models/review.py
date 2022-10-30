@@ -23,5 +23,7 @@ class Review(db.Model):
             'userId': self.userId,
             'review': self.review,
             'stars': self.stars,
-            'reviewImg': self.reviewImg
+            'reviewImg': self.reviewImg,
+            'firstname' : self.users.firstName if self.users else None,
+            'lastname' : self.users.lastName if self.users else None,
         }
