@@ -66,7 +66,7 @@ function CreateTrail() {
         let createdTrailData = await dispatch(thunkCreateTrail(payload))
 
         if (createdTrailData) 
-        history.push(`/trail/${createdTrailData.id}`)
+        history.push(`/trails/${createdTrailData.id}`)
 
     }
 
@@ -90,166 +90,235 @@ function CreateTrail() {
 
     let routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"];
 
+    // const validate = validations.map(error => error) 
+    // console.log(validate)
 
+      //  validations.length > 0 && submitted === true && (
+      //    <div className="create_trail_error">
+      //      {validations.map((error, ind) => (
+      //        <div key={ind}>{error}</div>
+      //      ))}
+      //    </div>
+      //  );
+
+      //IMAGE VALIDATION
+      const imageValidate = ((
+                  !previewImg.includes(".jpg") &&
+                  !previewImg.includes(".png") &&
+                  !previewImg.includes(".jpeg") &&
+                  !previewImg.includes(".svg")) ||
+                  (!previewImg.includes("https") &&
+                    !previewImg.includes("http")))
+     
 
     return (
-      <div>
-        <form onSubmit={onSubmit}>
-          <div>Create trail</div>
-          <div>
-            <div className="create_trail_inputs_div">
-              <input
-                name="name"
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                className="create_trail_inputs"
-              />
-            </div>
-            <div className="create_trail_inputs_div">
-              <select
-                name="country"
-                value={country}
-                onChange={(event) => setCountry(event.target.value)}
-                className="create_trail_inputs"
-              >
-                <option value="" disabled>
-                  Select a country
-                </option>
-                {country_choices.map((country, i) => (
-                  <option key={i} value={country}>
-                    {country}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="create_trail_inputs_div">
-              <select
-                name="state"
-                value={state}
-                onChange={(event) => setState(event.target.value)}
-                className="create_trail_inputs"
-              >
-                <option value="" disabled>
-                  Select a state
-                </option>
-                {state_choices.map((state, i) => (
-                  <option key={i} value={state}>
-                    {state}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="create_trail_inputs_div">
-              <select
-                name="resort"
-                value={resort}
-                onChange={(event) => setResort(event.target.value)}
-                className="create_trail_inputs"
-              >
-                <option value="" disabled>
-                  Select a resort
-                </option>
-                {resort_choices.map((resort, i) => (
-                  <option key={i} value={resort}>
-                    {resort}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="create_trail_inputs_div">
-              <select
-                name="difficulty"
-                value={difficulty}
-                onChange={(event) => setDifficulty(event.target.value)}
-                className="create_trail_inputs"
-              >
-                <option value="" disabled>
-                  Select a difficulty
-                </option>
-                {difficulty_choices.map((difficulty, i) => (
-                  <option key={i} value={difficulty}>
-                    {difficulty}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="create_trail_inputs_div">
-              <textarea
-                name="description"
-                type="text-area"
-                placeholder="Description"
-                value={description}
-                onChange={(event) => setDescription(event.target.value)}
-                className="create_trail_inputs"
-              ></textarea>
-            </div>
-            <div className="create_trail_inputs_div">
-              <input
-                name="length"
-                type="number"
-                placeholder="Length"
-                value={length}
-                onChange={(event) => setLength(event.target.value)}
-                className="create_trail_inputs"
-              />
-            </div>
-            <div className="create_trail_inputs_div">
-              <input
-                name="elevation"
-                type="number"
-                placeholder="Elevation"
-                value={elevation}
-                onChange={(event) => setElevation(event.target.value)}
-                className="create_trail_inputs"
-              />
-            </div>
-            <div className="create_trail_inputs_div">
-              <select
-                name="routeType"
-                value={routeType}
-                onChange={(event) => setRouteType(event.target.value)}
-                className="create_trail_inputs"
-              >
-                <option value="" disabled>
-                  Select a Route Type
-                </option>
-                {routeType_choices.map((routeType, i) => (
-                  <option key={i} value={routeType}>
-                    {routeType}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="create_trail_inputs_div">
-              <input
-                name="previewImg"
-                type="text"
-                placeholder="Trail Image"
-                value={previewImg}
-                onChange={(event) => setPreviewImg(event.target.value)}
-                className="create_trail_inputs"
-              />
-            </div>
-            {validations.length > 0 && submitted === true && (
-              <div className="create_trail_error">
-                {validations.map((error, ind) => (
-                  <div key={ind}>{error}</div>
-                ))}
+      <div className="create_trail_main">
+        <div className="create_trail_form">
+          <form onSubmit={onSubmit}>
+            <div className="create_trail_header">Create trail</div>
+            <div>
+              <div className="create_trail_inputs_div">
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  className="create_trail_inputs"
+                />
+                {validations.length > 0 &&
+                  submitted === true &&
+                  (name.length < 5 || name.length === 0) && (
+                    <div className="create_trail_error">
+                      Please enter a trail name longer than 5 characters
+                    </div>
+                  )}
               </div>
-            )}
-            <div className="create_trail_inputs_div">
-              <button
-                className="create_trail_button_form"
-                type="submit"
-                disabled={validations.length > 0 && submitted}
-              >
-                Create Trail
-              </button>
+              <div className="create_trail_inputs_div">
+                <select
+                  name="country"
+                  value={country}
+                  onChange={(event) => setCountry(event.target.value)}
+                  className="create_trail_inputs"
+                >
+                  <option value="" disabled>
+                    Select a country
+                  </option>
+                  {country_choices.map((country, i) => (
+                    <option key={i} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
+                {validations.length > 0 && submitted === true && !country && (
+                  <div className="create_trail_error">
+                    Please select a country
+                  </div>
+                )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <select
+                  name="state"
+                  value={state}
+                  onChange={(event) => setState(event.target.value)}
+                  className="create_trail_inputs"
+                >
+                  <option value="" disabled>
+                    Select a state
+                  </option>
+                  {state_choices.map((state, i) => (
+                    <option key={i} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+                {validations.length > 0 && submitted === true && !state && (
+                  <div className="create_trail_error">
+                    Please select a state
+                  </div>
+                )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <select
+                  name="resort"
+                  value={resort}
+                  onChange={(event) => setResort(event.target.value)}
+                  className="create_trail_inputs"
+                >
+                  <option value="" disabled>
+                    Select a resort
+                  </option>
+                  {resort_choices.map((resort, i) => (
+                    <option key={i} value={resort}>
+                      {resort}
+                    </option>
+                  ))}
+                </select>
+                {validations.length > 0 && submitted === true && !resort && (
+                  <div className="create_trail_error">
+                    Please select a resort
+                  </div>
+                )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <select
+                  name="difficulty"
+                  value={difficulty}
+                  onChange={(event) => setDifficulty(event.target.value)}
+                  className="create_trail_inputs"
+                >
+                  <option value="" disabled>
+                    Select a difficulty
+                  </option>
+                  {difficulty_choices.map((difficulty, i) => (
+                    <option key={i} value={difficulty}>
+                      {difficulty}
+                    </option>
+                  ))}
+                </select>
+                {validations.length > 0 &&
+                  submitted === true &&
+                  !difficulty && (
+                    <div className="create_trail_error">
+                      Please select a difficulty
+                    </div>
+                  )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <textarea
+                  name="description"
+                  type="text-area"
+                  placeholder="Description"
+                  value={description}
+                  onChange={(event) => setDescription(event.target.value)}
+                  className="create_trail_textarea"
+                ></textarea>
+                {validations.length > 0 &&
+                  submitted === true &&
+                  description.length < 20 && (
+                    <div className="create_trail_error">
+                      Please enter a description longer than 20 characters.
+                    </div>
+                  )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <input
+                  name="length"
+                  type="number"
+                  placeholder="Length"
+                  value={length}
+                  onChange={(event) => setLength(event.target.value)}
+                  className="create_trail_inputs"
+                />
+                {validations.length > 0 && submitted === true && !length && (
+                  <div className="create_trail_error">
+                    Please enter a valid length number
+                  </div>
+                )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <input
+                  name="elevation"
+                  type="number"
+                  placeholder="Elevation"
+                  value={elevation}
+                  onChange={(event) => setElevation(event.target.value)}
+                  className="create_trail_inputs"
+                />
+                {validations.length > 0 && submitted === true && !elevation && (
+                  <div className="create_trail_error">
+                    Please enter a valid elevation number
+                  </div>
+                )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <select
+                  name="routeType"
+                  value={routeType}
+                  onChange={(event) => setRouteType(event.target.value)}
+                  className="create_trail_inputs"
+                >
+                  <option value="" disabled>
+                    Select a Route Type
+                  </option>
+                  {routeType_choices.map((routeType, i) => (
+                    <option key={i} value={routeType}>
+                      {routeType}
+                    </option>
+                  ))}
+                </select>
+                {validations.length > 0 && submitted === true && !routeType && (
+                  <div className="create_trail_error">
+                    Please select a route type
+                  </div>
+                )}
+              </div>
+              <div className="create_trail_inputs_div">
+                <input
+                  name="previewImg"
+                  type="text"
+                  placeholder="Trail Image"
+                  value={previewImg}
+                  onChange={(event) => setPreviewImg(event.target.value)}
+                  className="create_trail_inputs"
+                />
+                {(validations.length > 0 &&
+                  submitted === true && imageValidate  && (
+                      <div className="create_trail_error">Please enter a valid url image</div>
+                    ))}
+              </div>
+              <div className="create_trail_inputs_div">
+                <button
+                  className="create_trail_button_form"
+                  type="submit"
+                  disabled={validations.length > 0 && submitted}
+                >
+                  Create Trail
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
 }

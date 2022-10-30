@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { thunkGetCurrentTrail, thunkGetTrail } from "../../store/trail";
+import { NavLink, useHistory } from "react-router-dom";
+import { thunkGetCurrentTrail } from "../../store/trail";
+import DeleteTrail from "./DeleteTrail";
 import "./Trail.css";
 
 function Trails() {
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const user = useSelector((state) => state.session.user);
 
@@ -17,9 +19,12 @@ function Trails() {
   );
 
   useEffect(() => {
-    dispatch(thunkGetTrail());
     dispatch(thunkGetCurrentTrail());
   }, [dispatch]);
+
+  if (!user) {
+    history.push('/')
+  }
 
   return (
     <div className="my_trail_main">
@@ -27,7 +32,7 @@ function Trails() {
         <div>
           <div>Plan your perfect trail</div>
           <div>
-            <NavLink exact to="/"></NavLink>
+            <NavLink exact to="/trails/new">Here</NavLink>
           </div>
         </div>
       ) : (
@@ -47,14 +52,13 @@ function Trails() {
                     <div className="my_trail_circle_text">Share</div>
                   </div>
                   <div className="my_trail_circle_inner">
-                    <NavLink exact to={`/trails/${trail?.id}/update`}>
+                    <NavLink className='my_trail_navlink' exact to={`/trails/${trail?.id}/update`}>
                     <div className="my_trail_white_circle"></div>
                     <div className="my_trail_circle_text">Edit</div>
                     </NavLink>
                   </div>
                   <div className="my_trail_circle_inner">
-                    <div className="my_trail_white_circle"></div>
-                    <div className="my_trail_circle_text">Delete</div>
+                    <div className="my_trail_circle_text"><DeleteTrail trail={trail}/></div>
                   </div>
                 </div>
               </div>
