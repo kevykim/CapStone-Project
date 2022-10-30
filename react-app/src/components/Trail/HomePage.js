@@ -16,7 +16,7 @@ function HomePage() {
     useEffect(() => {
         dispatch(thunkGetTrail())
     },[dispatch])
-
+    
 
     return (
       <div className="homepage_main">
@@ -62,9 +62,9 @@ function HomePage() {
                     <div className="homepage_trail_star_div">
                       <i className="fa-solid fa-star fa-sm"></i>
                     </div>
-                    <div className="homepage_trail_avgreview">reviewavg</div>
+                    <div className="homepage_trail_avgreview">{}</div>
                     <div className="homepage_trail_totalreview">
-                      (totalreview)
+                      {`(${trail.reviews.length})`}
                     </div>
                   </div>
                 </div>
