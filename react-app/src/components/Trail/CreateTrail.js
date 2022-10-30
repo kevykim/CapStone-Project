@@ -90,7 +90,7 @@ function CreateTrail() {
 
     let routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"];
 
-    const validate = validations.map(error => error) 
+    // const validate = validations.map(error => error) 
     // console.log(validate)
 
       //  validations.length > 0 && submitted === true && (
@@ -103,10 +103,10 @@ function CreateTrail() {
 
       //IMAGE VALIDATION
       const imageValidate = ((
-                  !previewImg.includes("jpg") &&
-                  !previewImg.includes("png") &&
-                  !previewImg.includes("jpeg") &&
-                  !previewImg.includes("svg")) ||
+                  !previewImg.includes(".jpg") &&
+                  !previewImg.includes(".png") &&
+                  !previewImg.includes(".jpeg") &&
+                  !previewImg.includes(".svg")) ||
                   (!previewImg.includes("https") &&
                     !previewImg.includes("http")))
      
