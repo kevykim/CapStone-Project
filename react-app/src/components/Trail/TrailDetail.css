@@ -141,6 +141,24 @@
 }
 
 
+.trail_detail_bottom_allreview {
+    width: 300px;
+    padding: 15px;
+}
+
+.trail_detail_bottom_writereview {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.trail_detail_bottom_profileinfo {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+}
 
 
 
@@ -153,8 +171,57 @@
     border-right: 0.5px solid lightgray;
 }
 
+.trail_detail_sidebar_inner_div {
+    display: flex;
+}
+
+.trail_detail_sidebar_image_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
 
 .trail_detail_near_div {
-    height: 1000px;
+    height: 100%;
+}
+
+.trail_detail_sidebar_inner {
+    padding: 15px;
+}
+
+.trail_detail_near_text {
+    text-align: center;
+    font-family: "Roboto-Bold";
+    padding: 15px;
+}
+
+.trail_detail_sidebar_image {
+    width: 296px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.trail_detail_sidebar_image_info {
+    display: flex;
+    flex-direction: column; 
+    width: 296px;
+}
+
+.trail_detail_sidebar_firstline {
+    display: flex;
+    flex-direction: row;
+    padding: 2px 0px 2px 0px;
+}
+
+.trail_detail_sidebar_name {
+    font-weight: bold;
+    padding: 2px 0px 2px 0px;
+}
+
+.trail_detail_sidebar_othertext {
+    color: rgb(109, 109, 109);
+    font-size: 10pt;
+    padding: 2px 0px 2px 0px;
 }
 
