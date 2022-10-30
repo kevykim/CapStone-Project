@@ -1,3 +1,22 @@
+.update_trail_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.update_trail_form {
+    width: 1100px;
+    display: flex;
+    margin-right: 60px;
+}
+
+
+.update_trail_header {
+    font-family: "Roboto-Bold";
+    font-size: 20pt;
+}
+
 .update_trail_inputs_div {
     margin-top: 10px;
 }
@@ -11,6 +30,16 @@
     border: 1px solid lightgrey;
 }
 
+.update_trail_textarea {
+    height: 47px;
+    width: 370px;
+    border-radius: 4px;
+    margin: 4px 0px;
+    padding: 10px 16px;
+    border: 1px solid lightgrey;
+    resize: none;
+}
+
 .update_trail_button_form {
     height: 47px;
     width: 370px;
@@ -21,8 +50,7 @@
     cursor: pointer;
 }
 
+
 .update_trail_error {
     color: red;
-    height: 2px;
-    margin-bottom: 35px;
 }
