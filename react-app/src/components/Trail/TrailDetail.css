@@ -18,6 +18,18 @@
 .trail_detail_top_text {
     display: flex;
     flex-direction: row;
+    padding: 20px;
+    margin-right: 680px;
+    color: rgb(132, 132, 132);
+    font-size: 9.2pt;
+}
+
+.trail_detail_navlink {
+    border: 1px solid green;
+}
+
+.trail_detail_navlink:hover {
+    text-decoration: underline;
 }
 
 .trail_detail_image_text {
@@ -30,8 +42,9 @@
 }
 
 .trail_detail_image_firstline {
-    font-weight: bold;
-    font-size: 40pt;
+    font-family: "Roboto-Bold";
+    font-size: 30pt;
+    color: lightgray;
     padding: 3px;
 }
 
@@ -51,7 +64,7 @@
     height: 50px;
     z-index: 10;
     width: 1100px;
-    bottom: 5px;
+    bottom: 0px;
     color: rgb(60, 103, 148);
 }
 
@@ -82,5 +95,66 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.trail_detail_bottom_box {
+    display: flex;
+    justify-content: center;
+        flex-direction: row;
+
+
+}
+
+.trail_detail_bottom_second {
+    border-right: 0.5px solid lightgray;
+    border-left: 0.5px solid lightgray;
+    width: 700px;
+}
+
+.trail_detail_bottom_inner {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+        border-bottom: 0.5px solid lightgray;
+}
+
+.trail_detail_bottom_description {
+    padding: 15px;
+    word-break: break-all;
+        white-space: pre-wrap;
+        font-size: 15pt;
+}
+
+.trail_detail_bottom_firstline {
+    color: rgb(134,134,134);
+    font-size: 10pt;
+    margin-bottom: 3px;
+}
+
+.trail_detail_bottom_secondline {
+    font-family: "Roboto-Bold";
+}
+
+.trail_detail_bottom_info_divs {
+    width: 210px;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+.trail_detail_sidebar {
+    width: 400px;
+
+    border-right: 0.5px solid lightgray;
+}
+
+
+.trail_detail_near_div {
+    height: 1000px;
 }
 
