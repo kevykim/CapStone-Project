@@ -17,8 +17,13 @@ function DeleteTrail({trail}) {
 
 
     return (
-        <button className='delete_trail_button' onClick={onDelete}>Delete</button>
-    )
+      <div>
+        <button className="delete_trail_button" onClick={onDelete}>
+          <div className="my_trail_white_circle"></div>
+          Delete
+        </button>
+      </div>
+    );
 }
 
 

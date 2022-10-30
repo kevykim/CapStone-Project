@@ -52,13 +52,12 @@ function Trails() {
                     <div className="my_trail_circle_text">Share</div>
                   </div>
                   <div className="my_trail_circle_inner">
-                    <NavLink exact to={`/trails/${trail?.id}/update`}>
+                    <NavLink className='my_trail_navlink' exact to={`/trails/${trail?.id}/update`}>
                     <div className="my_trail_white_circle"></div>
                     <div className="my_trail_circle_text">Edit</div>
                     </NavLink>
                   </div>
                   <div className="my_trail_circle_inner">
-                    <div className="my_trail_white_circle"></div>
                     <div className="my_trail_circle_text"><DeleteTrail trail={trail}/></div>
                   </div>
                 </div>

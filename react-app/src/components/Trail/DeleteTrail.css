@@ -1,6 +1,7 @@
 .delete_trail_button {
     border: none;
     background: none;
+    text-decoration: none;
     color: rgb(60, 103, 148);
     font-size: 12pt;
     cursor: pointer;
