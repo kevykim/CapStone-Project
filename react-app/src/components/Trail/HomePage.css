@@ -63,15 +63,44 @@
     display: flex;
     flex-direction: row;
     padding: 2px 0px 2px 0px;
+    word-break: break-all;
+        white-space: pre-wrap;
+    width: 288px;
 }
+
+.homepage_trail_difficulty {
+    display: flex;
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
+.homepage_trail_review_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage_trail_avgreview {
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
+.homepage_trail_totalreview {
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
 
 .homepage_trail_name {
     font-weight: bold;
     padding: 2px 0px 2px 0px;
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .homepage_trail_othertext {
     color: rgb(109, 109, 109);
     font-size: 10pt;
     padding: 2px 0px 2px 0px;
+    word-break: break-all;
+        white-space: pre-wrap;
 }

@@ -12,6 +12,9 @@ function HomePage() {
     const trail = useSelector(state => state.trail)
     const trailArr = Object.values(trail)
 
+    const user = useSelector(state => state.session.user)
+
+
     useEffect(() => {
         dispatch(thunkGetTrail())
     },[dispatch])
@@ -28,9 +31,15 @@ function HomePage() {
               alt="home"
             />
           </div>
-          <div className="homepage_text">
-            <div>Find your next trail</div>
-          </div>
+          {!user ? (
+            <div className="homepage_text">
+              <div>Find your next trail</div>
+            </div>
+          ) : (
+            <div className="homepage_text">
+              <div>Welcome {user?.firstName}</div>
+            </div>
+          )}
         </div>
         <div className="homepage_empty_div"></div>
         <div className="local_favorites_text">Local favorites</div>
@@ -48,8 +57,11 @@ function HomePage() {
               </div>
               <div>
                 <div className="homepage_trail_firstline">
-                  <div>{trail.difficulty}&nbsp;</div>
-                  <div>staravg&totalreviews</div>
+                  <div className='homepage_trail_difficulty'>{trail.difficulty}&nbsp;</div>
+                  <div className='homepage_trail_review_div'>
+                    <div className='homepage_trail_avgreview'>reviewavg</div>
+                    <div className='homepage_trail_totalreview'>(totalreview)</div>
+                  </div>
                 </div>
                 <div className="homepage_trail_name">{trail.name}</div>
                 <div className="homepage_trail_othertext">{trail.resort}</div>
