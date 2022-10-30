@@ -2,8 +2,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { thunkGetTrail } from '../../store/trail';
-
-
 import './HomePage.css'
 
 function HomePage() {
@@ -57,10 +55,17 @@ function HomePage() {
               </div>
               <div>
                 <div className="homepage_trail_firstline">
-                  <div className='homepage_trail_difficulty'>{trail.difficulty}&nbsp;</div>
-                  <div className='homepage_trail_review_div'>
-                    <div className='homepage_trail_avgreview'>reviewavg</div>
-                    <div className='homepage_trail_totalreview'>(totalreview)</div>
+                  <div className="homepage_trail_difficulty">
+                    {trail.difficulty}&nbsp;·&nbsp;
+                  </div>
+                  <div className="homepage_trail_review_div">
+                    <div className="homepage_trail_star_div">
+                      <i className="fa-solid fa-star fa-sm"></i>
+                    </div>
+                    <div className="homepage_trail_avgreview">reviewavg</div>
+                    <div className="homepage_trail_totalreview">
+                      (totalreview)
+                    </div>
                   </div>
                 </div>
                 <div className="homepage_trail_name">{trail.name}</div>

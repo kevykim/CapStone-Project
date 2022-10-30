@@ -62,6 +62,7 @@
 .homepage_trail_firstline {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 2px 0px 2px 0px;
     word-break: break-all;
         white-space: pre-wrap;
@@ -72,21 +73,33 @@
     display: flex;
     word-break: break-all;
         white-space: pre-wrap;
+    font-size: 10pt;
 }
 
 .homepage_trail_review_div {
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.homepage_trail_star_div {
+    display: flex;
+}
+
+.fa-solid.fa-star {
+    color: gold;
 }
 
 .homepage_trail_avgreview {
     word-break: break-all;
         white-space: pre-wrap;
+    font-size: 10pt;
 }
 
 .homepage_trail_totalreview {
     word-break: break-all;
         white-space: pre-wrap;
+    font-size: 10pt;
 }
 
 
@@ -95,6 +108,7 @@
     padding: 2px 0px 2px 0px;
     word-break: break-all;
         white-space: pre-wrap;
+        font-size: 11pt;
 }
 
 .homepage_trail_othertext {
