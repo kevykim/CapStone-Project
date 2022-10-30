@@ -42,16 +42,28 @@ function ProfileButton({ user }) {
           <div className="profile-dropdown">
             <div className="profile_dropdown_box">{user.username}</div>
             <div className="profile_dropdown_box">
-              <NavLink exact to='/trails'>Trails</NavLink>
+              <NavLink className="profile_dropdown_navlink" exact to="/trails">
+                Trails
+              </NavLink>
             </div>
             <div className="profile_dropdown_box">
-              <NavLink exact to='/reviews'>Reviews</NavLink>
+              <NavLink className="profile_dropdown_navlink" exact to="/reviews">
+                Reviews
+              </NavLink>
             </div>
             <div className="profile_dropdown_box">
-              <NavLink exact to='/trails/new'>New trail</NavLink>
+              <NavLink
+                className="profile_dropdown_navlink"
+                exact
+                to="/trails/new"
+              >
+                New trail
+              </NavLink>
             </div>
-            <div className="profile_dropdown_box">
-              <button className="log_out_button" onClick={logOut}>Log Out</button>
+            <div >
+              <button className="log_out_button" onClick={logOut}>
+                Log Out
+              </button>
             </div>
           </div>
         )}

@@ -25,36 +25,44 @@
     border-radius: 10px;
     z-index: 11;
     background: white;
-
 }
+
+.profile_dropdown_navlink {
+    text-decoration: none;
+    color: rgb(62, 62, 62);
+}
+
 
 .profile_dropdown_box {
     display: flex;
-    width: 200px;
+    width: 198px;
     height: 42px;
     align-items: center;
     cursor: pointer;
-    padding: 10px;
+    padding: 0px 16px;
     background: white;
+    color: rgb(62,62,62);
 }
 
 .profile_dropdown_box:hover {
-    background: lightgrey;
+    background: rgb(243,242,243);
 }
 
 .log_out_button {
     display: flex;
-    width: 210px;
+    width: 198px;
     height: 42px;
     justify-content: flex-start;
     align-items: center;
     border: none;
     background: white;
     cursor: pointer;
-    padding: 0px 0px 0px 0px;
+    padding: 0px 16px;
+    font-size: 12pt;
+    color: rgb(62, 62, 62);
 }
 
 .log_out_button:hover {
-    background: lightgray;
+    background: rgb(243, 242, 243);
 }
 
