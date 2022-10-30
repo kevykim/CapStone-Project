@@ -8,16 +8,16 @@ import { thunkUpdateTrail } from '../../store/trail';
 
 
 function UpdateTrail() {
-    const history = useHistory();
-    const dispatch = useDispatch();
-    const {id} = useParams()
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
-    const trail = useSelector(state => state.trail) 
-    const trailArr = Object.values(trail)
-    // console.log(trailArr)
+  const trail = useSelector((state) => state.trail);
+  const trailArr = Object.values(trail);
+  // console.log(trailArr)
 
-    const oldTrail = trailArr.find(trails => Number(trails.id) === Number(id))
-    // console.log(oldTrail)
+  const oldTrail = trailArr.find((trails) => Number(trails.id) === Number(id));
+  // console.log(oldTrail)
   const user = useSelector((state) => state.session.user);
 
   const [name, setName] = useState(oldTrail?.name);
@@ -110,6 +110,14 @@ function UpdateTrail() {
 
   let routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"];
 
+  //IMAGE VALIDATION
+  const imageValidate =
+    (!previewImg.includes(".jpg") &&
+      !previewImg.includes(".png") &&
+      !previewImg.includes(".jpeg") &&
+      !previewImg.includes(".svg")) ||
+    (!previewImg.includes("https") && !previewImg.includes("http"));
+
   return (
     <div className="update_trail_main">
       <div className="update_trail_form">
@@ -125,6 +133,13 @@ function UpdateTrail() {
                 onChange={(event) => setName(event.target.value)}
                 className="update_trail_inputs"
               />
+              {validations.length > 0 &&
+                submitted === true &&
+                (name.length < 5 || name.length === 0) && (
+                  <div className="update_trail_error">
+                    Please enter a trail name longer than 5 characters
+                  </div>
+                )}
             </div>
             <div className="update_trail_inputs_div">
               <select
@@ -142,6 +157,11 @@ function UpdateTrail() {
                   </option>
                 ))}
               </select>
+              {validations.length > 0 && submitted === true && !country && (
+                <div className="update_trail_error">
+                  Please select a country
+                </div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <select
@@ -159,6 +179,9 @@ function UpdateTrail() {
                   </option>
                 ))}
               </select>
+              {validations.length > 0 && submitted === true && !state && (
+                <div className="update_trail_error">Please select a state</div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <select
@@ -176,6 +199,9 @@ function UpdateTrail() {
                   </option>
                 ))}
               </select>
+              {validations.length > 0 && submitted === true && !resort && (
+                <div className="update_trail_error">Please select a resort</div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <select
@@ -193,6 +219,11 @@ function UpdateTrail() {
                   </option>
                 ))}
               </select>
+              {validations.length > 0 && submitted === true && !difficulty && (
+                <div className="update_trail_error">
+                  Please select a difficulty
+                </div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <textarea
@@ -203,6 +234,13 @@ function UpdateTrail() {
                 onChange={(event) => setDescription(event.target.value)}
                 className="update_trail_textarea"
               ></textarea>
+              {validations.length > 0 &&
+                submitted === true &&
+                description.length < 20 && (
+                  <div className="update_trail_error">
+                    Please enter a description longer than 20 characters.
+                  </div>
+                )}
             </div>
             <div className="update_trail_inputs_div">
               <input
@@ -213,6 +251,11 @@ function UpdateTrail() {
                 onChange={(event) => setLength(event.target.value)}
                 className="update_trail_inputs"
               />
+              {validations.length > 0 && submitted === true && !length && (
+                <div className="update_trail_error">
+                  Please enter a valid length number
+                </div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <input
@@ -223,6 +266,11 @@ function UpdateTrail() {
                 onChange={(event) => setElevation(event.target.value)}
                 className="update_trail_inputs"
               />
+              {validations.length > 0 && submitted === true && !elevation && (
+                <div className="update_trail_error">
+                  Please enter a valid elevation number
+                </div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <select
@@ -240,6 +288,11 @@ function UpdateTrail() {
                   </option>
                 ))}
               </select>
+              {validations.length > 0 && submitted === true && !routeType && (
+                <div className="update_trail_error">
+                  Please select a route type
+                </div>
+              )}
             </div>
             <div className="update_trail_inputs_div">
               <input
@@ -250,14 +303,21 @@ function UpdateTrail() {
                 onChange={(event) => setPreviewImg(event.target.value)}
                 className="update_trail_inputs"
               />
+              {validations.length > 0 &&
+                submitted === true &&
+                imageValidate && (
+                  <div className="update_trail_error">
+                    Please enter a valid url image
+                  </div>
+                )}
             </div>
-            {validations.length > 0 && submitted === true && (
+            {/* {validations.length > 0 && submitted === true && (
               <div className="update_trail_error">
                 {validations.map((error, ind) => (
                   <div key={ind}>{error}</div>
                 ))}
               </div>
-            )}
+            )} */}
             <div className="update_trail_inputs_div">
               <button
                 className="update_trail_button_form"
