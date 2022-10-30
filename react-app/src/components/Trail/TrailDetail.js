@@ -1,7 +1,8 @@
 import { NavLink, useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
-import { thunkGetSingleTrail, thunkGetTrail } from "../../store/trail"
+import {  thunkGetTrail } from "../../store/trail"
+// import { thunkGetSingleTrail } from "../../store/trail"
 import CreateReviewModal from "../Review/CreateReviewModal"
 
 import './TrailDetail.css'
@@ -16,16 +17,19 @@ function TrailDetail() {
     const review = useSelector(state => state.review)
     const reviewArr = Object.values(review)
 
+
     //TRAILS NEAR ME SIDEBAR
     const everyTrail = useSelector(state => state.trail)
     const everyTrailArr = Object.values(everyTrail)
 
     const trailsNear = everyTrailArr.filter(trails => trails.resort === trail.resort)
 
+    // const trailfilter = everyTrailArr.filter(trails => trails.id === Number(id))
+    // console.log(trailfilter[0])
 
 
     useEffect(() => {
-        dispatch(thunkGetSingleTrail(id))
+        // dispatch(thunkGetSingleTrail(id))
         dispatch(thunkGetTrailReview(id))
         dispatch(thunkGetTrail())
     }, [dispatch, id])
