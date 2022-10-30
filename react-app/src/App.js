@@ -41,14 +41,14 @@ function App() {
         <Route exact path="/signup">
           <SignUpForm />
         </Route>
+        <Route exact path='/trails/new'>
+          <CreateTrail />
+        </Route>
         <Route exact path='/trails/:id'>
           <TrailDetail />
         </Route>
         <Route exact path='/trails'>
           <Trails />
-        </Route>
-        <Route exact path='/trails/new'>
-          <CreateTrail />
         </Route>
         <Route exact path='/trails/:id/update'>
           <UpdateTrail />

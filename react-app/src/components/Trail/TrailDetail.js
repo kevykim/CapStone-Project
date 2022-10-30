@@ -22,7 +22,7 @@ function TrailDetail() {
     const everyTrail = useSelector(state => state.trail)
     const everyTrailArr = Object.values(everyTrail)
 
-    const trailsNear = everyTrailArr.filter(trails => trails.resort === trail.resort)
+    const trailsNear = everyTrailArr.filter(trails => trails.resort === trail?.resort)
 
     // const trailfilter = everyTrailArr.filter(trails => trails.id === Number(id))
     // console.log(trailfilter[0])

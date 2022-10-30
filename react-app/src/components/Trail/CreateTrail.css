@@ -1,3 +1,22 @@
+.create_trail_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.create_trail_form {
+    width: 1100px !important; 
+    display: flex;
+    margin-right: 60px;
+}
+
+
+.create_trail_header {
+    font-family: "Roboto-Bold";
+    font-size: 20pt;
+}
+
 .create_trail_inputs_div {
     margin-top: 10px;
 }
@@ -9,6 +28,16 @@
     margin: 4px 0px;
     padding: 10px 16px;
     border: 1px solid lightgrey;
+}
+
+.create_trail_textarea {
+    height: 47px;
+        width: 370px;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 10px 16px;
+        border: 1px solid lightgrey;
+        resize: none;
 }
 
 .create_trail_button_form {
