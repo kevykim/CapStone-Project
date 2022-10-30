@@ -91,7 +91,7 @@ function CreateTrail() {
     let routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"];
 
     const validate = validations.map(error => error) 
-    console.log(validate)
+    // console.log(validate)
 
       //  validations.length > 0 && submitted === true && (
       //    <div className="create_trail_error">
@@ -100,6 +100,15 @@ function CreateTrail() {
       //      ))}
       //    </div>
       //  );
+
+      //IMAGE VALIDATION
+      const imageValidate = ((
+                  !previewImg.includes("jpg") &&
+                  !previewImg.includes("png") &&
+                  !previewImg.includes("jpeg") &&
+                  !previewImg.includes("svg")) ||
+                  (!previewImg.includes("https") &&
+                    !previewImg.includes("http")))
      
 
     return (
@@ -163,8 +172,10 @@ function CreateTrail() {
                     </option>
                   ))}
                 </select>
-                {submitted === true && validate.includes(validate[2]) && (
-                  <div className="create_trail_error">{validate[2]}</div>
+                {validations.length > 0 && submitted === true && !state && (
+                  <div className="create_trail_error">
+                    Please select a state
+                  </div>
                 )}
               </div>
               <div className="create_trail_inputs_div">
@@ -183,8 +194,10 @@ function CreateTrail() {
                     </option>
                   ))}
                 </select>
-                {submitted === true && validate.includes(validate[3]) && (
-                  <div className="create_trail_error">{validate[3]}</div>
+                {validations.length > 0 && submitted === true && !resort && (
+                  <div className="create_trail_error">
+                    Please select a resort
+                  </div>
                 )}
               </div>
               <div className="create_trail_inputs_div">
@@ -203,9 +216,13 @@ function CreateTrail() {
                     </option>
                   ))}
                 </select>
-                {submitted === true && validate.includes(validate[4]) && (
-                  <div className="create_trail_error">{validate[4]}</div>
-                )}
+                {validations.length > 0 &&
+                  submitted === true &&
+                  !difficulty && (
+                    <div className="create_trail_error">
+                      Please select a difficulty
+                    </div>
+                  )}
               </div>
               <div className="create_trail_inputs_div">
                 <textarea
@@ -216,9 +233,13 @@ function CreateTrail() {
                   onChange={(event) => setDescription(event.target.value)}
                   className="create_trail_textarea"
                 ></textarea>
-                {submitted === true && validate.includes(validate[5]) && (
-                  <div className="create_trail_error">{validate[5]}</div>
-                )}
+                {validations.length > 0 &&
+                  submitted === true &&
+                  description.length < 20 && (
+                    <div className="create_trail_error">
+                      Please enter a description longer than 20 characters.
+                    </div>
+                  )}
               </div>
               <div className="create_trail_inputs_div">
                 <input
@@ -229,8 +250,10 @@ function CreateTrail() {
                   onChange={(event) => setLength(event.target.value)}
                   className="create_trail_inputs"
                 />
-                {submitted === true && validate.includes(validate[6]) && (
-                  <div className="create_trail_error">{validate[6]}</div>
+                {validations.length > 0 && submitted === true && !length && (
+                  <div className="create_trail_error">
+                    Please enter a valid length number
+                  </div>
                 )}
               </div>
               <div className="create_trail_inputs_div">
@@ -242,8 +265,10 @@ function CreateTrail() {
                   onChange={(event) => setElevation(event.target.value)}
                   className="create_trail_inputs"
                 />
-                {submitted === true && validate.includes(validate[7]) && (
-                  <div className="create_trail_error">{validate[7]}</div>
+                {validations.length > 0 && submitted === true && !elevation && (
+                  <div className="create_trail_error">
+                    Please enter a valid elevation number
+                  </div>
                 )}
               </div>
               <div className="create_trail_inputs_div">
@@ -262,8 +287,10 @@ function CreateTrail() {
                     </option>
                   ))}
                 </select>
-                {submitted === true && validate.includes(validate[8]) && (
-                  <div className="create_trail_error">{validate[8]}</div>
+                {validations.length > 0 && submitted === true && !routeType && (
+                  <div className="create_trail_error">
+                    Please select a route type
+                  </div>
                 )}
               </div>
               <div className="create_trail_inputs_div">
@@ -275,9 +302,10 @@ function CreateTrail() {
                   onChange={(event) => setPreviewImg(event.target.value)}
                   className="create_trail_inputs"
                 />
-                {submitted === true && validate.includes(validate[9]) && (
-                  <div className="create_trail_error">{validate[9]}</div>
-                )}
+                {(validations.length > 0 &&
+                  submitted === true && imageValidate  && (
+                      <div className="create_trail_error">Please enter a valid url image</div>
+                    ))}
               </div>
               <div className="create_trail_inputs_div">
                 <button
