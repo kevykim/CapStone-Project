@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, TextAreaField
-from wtforms.validators import DataRequired, ValidationError, NumberRange, Optional, URL
+from wtforms.validators import DataRequired, ValidationError, NumberRange, Optional
 from app.models import Review
 
 
@@ -18,4 +18,4 @@ def imagechecker(form, field):
 class ReviewForm(FlaskForm):
     review = TextAreaField('review', validators=[DataRequired(), reviewchecker])
     stars = IntegerField('stars', validators=[DataRequired(), NumberRange(min = 1, max = 5, message='Please select a star from 1 to 5.')])
-    reviewImg = StringField('reviewImg', validators=[ Optional(), URL(require_tld=True, message='Please enter a valid URL.'), imagechecker])
+    reviewImg = StringField('reviewImg', validators=[ Optional(), imagechecker])

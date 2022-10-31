@@ -94,6 +94,7 @@ div.my_review_box_main {
 .my_review_image_ {
     width: 150px;
     height: 150px;
+    border-radius: 5px;
 }
 
 .my_review_main_review {

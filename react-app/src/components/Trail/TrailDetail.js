@@ -578,6 +578,7 @@ function TrailDetail() {
                         <div>
                           <div>
                             <img
+                              className="trail_detail_review_img"
                               src={review.reviewImg}
                               alt="reviewimg"
                               onError={(event) => {

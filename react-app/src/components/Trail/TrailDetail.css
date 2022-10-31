@@ -258,7 +258,12 @@
     width: 40px;
     height: 40px;
 
+}
 
+.trail_detail_review_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
 }
 
 .trail_detail_bottom_reviewcomponents {
