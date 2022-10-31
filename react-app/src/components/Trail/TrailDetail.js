@@ -28,8 +28,8 @@ function TrailDetail() {
     // console.log(trailfilter[0])
 
     // AVERAGE STAR
-    const wholeAverage = Math.round(trail?.average_star)
-    console.log(wholeAverage)
+    const wholeAverage = Math.round(trail?.averagestar)
+    // console.log(wholeAverage)
 
 
     useEffect(() => {
@@ -104,7 +104,32 @@ function TrailDetail() {
           <div className="trail_detail_image_text">
             <div className="trail_detail_image_firstline">{trail?.name}</div>
             <div className="trail_detail_image_secondline">
-              <div>{trail?.difficulty}&nbsp;</div>
+              {trail.difficulty === "Beginner" ? (
+                <div className="trail_detail_difficulty_beginner_box">
+                  <i className="fa-solid fa-circle fa-xs"></i>
+                  &nbsp;
+                  {trail.difficulty}
+                </div>
+              ) : trail.difficulty === "Intermediate" ? (
+                <div className="trail_detail_difficulty_intermediate_box">
+                  <i className="fa-solid fa-square fa-xs"></i>
+                  &nbsp;
+                  {trail.difficulty}
+                </div>
+              ) : trail.difficulty === "Black Diamond" ? (
+                <div className="trail_detail_difficulty_blackdiamond_box">
+                  <i className="fa-solid fa-diamond fa-xs"></i>
+                  &nbsp;
+                  {trail.difficulty}
+                </div>
+              ) : (
+                <div className="trail_detail_difficulty_doubleblackdiamond_box">
+                  <i className="fa-solid fa-diamond fa-xs"></i>
+                  <i className="fa-solid fa-diamond fa-xs"></i>
+                  &nbsp;
+                  {trail.difficulty}
+                </div>
+              )}
               <div className="trail_detail_image_reviewinfo">
                 <div>
                   {wholeAverage === 1 && (
@@ -267,7 +292,7 @@ function TrailDetail() {
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
                   <div className="trail_detail_bottom_avgstar">
-                    {trail?.average_star}
+                    {trail?.averagestar}
                   </div>
                   <div style={{ textAlign: "center" }}>
                     {wholeAverage === 1 && (
@@ -396,7 +421,7 @@ function TrailDetail() {
                   </div>
                 </div>
                 <div className="trail_detail_bottom_writereview">
-                  <CreateReviewModal />
+                  <CreateReviewModal user={user} />
                 </div>
               </div>
               <div>
@@ -416,116 +441,131 @@ function TrailDetail() {
                     <div>
                       <div className="trail_detail_bottom_reviewinfo">
                         <div className="trail_detail_bottom_reviewcomponents">
-                        {review.stars === 1 && (
-                          <div>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                          </div>
-                        )}
-                        {review.stars === 2 && (
-                          <div>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                          </div>
-                        )}
-                        {review.stars === 3 && (
-                          <div>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                          </div>
-                        )}
-                        {review.stars === 4 && (
-                          <div>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "gold" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                            <i
-                              style={{ color: "lightgray" }}
-                              className="fa-solid fa-star"
-                            ></i>
-                          </div>
-                        )}
-                        {review.stars === 5 && (
-                          <div>
-                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
-                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
-                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
-                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
-                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
-                          </div>
-                        )}
-                      <div>{review.review}</div>
-                      </div>
-                      <div>
-                      <div>review img</div>
-                      </div>
+                          {review.stars === 1 && (
+                            <div>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                            </div>
+                          )}
+                          {review.stars === 2 && (
+                            <div>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                            </div>
+                          )}
+                          {review.stars === 3 && (
+                            <div>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                            </div>
+                          )}
+                          {review.stars === 4 && (
+                            <div>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "lightgray" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                            </div>
+                          )}
+                          {review.stars === 5 && (
+                            <div>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                              <i
+                                style={{ color: "gold" }}
+                                className="fa-solid fa-star"
+                              ></i>
+                            </div>
+                          )}
+                          <div>{review.review}</div>
+                        </div>
+                        <div>
+                          <div>review img</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -551,10 +591,39 @@ function TrailDetail() {
                       </NavLink>
                       <div className="trail_detail_sidebar_image_info">
                         <div className="trail_detail_sidebar_firstline">
-                          <div>{trail.difficulty}&nbsp;·&nbsp;</div>
+                          {trail.difficulty === "Beginner" ? (
+                            <div className="trail_detail_difficulty_beginner">
+                              <i className="fa-solid fa-circle fa-xs"></i>
+                              &nbsp;
+                              {trail.difficulty}
+                              &nbsp;·&nbsp;
+                            </div>
+                          ) : trail.difficulty === "Intermediate" ? (
+                            <div className="trail_detail_difficulty_intermediate">
+                              <i className="fa-solid fa-square fa-xs"></i>
+                              &nbsp;
+                              {trail.difficulty}
+                              &nbsp;·&nbsp;
+                            </div>
+                          ) : trail.difficulty === "Black Diamond" ? (
+                            <div className="trail_detail_difficulty_blackdiamond">
+                              <i className="fa-solid fa-diamond fa-xs"></i>
+                              &nbsp;
+                              {trail.difficulty}
+                              &nbsp;·&nbsp;
+                            </div>
+                          ) : (
+                            <div className="trail_detail_difficulty_doubleblackdiamond">
+                              <i className="fa-solid fa-diamond fa-xs"></i>
+                              <i className="fa-solid fa-diamond fa-xs"></i>
+                              &nbsp;
+                              {trail.difficulty}
+                              &nbsp;·&nbsp;
+                            </div>
+                          )}
                           <div className="trail_detail_sidebar_review_info">
                             <i className="fa-solid fa-star fa-sm"></i>
-                            <div>{trail?.average_star}&nbsp;</div>
+                            <div>{trail?.averagestar}&nbsp;</div>
                             <div>{`(${reviewArr.length})`}</div>
                           </div>
                         </div>

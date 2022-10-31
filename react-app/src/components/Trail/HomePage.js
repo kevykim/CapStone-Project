@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { thunkGetAllReview } from '../../store/review';
+
 import { thunkGetTrail } from '../../store/trail';
 import './HomePage.css'
 
@@ -15,6 +17,7 @@ function HomePage() {
 
     useEffect(() => {
         dispatch(thunkGetTrail())
+        dispatch(thunkGetAllReview())
     },[dispatch])
 
 
@@ -55,15 +58,46 @@ function HomePage() {
               </div>
               <div>
                 <div className="homepage_trail_firstline">
-                  <div className="homepage_trail_difficulty">
+                  {/* <div className="homepage_trail_difficulty">
                     {trail.difficulty}&nbsp;·&nbsp;
-                  </div>
+                  </div> */}
+                  {trail.difficulty === "Beginner" ? (
+                    <div className="homepage_trail_difficulty_beginner">
+                      <i className="fa-solid fa-circle fa-xs"></i>
+                      &nbsp;
+                      {trail.difficulty}
+                      &nbsp;·&nbsp;
+                    </div>
+                  ) : trail.difficulty === "Intermediate" ? (
+                    <div className="homepage_trail_difficulty_intermediate">
+                      <i className="fa-solid fa-square fa-xs"></i>
+                      &nbsp;
+                      {trail.difficulty}
+                      &nbsp;·&nbsp;
+                    </div>
+                  ) : trail.difficulty === "Black Diamond" ? (
+                    <div className="homepage_trail_difficulty_blackdiamond">
+                      <i className="fa-solid fa-diamond fa-xs"></i>
+                      &nbsp;
+                      {trail.difficulty}
+                      &nbsp;·&nbsp;
+                    </div>
+                  ) : (
+                    <div className="homepage_trail_difficulty_doubleblackdiamond">
+                      <i className="fa-solid fa-diamond fa-xs"></i>
+                      <i className="fa-solid fa-diamond fa-xs"></i>
+                      &nbsp;
+                      {trail.difficulty}
+                      &nbsp;·&nbsp;
+                    </div>
+                  )}
                   <div className="homepage_trail_review_div">
                     <div className="homepage_trail_star_div">
                       <i className="fa-solid fa-star fa-sm"></i>
                     </div>
                     <div className="homepage_trail_avgreview">
-                      {trail.average_star}&nbsp;
+                      {trail.averagestar}
+                      &nbsp;
                     </div>
                     <div className="homepage_trail_totalreview">
                       {`(${trail.reviews.length})`}

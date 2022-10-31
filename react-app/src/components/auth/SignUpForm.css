@@ -31,8 +31,8 @@
 
 .sign_up_error {
     color: red;
-    height: 2px;
-    margin-bottom: 65px;
+    /* height: 2px;
+    margin-bottom: 65px; */
 }
 
 .create_free_text {

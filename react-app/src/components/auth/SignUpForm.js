@@ -67,9 +67,23 @@ const SignUpForm = () => {
               name="username"
               onChange={updateUsername}
               value={username}
-              placeholder='Username'
+              placeholder="Username"
               className="sign_up_inputs"
             ></input>
+            {errors.length > 0 &&
+              errors.includes("Please enter a username") && (
+                <div className="sign_up_error">Please enter a username</div>
+              )}
+            {errors.length > 0 &&
+              errors.includes("Username is already in use.") && (
+                <div className="sign_up_error">Username is already in use</div>
+              )}
+            {errors.length > 0 &&
+              errors.includes("Username must be longer than 4 characters.") && (
+                <div className="sign_up_error">
+                  Username must be longer than 4 characters
+                </div>
+              )}
           </div>
           <div className="sign_up_inputs_div">
             <input
@@ -77,9 +91,21 @@ const SignUpForm = () => {
               name="email"
               onChange={updateEmail}
               value={email}
-              placeholder='Email'
+              placeholder="Email"
               className="sign_up_inputs"
             ></input>
+            {errors.length > 0 && errors.includes("Please enter a email") && (
+              <div className="sign_up_error">Please enter a email</div>
+            )}
+            {errors.length > 0 &&
+              errors.includes("Email address is already in use.") && (
+                <div className="sign_up_error">
+                  Email address is already in use
+                </div>
+              )}
+            {errors.length > 0 && errors.includes("Invalid email address") && (
+              <div className="sign_up_error">Invalid email address</div>
+            )}
           </div>
           <div className="sign_up_inputs_div">
             <input
@@ -87,9 +113,13 @@ const SignUpForm = () => {
               name="firstName"
               onChange={updateFirstName}
               value={firstName}
-              placeholder='First name'
+              placeholder="First name"
               className="sign_up_inputs"
             ></input>
+            {errors.length > 0 &&
+              errors.includes("Please enter a first name.") && (
+                <div className="sign_up_error">Please enter a first name</div>
+              )}
           </div>
           <div className="sign_up_inputs_div">
             <input
@@ -97,9 +127,13 @@ const SignUpForm = () => {
               name="lastName"
               onChange={updateLastName}
               value={lastName}
-              placeholder='Last name'
+              placeholder="Last name"
               className="sign_up_inputs"
             ></input>
+            {errors.length > 0 &&
+              errors.includes("Please enter a last name") && (
+                <div className="sign_up_error">Please enter a last name</div>
+              )}
           </div>
           <div className="sign_up_inputs_div">
             <input
@@ -107,23 +141,41 @@ const SignUpForm = () => {
               name="password"
               onChange={updatePassword}
               value={password}
-              placeholder='Password'
+              placeholder="Password"
               className="sign_up_inputs"
             ></input>
+            {errors.length > 0 &&
+              errors.includes("Please enter a password") && (
+                <div className="sign_up_error">Please enter a password</div>
+              )}
+            {errors.length > 0 &&
+              errors.includes("Password must include at least one number") && (
+                <div className="sign_up_error">
+                  Password must include at least one number
+                </div>
+              )}
+            {errors.length > 0 &&
+              errors.includes("Password must be longer than 7 characters.") && (
+                <div className="sign_up_error">
+                  Password must be longer than 7 characters
+                </div>
+              )}
           </div>
           <div className="sign_up_inputs_div">
-            <button className='sign_up_button_form' type="submit">Sign Up</button>
+            <button className="sign_up_button_form" type="submit">
+              Sign Up
+            </button>
           </div>
         </div>
-        <div className='sign_up_error'>
+        {/* <div className='sign_up_error'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
-        </div>
-        <div className='sign_up_bottom_div'>
+        </div> */}
+        <div className="sign_up_bottom_div">
           <div>Already have an account?</div>
           <div>
-            <NavLink className='log_in_free_text' exact to="/login">
+            <NavLink className="log_in_free_text" exact to="/login">
               &nbsp;Log in
             </NavLink>
           </div>

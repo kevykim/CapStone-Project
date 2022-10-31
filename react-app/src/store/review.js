@@ -1,5 +1,6 @@
 // TYPES
 
+const getAllReview = '/review/getAllReview'
 const createTrailReview = '/review/createReview'
 const getTrailReview = '/review/getTrailReview'
 const getCurrentReview = '/review/getCurrentReview'
@@ -12,6 +13,13 @@ const actionCreateTrailReview = (review) => {
     return {
         type: createTrailReview,
         review
+    }
+}
+
+const actionGetAllReview = (reviews) => {
+    return {
+        type: getAllReview,
+        reviews
     }
 }
 
@@ -55,6 +63,17 @@ export const thunkCreateTrailReview = (payload) => async dispatch => {
         const data = await response.json()
         dispatch(actionCreateTrailReview(data))
         return data
+    }
+}
+
+export const thunkGetAllReview = () => async dispatch => {
+    const response = await fetch('/api/reviews/', {
+        method:"GET",
+        headers: {"Content-Type": "application/json"}
+    });
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(actionGetAllReview(data))
     }
 }
 
@@ -118,6 +137,12 @@ const reviewReducer = (state = initialState, action) => {
     switch (action.type) {
         case createTrailReview:
             newState[action.review.id] = action.review
+            return newState
+        case getAllReview:
+            newState = {};
+            action.reviews.reviews.forEach((review) => {
+                newState[review.id] = review;
+            })
             return newState
         case getTrailReview:
             newState = {};

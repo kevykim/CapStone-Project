@@ -17,6 +17,45 @@
     justify-content: center;
 }
 
+.create_review_notlogged_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.create_review_notlogged {
+    height: 120px;
+    width: 240px;
+    padding: 30px;
+}
+
+.create_review_notlogged_navlink {
+    text-decoration: none;
+    color: white;
+    border: 1px solid lightgray;
+    background: rgb(60, 103, 148);
+    width: 130px;
+    height: 47px;
+    text-align: center;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create_review_notlogged_navlink:hover {
+    opacity: 0.7;
+}
+
+.create_review_owned_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
 
 .create_review_cancel {
     display: flex;

@@ -31,8 +31,7 @@
 
 .log_in_error {
     color: red;
-    height: 2px;
-    margin-bottom: 35px;
+    font-size: 11pt;
 }
 
 .let_going_text {
@@ -51,7 +50,8 @@
 }
 
 .log_in_inputs_div {
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    height: 110px;
 }
 
 .log_in_inputs {

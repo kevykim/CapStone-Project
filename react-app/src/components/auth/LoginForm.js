@@ -32,6 +32,9 @@ const LoginForm = () => {
     return <Redirect to='/' />;
   }
 
+  // console.log(errors.includes("Email provided not found."));
+  // console.log(errors)
+
   return (
     <div className="log_in_main">
       <div className="log_in_image_div">
@@ -53,6 +56,20 @@ const LoginForm = () => {
               onChange={updateEmail}
               className="log_in_inputs"
             />
+            {errors.length > 0 &&
+              errors.includes("Email provided not found.") && (
+                <div className="log_in_error">Email provided not found</div>
+              )}
+            {errors.length > 0 && errors.includes("Invalid email address") && (
+              <div className="log_in_error">Invalid email address</div>
+            )}
+            {errors.length > 0 && errors.includes("No such user exists.") && (
+              <div className="log_in_error">No such user exists</div>
+            )}
+            {errors.length > 0 &&
+              errors.includes("Please enter your email") && (
+                <div className="log_in_error">Please enter your email</div>
+              )}
           </div>
           <div className="log_in_inputs_div">
             <input
@@ -63,18 +80,22 @@ const LoginForm = () => {
               onChange={updatePassword}
               className="log_in_inputs"
             />
+            {errors.length > 0 &&
+              errors.includes("Please enter your password") && (
+                <div className="log_in_error">Please enter your password</div>
+              )}
           </div>
-          <div className='log_in_inputs_div'>
+          <div className="log_in_inputs_div">
             <button className="log_in_button_form" type="submit">
               Login
             </button>
           </div>
         </div>
-        <div className="log_in_error">
+        {/* <div className="log_in_error">
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
-        </div>
+        </div> */}
         <div className="log_in_bottom_div">
           <div>Don't have an account?</div>
           <div>

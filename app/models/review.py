@@ -26,4 +26,6 @@ class Review(db.Model):
             'reviewImg': self.reviewImg,
             'firstname' : self.users.firstName if self.users else None,
             'lastname' : self.users.lastName if self.users else None,
+            'trailname' : self.trails.name if self.trails else None,
+            'traildifficulty': self.trails.difficulty if self.trails else None
         }
