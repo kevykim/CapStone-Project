@@ -13,7 +13,7 @@ function CreateReview({setShowModal, user}) {
   const history = useHistory();
 
   const trail = useSelector((state) => state.trail[id]);
-  // console.log(trail)
+  // console.log(trail.userId)
 
   const [stars, setStars] = useState('');
   const [reviews, setReviews] = useState("");
@@ -77,8 +77,21 @@ function CreateReview({setShowModal, user}) {
           <div className="create_review_notlogged">
             You must log in to make a review...
           </div>
-          <NavLink className='create_review_notlogged_navlink' exact to="/login">Log in</NavLink>
+          <NavLink
+            className="create_review_notlogged_navlink"
+            exact
+            to="/login"
+          >
+            Log in
+          </NavLink>
         </div>
+      ) : trail?.userId === user?.id ? (
+        <div className='create_review_owned_main'>
+          <button className='create_review_cancel_button' onClick={closeModal}>x</button>
+          <div className='create_review_notlogged'>
+          Cannot make reviews on your own trails...
+          </div>
+          </div>
       ) : (
         <form className="create_review_form" onSubmit={onSubmit}>
           <div className="create_review_cancel">
