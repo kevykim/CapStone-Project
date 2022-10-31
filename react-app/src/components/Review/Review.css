@@ -65,6 +65,7 @@
 }
 
 .my_review_main_buttons {
+    padding: 4px 20px;
     display: flex;
     flex-direction: row;
 }

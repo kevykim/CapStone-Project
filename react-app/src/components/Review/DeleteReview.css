@@ -1,0 +1,11 @@
+.delete_review_modal_button {
+    border: none;
+    background: white;
+    color: rgb(60, 103, 148);
+}
+
+.delete_review_modal_button:hover {
+    cursor: pointer;
+    /* text-decoration: underline; */
+    opacity: 0.8;
+}
