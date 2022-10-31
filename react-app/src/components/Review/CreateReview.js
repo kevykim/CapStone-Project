@@ -76,7 +76,7 @@ function CreateReview({setShowModal}) {
       <form className="create_review_form" onSubmit={onSubmit}>
         <div className="create_review_cancel">
           <button className="create_review_cancel_button" onClick={closeModal}>
-            X
+            x
           </button>
         </div>
         <div className="create_review_trail_name_header">{trail?.name}</div>
