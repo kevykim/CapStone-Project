@@ -21,7 +21,7 @@ const history = useHistory()
         dispatch(thunkGetCurrentTrail())
         dispatch(thunkGetCurrentReview())
     },[dispatch])
-    console.log(currentReviewsArr)
+    // console.log(currentReviewsArr)
 
     if (!user) history.push('/')
 

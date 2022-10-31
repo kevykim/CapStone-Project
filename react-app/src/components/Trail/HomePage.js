@@ -96,7 +96,7 @@ function HomePage() {
                       <i className="fa-solid fa-star fa-sm"></i>
                     </div>
                     <div className="homepage_trail_avgreview">
-                      {trail.reviews.averagestar}
+                      {trail.averagestar}
                       &nbsp;
                     </div>
                     <div className="homepage_trail_totalreview">

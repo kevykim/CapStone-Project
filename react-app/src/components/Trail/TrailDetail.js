@@ -28,8 +28,8 @@ function TrailDetail() {
     // console.log(trailfilter[0])
 
     // AVERAGE STAR
-    const wholeAverage = Math.round(trail?.average_star)
-    console.log(wholeAverage)
+    const wholeAverage = Math.round(trail?.averagestar)
+    // console.log(wholeAverage)
 
 
     useEffect(() => {
@@ -292,7 +292,7 @@ function TrailDetail() {
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
                   <div className="trail_detail_bottom_avgstar">
-                    {trail?.average_star}
+                    {trail?.averagestar}
                   </div>
                   <div style={{ textAlign: "center" }}>
                     {wholeAverage === 1 && (
@@ -623,7 +623,7 @@ function TrailDetail() {
                           )}
                           <div className="trail_detail_sidebar_review_info">
                             <i className="fa-solid fa-star fa-sm"></i>
-                            <div>{trail?.average_star}&nbsp;</div>
+                            <div>{trail?.averagestar}&nbsp;</div>
                             <div>{`(${reviewArr.length})`}</div>
                           </div>
                         </div>

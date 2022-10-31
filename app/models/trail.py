@@ -25,11 +25,11 @@ class Trail(db.Model):
 
     def avg_star(self):
         # print(len(self.reviews))
-        if len(self.reviews) == 0:
-            return 0.0
-        else:
+        if len(self.reviews) != 0:
             average = sum(review.stars for review in self.reviews) / len(self.reviews)
             return round(average, 1) 
+        else:
+            return 0.0
 
     def to_dict(self):
         return {
