@@ -64,7 +64,7 @@
 }
 
 .create_review_inner_div {
-    height: 50px;
+    height: 45px;
 }
 
 .create_review_input_inner {
@@ -120,4 +120,9 @@
 
 .create_review_submit_button:hover {
     background: rgb(60, 103, 148);
+}
+
+.create_review_error {
+    color: red;
+    font-size: 11pt;
 }
