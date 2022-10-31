@@ -28,7 +28,7 @@ function TrailDetail() {
     // console.log(trailfilter[0])
 
     // AVERAGE STAR
-    const wholeAverage = Math.round(trail.average_star)
+    const wholeAverage = Math.round(trail?.average_star)
     // console.log(wholeAverage)
 
 
@@ -191,9 +191,55 @@ function TrailDetail() {
             <div>
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
-                  <div>{trail?.average_star}</div>
-                  <div>review stars</div>
-                  <div>{reviewArr.length} Reviews</div>
+                  <div className="trail_detail_bottom_avgstar">{trail?.average_star}</div>
+                  <div style={{textAlign:"center"}}>
+                    {wholeAverage === 1 && (
+                      <div>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                      </div>
+                    )}
+                    {wholeAverage === 2 && (
+                      <div>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                      </div>
+                    )}
+                    {wholeAverage === 3 && (
+                      <div>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                      </div>
+                    )}
+                    {wholeAverage === 4 && (
+                      <div>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                      </div>
+                    )}
+                    {wholeAverage === 5 && (
+                      <div>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i color="gold" className="fa-solid fa-star"></i>
+                      </div>
+                    )}
+                  </div>
+                  <div className="trail_detail_bottom_totalreview">{reviewArr.length} Reviews</div>
                 </div>
                 <div className="trail_detail_bottom_writereview">
                   <CreateReviewModal />
