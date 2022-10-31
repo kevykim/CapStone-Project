@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { thunkCreateTrailReview } from '../../store/review'
 
@@ -13,6 +13,8 @@ function CreateReview({setShowModal}) {
     const {id} = useParams()
     const history = useHistory()
 
+    const trail = useSelector(state => state.trail[id])
+    // console.log(trail)
 
     const [stars, setStars] = useState()
     const [reviews, setReviews] = useState('')
@@ -62,41 +64,50 @@ function CreateReview({setShowModal}) {
     let ratings = [1, 2, 3, 4, 5]
 
     return (
-      <div>
-        <div>
-          <div>
-            <button onClick={closeModal}>X</button>
+      <div className="create_review_main">
+        <form className="create_review_form" onSubmit={onSubmit}>
+          <div className="create_review_cancel">
+            <button
+              className="create_review_cancel_button"
+              onClick={closeModal}
+            >
+              X
+            </button>
           </div>
-          <form style={{height:'500px', width:"500px"}} onSubmit={onSubmit}>
-            <div>
-                <select
-                name='stars'
+          <div className='create_review_trail_name_header'>{trail?.name}</div>
+          <div className='create_review_inner'>
+            <div className='create_review_inner_div'>
+              <select
+                name="stars"
                 value={stars}
                 onChange={(event) => setStars(event.target.value)}
-                > 
-                    {ratings.map((rating, i) => (
-                        <option key={i} value={rating}>
-                            {rating}
-                        </option>
-                    ))}  
-                </select>
+                className='create_review_input_inner'
+              >
+                {ratings.map((rating, i) => (
+                  <option key={i} value={rating}>
+                    {rating}
+                  </option>
+                ))}
+              </select>
             </div>
-            <div>
+            <div className='create_review_inner_div_textarea'>
               <textarea
                 type="text-area"
                 name="review"
                 placeholder="Give back to the community. Let people know what you think of the trail so they can prepare."
                 value={reviews}
                 onChange={(event) => setReviews(event.target.value)}
+                className="create_review_input_textarea"
               ></textarea>
             </div>
-            <div>
+            <div className='create_review_inner_div_image'>
               <input
                 type="text"
                 name="reviewImg"
-                placeholder='Share a picture of your experience.'
+                placeholder="Share a picture of your experience."
                 value={reviewImg}
                 onChange={(event) => setReviewImg(event.target.value)}
+                className="create_review_input_image"
               />
             </div>
             {validations.length > 0 && submitted && (
@@ -106,16 +117,17 @@ function CreateReview({setShowModal}) {
                 ))}
               </div>
             )}
-            <div>
+            <div className='create_review_submit'>
               <button
                 type="submit"
                 disabled={validations.length > 0 && submitted}
+                className="create_review_submit_button"
               >
                 Submit
               </button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     );
 }
