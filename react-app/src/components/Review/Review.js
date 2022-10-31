@@ -67,10 +67,10 @@ const history = useHistory()
                           exact
                           to={`/trails/${review.trailId}`}
                         >
-                          sssss
+                          {review.trailname}
                         </NavLink>
                       </div>
-                      <div>Full date • difficulty</div>
+                      <div>Full date • {review.traildifficulty}</div>
                     </div>
                   </div>
                   <div className="my_review_main_star">
