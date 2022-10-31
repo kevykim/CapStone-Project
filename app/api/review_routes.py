@@ -30,6 +30,15 @@ def create_review(id):
 
 #READ
 
+# GET ALL TRAILS
+@review_routes.route('/')
+def get_all_reviews():
+    reviews = Review.query.all()
+    if reviews is None:
+        return {'errors': 'Review not found'}, 404
+
+    return {'reviews': [review.to_dict() for review in reviews]}
+
 # GET ALL REVIEWS FROM TRAIL
 @review_routes.route('/trails/<int:id>')
 def get_trail_reviews(id):

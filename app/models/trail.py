@@ -24,7 +24,8 @@ class Trail(db.Model):
     reviews = db.relationship('Review', back_populates='trails', cascade = 'all,delete')
 
     def avg_star(self):
-        if len(self.reviews) < 0:
+        # print(len(self.reviews))
+        if len(self.reviews) == 0:
             return 0.0
         else:
             average = sum(review.stars for review in self.reviews) / len(self.reviews)
@@ -47,5 +48,5 @@ class Trail(db.Model):
             'firstname' : self.users.firstName if self.users else None,
             'lastname' : self.users.lastName if self.users else None,
             'reviews' : [review.to_dict() for review in self.reviews],
-            'average_star': self.avg_star()
+            'averagestar': self.avg_star()
         }

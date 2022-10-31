@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { thunkGetAllReview } from '../../store/review';
+
 import { thunkGetTrail } from '../../store/trail';
 import './HomePage.css'
 
@@ -15,6 +17,7 @@ function HomePage() {
 
     useEffect(() => {
         dispatch(thunkGetTrail())
+        dispatch(thunkGetAllReview())
     },[dispatch])
 
 
@@ -93,7 +96,8 @@ function HomePage() {
                       <i className="fa-solid fa-star fa-sm"></i>
                     </div>
                     <div className="homepage_trail_avgreview">
-                      {trail.average_star}&nbsp;
+                      {trail.reviews.averagestar}
+                      &nbsp;
                     </div>
                     <div className="homepage_trail_totalreview">
                       {`(${trail.reviews.length})`}

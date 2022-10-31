@@ -55,7 +55,71 @@
     padding: 3px;
 }
 
+
+.trail_detail_difficulty_beginner_box {
+    display: flex;
+    flex-direction: row;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 12pt;
+    border: 1px solid green;
+    background: green;
+    border-radius: 25px;
+    width: 125px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.trail_detail_difficulty_intermediate_box {
+    display: flex;
+    flex-direction: row;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 12pt;
+    border: 1px solid blue;
+    background: blue;
+    border-radius: 25px;
+    width: 125px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.trail_detail_difficulty_blackdiamond_box {
+    display: flex;
+    flex-direction: row;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 12pt;
+    border: 1px solid black;
+    background: black;
+    border-radius: 25px;
+        width: 150px;
+        color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.trail_detail_difficulty_doubleblackdiamond_box {
+    display: flex;
+        flex-direction: row;
+        word-break: break-all;
+        white-space: pre-wrap;
+        font-size: 12pt;
+        border: 1px solid black;
+        background: black;
+        border-radius: 25px;
+        width: 220px;
+        color: white;
+        align-items: center;
+        justify-content: center;
+}
+
+
+
 .trail_detail_image_reviewinfo {
+    margin-left: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -192,6 +256,46 @@
 .trail_detail_bottom_reviewinfo {
     display: flex;
     flex-direction: row;
+}
+
+
+
+
+
+
+
+.trail_detail_difficulty_beginner {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    color: green;
+    align-items: center;
+}
+
+.trail_detail_difficulty_intermediate {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    color: blue;
+    align-items: center;
+}
+
+.trail_detail_difficulty_blackdiamond {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    align-items: center;
+}
+
+.trail_detail_difficulty_doubleblackdiamond {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    align-items: center;
 }
 
 
