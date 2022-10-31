@@ -147,6 +147,14 @@
     padding: 15px;
 }
 
+.trail_detail_bottom_main_review {
+    display: flex;
+    flex-direction: column;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 0.5px solid lightgray;
+}
+
 
 .trail_detail_bottom_allreview {
     width: 200px;
@@ -176,6 +184,17 @@
     display: flex;
     flex-direction: row;
 }
+
+.trail_detail_bottom_reviewcomponents {
+    width: 430px;
+}
+
+.trail_detail_bottom_reviewinfo {
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 
 

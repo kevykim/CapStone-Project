@@ -401,7 +401,7 @@ function TrailDetail() {
               </div>
               <div>
                 {reviewArr.map((review, i) => (
-                  <div className="trail_detail_bottom_inner" key={i}>
+                  <div className="trail_detail_bottom_main_review" key={i}>
                     <div className="trail_detail_bottom_profileinfo">
                       <div>
                         <img alt="profilepic" />
@@ -414,7 +414,8 @@ function TrailDetail() {
                       </div>
                     </div>
                     <div>
-                      <div>
+                      <div className="trail_detail_bottom_reviewinfo">
+                        <div className="trail_detail_bottom_reviewcomponents">
                         {review.stars === 1 && (
                           <div>
                             <i
@@ -520,9 +521,12 @@ function TrailDetail() {
                             <i style={{color:'gold'}} className="fa-solid fa-star"></i>
                           </div>
                         )}
-                      </div>
                       <div>{review.review}</div>
+                      </div>
+                      <div>
                       <div>review img</div>
+                      </div>
+                      </div>
                     </div>
                   </div>
                 ))}
