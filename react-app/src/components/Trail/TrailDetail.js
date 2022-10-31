@@ -92,15 +92,30 @@ function TrailDetail() {
             </div>
             <div className="trail_detail_circle">
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle"></div>
+                <div className="trail_detail_white_circle">
+                  <i
+                    style={{ color: "rgb(60, 103, 148)" }}
+                    className="fa-solid fa-camera fa-xl"
+                  ></i>
+                </div>
                 <div className="trail_detail_circle_text">Photos</div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle"></div>
+                <div className="trail_detail_white_circle">
+                  <i
+                    style={{ color: "rgb(60, 103, 148)" }}
+                    className="fa-solid fa-arrow-up-from-bracket fa-xl"
+                  ></i>
+                </div>
                 <div className="trail_detail_circle_text">Share</div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle"></div>
+                <div className="trail_detail_white_circle">
+                  <i
+                    style={{ color: "rgb(60, 103, 148)" }}
+                    className="fa-solid fa-circle-info fa-xl"
+                  ></i>
+                </div>
                 <div className="trail_detail_circle_text">More</div>
               </div>
             </div>
@@ -611,7 +626,7 @@ function TrailDetail() {
                           alt="nearme"
                           onError={(e) => {
                             e.currentTarget.src =
-                              "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg"
+                              "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
                           }}
                         />
                       </NavLink>

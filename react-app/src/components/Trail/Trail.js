@@ -49,12 +49,17 @@ function Trails() {
                   alt="mytrail"
                   onError={(e) => {
                     e.currentTarget.src =
-                      "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg"
+                      "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
                   }}
                 />
                 <div className="my_trail_circle">
                   <div className="my_trail_circle_inner">
-                    <div className="my_trail_white_circle"></div>
+                    <div className="my_trail_white_circle">
+                      <i
+                        style={{ color: "rgb(60, 103, 148)" }}
+                        className="fa-solid fa-arrow-up-from-bracket fa-xl"
+                      ></i>
+                    </div>
                     <div className="my_trail_circle_text">Share</div>
                   </div>
                   <div className="my_trail_circle_inner">
@@ -63,7 +68,12 @@ function Trails() {
                       exact
                       to={`/trails/${trail?.id}/update`}
                     >
-                      <div className="my_trail_white_circle"></div>
+                      <div className="my_trail_white_circle">
+                        <i
+                          style={{ color: "rgb(60, 103, 148)" }}
+                          className="fa-solid fa-pen-to-square fa-xl"
+                        ></i>
+                      </div>
                       <div className="my_trail_circle_text">Edit</div>
                     </NavLink>
                   </div>
