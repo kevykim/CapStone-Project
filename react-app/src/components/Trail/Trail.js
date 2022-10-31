@@ -32,19 +32,25 @@ function Trails() {
         <div>
           <div>Plan your perfect trail</div>
           <div>
-            <NavLink exact to="/trails/new">Here</NavLink>
+            <NavLink exact to="/trails/new">
+              Here
+            </NavLink>
           </div>
         </div>
       ) : (
-          <div>
-            <div className="my_trail_header">My Trails</div>
+        <div>
+          <div className="my_trail_header">My Trails</div>
           {currentTrailArr.map((trail, i) => (
-              <div key={i}>
+            <div key={i}>
               <div className="my_trail_image_div">
                 <img
                   className="my_trail_image"
                   src={trail?.previewImg}
                   alt="mytrail"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg"
+                  }}
                 />
                 <div className="my_trail_circle">
                   <div className="my_trail_circle_inner">
@@ -52,21 +58,27 @@ function Trails() {
                     <div className="my_trail_circle_text">Share</div>
                   </div>
                   <div className="my_trail_circle_inner">
-                    <NavLink className='my_trail_navlink' exact to={`/trails/${trail?.id}/update`}>
-                    <div className="my_trail_white_circle"></div>
-                    <div className="my_trail_circle_text">Edit</div>
+                    <NavLink
+                      className="my_trail_navlink"
+                      exact
+                      to={`/trails/${trail?.id}/update`}
+                    >
+                      <div className="my_trail_white_circle"></div>
+                      <div className="my_trail_circle_text">Edit</div>
                     </NavLink>
                   </div>
                   <div className="my_trail_circle_inner">
-                    <div className="my_trail_circle_text"><DeleteTrail trail={trail}/></div>
+                    <div className="my_trail_circle_text">
+                      <DeleteTrail trail={trail} />
+                    </div>
                   </div>
                 </div>
               </div>
-                <div className="my_trail_details">
-                  <div>{trail?.name}</div>
-                  <div>DATE?</div>
-                </div>
-                <div className="my_trail_border"></div>
+              <div className="my_trail_details">
+                <div>{trail?.name}</div>
+                <div>DATE?</div>
+              </div>
+              <div className="my_trail_border"></div>
             </div>
           ))}
         </div>

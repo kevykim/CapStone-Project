@@ -82,6 +82,10 @@ function TrailDetail() {
               className="trail_detail_previewImg"
               src={trail?.previewImg}
               alt="traildetail"
+              onError={(e) => {
+                e.currentTarget.src =
+                  "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
+              }}
             />
             <div>
               <div className="trail_detail_bluebar"></div>
@@ -604,6 +608,10 @@ function TrailDetail() {
                           className="trail_detail_sidebar_image"
                           src={trail.previewImg}
                           alt="nearme"
+                          onError={(e) => {
+                            e.currentTarget.src =
+                              "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg"
+                          }}
                         />
                       </NavLink>
                       <div className="trail_detail_sidebar_image_info">
