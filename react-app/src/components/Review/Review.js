@@ -41,12 +41,19 @@ const history = useHistory()
           </div>
           <div className="my_review_border"></div>
           <div className="my_review_header">Reviews</div>
-          {currentReviewsArr === 0 ? (
-            <div>Let's review some trails</div>
-          ) : (
+          {currentReviewsArr !== 0 ? (
             <div classname="my_review_box_main">
               {currentReviewsArr.map((review, i) => (
-                <div key={i}>
+                <div
+                  style={{
+                    borderBottom: "1px solid rgb(205, 201, 200)",
+                    height: "300px",
+                    marginRight:'25px',
+                    marginLeft:'25px'
+                  }}
+                  classname="my_review_box_main"
+                  key={i}
+                >
                   <div className="my_review_box_main_firstline">
                     <div>profileimage</div>
                     <div>
@@ -201,6 +208,8 @@ const history = useHistory()
                 </div>
               ))}
             </div>
+          ) : (
+            <div>Let's review some trails</div>
           )}
         </div>
       </div>

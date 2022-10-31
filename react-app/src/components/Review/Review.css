@@ -7,6 +7,10 @@
 
 .my_review_inner_div {
     width: 1100px;
+    height: 1200px;
+    border-right: 1px solid rgb(205, 201, 200);
+     border-left: 1px solid rgb(205, 201, 200);
+    border-bottom: 1px solid rgb(205, 201, 200);
 }
 
 .my_review_top_text {
@@ -17,6 +21,7 @@
         color: rgb(132, 132, 132);
         font-size: 9.2pt;
 }
+
 
 .my_review_border {
     border-bottom: 1px solid rgb(205, 201, 200);
@@ -33,9 +38,13 @@
     background: rgb(243,242,243);
 }
 
-.my_review_box_main {
-    display: flex;
-    border: 1px solid green;
+div.my_review_box_main {
+
+
+            border-right: 1px solid rgb(205, 201, 200);
+            border-left: 1px solid rgb(205, 201, 200);
+
+
 }
 
 .my_review_box_main_firstline {
