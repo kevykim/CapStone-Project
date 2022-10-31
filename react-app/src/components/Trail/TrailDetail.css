@@ -51,7 +51,14 @@
 .trail_detail_image_secondline {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 3px;
+}
+
+.trail_detail_image_reviewinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .trail_detail_image_thirdline {
@@ -211,7 +218,14 @@
 .trail_detail_sidebar_firstline {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 2px 0px 2px 0px;
+}
+
+.trail_detail_sidebar_review_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .trail_detail_sidebar_name {

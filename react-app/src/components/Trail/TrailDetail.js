@@ -27,6 +27,10 @@ function TrailDetail() {
     // const trailfilter = everyTrailArr.filter(trails => trails.id === Number(id))
     // console.log(trailfilter[0])
 
+    // AVERAGE STAR
+    const wholeAverage = Math.round(trail.average_star)
+    // console.log(wholeAverage)
+
 
     useEffect(() => {
         // dispatch(thunkGetSingleTrail(id))
@@ -100,8 +104,57 @@ function TrailDetail() {
           <div className="trail_detail_image_text">
             <div className="trail_detail_image_firstline">{trail?.name}</div>
             <div className="trail_detail_image_secondline">
-              <div>{trail?.difficulty}</div>
-              <div>review stars and total</div>
+              <div>{trail?.difficulty}&nbsp;</div>
+              <div className="trail_detail_image_reviewinfo">
+                <div>
+                  {wholeAverage === 1 && (
+                    <div>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                    </div>
+                  )}
+                  {wholeAverage === 2 && (
+                    <div>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                    </div>
+                  )}
+                  {wholeAverage === 3 && (
+                    <div>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                    </div>
+                  )}
+                  {wholeAverage === 4 && (
+                    <div>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                    </div>
+                  )}
+                  {wholeAverage === 5 && (
+                    <div>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i color="gold" className="fa-solid fa-star"></i>
+                    </div>
+                  )}
+                </div>
+                <div>&nbsp;{`(${reviewArr.length})`}</div>
+              </div>
             </div>
             <div className="trail_detail_image_thirdline">{trail?.resort}</div>
           </div>
@@ -138,7 +191,7 @@ function TrailDetail() {
             <div>
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
-                  <div>review avg</div>
+                  <div>{trail?.average_star}</div>
                   <div>review stars</div>
                   <div>{reviewArr.length} Reviews</div>
                 </div>
@@ -169,7 +222,9 @@ function TrailDetail() {
           <div className="trail_detail_sidebar">
             <div className="trail_detail_near_div">
               <div className="trail_detail_sidebar_inner">
-              <div className="trail_detail_near_text">Nearby trails in {trail?.resort}</div>
+                <div className="trail_detail_near_text">
+                  Nearby trails in {trail?.resort}
+                </div>
                 {trailsNear.map((trail, i) => (
                   <div classname="trail_detail_sidebar_inner_div" key={i}>
                     <div className="trail_detail_sidebar_image_div">
@@ -181,19 +236,23 @@ function TrailDetail() {
                         />
                       </NavLink>
                       <div className="trail_detail_sidebar_image_info">
-                      <div className="trail_detail_sidebar_firstline">
-                        <div>{trail.difficulty}&nbsp;</div>
-                        <div>staravg&totalreviews</div>
-                      </div>
-                      <div className="trail_detail_sidebar_name">{trail.name}</div>
-                      <div className="trail_detail_sidebar_othertext">
-                        {trail.resort}
-                      </div>
-                      <div className="trail_detail_sidebar_othertext">{`Length: ${trail.length} mi`}</div>
+                        <div className="trail_detail_sidebar_firstline">
+                          <div>{trail.difficulty}&nbsp;·&nbsp;</div>
+                          <div className="trail_detail_sidebar_review_info">
+                            <i className="fa-solid fa-star fa-sm"></i>
+                            <div>{trail?.average_star}&nbsp;</div>
+                            <div>{`(${reviewArr.length})`}</div>
+                          </div>
+                        </div>
+                        <div className="trail_detail_sidebar_name">
+                          {trail.name}
+                        </div>
+                        <div className="trail_detail_sidebar_othertext">
+                          {trail.resort}
+                        </div>
+                        <div className="trail_detail_sidebar_othertext">{`Length: ${trail.length} mi`}</div>
                       </div>
                     </div>
-
-
                   </div>
                 ))}
               </div>
