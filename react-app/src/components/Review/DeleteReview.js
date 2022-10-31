@@ -18,9 +18,13 @@ function DeleteReview({review, setShowModal}) {
     }
 
   return (
-    <div>
-      <button onClick={onDelete}>Delete</button>
-      <button onClick={onKeep}>Keep</button>
+    <div className="delete_review_main">
+      <div className="delete_review_inner">
+        <div className="delete_review_header">Delete review?</div>
+        <div>A review that is deleted will never be recovered.</div>
+        <button className="delete_review_button" onClick={onDelete}>Delete</button>
+        <button className="delete_review_keep" onClick={onKeep}>Keep</button>
+      </div>
     </div>
   );
 }
