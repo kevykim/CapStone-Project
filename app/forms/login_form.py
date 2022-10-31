@@ -30,6 +30,6 @@ def emailchecker(form, field):
 
 
 class LoginForm(FlaskForm):
-    email = StringField('email', validators=[DataRequired(), user_exists, emailchecker])
+    email = StringField('email', validators=[DataRequired(message='Please enter your email'), user_exists, emailchecker])
     password = StringField('password', validators=[
-                           DataRequired(), password_matches])
+                           DataRequired(message='Please enter your password'), password_matches])

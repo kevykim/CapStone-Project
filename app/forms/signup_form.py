@@ -49,9 +49,9 @@ def imagechecker(form, field):
 
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired(), username_exists, len_username])
-    firstName = StringField('firstName', validators=[DataRequired(message='Please enter your first name.')])
-    lastName = StringField('lastName', validators=[DataRequired(message='Please enter your last name')])
-    email = StringField('email', validators=[DataRequired(), user_exists, emailchecker])
-    password = StringField('password', validators=[DataRequired(), passwordchecker])
+        'username', validators=[DataRequired(message='Please enter a username'), username_exists, len_username])
+    firstName = StringField('firstName', validators=[DataRequired(message='Please a first name.')])
+    lastName = StringField('lastName', validators=[DataRequired(message='Please enter a last name')])
+    email = StringField('email', validators=[DataRequired(message='Please enter a email'), user_exists, emailchecker])
+    password = StringField('password', validators=[DataRequired(message='Please enter a password'), passwordchecker])
     # profileImg = StringField('profileImg')
