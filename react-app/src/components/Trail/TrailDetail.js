@@ -431,7 +431,7 @@ function TrailDetail() {
                       <div className="trail_detail_img_div">
                         <img
                           className="trail_detail_img_main"
-                          src={user.profileImg}
+                          src={review.profileImg}
                           alt="profilepic"
                           onError={(event) => {
                             event.currentTarget.src =
@@ -572,7 +572,16 @@ function TrailDetail() {
                           <div>{review.review}</div>
                         </div>
                         <div>
-                          <div>review img</div>
+                          <div>
+                            <img
+                              src={review.reviewImg}
+                              alt="reviewimg"
+                              onError={(event) => {
+                                event.currentTarget.src =
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
+                              }}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

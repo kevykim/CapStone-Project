@@ -48,14 +48,24 @@ const history = useHistory()
                   style={{
                     borderBottom: "1px solid rgb(205, 201, 200)",
                     height: "300px",
-                    marginRight:'25px',
-                    marginLeft:'25px'
+                    marginRight: "25px",
+                    marginLeft: "25px",
                   }}
                   classname="my_review_box_main"
                   key={i}
                 >
                   <div className="my_review_box_main_firstline">
-                    <div>profileimage</div>
+                    <div className="my_review_box_img_div">
+                      <img
+                        className="my_review_box_img_main"
+                        src={user.profileImg}
+                        alt="profileimg"
+                        onError={(event) => {
+                          event.currentTarget.src =
+                            "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                        }}
+                      />{" "}
+                    </div>
                     <div>
                       <div>
                         <span className="my_review_boldname">
@@ -70,7 +80,37 @@ const history = useHistory()
                           {review.trailname}
                         </NavLink>
                       </div>
-                      <div>Full date • {review.traildifficulty}</div>
+                      <div className="my_review_difficulty_main">
+                        <div>Full date •&nbsp;</div>
+                        <div>
+                          {review?.traildifficulty === "Beginner" ? (
+                            <div className="my_review_difficulty_beginner">
+                              <i className="fa-solid fa-circle fa-xs"></i>
+                              &nbsp;
+                              {review?.traildifficulty}
+                            </div>
+                          ) : review?.traildifficulty === "Intermediate" ? (
+                            <div className="my_review_difficulty_intermediate">
+                              <i className="fa-solid fa-square fa-xs"></i>
+                              &nbsp;
+                              {review?.traildifficulty}
+                            </div>
+                          ) : review?.traildifficulty === "Black Diamond" ? (
+                            <div className="my_review_difficulty_blackdiamond">
+                              <i className="fa-solid fa-diamond fa-xs"></i>
+                              &nbsp;
+                              {review?.traildifficulty}
+                            </div>
+                          ) : (
+                            <div className="my_review_difficulty_doubleblackdiamond">
+                              <i className="fa-solid fa-diamond fa-xs"></i>
+                              <i className="fa-solid fa-diamond fa-xs"></i>
+                              &nbsp;
+                              {review?.traildifficulty}
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="my_review_main_star">
@@ -195,7 +235,20 @@ const history = useHistory()
                       </div>
                     )}
                   </div>
-                  <div className="my_review_main_review">{review.review}</div>
+                  <div className='my_review_main_reviewimage'>
+                    <div className="my_review_main_review">{review.review}</div>
+                    <div>
+                      <img
+                        src={review.reviewImg}
+                        alt="reviewimg"
+                        className='my_review_image_'
+                        onError={(event) => {
+                          event.currentTarget.src =
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
+                        }}
+                      />
+                    </div>
+                  </div>
                   <div className="my_review_main_buttons">
                     <div>
                       <DeleteReviewModal review={review} />
