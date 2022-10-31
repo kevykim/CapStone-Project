@@ -69,11 +69,38 @@
     width: 288px;
 }
 
-.homepage_trail_difficulty {
+.homepage_trail_difficulty_beginner {
     display: flex;
     word-break: break-all;
         white-space: pre-wrap;
     font-size: 10pt;
+    color: green;
+    align-items: center;
+}
+
+.homepage_trail_difficulty_intermediate {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    color: blue;
+    align-items: center;
+}
+
+.homepage_trail_difficulty_blackdiamond {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    align-items: center;
+}
+
+.homepage_trail_difficulty_doubleblackdiamond {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 10pt;
+    align-items: center;
 }
 
 .homepage_trail_review_div {
