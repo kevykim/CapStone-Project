@@ -104,30 +104,30 @@ function TrailDetail() {
           <div className="trail_detail_image_text">
             <div className="trail_detail_image_firstline">{trail?.name}</div>
             <div className="trail_detail_image_secondline">
-              {trail.difficulty === "Beginner" ? (
+              {trail?.difficulty === "Beginner" ? (
                 <div className="trail_detail_difficulty_beginner_box">
                   <i className="fa-solid fa-circle fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
-              ) : trail.difficulty === "Intermediate" ? (
+              ) : trail?.difficulty === "Intermediate" ? (
                 <div className="trail_detail_difficulty_intermediate_box">
                   <i className="fa-solid fa-square fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
-              ) : trail.difficulty === "Black Diamond" ? (
+              ) : trail?.difficulty === "Black Diamond" ? (
                 <div className="trail_detail_difficulty_blackdiamond_box">
                   <i className="fa-solid fa-diamond fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
               ) : (
                 <div className="trail_detail_difficulty_doubleblackdiamond_box">
                   <i className="fa-solid fa-diamond fa-xs"></i>
                   <i className="fa-solid fa-diamond fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
               )}
               <div className="trail_detail_image_reviewinfo">
@@ -428,8 +428,16 @@ function TrailDetail() {
                 {reviewArr.map((review, i) => (
                   <div className="trail_detail_bottom_main_review" key={i}>
                     <div className="trail_detail_bottom_profileinfo">
-                      <div>
-                        <img alt="profilepic" />
+                      <div className="trail_detail_img_div">
+                        <img
+                          className="trail_detail_img_main"
+                          src={user.profileImg}
+                          alt="profilepic"
+                          onError={(event) => {
+                            event.currentTarget.src =
+                              "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                          }}
+                        />
                       </div>
                       <div>
                         <div>
@@ -591,25 +599,25 @@ function TrailDetail() {
                       </NavLink>
                       <div className="trail_detail_sidebar_image_info">
                         <div className="trail_detail_sidebar_firstline">
-                          {trail.difficulty === "Beginner" ? (
+                          {trail?.difficulty === "Beginner" ? (
                             <div className="trail_detail_difficulty_beginner">
                               <i className="fa-solid fa-circle fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
-                          ) : trail.difficulty === "Intermediate" ? (
+                          ) : trail?.difficulty === "Intermediate" ? (
                             <div className="trail_detail_difficulty_intermediate">
                               <i className="fa-solid fa-square fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
-                          ) : trail.difficulty === "Black Diamond" ? (
+                          ) : trail?.difficulty === "Black Diamond" ? (
                             <div className="trail_detail_difficulty_blackdiamond">
                               <i className="fa-solid fa-diamond fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
                           ) : (
@@ -617,7 +625,7 @@ function TrailDetail() {
                               <i className="fa-solid fa-diamond fa-xs"></i>
                               <i className="fa-solid fa-diamond fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
                           )}
