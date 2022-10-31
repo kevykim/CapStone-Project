@@ -4,7 +4,7 @@ import CreateReview from "./CreateReview";
 
 import "./CreateReview.css";
 
-function CreateReviewModal() {
+function CreateReviewModal({user}) {
 const [showModal, setShowModal] = useState(false);
 
   return (
@@ -18,7 +18,7 @@ const [showModal, setShowModal] = useState(false);
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <CreateReview setShowModal={setShowModal} />
+          <CreateReview user={user} setShowModal={setShowModal} />
         </Modal>
       )}
     </>

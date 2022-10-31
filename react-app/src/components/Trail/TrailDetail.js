@@ -396,7 +396,7 @@ function TrailDetail() {
                   </div>
                 </div>
                 <div className="trail_detail_bottom_writereview">
-                  <CreateReviewModal />
+                  <CreateReviewModal user={user}/>
                 </div>
               </div>
               <div>
