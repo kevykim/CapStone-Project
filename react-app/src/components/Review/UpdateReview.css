@@ -1,0 +1,126 @@
+.update_review_modal_button {
+    border: none;
+        background: white;
+        color: rgb(60, 103, 148);
+}
+
+.update_review_modal_button:hover {
+    cursor: pointer;
+        /* text-decoration: underline; */
+        opacity: 0.8;
+}
+
+.update_review_main {
+    display: flex;
+    justify-content: center;
+}
+
+
+.update_review_cancel {
+    display: flex;
+    height: 70px;
+}
+
+.update_review_cancel_button {
+    border: none;
+    background: white;
+    width: 50px;
+    height: 50px;
+    font-size: 25pt;
+    padding: 0px;
+}
+
+.update_review_cancel_button:hover {
+    background: lightgray;
+    width: 50px;
+    height: 50px;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+
+.update_review_form {
+    padding: 30px;
+    width: 524px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.update_review_trail_name_header {
+    height: 60px;
+    font-family: "Roboto-Bold";
+    font-size: 20pt;
+    word-break: break-all;
+    white-space: pre-wrap;
+    padding: 0 14px;
+}
+
+.update_review_inner {
+    padding: 0 14px;
+}
+
+.update_review_inner_div {
+    height: 45px;
+}
+
+.update_review_input_inner {
+    width: 430px;
+    border-radius: 5px;
+    border: 0.5px solid lightgray;
+}
+
+.update_review_input_textarea {
+    width: 430px;
+    resize: none;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    height: 113px;
+}
+
+.update_review_inner_div_textarea {
+    height: 145px;
+}
+
+.update_review_inner_div_image {
+    height: 40px;
+}
+
+.update_review_input_image {
+    width: 430px;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    height: 30px;
+}
+
+
+
+
+
+
+.update_review_submit {
+    display: flex;
+    align-items: flex-end;
+    height: 70px;
+}
+
+.update_review_submit_button {
+    height: 47px;
+    width: 100px;
+    border-radius: 25px;
+    border: 1px solid lightgrey;
+    background: lightgrey;
+    color: white;
+    cursor: pointer;
+    margin-left: 330px;
+}
+
+.update_review_submit_button:hover {
+    background: rgb(60, 103, 148);
+}
+
+.update_review_error {
+    color: red;
+    font-size: 11pt;
+}

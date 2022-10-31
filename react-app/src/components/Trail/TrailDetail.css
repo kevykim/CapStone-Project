@@ -25,7 +25,7 @@
 }
 
 .trail_detail_navlink {
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .trail_detail_navlink:hover {
@@ -51,7 +51,14 @@
 .trail_detail_image_secondline {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 3px;
+}
+
+.trail_detail_image_reviewinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .trail_detail_image_thirdline {
@@ -140,10 +147,28 @@
     padding: 15px;
 }
 
+.trail_detail_bottom_main_review {
+    display: flex;
+    flex-direction: column;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 0.5px solid lightgray;
+}
+
 
 .trail_detail_bottom_allreview {
-    width: 300px;
+    width: 200px;
     padding: 15px;
+}
+
+.trail_detail_bottom_avgstar {
+    text-align: center;
+    font-size: 20pt;
+}
+
+.trail_detail_bottom_totalreview {
+    text-align: center;
+    margin-top: 2px;
 }
 
 .trail_detail_bottom_writereview {
@@ -159,6 +184,17 @@
     display: flex;
     flex-direction: row;
 }
+
+.trail_detail_bottom_reviewcomponents {
+    width: 430px;
+}
+
+.trail_detail_bottom_reviewinfo {
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 
 
@@ -211,7 +247,14 @@
 .trail_detail_sidebar_firstline {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 2px 0px 2px 0px;
+}
+
+.trail_detail_sidebar_review_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .trail_detail_sidebar_name {

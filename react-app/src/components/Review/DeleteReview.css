@@ -1,0 +1,68 @@
+.delete_review_modal_button {
+    border: none;
+    background: white;
+    color: rgb(60, 103, 148);
+}
+
+.delete_review_modal_button:hover {
+    cursor: pointer;
+    /* text-decoration: underline; */
+    opacity: 0.8;
+}
+
+.delete_review_main {
+    display: flex;
+        justify-content: center;
+}
+
+.delete_review_inner {
+    padding: 30px;
+        width: 324px;
+        height: 290px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.delete_review_header {
+    font-family: "Roboto-Bold";
+    font-size: 25pt;
+    margin-right: 45px;
+}
+
+
+
+
+
+.delete_review_button {
+    height: 57px;
+        width: 250px;
+        border-radius: 35px;
+        border: 1px solid lightgrey;
+        background: rgb(60, 103, 148);
+        color: white;
+        cursor: pointer;
+
+}
+
+.delete_review_button:hover {
+    opacity: 0.7;
+}
+
+.delete_review_keep {
+    height: 57px;
+        width: 250px;
+        border-radius: 35px;
+        border: 1px solid lightgrey;
+        background: lightgrey;
+        color: white;
+        cursor: pointer;
+
+}
+
+.delete_review_keep:hover{
+    opacity: 0.7;
+}
+

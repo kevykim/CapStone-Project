@@ -1,0 +1,80 @@
+.my_review_main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my_review_inner_div {
+    width: 1100px;
+    height: 1200px;
+    border-right: 1px solid rgb(205, 201, 200);
+     border-left: 1px solid rgb(205, 201, 200);
+    border-bottom: 1px solid rgb(205, 201, 200);
+}
+
+.my_review_top_text {
+    display: flex;
+        flex-direction: row;
+        padding: 20px;
+        margin-right: 680px;
+        color: rgb(132, 132, 132);
+        font-size: 9.2pt;
+}
+
+
+.my_review_border {
+    border-bottom: 1px solid rgb(205, 201, 200);
+}
+
+.my_review_header {
+    margin-top: 10px;
+    height: 50px;
+    border: 1px solid rgb(205, 201, 200);
+    font-size: 16pt;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 20px 10px 20px;
+    background: rgb(243,242,243);
+}
+
+div.my_review_box_main {
+
+
+            border-right: 1px solid rgb(205, 201, 200);
+            border-left: 1px solid rgb(205, 201, 200);
+
+
+}
+
+.my_review_box_main_firstline {
+    display: flex;
+    padding: 20px;
+}
+
+.my_review_boldname {
+    font-family: "Roboto-Bold";
+}
+
+.my_review_navlink {
+    text-decoration: none;
+    color: rgb(60, 103, 148);
+}
+
+.my_review_navlink:hover {
+    text-decoration: underline;
+}
+
+.my_review_main_star {
+    padding: 0px 20px;
+}
+
+.my_review_main_review {
+    padding: 4px 20px;
+}
+
+.my_review_main_buttons {
+    padding: 4px 20px;
+    display: flex;
+    flex-direction: row;
+}
