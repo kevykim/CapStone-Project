@@ -29,13 +29,13 @@ function TrailDetail() {
 
     // AVERAGE STAR
     const wholeAverage = Math.round(trail?.average_star)
-    // console.log(wholeAverage)
+    console.log(wholeAverage)
 
 
     useEffect(() => {
         // dispatch(thunkGetSingleTrail(id))
-        dispatch(thunkGetTrailReview(id))
         dispatch(thunkGetTrail())
+        dispatch(thunkGetTrailReview(id))
     }, [dispatch, id])
 
     return (
@@ -109,47 +109,122 @@ function TrailDetail() {
                 <div>
                   {wholeAverage === 1 && (
                     <div>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
                     </div>
                   )}
                   {wholeAverage === 2 && (
                     <div>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
                     </div>
                   )}
                   {wholeAverage === 3 && (
                     <div>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
                     </div>
                   )}
                   {wholeAverage === 4 && (
                     <div>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="lightgrey" className="fa-solid fa-star"></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "lightgray" }}
+                        className="fa-solid fa-star"
+                      ></i>
                     </div>
                   )}
                   {wholeAverage === 5 && (
                     <div>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
-                      <i color="gold" className="fa-solid fa-star"></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
+                      <i
+                        style={{ color: "gold" }}
+                        className="fa-solid fa-star"
+                      ></i>
                     </div>
                   )}
                 </div>
@@ -191,55 +266,134 @@ function TrailDetail() {
             <div>
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
-                  <div className="trail_detail_bottom_avgstar">{trail?.average_star}</div>
-                  <div style={{textAlign:"center"}}>
+                  <div className="trail_detail_bottom_avgstar">
+                    {trail?.average_star}
+                  </div>
+                  <div style={{ textAlign: "center" }}>
                     {wholeAverage === 1 && (
                       <div>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
                       </div>
                     )}
                     {wholeAverage === 2 && (
                       <div>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
                       </div>
                     )}
                     {wholeAverage === 3 && (
                       <div>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
                       </div>
                     )}
                     {wholeAverage === 4 && (
                       <div>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="lightgrey" className="fa-solid fa-star"></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "lightgray" }}
+                          className="fa-solid fa-star"
+                        ></i>
                       </div>
                     )}
                     {wholeAverage === 5 && (
                       <div>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
-                        <i color="gold" className="fa-solid fa-star"></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
+                        <i
+                          style={{ color: "gold" }}
+                          className="fa-solid fa-star"
+                        ></i>
                       </div>
                     )}
                   </div>
-                  <div className="trail_detail_bottom_totalreview">{reviewArr.length} Reviews</div>
+                  <div className="trail_detail_bottom_totalreview">
+                    {reviewArr.length} Reviews
+                  </div>
                 </div>
                 <div className="trail_detail_bottom_writereview">
                   <CreateReviewModal />
@@ -249,14 +403,124 @@ function TrailDetail() {
                 {reviewArr.map((review, i) => (
                   <div className="trail_detail_bottom_inner" key={i}>
                     <div className="trail_detail_bottom_profileinfo">
-                      <div>profile pic</div>
                       <div>
-                        <div>first and last name</div>
+                        <img alt="profilepic" />
+                      </div>
+                      <div>
+                        <div>
+                          {review.firstname}&nbsp;{review.lastname}
+                        </div>
                         <div>review date</div>
                       </div>
                     </div>
                     <div>
-                      <div>{review.stars}</div>
+                      <div>
+                        {review.stars === 1 && (
+                          <div>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                          </div>
+                        )}
+                        {review.stars === 2 && (
+                          <div>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                          </div>
+                        )}
+                        {review.stars === 3 && (
+                          <div>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                          </div>
+                        )}
+                        {review.stars === 4 && (
+                          <div>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "gold" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                            <i
+                              style={{ color: "lightgray" }}
+                              className="fa-solid fa-star"
+                            ></i>
+                          </div>
+                        )}
+                        {review.stars === 5 && (
+                          <div>
+                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
+                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
+                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
+                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
+                            <i style={{color:'gold'}} className="fa-solid fa-star"></i>
+                          </div>
+                        )}
+                      </div>
                       <div>{review.review}</div>
                       <div>review img</div>
                     </div>
