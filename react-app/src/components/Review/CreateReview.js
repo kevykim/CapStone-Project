@@ -74,6 +74,9 @@ function CreateReview({setShowModal, user}) {
     <div className="create_review_main">
       {!user ? (
         <div className="create_review_notlogged_main">
+          <button className="create_review_notlogged_cancel_button" onClick={closeModal}>
+            x
+          </button>
           <div className="create_review_notlogged">
             You must log in to make a review...
           </div>
@@ -86,12 +89,14 @@ function CreateReview({setShowModal, user}) {
           </NavLink>
         </div>
       ) : trail?.userId === user?.id ? (
-        <div className='create_review_owned_main'>
-          <button className='create_review_cancel_button' onClick={closeModal}>x</button>
-          <div className='create_review_notlogged'>
-          Cannot make reviews on your own trails...
+        <div className="create_review_owned_main">
+          <button className="create_review_cancel_button" onClick={closeModal}>
+            x
+          </button>
+          <div className="create_review_notlogged">
+            Cannot make reviews on your own trails...
           </div>
-          </div>
+        </div>
       ) : (
         <form className="create_review_form" onSubmit={onSubmit}>
           <div className="create_review_cancel">

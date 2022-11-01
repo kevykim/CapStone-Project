@@ -6,6 +6,8 @@ import { thunkGetAllReview } from '../../store/review';
 import { thunkGetTrail } from '../../store/trail';
 import logo from "./WinterTrail_logo.png";
 import './HomePage.css'
+import HomePageloginModal from './HomePageloginModal';
+import HomePageloginM from './HomePageloginM';
 
 function HomePage() {
     const dispatch = useDispatch()
@@ -154,8 +156,40 @@ function HomePage() {
               </div>
               <div>
                 <div className="footer_first_row_header">Trails</div>
-                <div className="footer_first_innertext">My trails</div>
-                <div className="footer_first_innertext">Create trail</div>
+                <div className="footer_first_innertext">
+                  {!user ? (
+                    <div>
+                      <HomePageloginModal />
+                    </div>
+                  ) : (
+                    <div>
+                      <NavLink
+                        className="footer_first_navlink"
+                        exact
+                        to="/trails"
+                      >
+                        My trails
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
+                <div className="footer_first_innertext">
+                  {!user ? (
+                    <div>
+                      <HomePageloginM />
+                    </div>
+                  ) : (
+                    <div>
+                      <NavLink
+                        className="footer_first_navlink"
+                        exact
+                        to="/trails/new"
+                      >
+                        Create trail
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
               </div>
               <div>
                 <div>
