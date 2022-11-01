@@ -23,6 +23,7 @@
 .pages_inner_div {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 15px;
 }
@@ -34,9 +35,15 @@
 }
 
 
+.pages_navlink_divy {
+    padding: 10px;
+    border-bottom: 1px solid rgb(205, 201, 200);
+    width: 300px;
+    height: auto;
+}
+
 .pages_navlink_div {
     padding: 15px;
-    
 }
 
 .pages_navlink {
@@ -52,3 +59,9 @@
     color: rgb(60, 103, 148);
 }
 
+
+.pages_resort_header {
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Roboto-Bold";
+}

@@ -152,11 +152,11 @@ function HomePage() {
                   </NavLink>
                 </div>
               </div>
-              {/* <div>
+              <div>
                 <div className="footer_first_row_header">Trails</div>
                 <div className="footer_first_innertext">My trails</div>
                 <div className="footer_first_innertext">Create trail</div>
-              </div> */}
+              </div>
               <div>
                 <div>
                   <div className="footer_first_row_header">Connections</div>
