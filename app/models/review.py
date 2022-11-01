@@ -1,6 +1,6 @@
 from email.policy import default
 from .db import db
-from datetime import datetime
+from datetime import date
 
 class Review(db.Model):
     __tablename__ = 'reviews'
@@ -11,8 +11,8 @@ class Review(db.Model):
     review = db.Column(db.String(1000), nullable=False)
     stars = db.Column(db.Integer, nullable=False)
     reviewImg = db.Column(db.String(255))
-    createdAt = db.Column(db.String(255), nullable=False)
-    updatedAt = db.Column(db.String(255), nullable=False)
+    createdAt = db.Column(db.String(255), nullable=False, default=date.today())
+    updatedAt = db.Column(db.String(255), nullable=False, default=date.today())
 
     # Relationships
     users = db.relationship('User', back_populates='reviews')

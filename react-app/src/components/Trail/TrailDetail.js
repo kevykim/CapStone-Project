@@ -40,6 +40,15 @@ function TrailDetail() {
         dispatch(thunkGetTrailReview(id))
     }, [dispatch, id])
 
+
+    // DATE
+
+    const options = {
+      month: 'long', 
+      day: 'numeric',
+      year: 'numeric'
+    }
+
     return (
       <>
         <div className="trail_detail_main">
@@ -446,7 +455,7 @@ function TrailDetail() {
                         <div>
                           {review.firstname}&nbsp;{review.lastname}
                         </div>
-                        <div>review date</div>
+                        <div>{`${new Date(review.createdAt).toLocaleDateString(undefined, options)}`}</div>
                       </div>
                     </div>
                     <div>

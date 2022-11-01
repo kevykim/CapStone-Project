@@ -1,6 +1,6 @@
 from tkinter import CASCADE
 from .db import db
-from datetime import datetime
+from datetime import date
 
 
 
@@ -18,8 +18,8 @@ class Trail(db.Model):
     elevation = db.Column(db.Integer, nullable=False)
     routeType = db.Column(db.String(100), nullable=False)
     previewImg = db.Column(db.String(255), nullable=False)
-    createdAt = db.Column(db.String(255), nullable=False)
-    updatedAt = db.Column(db.String(255), nullable=False)
+    createdAt = db.Column(db.String(255), nullable=False, default=date.today())
+    updatedAt = db.Column(db.String(255), nullable=False, default=date.today())
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     # Relationships

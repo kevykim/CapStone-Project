@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
         <img
           onClick={openMenu}
           className="profile_img_main"
-          src={user.profileImg}
+          src={user?.profileImg}
           alt="profile-pic"
           onError={event => {event.currentTarget.src =
             "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"}}

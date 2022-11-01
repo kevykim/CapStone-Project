@@ -8,7 +8,7 @@ import "./Trail.css";
 
 function Trails() {
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
 
   const user = useSelector((state) => state.session.user);
 
@@ -24,8 +24,16 @@ function Trails() {
   }, [dispatch]);
 
   if (!user) {
-    history.push('/')
+    history.push("/");
   }
+
+  // DATE
+
+  const options = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  };
 
   return (
     <div className="my_trail_main">
@@ -55,7 +63,9 @@ function Trails() {
                 />
                 <div className="my_trail_circle">
                   <div className="my_trail_circle_inner">
-                    <div className="my_trail_circle_text"><MyTrailShareModal trail={trail}/></div>
+                    <div className="my_trail_circle_text">
+                      <MyTrailShareModal trail={trail} />
+                    </div>
                   </div>
                   <div className="my_trail_circle_inner">
                     <NavLink
@@ -81,7 +91,10 @@ function Trails() {
               </div>
               <div className="my_trail_details">
                 <div>{trail?.name}</div>
-                <div>DATE?</div>
+                <div>{`${new Date(trail.createdAt).toLocaleDateString(
+                  undefined,
+                  options
+                )}`}</div>
               </div>
               <div className="my_trail_border"></div>
             </div>
