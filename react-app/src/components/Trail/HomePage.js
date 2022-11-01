@@ -194,16 +194,64 @@ function HomePage() {
               <div>
                 <div>
                   <div className="footer_first_row_header">Connections</div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
+                  <div>
+                    <div>
+                      <i
+                        style={{ color: "rgb(186,194,208)" }}
+                        className="fa-brands fa-linkedin"
+                      >
+                        &nbsp;
+                      </i>
+                      <a
+                        className="footer_first_navlink"
+                        href="https://www.linkedin.com/in/kevin-kim-a88429150"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Linkedin
+                      </a>
+                    </div>
+                    <div>
+                      <i
+                        style={{ color: "rgb(186,194,208)" }}
+                        className="fa-brands fa-square-github"
+                      >
+                        &nbsp;
+                      </i>
+                      <a
+                        className="footer_first_navlink"
+                        href="https://github.com/kevykim"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Github
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div>
-              <div>
-                <div>2022 WinterTrails</div>
-                <div>Inspired by AllTrails</div>
+            <div className="footer_last_main">
+              <div className="footer_last_left">
+                <div>2022 WinterTrails&nbsp;•&nbsp;</div>
+                <div>Inspired by&nbsp;</div>
+                <a
+                  className="footer_last_navlink"
+                  href="https://www.alltrails.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  AllTrails
+                </a>
+                &nbsp;•&nbsp;
+                <a
+                  className="footer_last_navlink"
+                  href="https://github.com/kevykim/CapStone-Project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  More info
+                </a>
               </div>
               <div>{`English (US)`}</div>
             </div>

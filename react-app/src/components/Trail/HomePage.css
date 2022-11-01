@@ -266,3 +266,26 @@
 .footer_first_navlink:hover {
     text-decoration: underline;
 }
+
+.footer_last_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgb(244, 243, 243);
+    color: gray;
+}
+
+.footer_last_left {
+    display: flex;
+        flex-direction: row;
+}
+
+.footer_last_navlink {
+    text-decoration: none;
+    color: gray;
+}
+
+.footer_last_navlink:hover {
+    text-decoration: underline;
+}
