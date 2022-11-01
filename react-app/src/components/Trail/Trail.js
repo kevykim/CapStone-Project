@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { thunkGetCurrentTrail } from "../../store/trail";
 import MyTrailShareModal from "../Modals/MyTrailShareModal";
-import DeleteTrail from "./DeleteTrail";
+import DeleteTrailModal from "./DeleteTrailModal";
 import "./Trail.css";
 
 function Trails() {
@@ -38,11 +38,11 @@ function Trails() {
   return (
     <div className="my_trail_main">
       {currentTrailOwned.length === 0 ? (
-        <div>
-          <div>Plan your perfect trail</div>
+        <div className="my_trail_notrails_div">
+          <div>Plan your perfect trail&nbsp;</div>
           <div>
-            <NavLink exact to="/trails/new">
-              Here
+            <NavLink className='my_trail_notrails_navlink' exact to="/trails/new">
+              here...
             </NavLink>
           </div>
         </div>
@@ -84,7 +84,7 @@ function Trails() {
                   </div>
                   <div className="my_trail_circle_inner">
                     <div className="my_trail_circle_text">
-                      <DeleteTrail trail={trail} />
+                      <DeleteTrailModal trail={trail} />
                     </div>
                   </div>
                 </div>
