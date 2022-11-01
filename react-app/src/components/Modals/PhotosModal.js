@@ -10,16 +10,19 @@ function PhotosModal({ trail }) {
 
   return (
     <>
-      <button
-        className="photo_modal_button"
-        onClick={() => setShowModal(true)}
-      >
+      <button className="photo_modal_button" onClick={() => setShowModal(true)}>
+        <div className="trail_detail_white_circle">
+          <i
+            style={{ color: "rgb(60, 103, 148)" }}
+            className="fa-solid fa-camera fa-xl"
+          ></i>
+        </div>
         Photos
       </button>
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-            <Photos trail={trail} setShowModal={setShowModal}/>
+          <Photos trail={trail} setShowModal={setShowModal} />
         </Modal>
       )}
     </>

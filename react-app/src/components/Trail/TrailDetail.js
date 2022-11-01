@@ -93,12 +93,6 @@ function TrailDetail() {
             </div>
             <div className="trail_detail_circle">
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle">
-                  <i
-                    style={{ color: "rgb(60, 103, 148)" }}
-                    className="fa-solid fa-camera fa-xl"
-                  ></i>
-                </div>
                 <div className="trail_detail_circle_text"><PhotosModal trail={trail}/></div>
               </div>
               <div className="trail_detail_circle_inner">
