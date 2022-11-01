@@ -3,6 +3,7 @@ from flask_login import login_required, current_user
 from app.api.auth_routes import validation_errors_to_error_messages
 from app.models import Review, db
 from app.forms import ReviewForm
+from datetime import date
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -21,7 +22,9 @@ def create_review(id):
             userId = current_user.id,
             review = reviewform.data['review'],
             stars = reviewform.data['stars'],
-            reviewImg = reviewform.data['reviewImg']
+            reviewImg = reviewform.data['reviewImg'],
+            createdAt = date.today(),
+            updatedAt = date.today()
         )
         db.session.add(created_review)
         db.session.commit()
@@ -71,6 +74,7 @@ def update_review(id):
         updated_review.review = reviewform.data['review']
         updated_review.stars = reviewform.data['stars']
         updated_review.reviewImg = reviewform.data['reviewImg']
+        updated_review.updatedAt = date.today()
         db.session.commit()
         return updated_review.to_dict()
     return {'errors': validation_errors_to_error_messages(reviewform.errors)}, 400

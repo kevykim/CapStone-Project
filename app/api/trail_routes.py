@@ -3,6 +3,7 @@ from flask_login import login_required, current_user
 from app.models import Trail, db
 from app.forms import TrailForm
 from app.api.auth_routes import validation_errors_to_error_messages
+from datetime import date
 
 trail_routes = Blueprint('trails', __name__)
 
@@ -27,6 +28,8 @@ def create_trail():
             elevation = trailform.data['elevation'],
             routeType = trailform.data['routeType'],
             previewImg = trailform.data['previewImg'],
+            createdAt = date.today(),
+            updatedAt = date.today(),
             userId = current_user.id
         )
 
@@ -83,6 +86,7 @@ def update_trail(id):
         updated_trail.elevation = trailform.data['elevation']
         updated_trail.routeType = trailform.data['routeType']
         updated_trail.previewImg = trailform.data['previewImg']
+        updated_trail.updatedAt = date.today()
         db.session.commit()
         return updated_trail.to_dict()
     return {'errors': validation_errors_to_error_messages(trailform.errors)}, 400
