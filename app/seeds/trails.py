@@ -1,5 +1,5 @@
 from app.models import db, Trail
-
+from datetime import date
 
 def seed_trails():
     # BOREAL TAHOE
@@ -14,7 +14,9 @@ def seed_trails():
         elevation = 7701,
         routeType = "All-mountain",
         previewImg = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/b6/9c/d7/new-year-s-eve-skiing.jpg?w=1200&h=-1&s=1",
-        userId = 1
+        userId = 1,
+        createdAt = date(2022, 5, 3),
+        updatedAt = date.today()
     )
     boreal2 = Trail(
         name = "Tamarack",
@@ -27,7 +29,9 @@ def seed_trails():
         elevation = 7000,
         routeType = "Powder",
         previewImg = "https://d3ne5s9fv9p81l.cloudfront.net/public/wt/ac/58/20191219070340113759839.jpg?imageView2/2/format/auto",
-        userId = 1
+        userId = 1,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     boreal3 = Trail(
         name = "Sunrise Blvd",
@@ -40,7 +44,9 @@ def seed_trails():
         elevation = 7000,
         routeType = "Freeride",
         previewImg = "https://images.pexels.com/photos/950740/pexels-photo-950740.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 4, 15),
+        updatedAt = date.today()
     )
     boreal4 = Trail(
         name = "Mariposa",
@@ -53,7 +59,9 @@ def seed_trails():
         elevation = 5500,
         routeType = "Freeride",
         previewImg = "https://images.pexels.com/photos/880497/pexels-photo-880497.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 6, 3),
+        updatedAt = date.today()
     )
     boreal5 = Trail(
         name = "Juniper",
@@ -66,7 +74,9 @@ def seed_trails():
         elevation = 6500,
         routeType = "All-mountain",
         previewImg = "https://images.pexels.com/photos/728411/pexels-photo-728411.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 8, 11),
+        updatedAt = date.today()
     )
     boreal6 = Trail(
         name = "Kiss A Bear",
@@ -79,7 +89,9 @@ def seed_trails():
         elevation = 5000,
         routeType = "Park",
         previewImg = "https://images.pexels.com/photos/4580974/pexels-photo-4580974.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 9, 21),
+        updatedAt = date.today()
     )
     boreal7 = Trail(
         name = "Prospector",
@@ -92,7 +104,9 @@ def seed_trails():
         elevation = 6500,
         routeType = "Freeride",
         previewImg = "https://images.pexels.com/photos/8404254/pexels-photo-8404254.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 8, 12),
+        updatedAt = date.today()
     )
     boreal8 = Trail(
         name = "South 40",
@@ -105,7 +119,9 @@ def seed_trails():
         elevation = 5000,
         routeType = "Freeride",
         previewImg = "https://images.pexels.com/photos/7987347/pexels-photo-7987347.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 10, 14),
+        updatedAt = date.today()
     )
     boreal9 = Trail(
         name = "Chukker",
@@ -118,7 +134,9 @@ def seed_trails():
         elevation = 7500,
         routeType = "Powder",
         previewImg = "https://images.pexels.com/photos/869263/pexels-photo-869263.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 7, 5),
+        updatedAt = date.today()
     )
     boreal10 = Trail(
         name = "Klondike",
@@ -131,7 +149,9 @@ def seed_trails():
         elevation = 7000,
         routeType = "Freeride",
         previewImg = "https://images.pexels.com/photos/68398/pexels-photo-68398.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 2, 25),
+        updatedAt = date.today()
     )
     # HEAVENLY TAHOE
     heavenly1 = Trail(
@@ -145,7 +165,9 @@ def seed_trails():
         elevation = 9000,
         routeType = "All-mountain",
         previewImg = "https://images.pexels.com/photos/3600569/pexels-photo-3600569.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 6, 12),
+        updatedAt = date.today()
     )
     heavenly2 = Trail(
         name = "Milky Way Bowl",
@@ -158,7 +180,9 @@ def seed_trails():
         elevation = 9500,
         routeType = "Powder",
         previewImg = "https://images.pexels.com/photos/352092/pexels-photo-352092.jpeg",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 1, 16),
+        updatedAt = date.today()
     )
     trail3 = Trail(
         name = "",
@@ -171,7 +195,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail4 = Trail(
         name = "",
@@ -184,7 +210,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail5 = Trail(
         name = "",
@@ -197,7 +225,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail6 = Trail(
         name = "",
@@ -210,7 +240,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail7 = Trail(
         name = "",
@@ -223,7 +255,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail8 = Trail(
         name = "",
@@ -236,7 +270,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2, 
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail9 = Trail(
         name = "",
@@ -249,7 +285,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
     trail10 = Trail(
         name = "",
@@ -262,7 +300,9 @@ def seed_trails():
         elevation = "",
         routeType = "",
         previewImg = "",
-        userId = 2
+        userId = 2,
+        createdAt = date(2022, 3, 3),
+        updatedAt = date.today()
     )
 
     
