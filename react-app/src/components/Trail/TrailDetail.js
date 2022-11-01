@@ -9,6 +9,7 @@ import './TrailDetail.css'
 import { thunkGetTrailReview } from "../../store/review"
 import PhotosModal from "../Modals/PhotosModal"
 import ShareModal from "../Modals/ShareModal"
+import MoreModal from "../Modals/MoreModal"
 function TrailDetail() {
     const {id} = useParams()
     const dispatch = useDispatch()
@@ -99,13 +100,7 @@ function TrailDetail() {
                 <div className="trail_detail_circle_text"><ShareModal trail={trail} /></div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle">
-                  <i
-                    style={{ color: "rgb(60, 103, 148)" }}
-                    className="fa-solid fa-circle-info fa-xl"
-                  ></i>
-                </div>
-                <div className="trail_detail_circle_text">More</div>
+                <div className="trail_detail_circle_text"><MoreModal trail={trail}/></div>
               </div>
             </div>
           </div>
