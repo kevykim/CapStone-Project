@@ -12,6 +12,7 @@ import Trails from './components/Trail/Trail';
 import CreateTrail from './components/Trail/CreateTrail';
 import UpdateTrail from './components/Trail/UpdateTrail';
 import Review from './components/Review/Review';
+import Resort from './components/Pages/Resort';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -55,6 +56,12 @@ function App() {
         </Route>
         <Route exact path='/reviews'>
           <Review />
+        </Route>
+        <Route exact path='/resorts'>
+          <Resort />
+        </Route>
+        <Route exact path='/alltrails'>
+
         </Route>
         <Route>
           <h1>Page Not Found</h1>
