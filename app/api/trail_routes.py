@@ -85,7 +85,7 @@ def update_trail(id):
         updated_trail.length = trailform.data['length']
         updated_trail.elevation = trailform.data['elevation']
         updated_trail.routeType = trailform.data['routeType']
-        updated_trail.previewImg = trailform.data['previewImg'],
+        updated_trail.previewImg = trailform.data['previewImg']
         updated_trail.updatedAt = date.today()
         db.session.commit()
         return updated_trail.to_dict()
