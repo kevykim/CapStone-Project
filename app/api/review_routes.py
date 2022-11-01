@@ -30,7 +30,7 @@ def create_review(id):
 
 #READ
 
-# GET ALL TRAILS
+# GET ALL REVIEWS
 @review_routes.route('/')
 def get_all_reviews():
     reviews = Review.query.all()

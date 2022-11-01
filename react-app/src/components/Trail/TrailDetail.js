@@ -7,7 +7,9 @@ import CreateReviewModal from "../Review/CreateReviewModal"
 
 import './TrailDetail.css'
 import { thunkGetTrailReview } from "../../store/review"
-
+import PhotosModal from "../Modals/PhotosModal"
+import ShareModal from "../Modals/ShareModal"
+import MoreModal from "../Modals/MoreModal"
 function TrailDetail() {
     const {id} = useParams()
     const dispatch = useDispatch()
@@ -37,6 +39,15 @@ function TrailDetail() {
         dispatch(thunkGetTrail())
         dispatch(thunkGetTrailReview(id))
     }, [dispatch, id])
+
+
+    // DATE
+
+    const options = {
+      month: 'long', 
+      day: 'numeric',
+      year: 'numeric'
+    }
 
     return (
       <>
@@ -82,52 +93,53 @@ function TrailDetail() {
               className="trail_detail_previewImg"
               src={trail?.previewImg}
               alt="traildetail"
+              onError={(e) => {
+                e.currentTarget.src =
+                  "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
+              }}
             />
             <div>
               <div className="trail_detail_bluebar"></div>
             </div>
             <div className="trail_detail_circle">
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle"></div>
-                <div className="trail_detail_circle_text">Photos</div>
+                <div className="trail_detail_circle_text"><PhotosModal trail={trail}/></div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle"></div>
-                <div className="trail_detail_circle_text">Share</div>
+                <div className="trail_detail_circle_text"><ShareModal trail={trail} /></div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_white_circle"></div>
-                <div className="trail_detail_circle_text">More</div>
+                <div className="trail_detail_circle_text"><MoreModal trail={trail}/></div>
               </div>
             </div>
           </div>
           <div className="trail_detail_image_text">
             <div className="trail_detail_image_firstline">{trail?.name}</div>
             <div className="trail_detail_image_secondline">
-              {trail.difficulty === "Beginner" ? (
+              {trail?.difficulty === "Beginner" ? (
                 <div className="trail_detail_difficulty_beginner_box">
                   <i className="fa-solid fa-circle fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
-              ) : trail.difficulty === "Intermediate" ? (
+              ) : trail?.difficulty === "Intermediate" ? (
                 <div className="trail_detail_difficulty_intermediate_box">
                   <i className="fa-solid fa-square fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
-              ) : trail.difficulty === "Black Diamond" ? (
+              ) : trail?.difficulty === "Black Diamond" ? (
                 <div className="trail_detail_difficulty_blackdiamond_box">
                   <i className="fa-solid fa-diamond fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
               ) : (
                 <div className="trail_detail_difficulty_doubleblackdiamond_box">
                   <i className="fa-solid fa-diamond fa-xs"></i>
                   <i className="fa-solid fa-diamond fa-xs"></i>
                   &nbsp;
-                  {trail.difficulty}
+                  {trail?.difficulty}
                 </div>
               )}
               <div className="trail_detail_image_reviewinfo">
@@ -428,14 +440,22 @@ function TrailDetail() {
                 {reviewArr.map((review, i) => (
                   <div className="trail_detail_bottom_main_review" key={i}>
                     <div className="trail_detail_bottom_profileinfo">
-                      <div>
-                        <img alt="profilepic" />
+                      <div className="trail_detail_img_div">
+                        <img
+                          className="trail_detail_img_main"
+                          src={review.profileImg}
+                          alt="profilepic"
+                          onError={(event) => {
+                            event.currentTarget.src =
+                              "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                          }}
+                        />
                       </div>
                       <div>
                         <div>
                           {review.firstname}&nbsp;{review.lastname}
                         </div>
-                        <div>review date</div>
+                        <div>{`${new Date(review.createdAt).toLocaleDateString(undefined, options)}`}</div>
                       </div>
                     </div>
                     <div>
@@ -564,7 +584,17 @@ function TrailDetail() {
                           <div>{review.review}</div>
                         </div>
                         <div>
-                          <div>review img</div>
+                          <div>
+                            <img
+                              className="trail_detail_review_img"
+                              src={review.reviewImg}
+                              alt="reviewimg"
+                              onError={(event) => {
+                                event.currentTarget.src =
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
+                              }}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -587,29 +617,33 @@ function TrailDetail() {
                           className="trail_detail_sidebar_image"
                           src={trail.previewImg}
                           alt="nearme"
+                          onError={(e) => {
+                            e.currentTarget.src =
+                              "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
+                          }}
                         />
                       </NavLink>
                       <div className="trail_detail_sidebar_image_info">
                         <div className="trail_detail_sidebar_firstline">
-                          {trail.difficulty === "Beginner" ? (
+                          {trail?.difficulty === "Beginner" ? (
                             <div className="trail_detail_difficulty_beginner">
                               <i className="fa-solid fa-circle fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
-                          ) : trail.difficulty === "Intermediate" ? (
+                          ) : trail?.difficulty === "Intermediate" ? (
                             <div className="trail_detail_difficulty_intermediate">
                               <i className="fa-solid fa-square fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
-                          ) : trail.difficulty === "Black Diamond" ? (
+                          ) : trail?.difficulty === "Black Diamond" ? (
                             <div className="trail_detail_difficulty_blackdiamond">
                               <i className="fa-solid fa-diamond fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
                           ) : (
@@ -617,7 +651,7 @@ function TrailDetail() {
                               <i className="fa-solid fa-diamond fa-xs"></i>
                               <i className="fa-solid fa-diamond fa-xs"></i>
                               &nbsp;
-                              {trail.difficulty}
+                              {trail?.difficulty}
                               &nbsp;·&nbsp;
                             </div>
                           )}

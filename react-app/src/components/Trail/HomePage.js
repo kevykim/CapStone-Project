@@ -53,6 +53,10 @@ function HomePage() {
                     className="homepage_trail_image"
                     src={trail.previewImg}
                     alt="trailimg"
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg"
+                    }}
                   />
                 </NavLink>
               </div>

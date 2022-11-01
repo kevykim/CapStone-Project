@@ -6,27 +6,27 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        username='Demo', firstName='Demo', lastName='User', email='demo@aa.io', password='password2', profileImg='test')
+        username='Demo', firstName='Demo', lastName='User', email='demo@aa.io', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/hipster_beard_male_man-512.png')
         #BOREAL
     marnie = User(
-        username='Marnie', firstName='Marnet', lastName='Hart', email='marnie@aa.io', password='password2', profileImg='test')
+        username='Marnie', firstName='Marnet', lastName='Hart', email='marnie@aa.io', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/female_woman_avatar_portrait-512.png')
         #HEAVENLY
     bobbie = User(
-        username='Bobbie', firstName='Bob', lastName='Hart', email='bobbie@aa.io', password='password2', profileImg='test')
+        username='Bobbie', firstName='Bob', lastName='Hart', email='bobbie@aa.io', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/afro_man_male_avatar-512.png')
     jeff = User(
-        username='Jeffellow', firstName='Jeff', lastName='Campbell', email='jeffcamp@mail.com', password='password2', profileImg='test')
+        username='Jeffellow', firstName='Jeff', lastName='Campbell', email='jeffcamp@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/man_male_avatar_portrait-512.png')
     ted = User(
-        username='Tedster', firstName='Ted', lastName='Baker', email='thebaker@mail.com', password='password2', profileImg='test')
+        username='Tedster', firstName='Ted', lastName='Baker', email='thebaker@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/boy_male_avatar_portrait-512.png')
     christy = User(
-        username='AznxChrissyx', firstName='Christy', lastName='Kim', email='christine314@yahoo.com', password='password2', profileImg='test')
+        username='AznxChrissyx', firstName='Christy', lastName='Kim', email='christine314@yahoo.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/female_woman_avatar_portrait_1-512.png')
     peter = User(
-        username='Spiderman321', firstName='Peter', lastName='Parker', email='therealspiderguy@mail.com', password='password2', profileImg='test')
+        username='Spiderman321', firstName='Peter', lastName='Parker', email='therealspiderguy@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/indian_man_male_person-512.png')
     ron = User(
-        username='Lagavulin501', firstName='Ron', lastName='Swanson', email='steakisthebest@mail.net', password='password2', profileImg='test')
+        username='Lagavulin501', firstName='Ron', lastName='Swanson', email='steakisthebest@mail.net', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/old_man_male_portrait-512.png')
     corey = User(
-        username='Radsk8ter', firstName='Corey', lastName='Birch', email='birchwall@mail.com', password='password2', profileImg='test')
+        username='Radsk8ter', firstName='Corey', lastName='Birch', email='birchwall@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/punk_man_person_avatar-512.png')
     eddy = User(
-        username='thebesteddy', firstName='Eddy', lastName='Smith', email='cartonnetworkyyy@mail.com', password='password2', profileImg='test')
+        username='thebesteddy', firstName='Eddy', lastName='Smith', email='cartonnetworkyyy@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/boy_person_avatar_kid-512.png')
 
     db.session.add(demo)
     db.session.add(marnie)

@@ -1,6 +1,6 @@
+from email.policy import default
 from .db import db
-
-
+from datetime import date
 
 class Review(db.Model):
     __tablename__ = 'reviews'
@@ -11,6 +11,8 @@ class Review(db.Model):
     review = db.Column(db.String(1000), nullable=False)
     stars = db.Column(db.Integer, nullable=False)
     reviewImg = db.Column(db.String(255))
+    createdAt = db.Column(db.String(255), nullable=False, default=date.today())
+    updatedAt = db.Column(db.String(255), nullable=False, default=date.today())
 
     # Relationships
     users = db.relationship('User', back_populates='reviews')
@@ -24,8 +26,11 @@ class Review(db.Model):
             'review': self.review,
             'stars': self.stars,
             'reviewImg': self.reviewImg,
+            'createdAt': self.createdAt,
+            'updatedAt': self.createdAt,
             'firstname' : self.users.firstName if self.users else None,
             'lastname' : self.users.lastName if self.users else None,
             'trailname' : self.trails.name if self.trails else None,
-            'traildifficulty': self.trails.difficulty if self.trails else None
+            'traildifficulty': self.trails.difficulty if self.trails else None,
+            'profileImg': self.users.profileImg if self.users else None
         }

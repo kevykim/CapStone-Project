@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logout }  from "../../store/session";
 import './ProfileButton.css'
@@ -7,6 +7,8 @@ import './ProfileButton.css'
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+
+
 
   const openMenu = () => {
     if (showMenu) return;
@@ -35,8 +37,10 @@ function ProfileButton({ user }) {
         <img
           onClick={openMenu}
           className="profile_img_main"
-          src="https://img.favpng.com/8/10/1/avatar-image-computer-icons-likengo-png-favpng-szcsHZgZRX618rsHZNRncnnev.jpg"
+          src={user?.profileImg}
           alt="profile-pic"
+          onError={event => {event.currentTarget.src =
+            "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"}}
         />
         {showMenu && user && (
           <div className="profile-dropdown">

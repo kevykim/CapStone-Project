@@ -22,7 +22,7 @@ def descriptionchecker(form, field):
 
 def imagechecker(form, field):
     image = field.data
-    if 'https' not in image or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image):
+    if ('https' not in image and 'http' not in image) or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image):
         raise ValidationError('Please enter a valid URL.')
 
 # CHOICES

@@ -19,7 +19,12 @@ function DeleteTrail({trail}) {
     return (
       <div>
         <button className="delete_trail_button" onClick={onDelete}>
-          <div className="my_trail_white_circle"></div>
+          <div className="my_trail_white_circle">
+            <i
+              style={{ color: "rgb(60, 103, 148)" }}
+              className="fa-regular fa-trash-can fa-xl"
+            ></i>
+          </div>
           Delete
         </button>
       </div>

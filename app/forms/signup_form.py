@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, ValidationError, Optional, URL
 from app.models import User
 
 
@@ -41,7 +41,7 @@ def emailchecker(form, field):
 
 def imagechecker(form, field):
     image = field.data
-    if 'https' not in image or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image):
+    if ('https' not in image and 'http' not in image) or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image):
         raise ValidationError('Please enter a valid URL.')
 
 
@@ -54,4 +54,4 @@ class SignUpForm(FlaskForm):
     lastName = StringField('lastName', validators=[DataRequired(message='Please enter a last name')])
     email = StringField('email', validators=[DataRequired(message='Please enter a email'), user_exists, emailchecker])
     password = StringField('password', validators=[DataRequired(message='Please enter a password'), passwordchecker])
-    # profileImg = StringField('profileImg')
+    # profileImg = StringField('profileImg', validators=[Optional(), URL(require_tld=True, message='Please enter a valid URL.'), imagechecker])

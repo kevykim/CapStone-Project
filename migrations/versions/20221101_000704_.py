@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 4b43489ceb1b
+Revision ID: 796381102e0b
 Revises: 
-Create Date: 2022-10-31 11:09:32.400507
+Create Date: 2022-11-01 00:07:04.714654
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '4b43489ceb1b'
+revision = '796381102e0b'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -42,6 +42,8 @@ def upgrade():
     sa.Column('elevation', sa.Integer(), nullable=False),
     sa.Column('routeType', sa.String(length=100), nullable=False),
     sa.Column('previewImg', sa.String(length=255), nullable=False),
+    sa.Column('createdAt', sa.String(length=255), nullable=False),
+    sa.Column('updatedAt', sa.String(length=255), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -53,6 +55,8 @@ def upgrade():
     sa.Column('review', sa.String(length=1000), nullable=False),
     sa.Column('stars', sa.Integer(), nullable=False),
     sa.Column('reviewImg', sa.String(length=255), nullable=True),
+    sa.Column('createdAt', sa.String(length=255), nullable=False),
+    sa.Column('updatedAt', sa.String(length=255), nullable=False),
     sa.ForeignKeyConstraint(['trailId'], ['trails.id'], ),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')

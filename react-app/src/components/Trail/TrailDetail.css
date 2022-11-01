@@ -24,9 +24,9 @@
     font-size: 9.2pt;
 }
 
-.trail_detail_navlink {
-    /* border: 1px solid green; */
-}
+/* .trail_detail_navlink {
+    border: 1px solid green;
+} */
 
 .trail_detail_navlink:hover {
     text-decoration: underline;
@@ -154,6 +154,9 @@
 }
 
 .trail_detail_white_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
     width: 60px;
     height: 60px;
@@ -247,6 +250,23 @@
     padding: 15px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.trail_detail_img_div {
+    margin-right: 10px;
+}
+
+.trail_detail_img_main {
+    width: 40px;
+    height: 40px;
+
+}
+
+.trail_detail_review_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
 }
 
 .trail_detail_bottom_reviewcomponents {
