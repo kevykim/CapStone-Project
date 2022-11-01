@@ -7,6 +7,7 @@ import CreateReviewModal from "../Review/CreateReviewModal"
 
 import './TrailDetail.css'
 import { thunkGetTrailReview } from "../../store/review"
+import PhotosModal from "../Modals/PhotosModal"
 
 function TrailDetail() {
     const {id} = useParams()
@@ -98,7 +99,7 @@ function TrailDetail() {
                     className="fa-solid fa-camera fa-xl"
                   ></i>
                 </div>
-                <div className="trail_detail_circle_text">Photos</div>
+                <div className="trail_detail_circle_text"><PhotosModal trail={trail}/></div>
               </div>
               <div className="trail_detail_circle_inner">
                 <div className="trail_detail_white_circle">
