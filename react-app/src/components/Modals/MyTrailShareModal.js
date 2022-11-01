@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Modal } from "../context/Modal";
-import Share from "./Share";
+import MyTrailShare from "./MyTrailShare";
 
 import "./ShareModal.css";
 
-function ShareModal({ trail }) {
+function MyTrailShareModal({ trail }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button className="photo_modal_button" onClick={() => setShowModal(true)}>
+      <button className="my_trail_share_button" onClick={() => setShowModal(true)}>
         <div className="trail_detail_white_circle">
           <i
             style={{ color: "rgb(60, 103, 148)" }}
@@ -21,11 +21,11 @@ function ShareModal({ trail }) {
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <Share trail={trail} setShowModal={setShowModal} />
+          <MyTrailShare trail={trail} setShowModal={setShowModal} />
         </Modal>
       )}
     </>
   );
 }
 
-export default ShareModal;
+export default MyTrailShareModal;

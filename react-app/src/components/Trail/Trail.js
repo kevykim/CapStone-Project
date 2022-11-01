@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import { thunkGetCurrentTrail } from "../../store/trail";
+import MyTrailShareModal from "../Modals/MyTrailShareModal";
 import DeleteTrail from "./DeleteTrail";
 import "./Trail.css";
 
@@ -54,13 +55,7 @@ function Trails() {
                 />
                 <div className="my_trail_circle">
                   <div className="my_trail_circle_inner">
-                    <div className="my_trail_white_circle">
-                      <i
-                        style={{ color: "rgb(60, 103, 148)" }}
-                        className="fa-solid fa-arrow-up-from-bracket fa-xl"
-                      ></i>
-                    </div>
-                    <div className="my_trail_circle_text">Share</div>
+                    <div className="my_trail_circle_text"><MyTrailShareModal trail={trail}/></div>
                   </div>
                   <div className="my_trail_circle_inner">
                     <NavLink

@@ -65,3 +65,18 @@
 .share_modal_alink:hover {
     text-decoration: underline;
 }
+
+
+
+
+.my_trail_share_button {
+    background: none;
+        border: none;
+        color: rgb(60, 103, 148);
+        cursor: pointer;
+        font-size: 12pt;
+}
+
+.my_trail_share_modal_button:hover {
+    opacity: 0.7;
+}
