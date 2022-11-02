@@ -13,7 +13,7 @@ class Trail(db.Model):
     state = db.Column(db.String(100), nullable=False)
     resort = db.Column(db.String(100), nullable=False)
     difficulty = db.Column(db.String(100), nullable=False)
-    description = db.Column(db.String(400), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
     length = db.Column(db.Float, nullable=False)
     elevation = db.Column(db.Integer, nullable=False)
     routeType = db.Column(db.String(100), nullable=False)

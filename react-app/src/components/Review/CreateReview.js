@@ -24,8 +24,8 @@ function CreateReview({setShowModal, user}) {
   useEffect(() => {
     const errors = [];
     if (stars <= 0 || stars > 5) errors.push("Select a star between 1 to 5");
-    if (reviews.length < 20 || reviews.length > 255)
-      errors.push("Please add a review between 21 to 255 characters");
+    if (reviews.length < 20 || reviews.length > 500)
+      errors.push("Please add a review between 21 to 500 characters");
     if (
       (!reviewImg.includes("jpg") &&
         !reviewImg.includes("png") &&
@@ -144,9 +144,9 @@ function CreateReview({setShowModal, user}) {
               ></textarea>
               {validations.length > 0 &&
                 submitted === true &&
-                (reviews.length < 20 || reviews.length > 255) && (
+                (reviews.length < 20 || reviews.length > 500) && (
                   <div className="create_review_error">
-                    Please add a review between 21 to 255 characters
+                    Please add a review between 21 to 500 characters
                   </div>
                 )}
             </div>

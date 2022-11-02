@@ -578,7 +578,7 @@ function TrailDetail() {
                               ></i>
                             </div>
                           )}
-                          <div>{review.review}</div>
+                          <div className="trail_detail_actual_reviews">{review.review}</div>
                         </div>
                         <div>
                           <div>
