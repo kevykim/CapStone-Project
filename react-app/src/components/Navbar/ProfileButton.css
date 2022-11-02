@@ -1,5 +1,7 @@
 .profile_button_main {
-    width: 40px;
+    display: flex;
+    justify-content: flex-end;
+    width: 310px;
     height: 40px;
     border-radius: 30px;
     border: none;
@@ -22,6 +24,7 @@
     height: 260px;
     position: absolute;
     right: 0px;
+    top: 45px;
     border: 1px solid lightgrey;
     border-radius: 10px;
     z-index: 11;

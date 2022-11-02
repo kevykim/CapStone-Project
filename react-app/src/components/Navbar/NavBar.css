@@ -1,18 +1,24 @@
 .navbar_div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: 1265px;
     align-items: center;
     height: 60px;
-    padding: 0 10px;
-    border-bottom: 0.5px solid rgb(205, 201, 200);;
+}
+
+
+.navbar_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid rgb(205, 201, 200);
 }
 
 .winter_trail_div {
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    width: 985px;
 }
 .winter_trail_image {
     display: flex;
