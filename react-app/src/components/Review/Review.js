@@ -57,6 +57,7 @@ function Review() {
                   height: "300px",
                   marginRight: "25px",
                   marginLeft: "25px",
+                  marginBottom:'25px'
                 }}
                 classname="my_review_box_main"
                 key={i}

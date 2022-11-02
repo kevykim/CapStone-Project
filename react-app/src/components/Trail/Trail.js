@@ -75,8 +75,8 @@ function Trails() {
             </div>
             <div className="my_trail_top_border"></div>
             </div>
-            <div>
-            <div className="my_trail_header">My Trails</div>
+            <div className="my_trail_header_div">
+            <div className="my_trail_header">Trails</div>
             </div>
             </div>
             {currentTrailArr.map((trail, i) => (
