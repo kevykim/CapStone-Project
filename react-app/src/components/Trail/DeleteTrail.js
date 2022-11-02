@@ -6,7 +6,7 @@ import { thunkDeleteTrail } from '../../store/trail'
 import './DeleteTrail.css'
 
 
-function DeleteTrail({trail}) {
+function DeleteTrail({trail, setShowModal}) {
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -15,18 +15,23 @@ function DeleteTrail({trail}) {
         history.push('/trails')
     }
 
+    const onKeep = (event) => {
+      setShowModal(false);
+    };
+
 
     return (
-      <div>
-        <button className="delete_trail_button" onClick={onDelete}>
-          <div className="my_trail_white_circle">
-            <i
-              style={{ color: "rgb(60, 103, 148)" }}
-              className="fa-regular fa-trash-can fa-xl"
-            ></i>
-          </div>
-          Delete
-        </button>
+      <div className="delete_trail_main">
+        <div className="delete_trail_inner">
+          <div className="delete_trail_header">Delete Trail?</div>
+          <div>A trail that is deleted will never be recovered.</div>
+          <button className="delete_trail_button" onClick={onDelete}>
+            Delete
+          </button>
+          <button className="delete_trail_keep" onClick={onKeep}>
+            Keep
+          </button>
+        </div>
       </div>
     );
 }

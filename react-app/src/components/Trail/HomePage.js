@@ -4,7 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { thunkGetAllReview } from '../../store/review';
 
 import { thunkGetTrail } from '../../store/trail';
+import logo from "./WinterTrail_logo.png";
 import './HomePage.css'
+import HomePageloginModal from './HomePageloginModal';
+import HomePageloginM from './HomePageloginM';
 
 function HomePage() {
     const dispatch = useDispatch()
@@ -30,6 +33,10 @@ function HomePage() {
               classname="homepage_image"
               src="https://images.pexels.com/photos/1404713/pexels-photo-1404713.jpeg"
               alt="home"
+              onError={(e) => {
+                e.currentTarget.src =
+                  "https://images.pexels.com/photos/1404713/pexels-photo-1404713.jpeg";
+              }}
             />
           </div>
           {!user ? (
@@ -55,7 +62,7 @@ function HomePage() {
                     alt="trailimg"
                     onError={(e) => {
                       e.currentTarget.src =
-                        "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg"
+                        "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
                     }}
                   />
                 </NavLink>
@@ -114,6 +121,141 @@ function HomePage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="footer_main">
+          <div className="footer_main">
+            <div className="footer_logo_div">
+              <img
+                src={logo}
+                alt="logo"
+                onError={(e) => {
+                  e.currentTarget.src = { logo };
+                }}
+              />
+              <div className="footer_logo_text">&nbsp;WinterTrails</div>
+            </div>
+            <div className="footer_first_row">
+              <div>
+                <div className="footer_first_row_header">Explore</div>
+                {/* <div>Countries</div>
+                <div>States</div> */}
+                <div className="footer_first_innertext">
+                  <NavLink className="footer_first_navlink" exact to="/resorts">
+                    Resorts
+                  </NavLink>
+                </div>
+                <div className="footer_first_innertext">
+                  <NavLink
+                    className="footer_first_navlink"
+                    exact
+                    to="/alltrails"
+                  >
+                    Trails
+                  </NavLink>
+                </div>
+              </div>
+              <div>
+                <div className="footer_first_row_header">Trails</div>
+                <div className="footer_first_innertext">
+                  {!user ? (
+                    <div>
+                      <HomePageloginModal />
+                    </div>
+                  ) : (
+                    <div>
+                      <NavLink
+                        className="footer_first_navlink"
+                        exact
+                        to="/trails"
+                      >
+                        My trails
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
+                <div className="footer_first_innertext">
+                  {!user ? (
+                    <div>
+                      <HomePageloginM />
+                    </div>
+                  ) : (
+                    <div>
+                      <NavLink
+                        className="footer_first_navlink"
+                        exact
+                        to="/trails/new"
+                      >
+                        Create trail
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div className="footer_first_row_header">Connections</div>
+                  <div>
+                    <div>
+                      <i
+                        style={{ color: "rgb(186,194,208)" }}
+                        className="fa-brands fa-linkedin"
+                      >
+                        &nbsp;
+                      </i>
+                      <a
+                        className="footer_first_navlink"
+                        href="https://www.linkedin.com/in/kevin-kim-a88429150"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Linkedin
+                      </a>
+                    </div>
+                    <div>
+                      <i
+                        style={{ color: "rgb(186,194,208)" }}
+                        className="fa-brands fa-square-github"
+                      >
+                        &nbsp;
+                      </i>
+                      <a
+                        className="footer_first_navlink"
+                        href="https://github.com/kevykim"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Github
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="footer_last_main">
+              <div className="footer_last_left">
+                <div>2022 WinterTrails&nbsp;•&nbsp;</div>
+                <div>Inspired by&nbsp;</div>
+                <a
+                  className="footer_last_navlink"
+                  href="https://www.alltrails.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  AllTrails
+                </a>
+                &nbsp;•&nbsp;
+                <a
+                  className="footer_last_navlink"
+                  href="https://github.com/kevykim/CapStone-Project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  More info
+                </a>
+              </div>
+              <div>{`English (US)`}</div>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -24,9 +24,12 @@
     font-size: 9.2pt;
 }
 
-/* .trail_detail_navlink {
-    border: 1px solid green;
-} */
+.trail_detail_navlink {
+    text-decoration: none;
+    color: rgb(132, 132, 132);
+}
+
+
 
 .trail_detail_navlink:hover {
     text-decoration: underline;
@@ -265,21 +268,30 @@
 
 }
 
+.trail_detail_actual_review {
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
+
 .trail_detail_review_img {
     width: 150px;
     height: 150px;
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 .trail_detail_bottom_reviewcomponents {
     word-break: break-all;
         white-space: pre-wrap;
-    width: 430px;
+    width: 480px;
 }
 
 .trail_detail_bottom_reviewinfo {
     display: flex;
     flex-direction: row;
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 

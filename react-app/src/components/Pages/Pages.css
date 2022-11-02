@@ -1,0 +1,101 @@
+.pages_main {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+
+.page_inner{
+    width: 1100px;
+    border: 1px solid rgb(205, 201, 200);
+    margin-top: 10px;
+    height: 1100px;
+}
+
+.pages_header {
+    font-size: 30pt;
+    font-family: "Roboto-Bold";
+    border-bottom: 1px solid rgb(205, 201, 200);
+    padding: 10px;
+}
+
+
+.pages_inner_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.pages_image {
+    width: 300px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.pages_navlink_divs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pages_navlink_divy {
+    padding: 10px;
+    border-bottom: 1px solid rgb(205, 201, 200);
+    width: 300px;
+    height: auto;
+}
+
+.pages_navlink_div {
+    padding: 15px;
+}
+
+.pages_navlink {
+    text-decoration: none;
+    display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: rgb(205, 201, 200);
+}
+
+.pages_navlink:hover {
+    text-decoration: underline;
+    color: rgb(60, 103, 148);
+}
+
+
+.pages_resort_header {
+    text-align: center;
+    font-size: 15pt;
+    font-family: "Roboto-Bold";
+}
+
+
+
+.pages_detail_top_text {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-right: 680px;
+    color: rgb(132, 132, 132);
+    border-bottom: 1px solid rgb(205, 201, 200);
+    width: 100%;
+    font-size: 9.2pt;
+}
+
+.pages_detail_navlink {
+    text-decoration: none;
+    color: rgb(132, 132, 132);
+}
+
+.pages_detail_text {
+    color: rgb(132, 132, 132);
+}
+
+
+
+.pages_detail_navlink:hover {
+    text-decoration: underline;
+}

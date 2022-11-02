@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 796381102e0b
+Revision ID: 68a1bd440750
 Revises: 
-Create Date: 2022-11-01 00:07:04.714654
+Create Date: 2022-11-02 08:27:20.570981
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '796381102e0b'
+revision = '68a1bd440750'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -37,7 +37,7 @@ def upgrade():
     sa.Column('state', sa.String(length=100), nullable=False),
     sa.Column('resort', sa.String(length=100), nullable=False),
     sa.Column('difficulty', sa.String(length=100), nullable=False),
-    sa.Column('description', sa.String(length=1000), nullable=False),
+    sa.Column('description', sa.String(length=500), nullable=False),
     sa.Column('length', sa.Float(), nullable=False),
     sa.Column('elevation', sa.Integer(), nullable=False),
     sa.Column('routeType', sa.String(length=100), nullable=False),
@@ -52,7 +52,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('trailId', sa.Integer(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
-    sa.Column('review', sa.String(length=1000), nullable=False),
+    sa.Column('review', sa.String(length=500), nullable=False),
     sa.Column('stars', sa.Integer(), nullable=False),
     sa.Column('reviewImg', sa.String(length=255), nullable=True),
     sa.Column('createdAt', sa.String(length=255), nullable=False),

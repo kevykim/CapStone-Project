@@ -145,3 +145,147 @@
     word-break: break-all;
         white-space: pre-wrap;
 }
+
+
+
+
+.homepage_modal_button {
+    border: none;
+    background: none;
+    color: rgb(186, 194, 208);
+    padding: 0px;
+    font-size: 11pt;
+}
+
+.homepage_modal_button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.homepage_modal_cancel_button {
+    border: none;
+        background: white;
+        width: 50px;
+        height: 50px;
+        font-size: 25pt;
+        padding: 0px;
+        margin-right: 200px;
+}
+
+.homepage_modal_cancel_button:hover {
+    cursor: pointer;
+    background: lightgray;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage_modal_notlogged_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.homepage_modal_notlogged {
+    height: 120px;
+    width: 240px;
+    padding: 30px;
+}
+
+.homepage_modal_notlogged_navlink {
+    text-decoration: none;
+    color: white;
+    border: 1px solid lightgray;
+    background: rgb(60, 103, 148);
+    width: 130px;
+    height: 47px;
+    text-align: center;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage_modal_notlogged_navlink:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+.footer_main {
+    background: rgb(60, 103, 148);
+    width: 1265px;
+}
+
+
+.footer_logo_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1000px;
+    padding: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.footer_logo_text {
+    color: white;
+    font-size: 18pt;
+}
+
+.footer_first_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.footer_first_row_header {
+    font-size: 16pt;
+    font-family: "Roboto-Bold";
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer_first_innertext {
+    font-size: 11pt;
+    color: rgb(186,194,208);
+    margin-bottom: 5px;
+}
+
+.footer_first_navlink {
+    text-decoration: none;
+    color: rgb(186, 194, 208);
+}
+
+.footer_first_navlink:hover {
+    text-decoration: underline;
+}
+
+.footer_last_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgb(244, 243, 243);
+    color: gray;
+}
+
+.footer_last_left {
+    display: flex;
+        flex-direction: row;
+}
+
+.footer_last_navlink {
+    text-decoration: none;
+    color: gray;
+}
+
+.footer_last_navlink:hover {
+    text-decoration: underline;
+}

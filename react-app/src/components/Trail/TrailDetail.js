@@ -53,10 +53,9 @@ function TrailDetail() {
       <>
         <div className="trail_detail_main">
           <div className="trail_detail_top_text">
-            <div>
+            <div className="trail_detail_navlink">
               <NavLink
                 style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-                classname="trail_detail_navlink"
                 exact
                 to={`/${trail?.country}`}
               >
@@ -64,21 +63,19 @@ function TrailDetail() {
               </NavLink>
             </div>
             <div>&nbsp;›&nbsp;</div>
-            <div classname="trail_detail_navlink">
+            <div className="trail_detail_navlink">
               <NavLink
-                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
+                style={{ textDecoration: "none", color: "rgb(132, 132, 132)"}}
                 exact
                 to={`/${trail?.state}`}
-                classname="trail_detail_navlink"
               >
                 {trail?.state}
               </NavLink>
             </div>
             <div>&nbsp;›&nbsp;</div>
-            <div>
+            <div className="trail_detail_navlink">
               <NavLink
                 style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-                classname="trail_detail_navlink"
                 exact
                 to={`/${trail?.resort}`}
               >
@@ -581,7 +578,7 @@ function TrailDetail() {
                               ></i>
                             </div>
                           )}
-                          <div>{review.review}</div>
+                          <div className="trail_detail_actual_reviews">{review.review}</div>
                         </div>
                         <div>
                           <div>

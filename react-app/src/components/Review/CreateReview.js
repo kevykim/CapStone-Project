@@ -24,8 +24,8 @@ function CreateReview({setShowModal, user}) {
   useEffect(() => {
     const errors = [];
     if (stars <= 0 || stars > 5) errors.push("Select a star between 1 to 5");
-    if (reviews.length < 20 || reviews.length > 255)
-      errors.push("Please add a review between 21 to 255 characters");
+    if (reviews.length < 20 || reviews.length > 500)
+      errors.push("Please add a review between 21 to 500 characters");
     if (
       (!reviewImg.includes("jpg") &&
         !reviewImg.includes("png") &&
@@ -74,6 +74,9 @@ function CreateReview({setShowModal, user}) {
     <div className="create_review_main">
       {!user ? (
         <div className="create_review_notlogged_main">
+          <button className="create_review_notlogged_cancel_button" onClick={closeModal}>
+            x
+          </button>
           <div className="create_review_notlogged">
             You must log in to make a review...
           </div>
@@ -86,12 +89,14 @@ function CreateReview({setShowModal, user}) {
           </NavLink>
         </div>
       ) : trail?.userId === user?.id ? (
-        <div className='create_review_owned_main'>
-          <button className='create_review_cancel_button' onClick={closeModal}>x</button>
-          <div className='create_review_notlogged'>
-          Cannot make reviews on your own trails...
+        <div className="create_review_owned_main">
+          <button className="create_review_cancel_button" onClick={closeModal}>
+            x
+          </button>
+          <div className="create_review_notlogged">
+            Cannot make reviews on your own trails...
           </div>
-          </div>
+        </div>
       ) : (
         <form className="create_review_form" onSubmit={onSubmit}>
           <div className="create_review_cancel">
@@ -139,9 +144,9 @@ function CreateReview({setShowModal, user}) {
               ></textarea>
               {validations.length > 0 &&
                 submitted === true &&
-                (reviews.length < 20 || reviews.length > 255) && (
+                (reviews.length < 20 || reviews.length > 500) && (
                   <div className="create_review_error">
-                    Please add a review between 21 to 255 characters
+                    Please add a review between 21 to 500 characters
                   </div>
                 )}
             </div>

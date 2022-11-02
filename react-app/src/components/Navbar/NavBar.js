@@ -15,21 +15,23 @@ const NavBar = () => {
   await dispatch(thunkDemoUser())
   }
   return (
-    <div>
+    <div className="navbar_main">
       <div className="navbar_div">
-          <NavLink className='winter_trail_text' exact to="/">
         <div className="winter_trail_div">
+          <NavLink className='winter_trail_text' exact to="/">
+            <div style={{display:'flex', flexDirection:'row'}}>
             <div>
             <img className="winter_trail_image" src={logo} alt="Home"></img>
             </div>
             <div>WinterTrails</div>
-        </div>
+            </div>
           </NavLink>
+        </div>
         {/* <div className="sign_log_div"> */}
        {user ? (
         <ProfileButton user={user} />
        ) : (  <div>
-         <div className="navbar_div">
+         <div className="profile_nav_bar_div">
            <div className="sign_log_div">
              <button className="demo_user_button" onClick={democlick}>Demo User</button>
              <NavLink className="navlink_signup_text" exact to="/signup">

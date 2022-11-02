@@ -26,7 +26,7 @@ return (
             alt="boreal"
             onError={(event) => {
               event.currentTarget.src =
-                "https://cms.rideboreal.com/sites/boreal/files/inline-images/Boreal%20Trail%20Map.jpg"
+                "https://cms.rideboreal.com/sites/boreal/files/inline-images/Boreal%20Trail%20Map.jpg";
             }}
           ></img>
           <div className="more_modal_moreinfo">
@@ -50,7 +50,7 @@ return (
             alt="heavenly"
             onError={(event) => {
               event.currentTarget.src =
-                "https://static.evo.com/content/travel-guides/tahoe/heavenly/heavenly_trailmap.jpg"
+                "https://static.evo.com/content/travel-guides/tahoe/heavenly/heavenly_trailmap.jpg";
             }}
           />
           <div className="more_modal_moreinfo">
@@ -62,6 +62,78 @@ return (
               className="more_modal_alink"
             >
               Heavenly
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Mammoth Mountain" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://static.evo.com/content/travel-guides/ca/mammoth/mammoth_wintertrailmap_frontside.jpg"
+            alt="mammoth"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://static.evo.com/content/travel-guides/ca/mammoth/mammoth_wintertrailmap_frontside.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.mammothmountain.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Mammoth
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Bear Mountain" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://static.evo.com/content/travel-guides/ca/bigbear/17_map-1.png"
+            alt="bear"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://static.evo.com/content/travel-guides/ca/bigbear/17_map-1.png";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.bigbearmountainresort.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Bear Mountain
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Mountain High" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://res.cloudinary.com/liftopia/image/upload/c_fit,d_defaults:default_logo_1.png,f_auto,h_980,q_auto,w_980/v1/production/trail_maps/d05e41c2b8d2114c7a98a1a0154f38c5.jpg"
+            alt="mthighr"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://res.cloudinary.com/liftopia/image/upload/c_fit,d_defaults:default_logo_1.png,f_auto,h_980,q_auto,w_980/v1/production/trail_maps/d05e41c2b8d2114c7a98a1a0154f38c5.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.mthigh.com/site"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Mountain High
             </a>
             <div>&nbsp;for more info...</div>
           </div>

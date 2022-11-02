@@ -8,7 +8,7 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     trailId = db.Column(db.Integer, db.ForeignKey('trails.id'), nullable=False)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    review = db.Column(db.String(1000), nullable=False)
+    review = db.Column(db.String(500), nullable=False)
     stars = db.Column(db.Integer, nullable=False)
     reviewImg = db.Column(db.String(255))
     createdAt = db.Column(db.String(255), nullable=False, default=date.today())
@@ -34,3 +34,5 @@ class Review(db.Model):
             'traildifficulty': self.trails.difficulty if self.trails else None,
             'profileImg': self.users.profileImg if self.users else None
         }
+
+        
