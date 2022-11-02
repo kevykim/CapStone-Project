@@ -36,7 +36,7 @@ function Review() {
     <div className="my_review_main">
       <div className="my_review_inner_div">
         <div className="my_review_top_text">
-          <div>Members</div>
+          <div>Member</div>
           <div>&nbsp;›&nbsp;</div>
           <div>
             {user?.firstName}
