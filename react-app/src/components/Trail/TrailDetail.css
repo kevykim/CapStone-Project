@@ -24,9 +24,12 @@
     font-size: 9.2pt;
 }
 
-/* .trail_detail_navlink {
-    border: 1px solid green;
-} */
+.trail_detail_navlink {
+    text-decoration: none;
+    color: rgb(132, 132, 132);
+}
+
+
 
 .trail_detail_navlink:hover {
     text-decoration: underline;
