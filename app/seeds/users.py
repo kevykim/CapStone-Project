@@ -13,12 +13,15 @@ def seed_users():
         #HEAVENLY
     bobbie = User(
         username='Bobbie', firstName='Bob', lastName='Hart', email='bobbie@aa.io', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/afro_man_male_avatar-512.png')
+        #MAMMOTH
     jeff = User(
         username='Jeffellow', firstName='Jeff', lastName='Campbell', email='jeffcamp@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/man_male_avatar_portrait-512.png')
+        #BEAR
     ted = User(
         username='Tedster', firstName='Ted', lastName='Baker', email='thebaker@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/boy_male_avatar_portrait-512.png')
-    christy = User(
-        username='AznxChrissyx', firstName='Christy', lastName='Kim', email='christine314@yahoo.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/female_woman_avatar_portrait_1-512.png')
+        #MTHIGH
+    hope = User(
+        username='AznxHopex', firstName='Hope', lastName='Kim', email='hope314@yahoo.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/female_woman_avatar_portrait_1-512.png')
     peter = User(
         username='Spiderman321', firstName='Peter', lastName='Parker', email='therealspiderguy@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/indian_man_male_person-512.png')
     ron = User(
@@ -33,7 +36,7 @@ def seed_users():
     db.session.add(bobbie)
     db.session.add(jeff)
     db.session.add(ted)
-    db.session.add(christy)
+    db.session.add(hope)
     db.session.add(peter)
     db.session.add(ron)
     db.session.add(corey)
