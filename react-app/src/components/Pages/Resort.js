@@ -13,7 +13,7 @@ function Resort() {
           <div className="pages_header">Resorts</div>
           <div className="pages_inner_div">
             <div className="pages_navlink_div">
-              <NavLink className="pages_navlink" exact to="/boreal">
+              <NavLink className="pages_navlink" exact to="/Boreal Mountain Resort">
                 <img
                   className="pages_image"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Boreal_Mountain_Resort_-_panoramio.jpg/1200px-Boreal_Mountain_Resort_-_panoramio.jpg"
@@ -27,7 +27,7 @@ function Resort() {
               </NavLink>
             </div>
             <div className="pages_navlink_div">
-              <NavLink className="pages_navlink" exact to="/heavenly">
+              <NavLink className="pages_navlink" exact to="/Heavenly Lake Tahoe">
                 <img
                   className="pages_image"
                   src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"

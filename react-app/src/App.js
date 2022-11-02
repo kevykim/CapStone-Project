@@ -16,6 +16,8 @@ import Resort from './components/Pages/Resort';
 import Allthetrails from './components/Pages/Allthetrails';
 import USA from './components/Pages/USA';
 import California from './components/Pages/CA';
+import Boreal from './components/Pages/Boreal';
+import Heavenly from './components/Pages/Heavenly';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -66,17 +68,17 @@ function App() {
         <Route exact path="/alltrails">
           <Allthetrails />
         </Route>
-        <Route exact path="/United States Of America">
+        <Route exact path="/United States of America">
           <USA />
         </Route>
         <Route exact path='/California'>
           <California />
         </Route>
         <Route exact path='/Boreal Mountain Resort'>
-
+          <Boreal />
         </Route>
         <Route exact path='/Heavenly Lake Tahoe'>
-
+          <Heavenly />
         </Route>
         <Route>
           <h1>Page Not Found</h1>

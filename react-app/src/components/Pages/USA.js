@@ -5,6 +5,11 @@ function USA() {
   return (
     <div className="pages_main">
       <div className="page_inner">
+        <div className="pages_detail_top_text">
+          <div className="pages_detail_navlink">
+            United States of America
+          </div>
+        </div>
         <div className="pages_header">United States of America</div>
         <div className="pages_inner_div">
           <div className="pages_navlink_div">
