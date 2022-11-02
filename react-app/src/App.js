@@ -18,6 +18,7 @@ import USA from './components/Pages/USA';
 import California from './components/Pages/CA';
 import Boreal from './components/Pages/Boreal';
 import Heavenly from './components/Pages/Heavenly';
+import Mammoth from './components/Pages/Mammoth';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -79,6 +80,15 @@ function App() {
         </Route>
         <Route exact path='/Heavenly Lake Tahoe'>
           <Heavenly />
+        </Route>
+        <Route exact path='/Mammoth Mountain'>
+          <Mammoth />
+        </Route>
+        <Route exact path='/Bear Mountain'>
+
+        </Route>
+        <Route exact path='/Mountain High'>
+
         </Route>
         <Route>
           <h1>Page Not Found</h1>

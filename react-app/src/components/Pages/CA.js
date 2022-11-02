@@ -14,15 +14,13 @@ function California() {
               <NavLink
                 style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
                 exact
-                to='/United States of America'
+                to="/United States of America"
               >
                 United States of America
               </NavLink>
             </div>
             <div>&nbsp;›&nbsp;</div>
-            <div className="pages_detail_text">
-              California
-            </div>
+            <div className="pages_detail_text">California</div>
           </div>
           <div className="pages_header">California</div>
           <div className="pages_inner_div">
@@ -60,6 +58,60 @@ function California() {
                   }}
                 ></img>
                 Heavenly Lake Tahoe
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink
+                className="pages_navlink"
+                exact
+                to="/Mammoth Mountain"
+              >
+                <img
+                  className="pages_image"
+                  src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"
+                  alt="mammoth"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg";
+                  }}
+                ></img>
+                Mammoth Mountain
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink
+                className="pages_navlink"
+                exact
+                to="/Bear Mountain"
+              >
+                <img
+                  className="pages_image"
+                  src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"
+                  alt="bear"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg";
+                  }}
+                ></img>
+                Bear Mountain
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink
+                className="pages_navlink"
+                exact
+                to="/Mountain High"
+              >
+                <img
+                  className="pages_image"
+                  src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"
+                  alt="mthigh"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg";
+                  }}
+                ></img>
+                Mountain High
               </NavLink>
             </div>
             {/* <div>Mammoth</div>

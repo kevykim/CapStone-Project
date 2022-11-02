@@ -19,6 +19,18 @@ function Allthetrails() {
       (trail) => trail.resort === "Heavenly Lake Tahoe"
     );
 
+     const mammothFilter = trailArr.filter(
+       (trail) => trail.resort === "Mammoth Mountain"
+     );
+
+      const bearFilter = trailArr.filter(
+        (trail) => trail.resort === "Bear Mountain"
+      );
+
+       const mthighFilter = trailArr.filter(
+         (trail) => trail.resort === "Mountain High"
+       );
+
     useEffect(() => {
         dispatch(thunkGetTrail())
     }, [dispatch])
@@ -56,8 +68,22 @@ function Allthetrails() {
             ))}
           </div>
           <div className="pages_navlink_divy">
-            <div className="pages_resort_header">Mammoth</div>
-            {heavenlyFilter.map((trail, i) => (
+            <div className="pages_resort_header">Mammoth Mountain</div>
+            {mammothFilter.map((trail, i) => (
+              <div className="pages_navlink_div" key={i}>
+                <NavLink
+                  className="pages_navlink"
+                  exact
+                  to={`/trails/${trail?.id}`}
+                >
+                  {trail.name}
+                </NavLink>
+              </div>
+            ))}
+          </div>
+          <div className="pages_navlink_divy">
+            <div className="pages_resort_header">Bear Mountain</div>
+            {bearFilter.map((trail, i) => (
               <div className="pages_navlink_div" key={i}>
                 <NavLink
                   className="pages_navlink"
@@ -71,21 +97,7 @@ function Allthetrails() {
           </div>
           <div className="pages_navlink_divy">
             <div className="pages_resort_header">Mountain High</div>
-            {heavenlyFilter.map((trail, i) => (
-              <div className="pages_navlink_div" key={i}>
-                <NavLink
-                  className="pages_navlink"
-                  exact
-                  to={`/trails/${trail?.id}`}
-                >
-                  {trail.name}
-                </NavLink>
-              </div>
-            ))}
-          </div>
-          <div className="pages_navlink_divy">
-            <div className="pages_resort_header">Big Bear</div>
-            {heavenlyFilter.map((trail, i) => (
+            {mthighFilter.map((trail, i) => (
               <div className="pages_navlink_div" key={i}>
                 <NavLink
                   className="pages_navlink"

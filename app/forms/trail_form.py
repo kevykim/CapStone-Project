@@ -31,7 +31,7 @@ country_choices = ["United States of America"]
 
 state_choices = ["California"]
 
-resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe"]
+resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe", "Mammoth Mountain", "Bear Mountain", "Mountain High"]
 
 difficulty_choices = ["Beginner", "Intermediate", "Black Diamond", "Double Black Diamond"]
 

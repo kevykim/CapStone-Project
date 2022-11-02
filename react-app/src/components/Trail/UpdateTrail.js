@@ -99,7 +99,7 @@ function UpdateTrail() {
 
   let state_choices = ["California"];
 
-  let resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe"];
+  let resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe", "Mammoth Mountain", "Bear Mountain", "Mountain High"];
 
   let difficulty_choices = [
     "Beginner",
