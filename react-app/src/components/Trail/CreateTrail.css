@@ -7,18 +7,40 @@
 
 .create_trail_form {
     width: 1100px; 
+    height: 1100px;
     display: flex;
-    margin-right: 60px;
+    flex-direction: row;
+    border-right: 1px solid rgb(205, 201, 200);
+        border-left: 1px solid rgb(205, 201, 200);
+        border-bottom: 1px solid rgb(205, 201, 200);
+}
+
+.create_trail_top_text {
+    display: flex;
+        flex-direction: row;
+        padding: 15px;
+        margin-right: 680px;
+        color: rgb(132, 132, 132);
+        font-size: 9.2pt;
+        width: 100%;
+}
+
+.create_trail_top_text_div {
+        border-bottom: 1px solid rgb(205, 201, 200);
+        width: 100%;
 }
 
 
 .create_trail_header {
     font-family: "Roboto-Bold";
-    font-size: 20pt;
+    font-size: 15pt;
+    padding: 15px;
+    background: rgb(242, 243,243);
 }
 
 .create_trail_inputs_div {
-    margin-top: 10px;
+    height: 85px;
+    padding: 0px 15px;
 }
 
 .create_trail_inputs {
@@ -52,4 +74,12 @@
 
 .create_trail_error {
     color: red;
+}
+
+
+
+.create_trail_map_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
