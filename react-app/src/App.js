@@ -19,6 +19,8 @@ import California from './components/Pages/CA';
 import Boreal from './components/Pages/Boreal';
 import Heavenly from './components/Pages/Heavenly';
 import Mammoth from './components/Pages/Mammoth';
+import Bear from './components/Pages/Bear';
+import Mthigh from './components/Pages/Mthigh';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -85,10 +87,10 @@ function App() {
           <Mammoth />
         </Route>
         <Route exact path='/Bear Mountain'>
-
+          <Bear />
         </Route>
         <Route exact path='/Mountain High'>
-
+          <Mthigh />
         </Route>
         <Route>
           <h1>Page Not Found</h1>

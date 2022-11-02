@@ -61,54 +61,42 @@ function California() {
               </NavLink>
             </div>
             <div className="pages_navlink_div">
-              <NavLink
-                className="pages_navlink"
-                exact
-                to="/Mammoth Mountain"
-              >
+              <NavLink className="pages_navlink" exact to="/Mammoth Mountain">
                 <img
                   className="pages_image"
-                  src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"
+                  src="https://freeskier.com/wp-content/uploads/2017/02/Mammoth1_Social.jpg"
                   alt="mammoth"
                   onError={(e) => {
                     e.currentTarget.src =
-                      "https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg";
+                      "https://freeskier.com/wp-content/uploads/2017/02/Mammoth1_Social.jpg";
                   }}
                 ></img>
                 Mammoth Mountain
               </NavLink>
             </div>
             <div className="pages_navlink_div">
-              <NavLink
-                className="pages_navlink"
-                exact
-                to="/Bear Mountain"
-              >
+              <NavLink className="pages_navlink" exact to="/Bear Mountain">
                 <img
                   className="pages_image"
-                  src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"
+                  src="https://www.mtnscoop.com/media/images/2018/12/Big-Bear-Mountain-1024x478.jpg"
                   alt="bear"
                   onError={(e) => {
                     e.currentTarget.src =
-                      "https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg";
+                      "https://www.mtnscoop.com/media/images/2018/12/Big-Bear-Mountain-1024x478.jpg";
                   }}
                 ></img>
                 Bear Mountain
               </NavLink>
             </div>
             <div className="pages_navlink_div">
-              <NavLink
-                className="pages_navlink"
-                exact
-                to="/Mountain High"
-              >
+              <NavLink className="pages_navlink" exact to="/Mountain High">
                 <img
                   className="pages_image"
-                  src="https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg"
+                  src="https://dangerouscupcakelifestyle.com/wp-content/uploads/2019/01/skiing1.jpg"
                   alt="mthigh"
                   onError={(e) => {
                     e.currentTarget.src =
-                      "https://wanderjobs.com/wp-content/uploads/2019/08/Heavenly-2.jpg";
+                      "https://dangerouscupcakelifestyle.com/wp-content/uploads/2019/01/skiing1.jpg";
                   }}
                 ></img>
                 Mountain High
