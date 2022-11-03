@@ -85,8 +85,7 @@ function CreateTrail() {
         history.push('/')
     }
 
-    console.log(validations)
-    console.log(length.length)
+ 
 
     let country_choices = ["United States of America"];
 

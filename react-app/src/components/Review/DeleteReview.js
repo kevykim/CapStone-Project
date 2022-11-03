@@ -11,6 +11,8 @@ function DeleteReview({review, setShowModal}) {
     const onDelete = async (event) => {
         await dispatch(thunkDeleteTrailReview(review.id))
         history.push('/reviews')
+        setShowModal(false);
+
     }
 
     const onKeep = (event) => {
