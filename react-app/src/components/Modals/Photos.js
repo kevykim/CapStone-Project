@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { thunkGetCurrentTrail, thunkGetTrail } from '../../store/trail'
+import {thunkGetTrail } from '../../store/trail'
 
 import './PhotosModal.css'
 
