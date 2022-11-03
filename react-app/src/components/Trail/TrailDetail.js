@@ -264,7 +264,7 @@ function TrailDetail() {
                     </div>
                   )}
                 </div>
-                <div>&nbsp;{`(${reviewArr.length})`}</div>
+                {/* <div>&nbsp;{`(${reviewArr.length})`}</div> */}
               </div>
             </div>
             <div className="trail_detail_image_thirdline">{trail?.resort}</div>
@@ -656,7 +656,7 @@ function TrailDetail() {
                           <div className="trail_detail_sidebar_review_info">
                             <i className="fa-solid fa-star fa-sm"></i>
                             <div>{trail?.averagestar}&nbsp;</div>
-                            <div>{`(${reviewArr.length})`}</div>
+                            {/* <div>{`(${reviewArr.length})`}</div> */}
                           </div>
                         </div>
                         <div className="trail_detail_sidebar_name">

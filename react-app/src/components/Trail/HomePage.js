@@ -110,9 +110,9 @@ function HomePage() {
                       {trail.averagestar}
                       &nbsp;
                     </div>
-                    <div className="homepage_trail_totalreview">
+                    {/* <div className="homepage_trail_totalreview">
                       {`(${trail.reviews.length})`}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="homepage_trail_name">{trail.name}</div>
