@@ -32,6 +32,9 @@ function Review() {
     year: "numeric",
   };
 
+  let defaultImg =
+    "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+
   return (
     <div className="my_review_main">
       <div className="my_review_inner_div">
@@ -66,7 +69,7 @@ function Review() {
                   <div className="my_review_box_img_div">
                     <img
                       className="my_review_box_img_main"
-                      src={user?.profileImg}
+                      src={!user?.profileImg ? defaultImg : user?.profileImg}
                       alt="profileimg"
                       onError={(event) => {
                         event.currentTarget.src =

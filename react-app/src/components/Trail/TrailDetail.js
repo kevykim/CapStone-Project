@@ -49,6 +49,8 @@ function TrailDetail() {
       year: 'numeric'
     }
 
+    let defaultImg = "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"
+
     return (
       <>
         <div className="trail_detail_main">
@@ -440,11 +442,10 @@ function TrailDetail() {
                       <div className="trail_detail_img_div">
                         <img
                           className="trail_detail_img_main"
-                          src={review.profileImg}
+                          src={!review.profileImg ? defaultImg : review.profileImg}
                           alt="profilepic"
                           onError={(event) => {
-                            event.currentTarget.src =
-                              "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                            event.currentTarget.src = "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
                           }}
                         />
                       </div>

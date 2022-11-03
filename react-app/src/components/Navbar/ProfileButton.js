@@ -31,13 +31,16 @@ function ProfileButton({ user }) {
     dispatch(logout());
   };
 
+  let defaultImg =
+    "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+
   return (
     <>
       <div className="profile_button_main">
         <img
           onClick={openMenu}
           className="profile_img_main"
-          src={user?.profileImg}
+          src={!user?.profileImg ? defaultImg : user?.profileImg}
           alt="profile-pic"
           onError={event => {event.currentTarget.src =
             "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"}}
