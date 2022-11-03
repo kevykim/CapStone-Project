@@ -30,7 +30,8 @@ function CreateReview({setShowModal, user}) {
       (!reviewImg.includes("jpg") &&
         !reviewImg.includes("png") &&
         !reviewImg.includes("jpeg") &&
-        !reviewImg.includes("svg")) ||
+        !reviewImg.includes("svg") &&
+        !reviewImg.includes(".gif")) ||
       (!reviewImg.includes("https") && !reviewImg.includes("http"))
     )
       errors.push("Please enter a valid url image");
