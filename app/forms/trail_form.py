@@ -7,18 +7,18 @@ from app.models import Trail
 
 def namechecker(form, field):
     name = field.data
-    if len(name) < 5:
-        raise ValidationError('Please enter a trail name longer than 5 characters.')
+    if len(name) < 5 or len(name) >= 41:
+        raise ValidationError('Trail name must be between 5 to 40 characters')
 
 def descriptionchecker(form, field):
     description = field.data
-    if len(description) < 20:
-        raise ValidationError('Please enter a description longer than 20 characters.')
+    if len(description) < 20 or len(description) >= 501 :
+        raise ValidationError('Trail description must be between 20 to 500 characters')
 
 # def elevationchecker(form, field):
 #     elevation = field.data
-#     if '.' in elevation:
-#         raise ValidationError('Only whole numbers are allowed.')
+#     if float(elevation) % 1 != 0:
+#         raise ValidationError("Please enter a whole number")
 
 def imagechecker(form, field):
     image = field.data
@@ -45,6 +45,6 @@ class TrailForm(FlaskForm):
     difficulty = SelectField('difficulty', choices = difficulty_choices, validators=[DataRequired('Please select a difficulty.')])
     description = TextAreaField('description', validators=[DataRequired(), descriptionchecker])
     length = DecimalField('length', validators=[DataRequired()], places=1)
-    elevation = IntegerField('elevation', validators=[DataRequired()])
+    elevation = IntegerField('elevation', validators=[DataRequired('Please enter a elevation')])
     routeType = SelectField('routeType', choices = routeType_choices, validators=[DataRequired('Please select a route type.')])
     previewImg = StringField('previewImg', validators=[DataRequired(), imagechecker])
