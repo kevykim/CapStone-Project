@@ -1,0 +1,30 @@
+
+import { NavLink } from 'react-router-dom';
+import './PageNotFound.css'
+
+
+function PageNotFound() {
+
+    return (
+      <div className="pagenotfound_main">
+        <div className="pagenotfound_inner">
+          <div>
+            <div classname="pagenotfound_image">
+              <img
+                style={{width:'1098px', height:'898px', objectFit:'cover', position:'relative'}}
+                src="https://images.pexels.com/photos/10843099/pexels-photo-10843099.jpeg"
+                alt="notfound"
+              />
+            </div>
+            <div>
+            <div className='pagenotfound_text'>Page not found...</div>
+            <NavLink className='pagenotfound_navlink' exact to='/'>Return Home</NavLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+}
+
+
+export default PageNotFound

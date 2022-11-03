@@ -25,6 +25,7 @@ import Beginner from './components/Pages/beginner';
 import Intermediate from './components/Pages/intermediate';
 import BlackDiamond from './components/Pages/blackdiamond';
 import DoubleBlackDiamond from './components/Pages/doubleblackdiamond';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -109,7 +110,7 @@ function App() {
           <DoubleBlackDiamond />
         </Route>
         <Route>
-          <h1>Page Not Found</h1>
+          <PageNotFound />
         </Route>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
