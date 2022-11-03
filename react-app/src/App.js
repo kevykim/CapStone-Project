@@ -21,6 +21,7 @@ import Heavenly from './components/Pages/Heavenly';
 import Mammoth from './components/Pages/Mammoth';
 import Bear from './components/Pages/Bear';
 import Mthigh from './components/Pages/Mthigh';
+import Beginner from './components/Pages/beginner';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -91,6 +92,18 @@ function App() {
         </Route>
         <Route exact path='/Mountain High'>
           <Mthigh />
+        </Route>
+        <Route exact path='/beginner'>
+          <Beginner />
+        </Route>
+        <Route exact path='/intermediate'>
+
+        </Route>
+        <Route exact path='/blackdiamond'>
+
+        </Route>
+        <Route exact path='/doubleblackdiamond'>
+
         </Route>
         <Route>
           <h1>Page Not Found</h1>
