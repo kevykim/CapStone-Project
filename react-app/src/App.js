@@ -22,6 +22,9 @@ import Mammoth from './components/Pages/Mammoth';
 import Bear from './components/Pages/Bear';
 import Mthigh from './components/Pages/Mthigh';
 import Beginner from './components/Pages/beginner';
+import Intermediate from './components/Pages/intermediate';
+import BlackDiamond from './components/Pages/blackdiamond';
+import DoubleBlackDiamond from './components/Pages/doubleblackdiamond';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -97,13 +100,13 @@ function App() {
           <Beginner />
         </Route>
         <Route exact path='/intermediate'>
-
+          <Intermediate />
         </Route>
         <Route exact path='/blackdiamond'>
-
+          <BlackDiamond />
         </Route>
         <Route exact path='/doubleblackdiamond'>
-
+          <DoubleBlackDiamond />
         </Route>
         <Route>
           <h1>Page Not Found</h1>
