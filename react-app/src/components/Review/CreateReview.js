@@ -201,7 +201,7 @@ function CreateReview({setShowModal, user}) {
             <div className="create_review_submit">
               <button
                 type="submit"
-                disabled={validations.length > 0 && submitted}
+                // disabled={validations.length > 0 && submitted}
                 className="create_review_submit_button"
               >
                 Submit

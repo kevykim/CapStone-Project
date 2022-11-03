@@ -33,7 +33,12 @@
 
 .profile_dropdown_navlink {
     text-decoration: none;
+    height: 42px;
+    width: 100%;
     color: rgb(62, 62, 62);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 
@@ -42,7 +47,6 @@
     width: 198px;
     height: 42px;
     align-items: center;
-    cursor: pointer;
     padding: 0px 16px;
     background: white;
     color: rgb(62,62,62);
