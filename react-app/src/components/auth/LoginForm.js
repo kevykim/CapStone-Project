@@ -42,12 +42,20 @@ const LoginForm = () => {
           className="log_in_image"
           src="https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg"
           alt="login"
+          onError={(event) => {
+            event.currentTarget.src =
+              "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+          }}
         />
       </div>
       <form className="log_in_form" onSubmit={onLogin}>
         <div className="let_going_text">Log in and let's get going</div>
         <div>
           <div className="log_in_inputs_div">
+            <div className="log_in_label_div">
+              <div>Email</div>
+              {errors.length > 0 && <div className="log_in_error">&nbsp;*</div>}
+            </div>
             <input
               name="email"
               type="text"
@@ -72,6 +80,18 @@ const LoginForm = () => {
               )}
           </div>
           <div className="log_in_inputs_div">
+            <div className="log_in_label_div">
+              <div>Password</div>
+              {errors.includes("Please enter your password") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes("Password was incorrect.") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes("No such user exists.") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : (
+                <div></div>
+              )}
+            </div>
             <input
               name="password"
               type="password"
@@ -84,6 +104,13 @@ const LoginForm = () => {
               errors.includes("Please enter your password") && (
                 <div className="log_in_error">Please enter your password</div>
               )}
+            {errors.length > 0 &&
+              errors.includes("Password was incorrect.") && (
+                <div className="sign_up_error">Password was incorrect</div>
+              )}
+            {errors.length > 0 && errors.includes("No such user exists.") && (
+              <div className="log_in_error">No such user exists</div>
+            )}
           </div>
           <div className="log_in_inputs_div">
             <button className="log_in_button_form" type="submit">

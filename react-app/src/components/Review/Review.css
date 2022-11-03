@@ -99,6 +99,8 @@
 
 .my_review_main_review {
     padding: 4px 20px;
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .my_review_main_buttons {

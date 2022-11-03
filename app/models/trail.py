@@ -8,7 +8,7 @@ class Trail(db.Model):
     __tablename__ = 'trails'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(40), nullable=False)
     country = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100), nullable=False)
     resort = db.Column(db.String(100), nullable=False)

@@ -14,19 +14,20 @@ function UpdateReview({ setShowModal, review }) {
   const [stars, setStars] = useState(review.stars);
   const [reviews, setReviews] = useState(review.review);
   const [submitted, setSubmitted] = useState(false);
-  const [reviewImg, setReviewImg] = useState(review.reviewImg);
+  const [reviewImg, setReviewImg] = useState(review?.reviewImg);
   const [validations, setValidations] = useState([]);
 
   useEffect(() => {
     const errors = [];
     if (stars <= 0 || stars > 5) errors.push("Select a star between 1 to 5");
-    if (reviews.length < 20 || reviews.length > 500)
+    if (reviews.length < 20 || reviews.length >= 501)
       errors.push("Please add a review between 21 to 500 characters");
     if (
       (!reviewImg.includes("jpg") &&
         !reviewImg.includes("png") &&
         !reviewImg.includes("jpeg") &&
-        !reviewImg.includes("svg")) ||
+        !reviewImg.includes("svg") &&
+        !reviewImg.includes(".gif")) ||
       (!reviewImg.includes("https") && !reviewImg.includes("http"))
     )
       errors.push("Please enter a valid url image");
@@ -64,7 +65,8 @@ function UpdateReview({ setShowModal, review }) {
     (!reviewImg.includes(".jpg") &&
       !reviewImg.includes(".png") &&
       !reviewImg.includes(".jpeg") &&
-      !reviewImg.includes(".svg")) ||
+      !reviewImg.includes(".svg") &&
+      !reviewImg.includes(".gif")) ||
     (!reviewImg.includes("https") && !reviewImg.includes("http"));
 
   return (
@@ -78,6 +80,14 @@ function UpdateReview({ setShowModal, review }) {
         <div className="update_review_trail_name_header">{trail?.name}</div>
         <div className="update_review_inner">
           <div className="update_review_inner_div">
+            <div className="update_review_label_div">
+              <div>Stars</div>
+              {validations.length > 0 &&
+                submitted === true &&
+                (stars <= 0 || stars > 5) && (
+                  <div className="update_review_error">&nbsp;*</div>
+                )}
+            </div>
             <select
               name="stars"
               value={stars}
@@ -102,6 +112,14 @@ function UpdateReview({ setShowModal, review }) {
               )}
           </div>
           <div className="update_review_inner_div_textarea">
+            <div className="update_review_label_div">
+              <div>Review</div>
+              {validations.length > 0 &&
+                submitted === true &&
+                (reviews.length < 20 || reviews.length >= 501) && (
+                  <div className="update_review_error">&nbsp;*</div>
+                )}
+            </div>
             <textarea
               type="text-area"
               name="review"
@@ -112,13 +130,16 @@ function UpdateReview({ setShowModal, review }) {
             ></textarea>
             {validations.length > 0 &&
               submitted === true &&
-              (reviews.length < 20 || reviews.length > 500) && (
+              (reviews.length < 20 || reviews.length >= 501) && (
                 <div className="update_review_error">
                   Please add a review between 21 to 500 characters
                 </div>
               )}
           </div>
           <div className="update_review_inner_div_image">
+            <div className="update_review_label_div">
+              <div>Review Image (Optional)</div>
+            </div>
             <input
               type="text"
               name="reviewImg"

@@ -42,7 +42,7 @@
 .update_review_form {
     padding: 30px;
     width: 524px;
-    height: 490px;
+    height: 590px;
     display: flex;
     flex-direction: column;
 
@@ -62,7 +62,7 @@
 }
 
 .update_review_inner_div {
-    height: 45px;
+    height: 75px;
 }
 
 .update_review_input_inner {
@@ -80,11 +80,11 @@
 }
 
 .update_review_inner_div_textarea {
-    height: 145px;
+    height: 185px;
 }
 
 .update_review_inner_div_image {
-    height: 40px;
+    height: 75px;
 }
 
 .update_review_input_image {
@@ -123,4 +123,8 @@
 .update_review_error {
     color: red;
     font-size: 11pt;
+}
+
+.update_review_label_div {
+    display: flex;
 }

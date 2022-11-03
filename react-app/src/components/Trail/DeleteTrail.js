@@ -13,6 +13,8 @@ function DeleteTrail({trail, setShowModal}) {
     const onDelete = async event => {
         await dispatch(thunkDeleteTrail(trail.id))
         history.push('/trails')
+        setShowModal(false);
+
     }
 
     const onKeep = (event) => {

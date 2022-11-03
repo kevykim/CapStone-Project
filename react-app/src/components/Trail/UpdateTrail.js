@@ -36,22 +36,32 @@ function UpdateTrail() {
 
   useEffect(() => {
     let errors = [];
-    if (name?.length < 5 || name?.length === 0)
-      errors.push("Please enter a trail name longer than 5 characters");
+    if (name?.length < 5 || name?.length >= 41)
+      errors.push("Trail name must be between 5 to 40 characters");
     if (!country) errors.push("Please select a country");
     if (!state) errors.push("Please select a state");
     if (!resort) errors.push("Please select a resort");
     if (!difficulty) errors.push("Please select a difficulty");
-    if (description?.length < 20 || description?.length === 0)
-      errors.push("Please enter a description longer than 20 characters.");
-    if (!length) errors.push("Please enter a valid length number");
-    if (!elevation) errors.push("Please enter a valid elevation number");
+    if (description?.length < 20 || description?.length >= 501)
+      errors.push("Trail description must be between 20 to 500 characters");
+    if (!length || length >= 5.1 || length < 0.3 || isNaN(length))
+      errors.push("Please enter a number between 0.3 to 5.0");
+    if (length?.length > 3)
+      errors.push("Enter a whole number or a decimal in the tenths place");
+    if (
+      elevation % 1 !== 0 ||
+      elevation >= 12001 ||
+      elevation < 3000 ||
+      !elevation
+    )
+      errors.push("Please enter a whole number between 3,000 to 12,000");
     if (!routeType) errors.push("Please select a route type");
     if (
-      (!previewImg?.includes("jpg") &&
-        !previewImg?.includes("png") &&
-        !previewImg?.includes("jpeg") &&
-        !previewImg?.includes("svg")) ||
+      (!previewImg?.includes(".jpg") &&
+        !previewImg?.includes(".png") &&
+        !previewImg?.includes(".jpeg") &&
+        !previewImg?.includes(".svg") &&
+        !previewImg?.includes(".gif")) ||
       (!previewImg?.includes("https") && !previewImg?.includes("http"))
     )
       errors.push("Please enter a valid url image");
@@ -116,7 +126,8 @@ function UpdateTrail() {
     (!previewImg?.includes(".jpg") &&
       !previewImg?.includes(".png") &&
       !previewImg?.includes(".jpeg") &&
-      !previewImg?.includes(".svg")) ||
+      !previewImg?.includes(".svg") &&
+      !previewImg?.includes(".gif")) ||
     (!previewImg?.includes("https") && !previewImg?.includes("http"));
 
   return (
@@ -151,6 +162,14 @@ function UpdateTrail() {
               }}
             >
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Name</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    (name?.length < 5 || name?.length >= 41) && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <input
                   name="name"
                   type="text"
@@ -161,13 +180,19 @@ function UpdateTrail() {
                 />
                 {validations.length > 0 &&
                   submitted === true &&
-                  (name?.length < 5 || name?.length === 0) && (
+                  (name?.length < 5 || name?.length >= 41) && (
                     <div className="update_trail_error">
-                      Please enter a trail name longer than 5 characters
+                      Trail name must be between 5 to 40 characters
                     </div>
                   )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Country</div>
+                  {validations.length > 0 && submitted === true && !country && (
+                    <div className="update_trail_error">&nbsp;*</div>
+                  )}
+                </div>
                 <select
                   name="country"
                   value={country}
@@ -190,6 +215,12 @@ function UpdateTrail() {
                 )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>State</div>
+                  {validations.length > 0 && submitted === true && !state && (
+                    <div className="update_trail_error">&nbsp;*</div>
+                  )}
+                </div>
                 <select
                   name="state"
                   value={state}
@@ -212,6 +243,12 @@ function UpdateTrail() {
                 )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Resort</div>
+                  {validations.length > 0 && submitted === true && !resort && (
+                    <div className="update_trail_error">&nbsp;*</div>
+                  )}
+                </div>
                 <select
                   name="resort"
                   value={resort}
@@ -234,6 +271,14 @@ function UpdateTrail() {
                 )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Difficulty</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    !difficulty && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <select
                   name="difficulty"
                   value={difficulty}
@@ -258,6 +303,15 @@ function UpdateTrail() {
                   )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Description</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    (description?.length < 20 ||
+                      description?.length >= 501) && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <textarea
                   name="description"
                   type="text-area"
@@ -268,43 +322,87 @@ function UpdateTrail() {
                 ></textarea>
                 {validations.length > 0 &&
                   submitted === true &&
-                  description.length < 20 && (
+                  (description?.length < 20 || description?.length >= 501) && (
                     <div className="update_trail_error">
-                      Please enter a description longer than 20 characters.
+                      Trail description must be between 20 to 500 characters
                     </div>
                   )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Length</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    (!length ||
+                      length >= 5.1 ||
+                      length < 0.3 ||
+                      length?.length > 3 ||
+                      isNaN(length)) && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <input
                   name="length"
-                  type="number"
+                  type="text"
                   placeholder="Length"
                   value={length}
                   onChange={(event) => setLength(event.target.value)}
                   className="update_trail_inputs"
                 />
-                {validations.length > 0 && submitted === true && !length && (
+                {validations.length > 0 &&
+                submitted === true &&
+                (!length || length >= 5.1 || length < 0.3) ? (
                   <div className="update_trail_error">
-                    Please enter a valid length number
+                    Please enter a number between 0.3 to 5.0
                   </div>
+                ) : (
+                  (length?.length > 3 || isNaN(length)) && (
+                    <div className="update_trail_error">
+                      Enter a whole number or a decimal in the tenths place
+                    </div>
+                  )
                 )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Elevation</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    (elevation % 1 !== 0 ||
+                      elevation >= 12001 ||
+                      elevation < 3000 ||
+                      !elevation) && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <input
                   name="elevation"
-                  type="number"
+                  type="text"
                   placeholder="Elevation"
                   value={elevation}
                   onChange={(event) => setElevation(event.target.value)}
                   className="update_trail_inputs"
                 />
-                {validations.length > 0 && submitted === true && !elevation && (
-                  <div className="update_trail_error">
-                    Please enter a valid elevation number
-                  </div>
-                )}
+                {validations.length > 0 &&
+                  submitted === true &&
+                  (elevation % 1 !== 0 ||
+                    elevation >= 12001 ||
+                    elevation < 3000 ||
+                    !elevation) && (
+                    <div className="update_trail_error">
+                      Please enter a whole number between 3000 to 12000
+                    </div>
+                  )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Route Type</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    !routeType && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <select
                   name="routeType"
                   value={routeType}
@@ -327,6 +425,14 @@ function UpdateTrail() {
                 )}
               </div>
               <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>Trail image</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    imageValidate && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
                 <input
                   name="previewImg"
                   type="text"

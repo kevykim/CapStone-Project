@@ -1,14 +1,21 @@
-
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { thunkGetCurrentTrail, thunkGetTrail } from '../../store/trail'
 
 import './PhotosModal.css'
 
 
 function Photos({trail, setShowModal}) {
+  const dispatch = useDispatch()
     const reviewImages = trail.reviews.map(reviews => reviews.reviewImg)
 
         const closeModal = (event) => {
             setShowModal(false)
         }
+
+    useEffect(() => {
+      dispatch(thunkGetTrail())
+    }, [dispatch])
 
     return (
       <>

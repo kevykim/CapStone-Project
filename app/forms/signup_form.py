@@ -22,16 +22,28 @@ def username_exists(form, field):
 def len_username(form, field):
     # Checking length of username
     username = field.data
-    if len(username) < 4:
-        raise ValidationError('Username must be longer than 4 characters.')
+    if len(username) < 4 or len(username) >= 26:
+        raise ValidationError('Username must be between 4 to 25 characters.')
+
+def len_firstname(form, field):
+    #Checking length of firstname
+    firstname = field.data
+    if len(firstname) >= 26:
+        raise ValidationError('First name must be less than 25 characters')
+
+def len_lastname(form, field):
+    #Checking length of firstname
+    lastname = field.data
+    if len(lastname) >= 26:
+        raise ValidationError('Last name must be less than 25 characters')        
 
 def passwordchecker(form, field):
     # Checking password if less than 7 characters and includes a number
     password = field.data
     if "0" not in password and "1" not in password and "2" not in password and "3" not in password and "4" not in password and "5" not in password and "6" not in password and "7" not in password and "8" not in password and "9" not in password:
         raise ValidationError("Password must include at least one number")
-    elif len(password) < 7:
-        raise ValidationError('Password must be longer than 7 characters.')
+    elif len(password) < 7 or len(password) >= 31:
+        raise ValidationError('Password must be between 7 to 30 characters')
 
 def emailchecker(form, field):
     # Checking for email 
@@ -41,7 +53,7 @@ def emailchecker(form, field):
 
 def imagechecker(form, field):
     image = field.data
-    if ('https' not in image and 'http' not in image) or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image):
+    if ('https' not in image and 'http' not in image) or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image) and ('.png' not in image):
         raise ValidationError('Please enter a valid URL.')
 
 
@@ -50,8 +62,8 @@ def imagechecker(form, field):
 class SignUpForm(FlaskForm):
     username = StringField(
         'username', validators=[DataRequired(message='Please enter a username'), username_exists, len_username])
-    firstName = StringField('firstName', validators=[DataRequired(message='Please enter a first name.')])
-    lastName = StringField('lastName', validators=[DataRequired(message='Please enter a last name')])
+    firstName = StringField('firstName', validators=[DataRequired(message='Please enter a first name.'), len_firstname])
+    lastName = StringField('lastName', validators=[DataRequired(message='Please enter a last name'), len_lastname])
     email = StringField('email', validators=[DataRequired(message='Please enter a email'), user_exists, emailchecker])
     password = StringField('password', validators=[DataRequired(message='Please enter a password'), passwordchecker])
-    # profileImg = StringField('profileImg', validators=[Optional(), URL(require_tld=True, message='Please enter a valid URL.'), imagechecker])
+    profileImg = StringField('profileImg', validators=[Optional(), imagechecker])

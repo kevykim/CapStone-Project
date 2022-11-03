@@ -8,11 +8,11 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
-    firstName = db.Column(db.String(40), nullable=False)
-    lastName = db.Column(db.String(40), nullable=False)
-    hashed_password = db.Column(db.String(255), nullable=False)
-    email = db.Column(db.String(255), nullable=False, unique=True)
+    username = db.Column(db.String(25), nullable=False, unique=True)
+    firstName = db.Column(db.String(25), nullable=False)
+    lastName = db.Column(db.String(25), nullable=False)
+    hashed_password = db.Column(db.String(30), nullable=False)
+    email = db.Column(db.String(50), nullable=False, unique=True)
     profileImg = db.Column(db.String(255))
 
     # Relationships
@@ -29,6 +29,7 @@ class User(db.Model, UserMixin):
 
     def check_password(self, password):
         return check_password_hash(self.password, password)
+
 
     def to_dict(self):
         return {

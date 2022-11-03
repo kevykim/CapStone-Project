@@ -14,9 +14,13 @@
    border-radius: 16px;
    z-index: 10;
    width: 400px;
-   height: 500px;
+   height: 600px;
     box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
     top: 300px;
+}
+
+.log_in_label_div {
+    display: flex;
 }
 
 .log_in_image_div {
@@ -51,7 +55,7 @@
 
 .log_in_inputs_div {
     /* margin-top: 10px; */
-    height: 110px;
+    height: 140px;
 }
 
 .log_in_inputs {

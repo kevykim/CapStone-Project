@@ -24,13 +24,14 @@ function CreateReview({setShowModal, user}) {
   useEffect(() => {
     const errors = [];
     if (stars <= 0 || stars > 5) errors.push("Select a star between 1 to 5");
-    if (reviews.length < 20 || reviews.length > 500)
+    if (reviews.length < 20 || reviews.length >= 501)
       errors.push("Please add a review between 21 to 500 characters");
     if (
       (!reviewImg.includes("jpg") &&
         !reviewImg.includes("png") &&
         !reviewImg.includes("jpeg") &&
-        !reviewImg.includes("svg")) ||
+        !reviewImg.includes("svg") &&
+        !reviewImg.includes(".gif")) ||
       (!reviewImg.includes("https") && !reviewImg.includes("http"))
     )
       errors.push("Please enter a valid url image");
@@ -67,14 +68,18 @@ function CreateReview({setShowModal, user}) {
     (!reviewImg.includes(".jpg") &&
       !reviewImg.includes(".png") &&
       !reviewImg.includes(".jpeg") &&
-      !reviewImg.includes(".svg")) ||
+      !reviewImg.includes(".svg") &&
+      !reviewImg.includes(".gif")) ||
     (!reviewImg.includes("https") && !reviewImg.includes("http"));
 
   return (
     <div className="create_review_main">
       {!user ? (
         <div className="create_review_notlogged_main">
-          <button className="create_review_notlogged_cancel_button" onClick={closeModal}>
+          <button
+            className="create_review_notlogged_cancel_button"
+            onClick={closeModal}
+          >
             x
           </button>
           <div className="create_review_notlogged">
@@ -110,6 +115,14 @@ function CreateReview({setShowModal, user}) {
           <div className="create_review_trail_name_header">{trail?.name}</div>
           <div className="create_review_inner">
             <div className="create_review_inner_div">
+              <div className="create_review_label_div">
+                <div>Stars</div>
+                {validations.length > 0 &&
+                  submitted === true &&
+                  (stars <= 0 || stars > 5) && (
+                    <div className="create_review_error">&nbsp;*</div>
+                  )}
+              </div>
               <select
                 name="stars"
                 value={stars}
@@ -134,6 +147,14 @@ function CreateReview({setShowModal, user}) {
                 )}
             </div>
             <div className="create_review_inner_div_textarea">
+              <div className="create_review_label_div">
+                <div>Review</div>
+                {validations.length > 0 &&
+                  submitted === true &&
+                  (reviews.length < 20 || reviews.length >= 501) && (
+                    <div className="create_review_error">&nbsp;*</div>
+                  )}
+              </div>
               <textarea
                 type="text-area"
                 name="review"
@@ -144,13 +165,16 @@ function CreateReview({setShowModal, user}) {
               ></textarea>
               {validations.length > 0 &&
                 submitted === true &&
-                (reviews.length < 20 || reviews.length > 500) && (
+                (reviews.length < 20 || reviews.length >= 501) && (
                   <div className="create_review_error">
                     Please add a review between 21 to 500 characters
                   </div>
                 )}
             </div>
             <div className="create_review_inner_div_image">
+              <div className="create_review_label_div">
+                <div>Review Image (Optional)</div>
+              </div>
               <input
                 type="text"
                 name="reviewImg"
