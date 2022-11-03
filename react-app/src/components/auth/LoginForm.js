@@ -42,6 +42,10 @@ const LoginForm = () => {
           className="log_in_image"
           src="https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg"
           alt="login"
+          onError={(event) => {
+            event.currentTarget.src =
+              "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+          }}
         />
       </div>
       <form className="log_in_form" onSubmit={onLogin}>

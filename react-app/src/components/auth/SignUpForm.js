@@ -61,6 +61,10 @@ const SignUpForm = () => {
           className="sign_up_image"
           src="https://images.pexels.com/photos/848612/pexels-photo-848612.jpeg"
           alt="signup"
+          onError={(event) => {
+            event.currentTarget.src =
+              "https://images.pexels.com/photos/848612/pexels-photo-848612.jpeg";
+          }}
         />
       </div>
       <form className="sign_up_form" onSubmit={onSignUp}>
