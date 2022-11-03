@@ -6,8 +6,8 @@ from app.models import Review
 
 def reviewchecker(form, field):
     review = field.data
-    if len(review) < 10:
-        raise ValidationError('Reviews must be 10 characters long')
+    if len(review) < 20 or len(review) >= 501:
+        raise ValidationError('Reviews must be between 21 to 500 characters')
 
 def imagechecker(form, field):
     image = field.data
