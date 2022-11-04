@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, NavLink } from 'react-router-dom'
 import { thunkGetCurrentReview } from '../../store/review'
-import { thunkGetCurrentTrail } from '../../store/trail'
+// import { thunkGetCurrentTrail } from '../../store/trail'
 import DeleteReviewModal from './DeleteReviewModal'
 import './Review.css'
 import UpdateReviewModal from './UpdateReviewModal'
@@ -16,8 +16,10 @@ function Review() {
   const currentReviews = useSelector((state) => state.review);
   const currentReviewsArr = Object.values(currentReviews);
 
+  const currentReviewOwned = currentReviewsArr.filter((review) => review?.userId === user?.id)
+
   useEffect(() => {
-    dispatch(thunkGetCurrentTrail());
+    // dispatch(thunkGetCurrentTrail());
     dispatch(thunkGetCurrentReview());
   }, [dispatch]);
   // console.log(currentReviewsArr)
@@ -51,7 +53,25 @@ function Review() {
         </div>
         <div className="my_review_border"></div>
         <div className="my_review_header">Reviews</div>
-        {currentReviewsArr !== 0 ? (
+        {currentReviewOwned.length === 0 ? (
+          <div className="my_review_noneleft_div">
+            <div className="my_review_noneleft_inner">
+              <div className="my_review_noneleft_text">No reviews here...</div>
+              <img
+                className="my_review_noneleft_img"
+                src="https://www.outsideonline.com/wp-content/uploads/2019/02/21/snowboard-instructor-fail_s.jpg"
+                alt="fail"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://www.outsideonline.com/wp-content/uploads/2019/02/21/snowboard-instructor-fail_s.jpg";
+                }}
+              />
+              <NavLink className="my_review_noneleft_navlink" exact to="/">
+                Return Home
+              </NavLink>
+            </div>
+          </div>
+        ) : (
           <div classname="my_review_box_main">
             {currentReviewsArr.map((review, i) => (
               <div
@@ -60,7 +80,7 @@ function Review() {
                   height: "300px",
                   marginRight: "25px",
                   marginLeft: "25px",
-                  marginBottom:'25px'
+                  marginBottom: "25px",
                 }}
                 classname="my_review_box_main"
                 key={i}
@@ -278,8 +298,6 @@ function Review() {
               </div>
             ))}
           </div>
-        ) : (
-          <div>Let's review some trails</div>
         )}
       </div>
     </div>

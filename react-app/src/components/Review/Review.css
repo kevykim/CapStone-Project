@@ -3,6 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .my_review_inner_div {
@@ -147,4 +148,60 @@
     white-space: pre-wrap;
     font-size: 10pt;
     align-items: center;
+}
+
+
+
+
+
+
+.my_review_noneleft_div {
+    height: 700px;
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.my_review_noneleft_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my_review_noneleft_img {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
+}
+
+
+.my_review_noneleft_text {
+    font-family: "Roboto-Bold";
+    font-size: 30pt;
+}
+
+
+.my_review_noneleft_navlink {
+    position: absolute;
+    z-index: 11;
+    top: 760px;
+    text-decoration: none;
+    color: gray;
+    border-radius: 25px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+    box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
+    background: rgb(205, 201, 200);
+}
+
+.my_review_noneleft_navlink:hover {
+    cursor: pointer;
+    color: white;
+    background: rgb(60, 103, 148);
 }
