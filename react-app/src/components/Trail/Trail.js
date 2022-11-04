@@ -37,105 +37,139 @@ function Trails() {
 
   return (
     <div className="my_trail_main">
-      {currentTrailOwned.length === 0 ? (
-        <div className="my_trail_notrails_div">
-          <div>Plan your perfect trail&nbsp;</div>
-          <div>
-            <NavLink
-              className="my_trail_notrails_navlink"
-              exact
-              to="/trails/new"
-            >
-              here...
-            </NavLink>
-          </div>
-        </div>
-      ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <div className="my_trail_inner_div">
-            <div style={{width: '1100px'}}>
-            <div style={{width:'100%'}}>
-            <div className="my_trail_top_text">
-              <div>Member</div>
-              <div>&nbsp;›&nbsp;</div>
-              <div>
-                {user?.firstName}
-                &nbsp;
-                {user?.lastName}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className="my_trail_inner_div">
+          <div style={{ width: "1100px" }}>
+            <div style={{ width: "100%" }}>
+              <div className="my_trail_top_text">
+                <div>Member</div>
+                <div>&nbsp;›&nbsp;</div>
+                <div>
+                  {user?.firstName}
+                  &nbsp;
+                  {user?.lastName}
+                </div>
+                <div>&nbsp;›&nbsp;</div>
+                <div>Trails</div>
               </div>
-              <div>&nbsp;›&nbsp;</div>
-              <div>Trails</div>
-            </div>
-            <div className="my_trail_top_border"></div>
+              <div className="my_trail_top_border"></div>
             </div>
             <div className="my_trail_header_div">
-            <div className="my_trail_header">Trails</div>
+              <div className="my_trail_header">Trails</div>
             </div>
+          </div>
+          {currentTrailOwned.length === 0 ? (
+            <div className="my_trail_notrails_div">
+              <div className="my_trail_notrails_text">
+                Plan your next trail&nbsp;
+                <span>
+                  <NavLink
+                    className="my_trail_notrails_navlink"
+                    exact
+                    to="/trails/new"
+                  >
+                    here...
+                  </NavLink>
+                </span>
+              </div>
+              <div>
+                <img
+                  className="my_trail_notrails_image"
+                  src="https://images.pexels.com/photos/6466115/pexels-photo-6466115.jpeg"
+                  alt="notrail"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://images.pexels.com/photos/6466115/pexels-photo-6466115.jpeg";
+                  }}
+                />
+              </div>
             </div>
-            {currentTrailArr.map((trail, i) => (
-              <div style={{display:'flex', flexDirection:'row', width: '500px'}}>
-                <div className="my_trail_image_boxes" key={i}>
-                  <div className="my_trail_image_div">
-                    <img
-                      className="my_trail_image"
-                      src={trail?.previewImg}
-                      alt="mytrail"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
-                      }}
-                    />
-                    <div className="my_trail_circle">
-                      <div className="my_trail_circle_inner">
-                        <div className="my_trail_circle_text">
-                          <MyTrailShareModal trail={trail} />
-                        </div>
-                      </div>
-                      <div className="my_trail_circle_inner">
-                        <NavLink
-                          className="my_trail_navlink"
-                          exact
-                          to={`/trails/${trail?.id}/update`}
-                        >
-                          <div className="my_trail_white_circle">
-                            <i
-                              style={{ color: "rgb(60, 103, 148)" }}
-                              className="fa-solid fa-pen-to-square fa-xl"
-                            ></i>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {currentTrailArr.map((trail, i) => (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    width: "500px",
+                  }}
+                >
+                  <div className="my_trail_image_boxes" key={i}>
+                    <div className="my_trail_image_div">
+                      <img
+                        className="my_trail_image"
+                        src={trail?.previewImg}
+                        alt="mytrail"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
+                        }}
+                      />
+                      <div className="my_trail_circle">
+                        <div className="my_trail_circle_inner">
+                          <div className="my_trail_circle_text">
+                            <MyTrailShareModal trail={trail} />
                           </div>
-                          <div className="my_trail_circle_text">Edit</div>
-                        </NavLink>
-                      </div>
-                      <div className="my_trail_circle_inner">
-                        <div className="my_trail_circle_text">
-                          <DeleteTrailModal trail={trail} />
+                        </div>
+                        <div className="my_trail_circle_inner">
+                          <NavLink
+                            className="my_trail_navlink"
+                            exact
+                            to={`/trails/${trail?.id}/update`}
+                          >
+                            <div className="my_trail_white_circle">
+                              <i
+                                style={{ color: "rgb(60, 103, 148)" }}
+                                className="fa-solid fa-pen-to-square fa-xl"
+                              ></i>
+                            </div>
+                            <div className="my_trail_circle_text">Edit</div>
+                          </NavLink>
+                        </div>
+                        <div className="my_trail_circle_inner">
+                          <div className="my_trail_circle_text">
+                            <DeleteTrailModal trail={trail} />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="my_trail_details_detailandborder">
-                    <div className="my_trail_details">
-                      <div><NavLink className='my_trail_details_navlink_text' exact to={`/trails/${trail?.id}`}>{trail?.name}</NavLink></div>
-                      <div>{`${new Date(trail.createdAt).toLocaleDateString(
-                        undefined,
-                        options
-                      )}`}</div>
+                    <div className="my_trail_details_detailandborder">
+                      <div className="my_trail_details">
+                        <div>
+                          <NavLink
+                            className="my_trail_details_navlink_text"
+                            exact
+                            to={`/trails/${trail?.id}`}
+                          >
+                            {trail?.name}
+                          </NavLink>
+                        </div>
+                        <div>{`${new Date(trail.createdAt).toLocaleDateString(
+                          undefined,
+                          options
+                        )}`}</div>
+                      </div>
+                      <div className="my_trail_border"></div>
                     </div>
-                    <div className="my_trail_border"></div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

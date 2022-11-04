@@ -55,12 +55,16 @@ function Review() {
         <div className="my_review_header">Reviews</div>
         {currentReviewOwned.length === 0 ? (
           <div className="my_review_noneleft_div">
-            <div className='my_review_noneleft_inner'>
-              <div className='my_review_noneleft_text'>No reviews here...</div>
+            <div className="my_review_noneleft_inner">
+              <div className="my_review_noneleft_text">No reviews here...</div>
               <img
                 className="my_review_noneleft_img"
                 src="https://www.outsideonline.com/wp-content/uploads/2019/02/21/snowboard-instructor-fail_s.jpg"
                 alt="fail"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://www.outsideonline.com/wp-content/uploads/2019/02/21/snowboard-instructor-fail_s.jpg";
+                }}
               />
               <NavLink className="my_review_noneleft_navlink" exact to="/">
                 Return Home
