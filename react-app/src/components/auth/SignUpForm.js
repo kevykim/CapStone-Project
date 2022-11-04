@@ -14,16 +14,19 @@ const SignUpForm = () => {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [profileImg, setProfileImg] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    
-      const data = await dispatch(signUp(username, firstName, lastName, email, password, profileImg));
-      if (data) {
-        setErrors(data)
+
+      if (password === confirmPassword) {
+        const data = await dispatch(signUp(username, firstName, lastName, email, password, profileImg));
+        if (data) {
+          setErrors(data)
+        }
       }
   };
 
@@ -46,6 +49,10 @@ const SignUpForm = () => {
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  const updateConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
+  }
 
   const updateProfileImg = (e) => {
     setProfileImg(e.target.value);
@@ -389,6 +396,63 @@ const SignUpForm = () => {
                   Password must be between 7 to 30 characters
                 </div>
               )}
+          </div>
+          <div className="sign_up_inputs_div">
+            <div className="sign_up_label_div">
+              <div>Confirm password</div>
+              {errors.includes("Please enter a password") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes(
+                  "Password must include at least one number"
+                ) ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes(
+                  "Password must be between 7 to 30 characters"
+                ) ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : (
+                <div></div>
+              )}
+              {password !== confirmPassword && (
+                <div className="sign_up_error">&nbsp;*</div>
+              )}
+              {/* {errors.includes("Please enter a password") && (
+                <div className="sign_up_error">&nbsp;*</div>
+              )} */}
+            </div>
+            <input
+              type="password"
+              name="confirm_password"
+              onChange={updateConfirmPassword}
+              value={confirmPassword}
+              placeholder="Repeat your password"
+              // required
+              className="sign_up_inputs"
+            ></input>
+            {password !== confirmPassword && (
+              <div className="sign_up_error">Password must match</div>
+            )}
+            {errors.length > 0 &&
+              errors.includes("Please enter a password") && (
+                <div className="sign_up_error">Please enter a password</div>
+              )}
+            {errors.length > 0 &&
+              errors.includes("Password must include at least one number") && (
+                <div className="sign_up_error">
+                  Password must include at least one number
+                </div>
+              )}
+            {errors.length > 0 &&
+              errors.includes(
+                "Password must be between 7 to 30 characters"
+              ) && (
+                <div className="sign_up_error">
+                  Password must be between 7 to 30 characters
+                </div>
+              )}
+            {/* {!confirmPassword && (
+              <div className='sign_up_error'>Please enter a password</div>
+            )} */}
           </div>
           <div className="sign_up_inputs_div">
             <div className="sign_up_label_div">

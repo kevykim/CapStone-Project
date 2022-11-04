@@ -14,9 +14,9 @@
     border-radius: 16px;
     z-index: 10;
     width: 400px;
-    height: 900px;
+    height: 1020px;
     box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
-    top: 130px;
+    top: 80px;
 }
 
 .sign_up_image_div {
@@ -57,7 +57,7 @@
 }
 
 .sign_up_inputs_div {
-    height: 105px;
+    height: 112px;
 }
 
 .sign_up_inputs {
