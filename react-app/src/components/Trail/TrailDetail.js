@@ -33,6 +33,16 @@ function TrailDetail() {
     const wholeAverage = Math.round(trail?.averagestar)
     // console.log(wholeAverage)
 
+     const allReviews = reviewArr.map((review) => review.stars);
+     let sum = 0;
+
+     for (let i = 0; i < allReviews.length; i++) {
+       sum += allReviews[i];
+     }
+
+     const average = Math.round(sum / reviewArr.length)
+
+    //  console.log(average)
 
     useEffect(() => {
         // dispatch(thunkGetSingleTrail(id))
@@ -48,6 +58,8 @@ function TrailDetail() {
       day: 'numeric',
       year: 'numeric'
     }
+
+   
 
     let defaultImg = "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"
 
@@ -309,7 +321,7 @@ function TrailDetail() {
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
                   <div className="trail_detail_bottom_avgstar">
-                    {trail?.averagestar}
+                    {average}
                   </div>
                   <div style={{ textAlign: "center" }}>
                     {wholeAverage === 1 && (

@@ -11,14 +11,25 @@ function PageNotFound() {
           <div>
             <div classname="pagenotfound_image">
               <img
-                style={{width:'1098px', height:'898px', objectFit:'cover', position:'relative'}}
+                style={{
+                  width: "1098px",
+                  height: "898px",
+                  objectFit: "cover",
+                  position: "relative",
+                }}
                 src="https://images.pexels.com/photos/10843099/pexels-photo-10843099.jpeg"
                 alt="notfound"
+                onError={(event) => {
+                  event.currentTarget.src =
+                    "https://images.pexels.com/photos/10843099/pexels-photo-10843099.jpeg";
+                }}
               />
             </div>
             <div>
-            <div className='pagenotfound_text'>Page not found...</div>
-            <NavLink className='pagenotfound_navlink' exact to='/'>Return Home</NavLink>
+              <div className="pagenotfound_text">Page not found...</div>
+              <NavLink className="pagenotfound_navlink" exact to="/">
+                Return Home
+              </NavLink>
             </div>
           </div>
         </div>
