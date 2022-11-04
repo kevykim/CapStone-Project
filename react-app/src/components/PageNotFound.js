@@ -26,7 +26,11 @@ function PageNotFound() {
               />
             </div>
             <div>
+              <div className="pagenotfound_firsttext">404</div>
               <div className="pagenotfound_text">Page not found...</div>
+              <div className="pagenotfound_othertext">
+                The page you were looking for does not exist...
+              </div>
               <NavLink className="pagenotfound_navlink" exact to="/">
                 Return Home
               </NavLink>

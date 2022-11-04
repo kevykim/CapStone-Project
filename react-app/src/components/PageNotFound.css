@@ -20,13 +20,31 @@
         position: relative;
 }
 
+.pagenotfound_firsttext {
+    position: absolute;
+    z-index: 11;
+    top: 85px;
+    right: 500px;
+    font-family: "Roboto-Bold";
+    font-size: 60px;
+}
+
 .pagenotfound_text {
     position: absolute;
     z-index: 11;
-    top: 200px;
+    top: 150px;
     right: 380px;
     font-family: "Roboto-Bold";
     font-size: 40px;
+}
+
+.pagenotfound_othertext {
+    position: absolute;
+    z-index: 11;
+    top: 220px;
+    right: 330px;
+    font-family: "Roboto-Bold";
+    font-size: 20px;
 }
 
 .pagenotfound_navlink {
