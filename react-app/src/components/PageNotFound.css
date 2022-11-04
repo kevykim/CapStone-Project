@@ -1,0 +1,52 @@
+.pagenotfound_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pagenotfound_inner {
+    width: 1100px;
+    border: 1px solid rgb(205, 201, 200);
+    margin-top: 10px;
+    height: 900px;
+    position: relative;
+    z-index: 10;
+}
+
+.pagenotfound_image {
+    width: 1100px;
+    height: 898px;
+        position: relative;
+}
+
+.pagenotfound_text {
+    position: absolute;
+    z-index: 11;
+    top: 200px;
+    right: 380px;
+    font-family: "Roboto-Bold";
+    font-size: 40px;
+}
+
+.pagenotfound_navlink {
+    position: absolute;
+        z-index: 11;
+        top: 280px;
+        right: 495px;
+        text-decoration: none;
+        color: gray;
+        border-radius: 25px;
+        width: 110px;
+        padding: 8px;
+        height: 35px;
+        background: rgb(205, 201, 200);
+}
+
+.pagenotfound_navlink:hover {
+    cursor: pointer;
+    color: white;
+    background: rgb(60, 103, 148);
+}
+
+

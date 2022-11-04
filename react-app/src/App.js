@@ -21,6 +21,11 @@ import Heavenly from './components/Pages/Heavenly';
 import Mammoth from './components/Pages/Mammoth';
 import Bear from './components/Pages/Bear';
 import Mthigh from './components/Pages/Mthigh';
+import Beginner from './components/Pages/beginner';
+import Intermediate from './components/Pages/intermediate';
+import BlackDiamond from './components/Pages/blackdiamond';
+import DoubleBlackDiamond from './components/Pages/doubleblackdiamond';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -92,8 +97,20 @@ function App() {
         <Route exact path='/Mountain High'>
           <Mthigh />
         </Route>
+        <Route exact path='/beginner'>
+          <Beginner />
+        </Route>
+        <Route exact path='/intermediate'>
+          <Intermediate />
+        </Route>
+        <Route exact path='/blackdiamond'>
+          <BlackDiamond />
+        </Route>
+        <Route exact path='/doubleblackdiamond'>
+          <DoubleBlackDiamond />
+        </Route>
         <Route>
-          <h1>Page Not Found</h1>
+          <PageNotFound />
         </Route>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

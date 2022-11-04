@@ -7,6 +7,7 @@
 
 .homepage_image_div {
     position: relative;
+    background: rgb(243, 242, 243);
 }
 
 .homepage_image {
@@ -31,13 +32,19 @@
 }
 
 .homepage_empty_div {
-    height: 50px;
+    height: 30px;
+    width: 1265px;
+    background: rgb(243, 242, 243);
 
 }
 
 .local_favorites_text {
-    font-size: 40pt;
-    margin-right: 900px;
+    font-size: 25pt;
+    font-family: "Roboto-Bold";
+    width: 1265px;
+    background: rgb(243, 242, 243);
+    padding: 0 12px;
+    height: 45px;
 
 }
 
@@ -220,6 +227,7 @@
 .footer_main {
     background: rgb(60, 103, 148);
     width: 1265px;
+    height: 100%;
 }
 
 
@@ -288,4 +296,82 @@
 
 .footer_last_navlink:hover {
     text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+.homepage_skills_main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1265px;
+    height: 310px;
+}
+
+.homepage_skills_image_main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 450px;
+}
+
+.homepage_skills_image_div {
+    padding: 10px;
+}
+
+.homepage_skills_image_div:hover {
+    opacity: 0.7;
+}
+
+.homepage_skills_image {
+    width: 150px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+.homepage_second_empty_div {
+    height: 30px;
+    width: 1265px;
+    background: white;
+
+}
+
+.homepage_skills_text {
+    font-size: 25pt;
+    font-family: "Roboto-Bold";
+    width: 1265px;
+    background: white;
+    padding: 0 12px;
+    height: 45px;
+
+}
+
+.homepage_skills_text_div {
+    height: 100px;
+    width: 500px;
+    margin-left: 150px;
+}
+
+.homepage_skills_top_text {
+    font-size: 25pt;
+    font-family: "Roboto-Bold";
+    height: 50px;
+}
+
+.homepage_skills_bottom_text {
+    width: 340px;
+    word-break: break-all;
+        white-space: pre-wrap;
 }

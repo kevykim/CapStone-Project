@@ -33,6 +33,16 @@ function TrailDetail() {
     const wholeAverage = Math.round(trail?.averagestar)
     // console.log(wholeAverage)
 
+     const allReviews = reviewArr.map((review) => review.stars);
+     let sum = 0;
+
+     for (let i = 0; i < allReviews.length; i++) {
+       sum += allReviews[i];
+     }
+
+     const average = Math.round(sum / reviewArr.length)
+
+    //  console.log(average)
 
     useEffect(() => {
         // dispatch(thunkGetSingleTrail(id))
@@ -48,6 +58,8 @@ function TrailDetail() {
       day: 'numeric',
       year: 'numeric'
     }
+
+   
 
     let defaultImg = "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"
 
@@ -67,7 +79,7 @@ function TrailDetail() {
             <div>&nbsp;›&nbsp;</div>
             <div className="trail_detail_navlink">
               <NavLink
-                style={{ textDecoration: "none", color: "rgb(132, 132, 132)"}}
+                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
                 exact
                 to={`/${trail?.state}`}
               >
@@ -102,13 +114,19 @@ function TrailDetail() {
             </div>
             <div className="trail_detail_circle">
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_circle_text"><PhotosModal trail={trail}/></div>
+                <div className="trail_detail_circle_text">
+                  <PhotosModal trail={trail} />
+                </div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_circle_text"><ShareModal trail={trail} /></div>
+                <div className="trail_detail_circle_text">
+                  <ShareModal trail={trail} />
+                </div>
               </div>
               <div className="trail_detail_circle_inner">
-                <div className="trail_detail_circle_text"><MoreModal trail={trail}/></div>
+                <div className="trail_detail_circle_text">
+                  <MoreModal trail={trail} />
+                </div>
               </div>
             </div>
           </div>
@@ -289,7 +307,7 @@ function TrailDetail() {
                   Elevation gain
                 </div>
                 <div className="trail_detail_bottom_secondline">
-                  {trail?.elevation} ft
+                  {new Intl.NumberFormat().format(trail?.elevation)} ft
                 </div>
               </div>
               <div className="trail_detail_bottom_info_divs">
@@ -303,7 +321,7 @@ function TrailDetail() {
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
                   <div className="trail_detail_bottom_avgstar">
-                    {trail?.averagestar}
+                    {average}
                   </div>
                   <div style={{ textAlign: "center" }}>
                     {wholeAverage === 1 && (
@@ -442,10 +460,13 @@ function TrailDetail() {
                       <div className="trail_detail_img_div">
                         <img
                           className="trail_detail_img_main"
-                          src={!review.profileImg ? defaultImg : review.profileImg}
+                          src={
+                            !review.profileImg ? defaultImg : review.profileImg
+                          }
                           alt="profilepic"
                           onError={(event) => {
-                            event.currentTarget.src = "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                            event.currentTarget.src =
+                              "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
                           }}
                         />
                       </div>
@@ -453,7 +474,10 @@ function TrailDetail() {
                         <div>
                           {review.firstname}&nbsp;{review.lastname}
                         </div>
-                        <div>{`${new Date(review.createdAt).toLocaleDateString(undefined, options)}`}</div>
+                        <div>{`${new Date(review.createdAt).toLocaleDateString(
+                          undefined,
+                          options
+                        )}`}</div>
                       </div>
                     </div>
                     <div>
@@ -579,7 +603,9 @@ function TrailDetail() {
                               ></i>
                             </div>
                           )}
-                          <div className="trail_detail_actual_reviews">{review.review}</div>
+                          <div className="trail_detail_actual_reviews">
+                            {review.review}
+                          </div>
                         </div>
                         <div>
                           <div>
