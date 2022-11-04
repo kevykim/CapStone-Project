@@ -22,7 +22,6 @@
     color: white;
     font-size: 100px;
     font-weight: bold;
-
 }
 
 .homepage_trail_image {
@@ -338,6 +337,7 @@
     height: 130px;
     object-fit: cover;
     border-radius: 15px;
+    box-shadow: 0 9px 17px 0 rgb(0 0 0 / 20%), 0 0 9px 0 rgb(0 0 0 / 10%);
 }
 
 

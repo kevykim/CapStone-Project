@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { thunkGetAllReview } from '../../store/review';
+// import { thunkGetAllReview } from '../../store/review';
 
 import { thunkGetTrail } from '../../store/trail';
 import logo from "./WinterTrail_logo.png";
@@ -34,7 +34,7 @@ function HomePage() {
 
     useEffect(() => {
         dispatch(thunkGetTrail())
-        dispatch(thunkGetAllReview())
+        // dispatch(thunkGetAllReview())
     },[dispatch])
 
 
@@ -64,7 +64,7 @@ function HomePage() {
           )}
         </div>
         <div className="homepage_empty_div"></div>
-        <div className="local_favorites_text">Recently created</div>
+        <div className="local_favorites_text">Trending trails</div>
         <div className="homepage_arr_div">
           {recentTrail.map((trail, i) => (
             <div className="homepage_arr_div_inner" key={i}>
