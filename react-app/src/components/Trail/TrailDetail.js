@@ -2,7 +2,7 @@ import { NavLink, useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import {  thunkGetTrail } from "../../store/trail"
-// import { thunkGetSingleTrail } from "../../store/trail"
+import { thunkGetSingleTrail } from "../../store/trail"
 import CreateReviewModal from "../Review/CreateReviewModal"
 
 import './TrailDetail.css'
@@ -45,9 +45,9 @@ function TrailDetail() {
     //  console.log(average)
 
     useEffect(() => {
-        // dispatch(thunkGetSingleTrail(id))
-        dispatch(thunkGetTrail())
-        dispatch(thunkGetTrailReview(id))
+      dispatch(thunkGetTrail())
+      dispatch(thunkGetTrailReview(id))
+      dispatch(thunkGetSingleTrail(id))
     }, [dispatch, id])
 
 

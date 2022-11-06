@@ -13,6 +13,7 @@ import beginner from './Beginner.png'
 import intermediate from './Intermediate.png'
 import blackdiamond from './BlackDiamond.png'
 import doubleblackdiamond from './DoubleBlackDiamond.png'
+// import { thunkGetCurrentReview } from '../../store/review';
 
 function HomePage() {
     const dispatch = useDispatch()
@@ -27,13 +28,14 @@ function HomePage() {
     // console.log(highestRevewTrails)
 
 
-    const recentTrail = trailArr.slice().reverse().slice(0,4)
+    const recentTrail = trailArr.slice().reverse().slice(0,4);
 
     const user = useSelector(state => state.session.user)
 
 
     useEffect(() => {
         dispatch(thunkGetTrail())
+        // dispatch(thunkGetCurrentReview())
         // dispatch(thunkGetAllReview())
     },[dispatch])
 
