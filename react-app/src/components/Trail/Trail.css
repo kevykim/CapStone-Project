@@ -162,6 +162,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 500px;
 }
 
 .my_trail_details_detailandborder {

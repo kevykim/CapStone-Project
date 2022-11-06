@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, NavLink } from 'react-router-dom'
 import { thunkGetCurrentReview } from '../../store/review'
-// import { thunkGetCurrentTrail } from '../../store/trail'
+import { thunkGetCurrentTrail } from '../../store/trail'
 import DeleteReviewModal from './DeleteReviewModal'
 import './Review.css'
 import UpdateReviewModal from './UpdateReviewModal'
@@ -19,7 +19,7 @@ function Review() {
   const currentReviewOwned = currentReviewsArr.filter((review) => review?.userId === user?.id)
 
   useEffect(() => {
-    // dispatch(thunkGetCurrentTrail());
+    dispatch(thunkGetCurrentTrail());
     dispatch(thunkGetCurrentReview());
   }, [dispatch]);
   // console.log(currentReviewsArr)
@@ -53,7 +53,7 @@ function Review() {
         </div>
         <div className="my_review_border"></div>
         <div className="my_review_header">Reviews</div>
-        {currentReviewOwned.length === 0 ? (
+        {currentReviewsArr.length === 0 ? (
           <div className="my_review_noneleft_div">
             <div className="my_review_noneleft_inner">
               <div className="my_review_noneleft_text">No reviews here...</div>
@@ -73,7 +73,7 @@ function Review() {
           </div>
         ) : (
           <div classname="my_review_box_main">
-            {currentReviewsArr.map((review, i) => (
+            {currentReviewOwned.map((review, i) => (
               <div
                 style={{
                   borderBottom: "1px solid rgb(205, 201, 200)",

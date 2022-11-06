@@ -18,7 +18,7 @@ function Trails() {
   const currentTrailOwned = currentTrailArr.filter(
     (trail) => trail?.userId === user?.id
   );
-
+  
   useEffect(() => {
     dispatch(thunkGetCurrentTrail());
   }, [dispatch]);
@@ -94,15 +94,18 @@ function Trails() {
             <div
               style={{
                 display: "flex",
+                flexDirection: "row",
                 justifyContent: "center",
-                alignItems: "center",
+                flexWrap: "wrap",
+                alignItems: "center"
               }}
             >
-              {currentTrailArr.map((trail, i) => (
+              {currentTrailOwned.map((trail, i) => (
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "row",
+                    flexWrap: "wrap",
                     width: "500px",
                   }}
                 >
