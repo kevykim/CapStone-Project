@@ -22,20 +22,20 @@ def username_exists(form, field):
 def len_username(form, field):
     # Checking length of username
     username = field.data
-    if len(username) < 4 or len(username) >= 26:
-        raise ValidationError('Username must be between 4 to 25 characters.')
+    if len(username) < 4 or len(username) >= 16:
+        raise ValidationError('Username must be between 4 to 15 characters.')
 
 def len_firstname(form, field):
     #Checking length of firstname
     firstname = field.data
-    if len(firstname) >= 26:
-        raise ValidationError('First name must be less than 25 characters')
+    if len(firstname) >= 16:
+        raise ValidationError('First name must be less than 15 characters')
 
 def len_lastname(form, field):
     #Checking length of firstname
     lastname = field.data
-    if len(lastname) >= 26:
-        raise ValidationError('Last name must be less than 25 characters')        
+    if len(lastname) >= 16:
+        raise ValidationError('Last name must be less than 15 characters')        
 
 def passwordchecker(form, field):
     # Checking password if less than 7 characters and includes a number

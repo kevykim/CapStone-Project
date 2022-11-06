@@ -35,28 +35,53 @@
     padding: 20px;
     font-family: "Roboto-Bold";
     text-align: center;
+    font-size: 20pt;
 }
 
 
 .photo_modal_main {
-    width: 400px;
-    height: 500px;
+    width: 1100px;
+    height: 560px;
     display: flex;
         flex-wrap: wrap;
             flex-direction: row;
     justify-content: center;
     padding: 10px;
+    overflow-y: scroll;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    
 }
 
 .photo_modal_inner {
     padding: 5px;
-    height: 160px;
+    height: 250px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
+.photo_modal_inner_div {
+    display: flex;
+    flex-direction: column;
+}
+
 .photo_modal_image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.photo_modal_text_lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.photo_modal_text_fonts {
+    font-family: "Roboto-Medium";
+    word-break: break-all;
+        white-space: pre-wrap;
 }

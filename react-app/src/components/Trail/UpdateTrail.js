@@ -119,7 +119,7 @@ function UpdateTrail() {
     "Double Black Diamond",
   ];
 
-  let routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"];
+  let routeType_choices = ["All-mountain", "Park", "Powder", "Free-ride"];
 
   //IMAGE VALIDATION
   const imageValidate =

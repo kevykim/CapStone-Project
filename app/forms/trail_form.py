@@ -35,7 +35,7 @@ resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe", "Mammoth Moun
 
 difficulty_choices = ["Beginner", "Intermediate", "Black Diamond", "Double Black Diamond"]
 
-routeType_choices = ["All-mountain", "Park", "Powder", "Freeride"]
+routeType_choices = ["All-mountain", "Park", "Powder", "Free-ride"]
 
 class TrailForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])

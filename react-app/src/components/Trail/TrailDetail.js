@@ -30,7 +30,7 @@ function TrailDetail() {
     // console.log(trailfilter[0])
 
     // AVERAGE STAR
-    const wholeAverage = Math.round(trail?.averagestar)
+    // const wholeAverage = Math.round(trail?.averagestar)
     // console.log(wholeAverage)
 
      const allReviews = reviewArr.map((review) => review.stars);
@@ -97,7 +97,7 @@ function TrailDetail() {
               </NavLink>
             </div>
             <div>&nbsp;›&nbsp;</div>
-            <div>{trail?.name}</div>
+            <div className="trail_detail_top_name">{trail?.name}</div>
           </div>
           <div className="trail_detail_image_div">
             <img
@@ -161,7 +161,7 @@ function TrailDetail() {
               )}
               <div className="trail_detail_image_reviewinfo">
                 <div>
-                  {wholeAverage === 1 && (
+                  {average === 1 && (
                     <div>
                       <i
                         style={{ color: "gold" }}
@@ -185,7 +185,7 @@ function TrailDetail() {
                       ></i>
                     </div>
                   )}
-                  {wholeAverage === 2 && (
+                  {average === 2 && (
                     <div>
                       <i
                         style={{ color: "gold" }}
@@ -209,7 +209,7 @@ function TrailDetail() {
                       ></i>
                     </div>
                   )}
-                  {wholeAverage === 3 && (
+                  {average === 3 && (
                     <div>
                       <i
                         style={{ color: "gold" }}
@@ -233,7 +233,7 @@ function TrailDetail() {
                       ></i>
                     </div>
                   )}
-                  {wholeAverage === 4 && (
+                  {average === 4 && (
                     <div>
                       <i
                         style={{ color: "gold" }}
@@ -257,7 +257,7 @@ function TrailDetail() {
                       ></i>
                     </div>
                   )}
-                  {wholeAverage === 5 && (
+                  {average === 5 && (
                     <div>
                       <i
                         style={{ color: "gold" }}
@@ -324,7 +324,7 @@ function TrailDetail() {
                     {average}
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    {wholeAverage === 1 && (
+                    {average === 1 && (
                       <div>
                         <i
                           style={{ color: "gold" }}
@@ -348,7 +348,7 @@ function TrailDetail() {
                         ></i>
                       </div>
                     )}
-                    {wholeAverage === 2 && (
+                    {average === 2 && (
                       <div>
                         <i
                           style={{ color: "gold" }}
@@ -372,7 +372,7 @@ function TrailDetail() {
                         ></i>
                       </div>
                     )}
-                    {wholeAverage === 3 && (
+                    {average === 3 && (
                       <div>
                         <i
                           style={{ color: "gold" }}
@@ -396,7 +396,7 @@ function TrailDetail() {
                         ></i>
                       </div>
                     )}
-                    {wholeAverage === 4 && (
+                    {average === 4 && (
                       <div>
                         <i
                           style={{ color: "gold" }}
@@ -420,7 +420,7 @@ function TrailDetail() {
                         ></i>
                       </div>
                     )}
-                    {wholeAverage === 5 && (
+                    {average === 5 && (
                       <div>
                         <i
                           style={{ color: "gold" }}
@@ -471,7 +471,7 @@ function TrailDetail() {
                         />
                       </div>
                       <div>
-                        <div>
+                        <div className="trail_detail_firstandlastnames">
                           {review.firstname}&nbsp;{review.lastname}
                         </div>
                         <div>{`${new Date(review.createdAt).toLocaleDateString(

@@ -21,7 +21,7 @@ function Beginner() {
     return (
       <div className="pages_main">
         <div className="page_inner">
-          <div className="pages_header">All beginner trails listed</div>
+          <div className="pages_header">All Beginner trails listed</div>
           <div className="pages_inner_div">
             <div className="pages_navlink_divs">
               {beginnerFilter.map((trail, i) => (
