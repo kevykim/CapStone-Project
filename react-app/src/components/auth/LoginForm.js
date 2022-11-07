@@ -194,7 +194,17 @@ const LoginForm = () => {
           <div className="log_in_inputs_div">
             <div className="log_in_label_div">
               <div>Email</div>
-              {errors.length > 0 && <div className="log_in_error">&nbsp;*</div>}
+              {errors.includes("Email provided not found.") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes("Invalid email address") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes("No such user exists.") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : errors.includes("Please enter your email") ? (
+                <div className="log_in_error">&nbsp;*</div>
+              ) : (
+                <div></div>
+              )}
             </div>
             <input
               name="email"
