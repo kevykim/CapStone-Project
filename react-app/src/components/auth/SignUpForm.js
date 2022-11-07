@@ -410,15 +410,12 @@ const SignUpForm = () => {
                   "Password must be between 7 to 30 characters"
                 ) ? (
                 <div className="log_in_error">&nbsp;*</div>
+              ) : (password !== confirmPassword) 
+               ? (
+                <div className="sign_up_error">&nbsp;*</div>
               ) : (
                 <div></div>
               )}
-              {password !== confirmPassword && (
-                <div className="sign_up_error">&nbsp;*</div>
-              )}
-              {/* {errors.includes("Please enter a password") && (
-                <div className="sign_up_error">&nbsp;*</div>
-              )} */}
             </div>
             <input
               type="password"
