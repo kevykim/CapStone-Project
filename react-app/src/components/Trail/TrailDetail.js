@@ -48,9 +48,9 @@ function TrailDetail() {
     //  console.log(average)
 
     useEffect(() => {
-      dispatch(thunkGetTrail())
-      dispatch(thunkGetTrailReview(id))
       dispatch(thunkGetSingleTrail(id))
+      dispatch(thunkGetTrailReview(id))
+      dispatch(thunkGetTrail())
     }, [dispatch, id])
 
 
