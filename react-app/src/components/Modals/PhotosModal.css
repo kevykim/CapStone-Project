@@ -10,7 +10,7 @@
 }
 
 .photo_modal_cancel_div {
-    padding: 25px;
+    padding: 15px;
 }
 
 .photo_modal_cancel_button {
@@ -32,7 +32,7 @@
 }
 
 .photo_modal_text {
-    padding: 20px;
+    padding: 10px;
     font-family: "Roboto-Bold";
     text-align: center;
     font-size: 20pt;
@@ -41,11 +41,10 @@
 
 .photo_modal_main {
     width: 1100px;
-    height: 560px;
-    display: flex;
-        flex-wrap: wrap;
-            flex-direction: row;
-    justify-content: center;
+    height: 550px;
+    /* display: flex; */
+    /* flex-direction: column; */
+
     padding: 10px;
     overflow-y: scroll;
     border-radius: 5px;
@@ -62,21 +61,26 @@
 
 .photo_modal_inner {
     padding: 5px;
-    height: 250px;
+    height: auto;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .photo_modal_inner_div {
     display: flex;
-    flex-direction: column;
+        flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    border-bottom: 1px solid lightgray;
 }
 
 .photo_modal_image {
-    width: 200px;
-    height: 200px;
+    object-fit: fill;
+    width: 700px;
+    height: 450px;
     border-radius: 5px;
+    margin-top: 25px;
 }
 
 .photo_modal_text_lines {
@@ -84,7 +88,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    padding: 15px;
 }
 
 .photo_modal_text_fonts {
