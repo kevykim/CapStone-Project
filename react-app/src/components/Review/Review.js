@@ -274,7 +274,7 @@ function Review() {
                 </div>
                 <div className="my_review_main_reviewimage">
                   <div className="my_review_main_review">{review.review}</div>
-                  <div>
+                  {review.reviewImg && <div>
                     <img
                       src={review.reviewImg}
                       alt="reviewimg"
@@ -284,7 +284,7 @@ function Review() {
                           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
                       }}
                     />
-                  </div>
+                  </div>}
                 </div>
                 <div className="my_review_main_buttons">
                   <div>

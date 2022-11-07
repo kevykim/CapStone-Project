@@ -40,8 +40,11 @@ function TrailDetail() {
        sum += allReviews[i];
      }
 
-     const average = Math.round(sum / reviewArr.length)
+     let average = Math.round(sum / reviewArr.length)
 
+     if (!average) {
+        average = 0
+     }
     //  console.log(average)
 
     useEffect(() => {
@@ -608,7 +611,7 @@ function TrailDetail() {
                           </div>
                         </div>
                         <div>
-                          <div>
+                          {review.reviewImg && <div>
                             <img
                               className="trail_detail_review_img"
                               src={review.reviewImg}
@@ -618,7 +621,7 @@ function TrailDetail() {
                                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
                               }}
                             />
-                          </div>
+                          </div>}
                         </div>
                       </div>
                     </div>

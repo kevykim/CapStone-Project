@@ -43,8 +43,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 450px;
-    height: 100px;
+    width: 500px;
+    height: 120px;
 }
 
 .share_modal_link_div {
@@ -55,6 +55,8 @@
 
 .share_modal_link {
     color: rgb(60, 103, 148);
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .share_modal_alink {
