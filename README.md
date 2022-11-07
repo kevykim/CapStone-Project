@@ -183,6 +183,8 @@ https://upload.wikimedia.org/wikipedia/commons/1/17/BorealSkiCA.jpg
 
 https://whitebookski.com/wp-content/uploads/2017/04/shred-2.jpg
 
+https://png.pngtree.com/png-vector/20190729/ourlarge/pngtree-mountains-nature-outdoor-sun-hiking-flat-color-icon-vector-png-image_1622135.jpg
+
 
 
 

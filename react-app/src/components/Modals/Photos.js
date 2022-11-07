@@ -8,7 +8,12 @@ import './PhotosModal.css'
 function Photos({trail, setShowModal}) {
   const dispatch = useDispatch()
     const reviewImages = trail.reviews.map(reviews => reviews)
-    // console.log(trail.reviews)
+
+    const imagesArr = trail.reviews.map(reviews => reviews.reviewImg)
+    const httpsfilter = imagesArr.filter(image => image.includes('https'))
+    const httpfilter = imagesArr.filter(image => image.includes('http'))
+    // console.log(httpfilter)
+    // console.log(imagefilter)
         const closeModal = (event) => {
             setShowModal(false)
         }
@@ -26,7 +31,7 @@ function Photos({trail, setShowModal}) {
         </div>
         <div className="photo_modal_text">Photos of {trail.name}</div>
         <div>
-          {reviewImages.length === 0 ? (
+          {(httpsfilter.length === 0 && httpfilter.length === 0) ? (
             <div className="photo_modal_notmain">
               <div>
                 No photos here&nbsp;<i className="fa-regular fa-face-frown"></i>
@@ -36,7 +41,8 @@ function Photos({trail, setShowModal}) {
             <div className="photo_modal_main">
               {reviewImages.map((review, i) => (
                 <div key={i}>
-                  {review.reviewImg && <div className="photo_modal_inner">
+                  {review.reviewImg && (
+                    <div className="photo_modal_inner">
                       <div className="photo_modal_inner_div">
                         <img
                           className="photo_modal_image"
@@ -56,8 +62,8 @@ function Photos({trail, setShowModal}) {
                           </div>
                         </div>
                       </div>
-                  </div>
-                    }
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
