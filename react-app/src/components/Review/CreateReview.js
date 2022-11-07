@@ -7,7 +7,7 @@ import './CreateReview.css'
 
 
 
-function CreateReview({setShowModal, user}) {
+function CreateReview({ setShowModal, user }) {
   const dispatch = useDispatch();
   const { id } = useParams();
   const history = useHistory();
@@ -15,7 +15,7 @@ function CreateReview({setShowModal, user}) {
   const trail = useSelector((state) => state.trail[id]);
   // console.log(trail.userId)
 
-  const [stars, setStars] = useState('');
+  const [stars, setStars] = useState("");
   const [reviews, setReviews] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [reviewImg, setReviewImg] = useState("");
@@ -26,15 +26,15 @@ function CreateReview({setShowModal, user}) {
     if (stars <= 0 || stars > 5) errors.push("Select a star between 1 to 5");
     if (reviews.length < 20 || reviews.length >= 501)
       errors.push("Please add a review between 21 to 500 characters");
-    if (
-      (!reviewImg.includes("jpg") &&
-        !reviewImg.includes("png") &&
-        !reviewImg.includes("jpeg") &&
-        !reviewImg.includes("svg") &&
-        !reviewImg.includes(".gif")) ||
-      (!reviewImg.includes("https") && !reviewImg.includes("http"))
-    )
-      errors.push("Please enter a valid url image");
+    // if (
+    //   (!reviewImg.includes("jpg") &&
+    //     !reviewImg.includes("png") &&
+    //     !reviewImg.includes("jpeg") &&
+    //     !reviewImg.includes("svg") &&
+    //     !reviewImg.includes(".gif")) ||
+    //   (!reviewImg.includes("https") && !reviewImg.includes("http"))
+    // )
+    //   errors.push("Please enter a valid url image");
 
     setValidations(errors);
   }, [stars, reviews, reviewImg]);
@@ -65,12 +65,20 @@ function CreateReview({setShowModal, user}) {
 
   //IMAGE VALIDATION
   const imageValidate =
-    (!reviewImg.includes(".jpg") &&
-      !reviewImg.includes(".png") &&
-      !reviewImg.includes(".jpeg") &&
-      !reviewImg.includes(".svg") &&
-      !reviewImg.includes(".gif")) ||
-    (!reviewImg.includes("https") && !reviewImg.includes("http"));
+    (!reviewImg.endsWith(".jpg") &&
+      !reviewImg.endsWith(".png") &&
+      !reviewImg.endsWith(".jpeg") &&
+      !reviewImg.endsWith(".svg") &&
+      !reviewImg.endsWith(".gif")) ||
+    (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
+
+  // const imageValidate =
+  //   (!reviewImg.includes(".jpg") &&
+  //     !reviewImg.includes(".png") &&
+  //     !reviewImg.includes(".jpeg") &&
+  //     !reviewImg.includes(".svg") &&
+  //     !reviewImg.includes(".gif")) ||
+  //   (!reviewImg.includes("https") && !previewImg.includes("http"));
 
   return (
     <div className="create_review_main">
@@ -174,6 +182,11 @@ function CreateReview({setShowModal, user}) {
             <div className="create_review_inner_div_image">
               <div className="create_review_label_div">
                 <div>Review Image (Optional)</div>
+                {/* {reviewImg.length > 0 &&
+                  submitted === true &&
+                  imageValidate && (
+                    <div className="create_review_error">&nbsp;*</div>
+                  )} */}
               </div>
               <input
                 type="text"
@@ -183,13 +196,11 @@ function CreateReview({setShowModal, user}) {
                 onChange={(event) => setReviewImg(event.target.value)}
                 className="create_review_input_image"
               />
-              {validations.length > 0 &&
-                submitted === true &&
-                imageValidate && (
-                  <div className="create_review_error">
-                    Please enter a valid url image
-                  </div>
-                )}
+              {reviewImg.length > 0 && submitted === true && imageValidate && (
+                <div className="create_review_error">
+                  Please enter a valid url image
+                </div>
+              )}
             </div>
             {/* {validations.length > 0 && submitted && (
               <div>
