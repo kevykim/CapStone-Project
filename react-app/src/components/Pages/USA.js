@@ -6,7 +6,7 @@ function USA() {
     <div className="pages_main">
       <div className="page_inner">
         <div className="pages_detail_top_text">
-          <div className="pages_detail_navlink">
+          <div className="pages_detail_nonnavlink">
             United States of America
           </div>
         </div>

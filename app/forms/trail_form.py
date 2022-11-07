@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, DecimalField, IntegerField, TextAreaField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, NumberRange
 from app.models import Trail
 
 
@@ -22,7 +22,7 @@ def descriptionchecker(form, field):
 
 def imagechecker(form, field):
     image = field.data
-    if ('https' not in image and 'http' not in image) or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image) and ('.png' not in image):
+    if ('https://' not in image and 'http://' not in image) or ('.jpg' not in image) and ('.jpeg' not in image) and ('.gif' not in image) and ('.svg' not in image) and ('.png' not in image):
         raise ValidationError('Please enter a valid URL.')
 
 # CHOICES
@@ -44,7 +44,7 @@ class TrailForm(FlaskForm):
     resort = SelectField('resort', choices = resort_choices, validators=[DataRequired('Please select a resort.')])
     difficulty = SelectField('difficulty', choices = difficulty_choices, validators=[DataRequired('Please select a difficulty.')])
     description = TextAreaField('description', validators=[DataRequired(), descriptionchecker])
-    length = DecimalField('length', validators=[DataRequired()], places=1)
-    elevation = IntegerField('elevation', validators=[DataRequired('Please enter a elevation')])
+    length = DecimalField('length', validators=[DataRequired(), NumberRange(min=0.3, max=5.0)], places=1)
+    elevation = IntegerField('elevation', validators=[DataRequired('Please enter a elevation'), NumberRange(min=3000, max=12000)])
     routeType = SelectField('routeType', choices = routeType_choices, validators=[DataRequired('Please select a route type.')])
     previewImg = StringField('previewImg', validators=[DataRequired(), imagechecker])

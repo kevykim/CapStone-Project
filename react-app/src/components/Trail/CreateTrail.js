@@ -36,22 +36,22 @@ function CreateTrail() {
           errors.push("Trail description must be between 20 to 500 characters");
         if (
           !length ||
-          length >= 5.1 ||
-          length < 0.3 ||
+          Number(length) >= 5.1 ||
+          Number(length) < 0.3 ||
           isNaN(length)
         )
           errors.push("Please enter a number between 0.3 to 5.0");
         if (length?.length > 3) errors.push('Enter a whole number or a decimal in the tenths place')
-        if (elevation % 1 !== 0 || elevation >= 12001 || elevation < 3000 || !elevation)
+        if (Number(elevation) % 1 !== 0 || Number(elevation) >= 12001 || Number(elevation) < 3000 || !elevation)
           errors.push("Please enter a whole number between 3,000 to 12,000");
         if(!routeType) errors.push('Please select a route type')
         if (
-          (!previewImg.includes(".jpg") &&
-            !previewImg.includes(".png") &&
-            !previewImg.includes(".jpeg") &&
-            !previewImg.includes(".svg") &&
-            !previewImg.includes(".gif")) ||
-          (!previewImg.includes("https") && !previewImg.includes("http"))
+          (!previewImg.endsWith(".jpg") &&
+          !previewImg.endsWith(".png") &&
+          !previewImg.endsWith(".jpeg") &&
+          !previewImg.endsWith(".svg") &&
+          !previewImg.endsWith(".gif")) ||
+        (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"))
         )
           errors.push("Please enter a valid url image");
         setValidations(errors)
@@ -85,6 +85,7 @@ function CreateTrail() {
         history.push('/')
     }
 
+    // console.log(typeof (length))
  
 
     let country_choices = ["United States of America"];
@@ -115,14 +116,20 @@ function CreateTrail() {
 
       //IMAGE VALIDATION
       const imageValidate =
-        (!previewImg.includes(".jpg") &&
-          !previewImg.includes(".png") &&
-          !previewImg.includes(".jpeg") &&
-          !previewImg.includes(".svg") &&
-          !previewImg.includes(".gif")) ||
-        (!previewImg.includes("https") && !previewImg.includes("http"));
-     
+        (!previewImg.endsWith(".jpg") &&
+          !previewImg.endsWith(".png") &&
+          !previewImg.endsWith(".jpeg") &&
+          !previewImg.endsWith(".svg") &&
+          !previewImg.endsWith(".gif")) ||
+        (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"));
 
+        // const imageValidate =
+        //   (!previewImg.includes(".jpg") &&
+        //     !previewImg.includes(".png") &&
+        //     !previewImg.includes(".jpeg") &&
+        //     !previewImg.includes(".svg") &&
+        //     !previewImg.includes(".gif")) ||
+        //   (!previewImg.includes("https") && !previewImg.includes("http"));
     return (
       <div className="create_trail_main">
         <div className="create_trail_form">
@@ -332,8 +339,8 @@ function CreateTrail() {
                     {validations.length > 0 &&
                       submitted === true &&
                       (!length ||
-                        length >= 5.1 ||
-                        length < 0.3 ||
+                        Number(length) >= 5.1 ||
+                        Number(length) < 0.3 ||
                         length?.length > 3 ||
                         isNaN(length)) && (
                         <div className="create_trail_error">&nbsp;*</div>
@@ -349,9 +356,7 @@ function CreateTrail() {
                   />
                   {validations.length > 0 &&
                   submitted === true &&
-                  (!length ||
-                    length >= 5.1 ||
-                    length < 0.3) ? (
+                  (!length || Number(length) >= 5.1 || Number(length) < 0.3) ? (
                     <div className="create_trail_error">
                       Please enter a number between 0.3 to 5.0
                     </div>
@@ -368,9 +373,9 @@ function CreateTrail() {
                     <div>Elevation</div>
                     {validations.length > 0 &&
                       submitted === true &&
-                      (elevation % 1 !== 0 ||
-                        elevation >= 12001 ||
-                        elevation < 3000 ||
+                      (Number(elevation) % 1 !== 0 ||
+                        Number(elevation) >= 12001 ||
+                        Number(elevation) < 3000 ||
                         !elevation) && (
                         <div className="create_trail_error">&nbsp;*</div>
                       )}
@@ -385,9 +390,9 @@ function CreateTrail() {
                   />
                   {validations.length > 0 &&
                     submitted === true &&
-                    (elevation % 1 !== 0 ||
-                      elevation >= 12001 ||
-                      elevation < 3000 ||
+                    (Number(elevation) % 1 !== 0 ||
+                      Number(elevation) >= 12001 ||
+                      Number(elevation) < 3000 ||
                       !elevation) && (
                       <div className="create_trail_error">
                         Please enter a whole number between 3000 to 12000
