@@ -141,6 +141,7 @@ function UpdateTrail() {
       !previewImg.endsWith(".gif")) ||
     (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"));
 
+    //previous
   // const imageValidate =
   //   (!previewImg.includes(".jpg") &&
   //     !previewImg.includes(".png") &&
