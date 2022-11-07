@@ -19,8 +19,9 @@
     display: flex;
     flex-direction: row;
     padding: 20px;
-    margin-right: 680px;
+    margin-right: 520px;
     color: rgb(132, 132, 132);
+    width: 600px;
     font-size: 9.2pt;
 }
 
@@ -29,7 +30,10 @@
     color: rgb(132, 132, 132);
 }
 
-
+.trail_detail_top_name {
+    word-break: break-all;
+        white-space: pre-wrap;
+}
 
 .trail_detail_navlink:hover {
     text-decoration: underline;
@@ -40,7 +44,8 @@
     flex-direction: column;
     position: absolute;
     z-index: 10;
-    margin-right: 750px;
+    margin-right: 300px;
+    width: 700px;
 }
 
 .trail_detail_image_firstline {
@@ -49,6 +54,8 @@
     color: white;
     padding: 3px;
     text-shadow: 3px 5px 7px black;
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .trail_detail_image_secondline {
@@ -216,7 +223,7 @@
 }
 
 .trail_detail_bottom_info_divs {
-    width: 210px;
+    width: 230px;
     padding: 15px;
 }
 
@@ -231,17 +238,22 @@
 
 
 .trail_detail_bottom_allreview {
-    width: 240px;
+    width: 300px;
     padding: 15px;
+    margin-right: 10px;
 }
 
 .trail_detail_bottom_avgstar {
     text-align: center;
     font-size: 20pt;
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .trail_detail_bottom_totalreview {
     text-align: center;
+    word-break: break-all;
+        white-space: pre-wrap;
     margin-top: 2px;
 }
 
@@ -258,6 +270,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
+.trail_detail_firstandlastnames {
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .trail_detail_img_div {
@@ -270,7 +289,7 @@
 
 }
 
-.trail_detail_actual_review {
+.trail_detail_actual_reviews {
     word-break: break-all;
         white-space: pre-wrap;
 }
@@ -402,6 +421,8 @@
 .trail_detail_sidebar_name {
     font-weight: bold;
     padding: 2px 0px 2px 0px;
+    word-break: break-all;
+        white-space: pre-wrap;
 }
 
 .trail_detail_sidebar_othertext {

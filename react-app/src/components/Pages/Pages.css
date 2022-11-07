@@ -88,6 +88,10 @@
 .pages_detail_navlink {
     text-decoration: none;
     color: rgb(132, 132, 132);
+
+}
+.pages_detail_nonnavlink {
+    color: rgb(132, 132, 132);
 }
 
 .pages_detail_text {

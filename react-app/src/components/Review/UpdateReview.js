@@ -5,11 +5,10 @@ import { thunkUpdateTrailReview } from "../../store/review";
 
 function UpdateReview({ setShowModal, review }) {
   const dispatch = useDispatch();
-  const {id} = useParams();
+  const { id } = useParams();
   const history = useHistory();
 
   const trail = useSelector((state) => state.trail[id]);
-
 
   const [stars, setStars] = useState(review.stars);
   const [reviews, setReviews] = useState(review.review);
@@ -22,15 +21,15 @@ function UpdateReview({ setShowModal, review }) {
     if (stars <= 0 || stars > 5) errors.push("Select a star between 1 to 5");
     if (reviews.length < 20 || reviews.length >= 501)
       errors.push("Please add a review between 21 to 500 characters");
-    if (
-      (!reviewImg.includes("jpg") &&
-        !reviewImg.includes("png") &&
-        !reviewImg.includes("jpeg") &&
-        !reviewImg.includes("svg") &&
-        !reviewImg.includes(".gif")) ||
-      (!reviewImg.includes("https") && !reviewImg.includes("http"))
-    )
-      errors.push("Please enter a valid url image");
+    // if (
+    //   (!reviewImg.includes("jpg") &&
+    //     !reviewImg.includes("png") &&
+    //     !reviewImg.includes("jpeg") &&
+    //     !reviewImg.includes("svg") &&
+    //     !reviewImg.includes(".gif")) ||
+    //   (!reviewImg.includes("https") && !reviewImg.includes("http"))
+    // )
+    //   errors.push("Please enter a valid url image");
 
     setValidations(errors);
   }, [stars, reviews, reviewImg]);
@@ -62,12 +61,20 @@ function UpdateReview({ setShowModal, review }) {
 
   //IMAGE VALIDATION
   const imageValidate =
-    (!reviewImg.includes(".jpg") &&
-      !reviewImg.includes(".png") &&
-      !reviewImg.includes(".jpeg") &&
-      !reviewImg.includes(".svg") &&
-      !reviewImg.includes(".gif")) ||
-    (!reviewImg.includes("https") && !reviewImg.includes("http"));
+    (!reviewImg.endsWith(".jpg") &&
+      !reviewImg.endsWith(".png") &&
+      !reviewImg.endsWith(".jpeg") &&
+      !reviewImg.endsWith(".svg") &&
+      !reviewImg.endsWith(".gif")) ||
+    (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
+
+  // const imageValidate =
+  //   (!reviewImg.includes(".jpg") &&
+  //     !reviewImg.includes(".png") &&
+  //     !reviewImg.includes(".jpeg") &&
+  //     !reviewImg.includes(".svg") &&
+  //     !reviewImg.includes(".gif")) ||
+  //   (!reviewImg.includes("https") && !previewImg.includes("http"));
 
   return (
     <div className="update_review_main">
@@ -139,6 +146,11 @@ function UpdateReview({ setShowModal, review }) {
           <div className="update_review_inner_div_image">
             <div className="update_review_label_div">
               <div>Review Image (Optional)</div>
+              {/* {reviewImg.length > 0 &&
+                  submitted === true &&
+                  imageValidate && (
+                    <div className="update_review_error">&nbsp;*</div>
+                  )} */}
             </div>
             <input
               type="text"
@@ -148,7 +160,7 @@ function UpdateReview({ setShowModal, review }) {
               onChange={(event) => setReviewImg(event.target.value)}
               className="update_review_input_image"
             />
-            {validations.length > 0 && submitted === true && imageValidate && (
+            {reviewImg.length > 0 && submitted === true && imageValidate && (
               <div className="update_review_error">
                 Please enter a valid url image
               </div>

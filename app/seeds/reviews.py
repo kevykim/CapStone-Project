@@ -35,7 +35,7 @@ def seed_reviews():
         userId = 2,
         review = "The Boreal was so cool. They boasted an enormous two-story cafe, easy entry through gates with a pocket pass, and quick rental service. Being Tahoe, the locals kept being incredibly laid-back, and the employees kept being SUPER SKILLED at running rescue teams. Throughout the day, the Slopes were opening and closing, making getting about difficult.",
         stars = 4,
-        reviewImg = "http://static1.squarespace.com/static/5f5b750c2612de46c3a1cbe2/t/6164d43dddd4d97f9f572883/1633998671113/Boreal+Terrain+Park.jpeg?format=1500w",
+        reviewImg = "https://images.pexels.com/photos/7969331/pexels-photo-7969331.jpeg",
         createdAt = date(2022, 7, 4),
         updatedAt = date.today()
     )

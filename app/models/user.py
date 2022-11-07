@@ -8,9 +8,9 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(25), nullable=False, unique=True)
-    firstName = db.Column(db.String(25), nullable=False)
-    lastName = db.Column(db.String(25), nullable=False)
+    username = db.Column(db.String(15), nullable=False, unique=True)
+    firstName = db.Column(db.String(15), nullable=False)
+    lastName = db.Column(db.String(15), nullable=False)
     hashed_password = db.Column(db.String(1000), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
     profileImg = db.Column(db.String(255))

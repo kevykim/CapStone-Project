@@ -223,7 +223,7 @@ const SignUpForm = () => {
               ) : errors.includes("Username is already in use.") ? (
                 <div className="log_in_error">&nbsp;*</div>
               ) : errors.includes(
-                  "Username must be between 4 to 25 characters."
+                  "Username must be between 4 to 15 characters."
                 ) ? (
                 <div className="log_in_error">&nbsp;*</div>
               ) : (
@@ -248,10 +248,10 @@ const SignUpForm = () => {
               )}
             {errors.length > 0 &&
               errors.includes(
-                "Username must be between 4 to 25 characters."
+                "Username must be between 4 to 15 characters."
               ) && (
                 <div className="sign_up_error">
-                  Username must be between 4 to 25 characters
+                  Username must be between 4 to 15 characters
                 </div>
               )}
           </div>
@@ -295,7 +295,7 @@ const SignUpForm = () => {
               {errors.includes("Please enter a first name.") ? (
                 <div className="log_in_error">&nbsp;*</div>
               ) : errors.includes(
-                  "First name must be less than 25 characters"
+                  "First name must be less than 15 characters"
                 ) ? (
                 <div className="log_in_error">&nbsp;*</div>
               ) : (
@@ -315,9 +315,9 @@ const SignUpForm = () => {
                 <div className="sign_up_error">Please enter a first name</div>
               )}
             {errors.length > 0 &&
-              errors.includes("First name must be less than 25 characters") && (
+              errors.includes("First name must be less than 15 characters") && (
                 <div className="sign_up_error">
-                  First name must be less than 25 characters
+                  First name must be less than 15 characters
                 </div>
               )}
           </div>
@@ -327,7 +327,7 @@ const SignUpForm = () => {
               {errors.includes("Please enter a last name") ? (
                 <div className="log_in_error">&nbsp;*</div>
               ) : errors.includes(
-                  "Last name must be less than 25 characters"
+                  "Last name must be less than 15 characters"
                 ) ? (
                 <div className="log_in_error">&nbsp;*</div>
               ) : (
@@ -347,9 +347,9 @@ const SignUpForm = () => {
                 <div className="sign_up_error">Please enter a last name</div>
               )}
             {errors.length > 0 &&
-              errors.includes("Last name must be less than 25 characters") && (
+              errors.includes("Last name must be less than 15 characters") && (
                 <div className="sign_up_error">
-                  Last name must be less than 25 characters
+                  Last name must be less than 15 characters
                 </div>
               )}
           </div>

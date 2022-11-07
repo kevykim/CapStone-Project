@@ -274,17 +274,17 @@ function Review() {
                 </div>
                 <div className="my_review_main_reviewimage">
                   <div className="my_review_main_review">{review.review}</div>
-                  <div>
+                  {review.reviewImg && <div>
                     <img
                       src={review.reviewImg}
                       alt="reviewimg"
                       className="my_review_image_"
                       onError={(event) => {
                         event.currentTarget.src =
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
+                          "https://png.pngtree.com/png-vector/20190729/ourlarge/pngtree-mountains-nature-outdoor-sun-hiking-flat-color-icon-vector-png-image_1622135.jpg";
                       }}
                     />
-                  </div>
+                  </div>}
                 </div>
                 <div className="my_review_main_buttons">
                   <div>
