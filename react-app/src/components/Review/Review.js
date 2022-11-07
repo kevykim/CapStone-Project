@@ -281,7 +281,7 @@ function Review() {
                       className="my_review_image_"
                       onError={(event) => {
                         event.currentTarget.src =
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPa4_Kyvffe_glSxOxK6jNM54hOHPHxuXAso_XuTVQ2c1tO59glVHLXyFbTvx68Q6Veqs&usqp=CAU";
+                          "https://png.pngtree.com/png-vector/20190729/ourlarge/pngtree-mountains-nature-outdoor-sun-hiking-flat-color-icon-vector-png-image_1622135.jpg";
                       }}
                     />
                   </div>}
