@@ -70,10 +70,13 @@ function HomePage() {
         <div className="homepage_arr_div">
           {recentTrail.map((trail, i) => (
             <div className="homepage_arr_div_inner" key={i}>
-              <div>
-                <NavLink exact to={`/trails/${trail.id}`}>
+              <div className="homepage_trail_image">
+                <NavLink
+                  className="homepage_trail_image"
+                  exact
+                  to={`/trails/${trail.id}`}
+                >
                   <img
-                    className="homepage_trail_image"
                     src={trail.previewImg}
                     alt="trailimg"
                     onError={(e) => {
@@ -179,9 +182,11 @@ function HomePage() {
               </NavLink>
             </div>
           </div>
-          <div className='homepage_skills_text_div'>
-            <div className='homepage_skills_top_text'>Built (for everyone) to go wild</div>
-            <div className='homepage_skills_bottom_text'>
+          <div className="homepage_skills_text_div">
+            <div className="homepage_skills_top_text">
+              Built (for everyone) to go wild
+            </div>
+            <div className="homepage_skills_bottom_text">
               Whether you want a casual ride or go super fast on some gnarly
               slopes, we've got you covered.
             </div>
@@ -192,10 +197,13 @@ function HomePage() {
         <div className="homepage_arr_div">
           {highestRevewTrails.map((trail, i) => (
             <div className="homepage_arr_div_inner" key={i}>
-              <div>
-                <NavLink exact to={`/trails/${trail.id}`}>
+              <div className="homepage_trail_image">
+                <NavLink
+                  className="homepage_trail_image"
+                  exact
+                  to={`/trails/${trail.id}`}
+                >
                   <img
-                    className="homepage_trail_image"
                     src={trail.previewImg}
                     alt="trailimg"
                     onError={(e) => {
