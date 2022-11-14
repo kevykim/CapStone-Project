@@ -58,25 +58,25 @@ WinterTrails is a web-application clone inspired by [AllTrails](https://www.allt
 
 # Features Direction
 ## HomePage
-<img src='https://i.imgur.com/i4hLW2m.gifv'/>
+<img src='https://i.imgur.com/i4hLW2m.gif'/>
 
 ## Sign up and Log in
-<img src='react-app/public/readmepics/signupandlogin.gif'/>
+<img src='https://i.imgur.com/UnuHehd.gif'/>
 
 ## Demo User
-<img src='react-app/public/readmepics/DemoUser.gif'/>
+<img src='https://i.imgur.com/JHRlPRM.gif'/>
 
 ## Create trail
-<img src='react-app/public/readmepics/Createtrail.gif' />
+<img src='https://i.imgur.com/f3OZeTK.gif' />
 
 ## Update and Delete trail
-<img src='react-app/public/readmepics/update&deletetrail.gif'/>
+<img src='https://i.imgur.com/FEUkqXS.gif'/>
 
 ## Create review
-<img src='react-app/public/readmepics/Createreview.gif'/>
+<img src='https://i.imgur.com/CkUFYcV.gif'/>
 
 ## Update and Delete review
-<img src='react-app/public/readmepics/editdeletereview.gif' />
+<img src='https://i.imgur.com/7VUANLZ.gif' />
 
 # Future Focus
 - Add a search bar where users can look up by the name of a trail, state, or country.
