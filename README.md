@@ -58,7 +58,7 @@ WinterTrails is a web-application clone inspired by [AllTrails](https://www.allt
 
 # Features Direction
 ## HomePage
-<img src='react-app/public/readmepics/Home Page.gif'/>
+<img src='https://i.imgur.com/i4hLW2m.gifv'/>
 
 ## Sign up and Log in
 <img src='react-app/public/readmepics/signupandlogin.gif'/>

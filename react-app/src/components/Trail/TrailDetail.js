@@ -323,9 +323,7 @@ function TrailDetail() {
             <div>
               <div className="trail_detail_bottom_inner">
                 <div className="trail_detail_bottom_allreview">
-                  <div className="trail_detail_bottom_avgstar">
-                    {average}
-                  </div>
+                  <div className="trail_detail_bottom_avgstar">{average}</div>
                   <div style={{ textAlign: "center" }}>
                     {average === 1 && (
                       <div>
@@ -611,17 +609,19 @@ function TrailDetail() {
                           </div>
                         </div>
                         <div>
-                          {review.reviewImg && <div>
-                            <img
-                              className="trail_detail_review_img"
-                              src={review.reviewImg}
-                              alt="reviewimg"
-                              onError={(event) => {
-                                event.currentTarget.src =
-                                  "https://png.pngtree.com/png-vector/20190729/ourlarge/pngtree-mountains-nature-outdoor-sun-hiking-flat-color-icon-vector-png-image_1622135.jpg";
-                              }}
-                            />
-                          </div>}
+                          {review.reviewImg && (
+                            <div>
+                              <img
+                                className="trail_detail_review_img"
+                                src={review.reviewImg}
+                                alt="reviewimg"
+                                onError={(event) => {
+                                  event.currentTarget.src =
+                                    "https://png.pngtree.com/png-vector/20190729/ourlarge/pngtree-mountains-nature-outdoor-sun-hiking-flat-color-icon-vector-png-image_1622135.jpg";
+                                }}
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -639,17 +639,19 @@ function TrailDetail() {
                 {trailsNear.map((trail, i) => (
                   <div classname="trail_detail_sidebar_inner_div" key={i}>
                     <div className="trail_detail_sidebar_image_div">
-                      <NavLink exact to={`/trails/${trail.id}`}>
-                        <img
-                          className="trail_detail_sidebar_image"
-                          src={trail.previewImg}
-                          alt="nearme"
-                          onError={(e) => {
-                            e.currentTarget.src =
-                              "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
-                          }}
-                        />
-                      </NavLink>
+                      <div className="trail_detail_sidebar_image">
+                        <NavLink exact to={`/trails/${trail.id}`}>
+                          <img
+                            className="trail_detail_sidebar_image"
+                            src={trail.previewImg}
+                            alt="nearme"
+                            onError={(e) => {
+                              e.currentTarget.src =
+                                "https://images.pexels.com/photos/6650184/pexels-photo-6650184.jpeg";
+                            }}
+                          />
+                        </NavLink>
+                      </div>
                       <div className="trail_detail_sidebar_image_info">
                         <div className="trail_detail_sidebar_firstline">
                           {trail?.difficulty === "Beginner" ? (
