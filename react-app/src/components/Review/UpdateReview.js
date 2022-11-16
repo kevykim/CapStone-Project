@@ -14,6 +14,7 @@ function UpdateReview({ setShowModal, review }) {
   const [reviews, setReviews] = useState(review.review);
   const [submitted, setSubmitted] = useState(false);
   const [reviewImg, setReviewImg] = useState(review?.reviewImg);
+  const [covered, setCovered] = useState("");
   const [validations, setValidations] = useState([]);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ function UpdateReview({ setShowModal, review }) {
     }
   };
 
-  let ratings = [1, 2, 3, 4, 5];
+  // let ratings = [1, 2, 3, 4, 5];
 
   //IMAGE VALIDATION
   const imageValidate =
@@ -88,14 +89,14 @@ function UpdateReview({ setShowModal, review }) {
         <div className="update_review_inner">
           <div className="update_review_inner_div">
             <div className="update_review_label_div">
-              <div>Stars</div>
+              <div style={{marginBottom:'15px'}}>Stars</div>
               {validations.length > 0 &&
                 submitted === true &&
                 (stars <= 0 || stars > 5) && (
                   <div className="update_review_error">&nbsp;*</div>
                 )}
             </div>
-            <select
+            {/* <select
               name="stars"
               value={stars}
               onChange={(event) => setStars(event.target.value)}
@@ -109,7 +110,31 @@ function UpdateReview({ setShowModal, review }) {
                   {rating}
                 </option>
               ))}
-            </select>
+            </select> */}
+            <span>
+              {["star1", "star2", "star3", "star4", "star5"].map((star, i) => {
+                return (
+                  <label>
+                    <input
+                      style={{ display: "none" }}
+                      type="radio"
+                      value={stars}
+                      onClick={(event) => setStars(i++)}
+                    />
+                    <i
+                      style={{
+                        transition: "0.5s",
+                        color: i++ < (covered || stars) ? "gold" : "lightgray",
+                        cursor: "pointer",
+                      }}
+                      onMouseEnter={(event) => setCovered(i++)}
+                      onMouseLeave={(event) => setCovered("")}
+                      className="fa-solid fa-star fa-2xl"
+                    ></i>
+                  </label>
+                );
+              })}
+            </span>
             {validations.length > 0 &&
               submitted === true &&
               (stars <= 0 || stars > 5) && (
