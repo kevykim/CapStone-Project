@@ -57,20 +57,17 @@ WinterTrails is a web-application clone inspired by [AllTrails](https://www.allt
     ```
 
 # Features Direction
-## HomePage
-<img src='https://i.imgur.com/lxtaUgy.gif'/>
+## Demo User
+<img src='https://i.imgur.com/JbiNyE2.gif'/>
 
 ## Sign up and Log in
 <img src='https://i.imgur.com/0OWGRrd.gif'/>
-
-## Demo User
-<img src='https://i.imgur.com/JbiNyE2.gif'/>
 
 ## Create, Read, Update, & Delete Trail
 <img src='https://i.imgur.com/ldyah58.gif'>
 
 ## Create, Read, Update & Delete Review
-<img src='https://i.imgur.com/fQ5KxzJ.gif'>
+<img src='https://i.imgur.com/5XjUnF1.gif'>
 
 # Future Focus
 - Add a search bar where users can look up by the name of a trail, state, or country.
