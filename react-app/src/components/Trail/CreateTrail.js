@@ -45,15 +45,16 @@ function CreateTrail() {
         if (Number(elevation) % 1 !== 0 || Number(elevation) >= 12001 || Number(elevation) < 3000 || !elevation)
           errors.push("Please enter a whole number between 3,000 to 12,000");
         if(!routeType) errors.push('Please select a route type')
-        if (
-          (!previewImg.endsWith(".jpg") &&
-          !previewImg.endsWith(".png") &&
-          !previewImg.endsWith(".jpeg") &&
-          !previewImg.endsWith(".svg") &&
-          !previewImg.endsWith(".gif")) ||
-        (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"))
-        )
-          errors.push("Please enter a valid url image");
+        // if (
+        //   (!previewImg.endsWith(".jpg") &&
+        //   !previewImg.endsWith(".png") &&
+        //   !previewImg.endsWith(".jpeg") &&
+        //   !previewImg.endsWith(".svg") &&
+        //   !previewImg.endsWith(".gif")) ||
+        // (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"))
+        // )
+        //   errors.push("Please enter a valid url image");
+        if(!previewImg) errors.push('Please add an image file.')
         setValidations(errors)
 
     }, [dispatch, name, country, state, resort, difficulty, description, length, elevation, routeType, previewImg])
@@ -61,24 +62,30 @@ function CreateTrail() {
     const onSubmit = async event => {
         event.preventDefault()
         setSubmitted(!submitted)
-        const payload = {
-            name,
-            country,
-            state,
-            resort,
-            difficulty,
-            description,
-            length,
-            elevation,
-            routeType,
-            previewImg
-        }
 
-        let createdTrailData = await dispatch(thunkCreateTrail(payload))
+        const formData = new FormData()
+
+        formData.append('name', name)
+        formData.append('country', country)
+        formData.append("state", state)
+        formData.append('resort', resort)
+        formData.append('difficulty', difficulty)
+        formData.append('description', description)
+        formData.append('length', length)
+        formData.append('elevation', elevation)
+        formData.append('routeType', routeType)
+        formData.append('previewImg', previewImg)
+
+        let createdTrailData = await dispatch(thunkCreateTrail(formData))
 
         if (createdTrailData) 
         history.push(`/trails/${createdTrailData.id}`)
 
+    }
+
+    const addImage = event => {
+      const file = event.target.files[0]
+      setPreviewImg(file)
     }
 
     if (!user) {
@@ -115,13 +122,13 @@ function CreateTrail() {
       //  );
 
       //IMAGE VALIDATION
-      const imageValidate =
-        (!previewImg.endsWith(".jpg") &&
-          !previewImg.endsWith(".png") &&
-          !previewImg.endsWith(".jpeg") &&
-          !previewImg.endsWith(".svg") &&
-          !previewImg.endsWith(".gif")) ||
-        (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"));
+      // const imageValidate =
+      //   (!previewImg.endsWith(".jpg") &&
+      //     !previewImg.endsWith(".png") &&
+      //     !previewImg.endsWith(".jpeg") &&
+      //     !previewImg.endsWith(".svg") &&
+      //     !previewImg.endsWith(".gif")) ||
+      //   (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"));
 
         // const imageValidate =
         //   (!previewImg.includes(".jpg") &&
@@ -434,29 +441,49 @@ function CreateTrail() {
                 <div className="create_trail_inputs_div">
                   <div className="create_trail_label_div">
                     <div>Trail image</div>
-                    {validations.length > 0 &&
+                    {/* {validations.length > 0 &&
                       submitted === true &&
                       imageValidate && (
                         <div className="create_trail_error">&nbsp;*</div>
+                      )} */}
+                    {validations.length > 0 &&
+                      submitted === true &&
+                      !previewImg && (
+                        <div className="create_trail_error">&nbsp;*</div>
                       )}
                   </div>
-                  <input
-                    name="previewImg"
-                    type="text"
-                    placeholder="Trail Image"
-                    value={previewImg}
-                    onChange={(event) => setPreviewImg(event.target.value)}
-                    className="create_trail_inputs"
-                  />
+                  <div className='testing_input_div'>
+                    <label className="testing_input">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        placeholder="Trail Image"
+                        // value={previewImg}
+                        onChange={addImage}
+                      />
+                      <div style={{height:'40px'}}>Select Image File</div>
+                      <i
+                        style={{ color: "rgb(60, 103, 148)" }}
+                        className="fa-solid fa-camera fa-xl"
+                      ></i>
+                    </label>
+                  </div>
                   {validations.length > 0 &&
+                    submitted === true &&
+                    !previewImg && (
+                      <div className="create_trail_error">
+                        Please add an image file
+                      </div>
+                    )}
+                  {/* {validations.length > 0 &&
                     submitted === true &&
                     imageValidate && (
                       <div className="create_trail_error">
                         Please enter a valid url image
                       </div>
-                    )}
+                    )} */}
                 </div>
-                <div className="create_trail_inputs_div">
+                <div className="create_trail_inputs_button_div">
                   <button
                     className="create_trail_button_form"
                     type="submit"

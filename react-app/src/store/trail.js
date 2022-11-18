@@ -53,11 +53,12 @@ const actionDeleteTrail = (id) => {
 
 // THUNKS
 
-export const thunkCreateTrail = (payload) => async dispatch => {
+export const thunkCreateTrail = (formData) => async dispatch => {
     const response = await fetch('/api/trails/', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(payload)
+        // headers: {'Content-Type': 'application/json'},
+        // body: JSON.stringify(payload)
+        body: formData
     })
     if (response.ok) {
         const data = await response.json()

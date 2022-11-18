@@ -7,7 +7,7 @@
 
 .create_trail_form {
     width: 1100px; 
-    height: 1300px;
+    height: 1350px;
     display: flex;
     flex-direction: row;
     border-right: 1px solid rgb(205, 201, 200);
@@ -41,6 +41,14 @@
 .create_trail_inputs_div {
     height: 110px;
     padding: 0px 15px;
+}
+
+.create_trail_inputs_button_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 110px;
+        padding: 0px 15px;
 }
 
 .create_trail_inputs {
@@ -89,4 +97,36 @@
 
 .create_trail_label_div {
     display: flex;
+}
+
+input[type=file] {
+    display: none;
+    
+}
+
+.testing_input {
+    height: 100px;
+        width: 390px;
+        border-radius: 4px;
+        margin: 4px 0px;
+        padding: 10px 16px;
+        border: 1px solid lightgrey;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: .7s ease-in-out;
+}
+
+.testing_input_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testing_input:hover {
+    background: lightgray;
+        border-radius: 4px;
+    height: 100px;
 }
