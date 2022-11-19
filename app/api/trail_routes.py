@@ -4,6 +4,7 @@ from app.models import Trail, db
 from app.forms import TrailForm
 from app.api.auth_routes import validation_errors_to_error_messages
 from datetime import date
+from app.sw3_upload import (upload_file_to_s3, allowed_file, get_unique_filename)
 
 trail_routes = Blueprint('trails', __name__)
 
@@ -14,6 +15,26 @@ trail_routes = Blueprint('trails', __name__)
 @trail_routes.route('/', methods=["POST"])
 @login_required
 def create_trail():
+    if "previewImg" not in request.files:
+        return {"errors": "image required"}, 400
+
+    image = request.files["previewImg"]
+
+    if not allowed_file(image.filename):
+        return {"errors": "file type not permitted"}, 400
+    
+    image.filename = get_unique_filename(image.filename)
+
+    upload = upload_file_to_s3(image)
+
+    if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return upload, 400
+
+    url = upload["url"]
+
     trailform = TrailForm()
     trailform['csrf_token'].data = request.cookies['csrf_token']
     if trailform.validate_on_submit():
@@ -27,7 +48,7 @@ def create_trail():
             length = trailform.data['length'],
             elevation = trailform.data['elevation'],
             routeType = trailform.data['routeType'],
-            previewImg = trailform.data['previewImg'],
+            previewImg = url,
             createdAt = date.today(),
             updatedAt = date.today(),
             userId = current_user.id
