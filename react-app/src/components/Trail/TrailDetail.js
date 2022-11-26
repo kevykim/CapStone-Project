@@ -10,6 +10,7 @@ import { thunkGetTrailReview } from "../../store/review"
 import PhotosModal from "../Modals/PhotosModal"
 import ShareModal from "../Modals/ShareModal"
 import MoreModal from "../Modals/MoreModal"
+import TrailDetailSearchBar from "../SearchBar/TrailDetailSearchBar"
 function TrailDetail() {
     const {id} = useParams()
     const dispatch = useDispatch()
@@ -69,38 +70,52 @@ function TrailDetail() {
     return (
       <>
         <div className="trail_detail_main">
-          <div className="trail_detail_top_text">
-            <div className="trail_detail_navlink">
-              <NavLink
-                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-                exact
-                to={`/${trail?.country}`}
-              >
-                {trail?.country}
-              </NavLink>
+          <div className="trail_detail_top_main">
+            <div className="trail_detail_top_text">
+              <div className="trail_detail_navlink">
+                <NavLink
+                  style={{
+                    textDecoration: "none",
+                    color: "rgb(132, 132, 132)",
+                  }}
+                  exact
+                  to={`/${trail?.country}`}
+                >
+                  {trail?.country}
+                </NavLink>
+              </div>
+              <div>&nbsp;›&nbsp;</div>
+              <div className="trail_detail_navlink">
+                <NavLink
+                  style={{
+                    textDecoration: "none",
+                    color: "rgb(132, 132, 132)",
+                  }}
+                  exact
+                  to={`/${trail?.state}`}
+                >
+                  {trail?.state}
+                </NavLink>
+              </div>
+              <div>&nbsp;›&nbsp;</div>
+              <div className="trail_detail_navlink">
+                <NavLink
+                  style={{
+                    textDecoration: "none",
+                    color: "rgb(132, 132, 132)",
+                  }}
+                  exact
+                  to={`/${trail?.resort}`}
+                >
+                  {trail?.resort}
+                </NavLink>
+              </div>
+              <div>&nbsp;›&nbsp;</div>
+              <div className="trail_detail_top_name">{trail?.name}</div>
             </div>
-            <div>&nbsp;›&nbsp;</div>
-            <div className="trail_detail_navlink">
-              <NavLink
-                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-                exact
-                to={`/${trail?.state}`}
-              >
-                {trail?.state}
-              </NavLink>
+            <div>
+            <TrailDetailSearchBar />
             </div>
-            <div>&nbsp;›&nbsp;</div>
-            <div className="trail_detail_navlink">
-              <NavLink
-                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-                exact
-                to={`/${trail?.resort}`}
-              >
-                {trail?.resort}
-              </NavLink>
-            </div>
-            <div>&nbsp;›&nbsp;</div>
-            <div className="trail_detail_top_name">{trail?.name}</div>
           </div>
           <div className="trail_detail_image_div">
             <img

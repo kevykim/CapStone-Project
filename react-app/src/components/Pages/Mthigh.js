@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { thunkGetTrail } from "../../store/trail";
+import PageSearchBar from "../SearchBar/PageSearchBar";
+
 
 import "./Pages.css";
 
@@ -21,6 +23,7 @@ function Mthigh() {
   return (
     <div className="pages_main">
       <div className="page_inner">
+        <div className="pages_detail_top_main">
         <div className="pages_detail_top_text">
           <div className="pages_detail_navlink">
             <NavLink
@@ -43,6 +46,10 @@ function Mthigh() {
           </div>
           <div>&nbsp;›&nbsp;</div>
           <div className="pages_detail_text">Mountain High</div>
+        </div>
+        <div>
+          <PageSearchBar />
+        </div>
         </div>
         <div className="pages_header">Mountain High</div>
         <div className="pages_inner_div">

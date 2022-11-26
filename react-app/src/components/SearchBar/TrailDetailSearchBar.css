@@ -1,0 +1,165 @@
+.traildetailsearchbar_main {
+    width: 330px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto-Regular';
+    outline: none;
+    z-index: 13;
+    position: relative;
+}
+
+.traildetailsearchbar_input {
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+    width: 330px;
+    height: 36px;
+    padding: 0 25px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    font-family: 'Roboto-Regular';
+    outline: none;
+    z-index: 1;
+    font-size: 9pt;
+
+}
+
+.traildetailsearchbar_magnify {
+    position: absolute;
+    right: 1px;
+    color: white;
+    border-radius: 5px;
+    background:rgb(60, 103, 148);;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+
+
+
+
+.traildetailsearchbar_dropmenu {
+    width: 320px;
+    height: 505px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+    position: absolute;
+    z-index: 12;
+        top: 90px;
+        right: 85px;
+    padding-top: 15px;
+    font-family: 'Roboto-Regular';
+    font-size: 8pt;
+}
+
+.traildetailsearchbar_nosearch_dropmenu {
+    width: 325px;
+        height: 505px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 1px 2px 2px 1px rgb(190, 186, 186);
+        position: absolute;
+        top: 90px;
+            right: 85px;
+        z-index: 12;
+        padding: 30px 16px;
+        font-family: 'Roboto-Regular';
+        font-size: 9pt;
+}
+
+.traildetailsearchbar_dropmenu_navlink {
+    text-decoration: none;
+    width: 300px;
+    color: rgb(52, 52, 52);
+    font-family: 'Roboto-Regular';
+}
+
+
+
+.traildetailsearchbar_dropmenu_text {
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(52, 52, 52);
+    padding-left: 10px;
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
+
+
+.traildetailsearchbar_dropmenu_inner {
+    width: 290px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Roboto-Regular';
+    border-bottom: 1px solid lightgray;
+    color: rgb(52, 52, 52);
+    margin-left: 10px;
+}
+.traildetailsearchbar_dropmenu_inner:hover {
+    /* color: rgb(60, 103, 148); */
+   background: lightgray;
+}
+
+.traildetailsearchbar_dropmenu_text_div {
+    padding-left: 10px;
+    color: rgb(52, 52, 52);
+    word-break: break-all;
+        white-space: pre-wrap;
+}
+
+
+
+.traildetailsearchbar_dropdown_icons {
+    width: 45px;
+    height: 45px;
+    background: rgb(243, 242, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    color: rgb(60, 103, 148);
+}
+
+
+.traildetailsearchbar_nosearchfound {
+    padding-top: 10px;
+    font-family: 'Roboto-Regular';
+    width: 280px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.traildetailsearchbar_dropmenu_text_big {
+    width: 210px;
+        word-break: break-all;
+            white-space: pre-wrap;
+}
+
+.traildetailsearchbar_dropmenu_text_small {
+    padding-top: 3px;
+    font-size: 7.5pt;
+}
+
+.traildetailsearchbar_nosearchspan {
+    color: rgb(60, 103, 148);
+    font-family: 'Roboto-Regular';
+}

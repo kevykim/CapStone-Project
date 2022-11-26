@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { thunkGetTrail } from "../../store/trail";
+import PageSearchBar from "../SearchBar/PageSearchBar";
+
 
 import "./Pages.css";
 
@@ -22,6 +24,7 @@ function Boreal() {
   return (
     <div className="pages_main">
       <div className="page_inner">
+        <div className="pages_detail_top_main">
         <div className="pages_detail_top_text">
           <div className="pages_detail_navlink">
             <NavLink
@@ -46,6 +49,10 @@ function Boreal() {
           <div className="pages_detail_text">
            Boreal Mountain Resort
           </div>
+        </div>
+        <div>
+          <PageSearchBar />
+        </div>
         </div>
         <div className="pages_header">Boreal Mountain Resort</div>
         <div className="pages_inner_div">

@@ -1,14 +1,23 @@
 import { NavLink } from 'react-router-dom';
+import { thunkGetTrail } from '../../store/trail';
+import { useEffect } from 'react';
 import './Pages.css'
+import { useDispatch } from 'react-redux';
+import PageSearchBar from '../SearchBar/PageSearchBar';
 
 
 
 
 function California() {
+const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(thunkGetTrail())
+  }, [dispatch])
     return (
       <div className="pages_main">
         <div className="page_inner">
+        <div className="pages_detail_top_main">
           <div className="pages_detail_top_text">
             <div className="pages_detail_navlink">
               <NavLink
@@ -21,6 +30,10 @@ function California() {
             </div>
             <div>&nbsp;›&nbsp;</div>
             <div className="pages_detail_text">California</div>
+          </div>
+          <div>
+            < PageSearchBar />
+          </div>
           </div>
           <div className="pages_header">California</div>
           <div className="pages_inner_div">

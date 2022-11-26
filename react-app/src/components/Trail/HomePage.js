@@ -13,6 +13,7 @@ import beginner from './Beginner.png'
 import intermediate from './Intermediate.png'
 import blackdiamond from './BlackDiamond.png'
 import doubleblackdiamond from './DoubleBlackDiamond.png'
+import SearchBar from '../SearchBar/SearchBar';
 // import { thunkGetCurrentReview } from '../../store/review';
 
 function HomePage() {
@@ -57,11 +58,15 @@ function HomePage() {
           </div>
           {!user ? (
             <div className="homepage_text">
-              <div>Find your next trail</div>
+              <div className="homepage_inner_text">Find your next trail</div>
+              <SearchBar />
             </div>
           ) : (
             <div className="homepage_text">
-              <div>Welcome {user?.firstName}</div>
+              <div className="homepage_inner_text">
+                Welcome {user?.firstName}
+              </div>
+              <SearchBar />
             </div>
           )}
         </div>

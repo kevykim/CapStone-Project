@@ -1,14 +1,29 @@
 import { NavLink } from "react-router-dom";
+import TrailDetailSearchBar from "../SearchBar/TrailDetailSearchBar";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { thunkGetTrail } from "../../store/trail";
 import "./Pages.css";
 
 function USA() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(thunkGetTrail())
+  }, [dispatch])
+
   return (
     <div className="pages_main">
       <div className="page_inner">
+        <div className="pages_detail_top_main">
         <div className="pages_detail_top_text">
           <div className="pages_detail_nonnavlink">
             United States of America
           </div>
+        </div>
+        <div>
+          < TrailDetailSearchBar />
+        </div>
         </div>
         <div className="pages_header">United States of America</div>
         <div className="pages_inner_div">

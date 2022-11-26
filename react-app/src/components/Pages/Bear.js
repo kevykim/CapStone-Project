@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { thunkGetTrail } from "../../store/trail";
+import PageSearchBar from "../SearchBar/PageSearchBar";
+
 
 import "./Pages.css";
 
@@ -21,28 +23,33 @@ function Bear() {
   return (
     <div className="pages_main">
       <div className="page_inner">
-        <div className="pages_detail_top_text">
-          <div className="pages_detail_navlink">
-            <NavLink
-              style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-              exact
-              to="/United States of America"
-            >
-              United States of America
-            </NavLink>
+        <div className="pages_detail_top_main">
+          <div className="pages_detail_top_text">
+            <div className="pages_detail_navlink">
+              <NavLink
+                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
+                exact
+                to="/United States of America"
+              >
+                United States of America
+              </NavLink>
+            </div>
+            <div>&nbsp;›&nbsp;</div>
+            <div className="pages_detail_navlink">
+              <NavLink
+                style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
+                exact
+                to="/California"
+              >
+                California
+              </NavLink>
+            </div>
+            <div>&nbsp;›&nbsp;</div>
+            <div className="pages_detail_text">Bear Mountain</div>
           </div>
-          <div>&nbsp;›&nbsp;</div>
-          <div className="pages_detail_navlink">
-            <NavLink
-              style={{ textDecoration: "none", color: "rgb(132, 132, 132)" }}
-              exact
-              to="/California"
-            >
-              California
-            </NavLink>
+          <div className="pages_detail_searchbar_div">
+            <PageSearchBar />
           </div>
-          <div>&nbsp;›&nbsp;</div>
-          <div className="pages_detail_text">Bear Mountain</div>
         </div>
         <div className="pages_header">Bear Mountain</div>
         <div className="pages_inner_div">
