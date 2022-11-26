@@ -72,18 +72,27 @@
     font-family: "Roboto-Bold";
 }
 
-
+.pages_detail_top_main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1100px;
+    border-bottom: 1px solid rgb(205, 201, 200);
+}
 
 .pages_detail_top_text {
     display: flex;
     flex-direction: row;
     padding: 20px;
-    margin-right: 680px;
+    margin-right: 220px;
     color: rgb(132, 132, 132);
-    border-bottom: 1px solid rgb(205, 201, 200);
-    width: 100%;
+    width: 535px;
     font-size: 9.2pt;
 }
+
+/* .pages_detail_searchbar_div {
+
+} */
 
 .pages_detail_navlink {
     text-decoration: none;
