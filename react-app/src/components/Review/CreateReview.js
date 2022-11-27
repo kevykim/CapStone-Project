@@ -62,16 +62,21 @@ function CreateReview({ setShowModal, user }) {
     }
   };
 
+    const addReviewImage = (event) => {
+      const file = event.target.files[0];
+      setReviewImg(file);
+    };
+
   // let ratings = [1, 2, 3, 4, 5];
 
   //IMAGE VALIDATION
-  const imageValidate =
-    (!reviewImg.endsWith(".jpg") &&
-      !reviewImg.endsWith(".png") &&
-      !reviewImg.endsWith(".jpeg") &&
-      !reviewImg.endsWith(".svg") &&
-      !reviewImg.endsWith(".gif")) ||
-    (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
+  // const imageValidate =
+  //   (!reviewImg.endsWith(".jpg") &&
+  //     !reviewImg.endsWith(".png") &&
+  //     !reviewImg.endsWith(".jpeg") &&
+  //     !reviewImg.endsWith(".svg") &&
+  //     !reviewImg.endsWith(".gif")) ||
+  //   (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
 
   // const imageValidate =
   //   (!reviewImg.includes(".jpg") &&
@@ -204,29 +209,33 @@ function CreateReview({ setShowModal, user }) {
                   </div>
                 )}
             </div>
-            <div className="create_review_inner_div_image">
-              <div className="create_review_label_div">
-                <div>Review Image (Optional)</div>
+            {/* <div className="create_review_inner_div_image"> */}
+              {/* <div className="create_review_label_div"> */}
+                {/* <div>Review Image (Optional)</div> */}
                 {/* {reviewImg.length > 0 &&
                   submitted === true &&
                   imageValidate && (
                     <div className="create_review_error">&nbsp;*</div>
                   )} */}
-              </div>
+              {/* </div> */}
+              <div className='testing_input_div'>
+                <label className='testing_input'>
               <input
-                type="text"
-                name="reviewImg"
+                type="file"
+                accept='image/*'
                 placeholder="Share a picture of your experience."
-                value={reviewImg}
-                onChange={(event) => setReviewImg(event.target.value)}
-                className="create_review_input_image"
+                // value={reviewImg}
+                onChange={addReviewImage}
+                // className="create_review_input_image"
               />
-              {reviewImg.length > 0 && submitted === true && imageValidate && (
+              </label>
+              </div>
+              {/* {reviewImg.length > 0 && submitted === true && imageValidate && (
                 <div className="create_review_error">
                   Please enter a valid url image
                 </div>
-              )}
-            </div>
+              )} */}
+            {/* </div> */}
             {/* {validations.length > 0 && submitted && (
               <div>
                 {validations.map((error, i) => (

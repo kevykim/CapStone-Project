@@ -56,8 +56,8 @@ const actionDeleteTrailReview = (id) => {
 export const thunkCreateTrailReview = (payload) => async dispatch => {
     const response = await fetch(`/api/reviews/trails/${payload.trailId}`, {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(payload)
+        // headers: {"Content-Type": "application/json"},
+        // body: JSON.stringify(payload)
     });
     if(response.ok) {
         const data = await response.json()
