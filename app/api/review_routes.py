@@ -4,6 +4,8 @@ from app.api.auth_routes import validation_errors_to_error_messages
 from app.models import Review, db
 from app.forms import ReviewForm
 from datetime import date
+from app.sw3_upload import (upload_file_to_s3, allowed_file, get_unique_filename)
+
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -14,6 +16,26 @@ review_routes = Blueprint('reviews', __name__)
 @review_routes.route('/trails/<int:id>', methods=["POST"])
 @login_required
 def create_review(id):
+    if "reviewImg" not in request.files:
+        return {"errors": "image required"}, 400
+
+    image = request.files["reviewImg"]
+
+    if not allowed_file(image.filename):
+        return {"errors": "file type not permitted"}, 400
+    
+    image.filename = get_unique_filename(image.filename)
+
+    upload = upload_file_to_s3(image)
+
+    if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+        return upload, 400
+
+    url = upload["url"]
+
     reviewform = ReviewForm()
     reviewform['csrf_token'].data = request.cookies['csrf_token']
     if reviewform.validate_on_submit():
@@ -22,7 +44,7 @@ def create_review(id):
             userId = current_user.id,
             review = reviewform.data['review'],
             stars = reviewform.data['stars'],
-            reviewImg = reviewform.data['reviewImg'],
+            reviewImg = url,
             createdAt = date.today(),
             updatedAt = date.today()
         )
