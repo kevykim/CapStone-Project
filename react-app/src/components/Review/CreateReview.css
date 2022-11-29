@@ -101,7 +101,7 @@
 .create_review_form {
     padding: 30px;
     width: 524px;
-    height: 590px;
+    height: 630px;
     display: flex;
         flex-direction: column;
 
@@ -121,7 +121,7 @@
 }
 
 .create_review_inner_div {
-    height: 75px;
+    height: 100px;
 }
 
 .create_review_input_inner {
@@ -139,11 +139,10 @@
 }
 
 .create_review_inner_div_textarea {
-    height: 185px;
+    height: 170px;
 }
 
 .create_review_inner_div_image {
-    height: 75px;
 }
 
 .create_review_input_image {
@@ -186,4 +185,61 @@
 
 .create_review_label_div {
     display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+input[type=file] {
+    display: none;
+}
+
+.create_review_image_div {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 115px;
+}
+
+.create_review_image_input {
+    height: 75px;
+    width: 430px;
+    /* border-radius: 4px; */
+    margin: 4px 0px;
+    padding: 10px 16px;
+    /* border: 0.5px solid lightgrey; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.create_review_imageselect_text {
+    z-index: 1;
+    color: white;
+    height: 40px;
+    text-shadow: 1px 1.5px 1px black;
+}
+
+#review {
+    width: 430px;
+    height: 100px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    border-radius: 4px;
+    transition: .5s ease-in-out;
+}
+
+#review:hover {
+    opacity: 0.7;
 }

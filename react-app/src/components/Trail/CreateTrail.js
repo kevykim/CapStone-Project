@@ -77,7 +77,7 @@ function CreateTrail() {
         formData.append('previewImg', previewImg)
 
         let createdTrailData = await dispatch(thunkCreateTrail(formData))
-        console.log(formData)
+        // console.log(formData)
         if (createdTrailData) 
         history.push(`/trails/${createdTrailData.id}`)
 
