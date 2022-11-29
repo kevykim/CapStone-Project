@@ -73,8 +73,9 @@ function PageSearchBar() {
 
         {showDropdown && searchResult?.length > 0 && (
           <div className="pagesearchbar_dropmenu">
-            {searchResult.map((trail) => (
+            {searchResult.map((trail, i) => (
               <NavLink
+                key={i}
                 to={`/trails/${trail.id}`}
                 className="pagesearchbar_dropmenu_navlink"
                 onClick={() => setSearchWord("")}

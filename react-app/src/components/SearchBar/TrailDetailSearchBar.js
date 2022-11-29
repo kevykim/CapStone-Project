@@ -73,8 +73,9 @@ function TrailDetailSearchBar() {
 
         {showDropdown && searchResult?.length > 0 && (
           <div className="traildetailsearchbar_dropmenu">
-            {searchResult.map((trail) => (
+            {searchResult.map((trail, i) => (
               <NavLink
+                key={i}
                 to={`/trails/${trail.id}`}
                 className="traildetailsearchbar_dropmenu_navlink"
                 onClick={() => setSearchWord("")}
