@@ -77,16 +77,23 @@ function CreateTrail() {
         formData.append('previewImg', previewImg)
 
         let createdTrailData = await dispatch(thunkCreateTrail(formData))
-
+        console.log(formData)
         if (createdTrailData) 
         history.push(`/trails/${createdTrailData.id}`)
 
     }
 
     const addImage = event => {
-      const file = event.target.files[0]
-      setPreviewImg(file)
+      if (event.target.files.length === 1) {
+        const file = event.target.files[0]
+        const src = String(URL.createObjectURL(file))
+        const previewImage = document.getElementById('preview')
+        previewImage.src = src
+        // console.log(image)
+        setPreviewImg(file)
+      }
     }
+
 
     if (!user) {
         history.push('/')
@@ -452,8 +459,8 @@ function CreateTrail() {
                         <div className="create_trail_error">&nbsp;*</div>
                       )}
                   </div>
-                  <div className='testing_input_div'>
-                    <label className="testing_input">
+                  <div className="create_trail_image_div">
+                    <label className="create_trail_image_input">
                       <input
                         type="file"
                         accept="image/*"
@@ -461,11 +468,23 @@ function CreateTrail() {
                         // value={previewImg}
                         onChange={addImage}
                       />
-                      <div style={{height:'40px'}}>Select Image File</div>
+                      <div className='create_trail_imageselect_text'>
+                        Select Image File
+                      </div>
                       <i
-                        style={{ color: "rgb(60, 103, 148)" }}
+                        style={{ color: "rgb(60, 103, 148)", zIndex: 1, textShadow:'0.5px 1px 2.5px  white' }}
                         className="fa-solid fa-camera fa-xl"
                       ></i>
+                      <img
+                        id="preview"
+                        // onError="this.style.display='none'"
+                        onError={(event) => {
+                          event.currentTarget.src =
+                            "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+                        }}
+                        alt='preview'
+                        src=''
+                      />
                     </label>
                   </div>
                   {validations.length > 0 &&
