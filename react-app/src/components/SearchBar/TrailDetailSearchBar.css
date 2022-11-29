@@ -17,14 +17,14 @@
     border-radius: 10px;
     font-family: 'Roboto-Regular';
     outline: none;
-    z-index: 1;
+    z-index: 13;
     font-size: 9pt;
 
 }
 
 .traildetailsearchbar_magnify {
     position: absolute;
-    right: 1px;
+    right: 0px;
     color: white;
     border-radius: 5px;
     background:rgb(60, 103, 148);;
@@ -33,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 13;
 }
 
 
@@ -41,7 +41,7 @@
 
 
 .traildetailsearchbar_dropmenu {
-    width: 320px;
+    width: 325px;
     height: 505px;
     overflow-y: auto;
     display: flex;

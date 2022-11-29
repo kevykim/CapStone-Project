@@ -47,31 +47,73 @@ function CreateReview({ setShowModal, user }) {
   const onSubmit = async (event) => {
     event.preventDefault();
     setSubmitted(!submitted);
+
+    // const formData = new FormData();
+
     const payload = {
       trailId: id,
       stars,
       review: reviews,
       reviewImg,
     };
+    
 
-    let createdReviewData = await dispatch(thunkCreateTrailReview(payload));
+    // if (createdReviewData) {
+    //   history.push(`/trails/${payload.trailId}`);
+    //   setShowModal(false);
+    // }
 
-    if (createdReviewData) {
-      history.push(`/trails/${payload.trailId}`);
-      setShowModal(false);
+    // const trailId = id;
+
+    // formData.append("trailId", trailId);
+    // formData.append("stars", stars);
+    // formData.append("review", reviews);
+    // formData.append("reviewImg", reviewImg);
+
+  // const createdReviewData = await fetch(`/api/reviews/trails/${trailId}`, {
+  //   method: "POST",
+  //   body: formData,
+  // });
+  // if (createdReviewData.ok) {
+  //   await createdReviewData.json();
+  //   history.push(`/trails/${createdReviewData.trailId}`);
+  //   setShowModal(false);
+  //   return createdReviewData
+    
+  // }
+  // if (formData) {
+  //   await dispatch(thunkCreateTrailReview(formData));
+  // }
+  let createdReviewData = await dispatch(thunkCreateTrailReview(payload));
+
+  if (createdReviewData) {
+    history.push(`/trails/${payload.trailId}`);
+    setShowModal(false);
+    }
+  };
+
+  const addReviewImage = (event) => {
+    if (event.target.files.length === 1) {
+      const file = event.target.files[0];
+      const src = String(URL.createObjectURL(file));
+      const reviewImage = document.getElementById("review");
+      reviewImage.src = src
+      console.log(src)
+      // console.log(file)
+      setReviewImg(file);
     }
   };
 
   // let ratings = [1, 2, 3, 4, 5];
 
   //IMAGE VALIDATION
-  const imageValidate =
-    (!reviewImg.endsWith(".jpg") &&
-      !reviewImg.endsWith(".png") &&
-      !reviewImg.endsWith(".jpeg") &&
-      !reviewImg.endsWith(".svg") &&
-      !reviewImg.endsWith(".gif")) ||
-    (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
+  // const imageValidate =
+  //   (!reviewImg.endsWith(".jpg") &&
+  //     !reviewImg.endsWith(".png") &&
+  //     !reviewImg.endsWith(".jpeg") &&
+  //     !reviewImg.endsWith(".svg") &&
+  //     !reviewImg.endsWith(".gif")) ||
+  //   (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
 
   // const imageValidate =
   //   (!reviewImg.includes(".jpg") &&
@@ -125,7 +167,7 @@ function CreateReview({ setShowModal, user }) {
           <div className="create_review_inner">
             <div className="create_review_inner_div">
               <div className="create_review_label_div">
-                <div style={{marginBottom:'15px'}}>Stars</div>
+                <div style={{ marginBottom: "15px" }}>Stars</div>
                 {validations.length > 0 &&
                   submitted === true &&
                   (stars <= 0 || stars > 5) && (
@@ -148,33 +190,39 @@ function CreateReview({ setShowModal, user }) {
                 ))}
               </select> */}
               <span>
-              {["star1", "star2", "star3", "star4", "star5"].map((star, i) => {
-                return (
-                  <label>
-                    <input
-                      style={{ display: "none" }}
-                      type="radio"
-                      value={i}
-                      onClick={(event) => setStars(i++)}
-                    />
-                    <i
-                      style={{
-                        transition: "0.5s",
-                        color: i++ < (covered || stars) ? "gold" : "lightgray",
-                        cursor: "pointer",
-                      }}
-                      onMouseEnter={(event) => setCovered(i++)}
-                      onMouseLeave={(event) => setCovered("")}
-                      className="fa-solid fa-star fa-2xl"
-                    ></i>
-                  </label>
-                );
-              })}
-            </span>
+                {["star1", "star2", "star3", "star4", "star5"].map(
+                  (star, i) => {
+                    return (
+                      <label key={i}>
+                        <input
+                          style={{ display: "none" }}
+                          type="radio"
+                          value={i}
+                          onClick={(event) => setStars(i++)}
+                        />
+                        <i
+                          style={{
+                            transition: "0.5s",
+                            color:
+                              i++ < (covered || stars) ? "gold" : "lightgray",
+                            cursor: "pointer",
+                          }}
+                          onMouseEnter={(event) => setCovered(i++)}
+                          onMouseLeave={(event) => setCovered("")}
+                          className="fa-solid fa-star fa-2xl"
+                        ></i>
+                      </label>
+                    );
+                  }
+                )}
+              </span>
               {validations.length > 0 &&
                 submitted === true &&
                 (stars <= 0 || stars > 5) && (
-                  <div className="create_review_error">
+                  <div
+                    style={{ marginTop: "15px" }}
+                    className="create_review_error"
+                  >
                     Select a star between 1 to 5
                   </div>
                 )}
@@ -204,29 +252,54 @@ function CreateReview({ setShowModal, user }) {
                   </div>
                 )}
             </div>
+              <div className="create_review_image_div">
             <div className="create_review_inner_div_image">
-              <div className="create_review_label_div">
-                <div>Review Image (Optional)</div>
-                {/* {reviewImg.length > 0 &&
+              {/* <div className="create_review_label_div"> */}
+              <div>Review Image (Optional)</div>
+              {/* {reviewImg.length > 0 &&
                   submitted === true &&
                   imageValidate && (
                     <div className="create_review_error">&nbsp;*</div>
                   )} */}
-              </div>
-              <input
-                type="text"
-                name="reviewImg"
-                placeholder="Share a picture of your experience."
-                value={reviewImg}
-                onChange={(event) => setReviewImg(event.target.value)}
-                className="create_review_input_image"
-              />
-              {reviewImg.length > 0 && submitted === true && imageValidate && (
+            </div>
+              <label className="create_review_image_input">
+                <input
+                  type="file"
+                  accept="image/*"
+                  placeholder="Share a picture of your experience."
+                  // value={reviewImg}
+                  onChange={addReviewImage}
+                  // className="create_review_input_image"
+                />
+                <div className="create_review_imageselect_text">
+                  Select Image File
+                </div>
+                <i
+                  style={{
+                    color: "rgb(60, 103, 148)",
+                    zIndex: 1,
+                    textShadow: "0.5px 1px 2.5px  white",
+                  }}
+                  className="fa-solid fa-camera fa-xl"
+                ></i>
+                <img
+                  id="review"
+                  // onError="this.style.display='none'"
+                  onError={(event) => {
+                    event.currentTarget.src =
+                      "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+                  }}
+                  alt="review"
+                  src=""
+                />
+              </label>
+            </div>
+            {/* {reviewImg.length > 0 && submitted === true && imageValidate && (
                 <div className="create_review_error">
                   Please enter a valid url image
                 </div>
-              )}
-            </div>
+              )} */}
+            {/* </div> */}
             {/* {validations.length > 0 && submitted && (
               <div>
                 {validations.map((error, i) => (

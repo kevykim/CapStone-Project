@@ -101,32 +101,48 @@
 
 input[type=file] {
     display: none;
-    
 }
 
-.testing_input {
-    height: 100px;
+.create_trail_image_div {
+    display: flex;
+
+}
+
+.create_trail_image_input {
+    height: 101px;
         width: 390px;
-        border-radius: 4px;
+        /* border-radius: 4px; */
         margin: 4px 0px;
         padding: 10px 16px;
-        border: 1px solid lightgrey;
+        /* border: 0.5px solid lightgrey; */
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: .7s ease-in-out;
+        position: relative;
 }
 
-.testing_input_div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+.create_trail_imageselect_text {
+    z-index: 1;
+    color: white;
+    height: 40px;
+        text-shadow: 1px 1.5px 1px black;
 }
 
-.testing_input:hover {
-    background: lightgray;
-        border-radius: 4px;
+#preview {
+    width: 390px;
     height: 100px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+        border-radius: 4px;
+        transition: .5s ease-in-out;
 }
+
+#preview:hover {
+    opacity: 0.7;
+}
+
+
