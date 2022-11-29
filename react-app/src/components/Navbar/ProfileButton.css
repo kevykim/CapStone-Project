@@ -27,7 +27,7 @@
     top: 45px;
     border: 1px solid lightgrey;
     border-radius: 10px;
-    z-index: 11;
+    z-index: 13;
     background: white;
 }
 
@@ -50,10 +50,12 @@
     padding: 0px 16px;
     background: white;
     color: rgb(62,62,62);
+    z-index: 12;
 }
 
 .profile_dropdown_box:hover {
     background: rgb(243,242,243);
+    z-index: 12;
 }
 
 .log_out_button {
