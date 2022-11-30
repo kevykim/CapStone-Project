@@ -98,8 +98,6 @@ function CreateReview({ setShowModal, user }) {
       const src = String(URL.createObjectURL(file));
       const reviewImage = document.getElementById("review");
       reviewImage.src = src
-      console.log(src)
-      // console.log(file)
       setReviewImg(file);
     }
   };
