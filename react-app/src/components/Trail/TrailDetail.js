@@ -652,7 +652,7 @@ function TrailDetail() {
                   Nearby trails in {trail?.resort}
                 </div>
                 {trailsNear.map((trail, i) => (
-                  <div classname="trail_detail_sidebar_inner_div" key={i}>
+                  <div className="trail_detail_sidebar_inner_div" key={i}>
                     <div className="trail_detail_sidebar_image_div">
                       <div className="trail_detail_sidebar_image">
                         <NavLink exact to={`/trails/${trail.id}`}>

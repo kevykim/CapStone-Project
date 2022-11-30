@@ -9,7 +9,7 @@ function PageNotFound() {
       <div className="pagenotfound_main">
         <div className="pagenotfound_inner">
           <div>
-            <div classname="pagenotfound_image">
+            <div className="pagenotfound_image">
               <img
                 style={{
                   width: "1098px",

@@ -47,7 +47,7 @@ function HomePage() {
           <div className="homepage_image_div">
             <img
               style={{ height: "540px", width: "1265px" }}
-              classname="homepage_image"
+              className="homepage_image"
               src="https://images.pexels.com/photos/1404713/pexels-photo-1404713.jpeg"
               alt="home"
               onError={(e) => {
