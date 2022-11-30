@@ -93,6 +93,26 @@ def get_trail_by_id(id):
 def update_trail(id):
     trailform = TrailForm()
     trailform['csrf_token'].data = request.cookies['csrf_token']
+
+    if "previewImg" not in request.files:
+        url = trailform.data['previewImg']
+    else:
+        image = request.files["previewImg"]
+
+        if not allowed_file(image.filename):
+            return {"errors": "file type not permitted"}, 400
+    
+        image.filename = get_unique_filename(image.filename)
+
+        upload = upload_file_to_s3(image)
+
+        if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+            return upload, 400
+
+        url = upload["url"]
     updated_trail = Trail.query.get(id)
     if updated_trail is None:
         return {'errors': 'Trail not found'}, 404
@@ -106,7 +126,7 @@ def update_trail(id):
         updated_trail.length = trailform.data['length']
         updated_trail.elevation = trailform.data['elevation']
         updated_trail.routeType = trailform.data['routeType']
-        updated_trail.previewImg = trailform.data['previewImg']
+        updated_trail.previewImg = url
         updated_trail.updatedAt = date.today()
         db.session.commit()
         return updated_trail.to_dict()
