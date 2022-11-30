@@ -61,15 +61,15 @@ function UpdateTrail() {
     )
       errors.push("Please enter a whole number between 3,000 to 12,000");
     if (!routeType) errors.push("Please select a route type");
-    if (
-      (!previewImg.endsWith(".jpg") &&
-        !previewImg.endsWith(".png") &&
-        !previewImg.endsWith(".jpeg") &&
-        !previewImg.endsWith(".svg") &&
-        !previewImg.endsWith(".gif")) ||
-      (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"))
-    )
-      errors.push("Please enter a valid url image");
+    // if (
+    //   (!previewImg.endsWith(".jpg") &&
+    //     !previewImg.endsWith(".png") &&
+    //     !previewImg.endsWith(".jpeg") &&
+    //     !previewImg.endsWith(".svg") &&
+    //     !previewImg.endsWith(".gif")) ||
+    //   (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"))
+    // )
+    //   errors.push("Please enter a valid url image");
     setValidations(errors);
   }, [
     dispatch,
@@ -88,19 +88,20 @@ function UpdateTrail() {
   const onSubmit = async (event) => {
     event.preventDefault();
     setSubmitted(!submitted);
-    const payload = {
-      id,
-      name,
-      country,
-      state,
-      resort,
-      difficulty,
-      description,
-      length,
-      elevation,
-      routeType,
-      previewImg,
-    };
+
+     const payload = {
+       id,
+       name,
+       country,
+       state,
+       resort,
+       difficulty,
+       description,
+       length,
+       elevation,
+       routeType,
+       previewImg,
+     };
 
     let updatedTrailData = await dispatch(thunkUpdateTrail(payload));
 
@@ -132,14 +133,25 @@ function UpdateTrail() {
 
   let routeType_choices = ["All-mountain", "Park", "Powder", "Free-ride"];
 
+  const addImage = (event) => {
+    if (event.target.files.length === 1) {
+      let file = event.target.files[0];
+      const src = String(URL.createObjectURL(file));
+      const previewImage = document.getElementById("updated");
+      previewImage.src = src
+      document.getElementById('previous').style['display'] = 'none'
+      setPreviewImg(file);
+    }
+  };
+
   //IMAGE VALIDATION
-  const imageValidate =
-    (!previewImg.endsWith(".jpg") &&
-      !previewImg.endsWith(".png") &&
-      !previewImg.endsWith(".jpeg") &&
-      !previewImg.endsWith(".svg") &&
-      !previewImg.endsWith(".gif")) ||
-    (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"));
+  // const imageValidate =
+  //   (!previewImg.endsWith(".jpg") &&
+  //     !previewImg.endsWith(".png") &&
+  //     !previewImg.endsWith(".jpeg") &&
+  //     !previewImg.endsWith(".svg") &&
+  //     !previewImg.endsWith(".gif")) ||
+  //   (!previewImg.startsWith("http://") && !previewImg.startsWith("https://"));
 
     //previous
   // const imageValidate =
@@ -446,27 +458,76 @@ function UpdateTrail() {
               <div className="update_trail_inputs_div">
                 <div className="update_trail_label_div">
                   <div>Trail image</div>
-                  {validations.length > 0 &&
+                  {/* {validations.length > 0 &&
                     submitted === true &&
                     imageValidate && (
                       <div className="update_trail_error">&nbsp;*</div>
+                    )} */}
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    !previewImg && (
+                      <div className="create_trail_error">&nbsp;*</div>
                     )}
                 </div>
-                <input
-                  name="previewImg"
-                  type="text"
-                  placeholder="Trail Image"
-                  value={previewImg}
-                  onChange={(event) => setPreviewImg(event.target.value)}
-                  className="update_trail_inputs"
-                />
+                <div className="update_trail_image_div">
+                  <label className="update_trail_image_input">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      placeholder="Trail Image"
+                      // value={previewImg}
+                      onChange={addImage}
+                    />
+                    <div className="update_trail_imageselect_text">
+                      Select Image File
+                    </div>
+                    <i
+                      style={{
+                        color: "rgb(60, 103, 148)",
+                        zIndex: 1,
+                        textShadow: "0.5px 1px 2.5px  white",
+                      }}
+                      className="fa-solid fa-camera fa-xl"
+                    ></i>
+                    
+                    <img
+                      id="updated"
+                      // onError="this.style.display='none'"
+                      onError={(event) => {
+                        event.currentTarget.src =
+                          "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+                      }}
+
+                      alt="actual"
+                      src=''
+                    />
+                    <img  
+                    id="previous"
+                      // onError="this.style.display='none'"
+                      onError={(event) => {
+                        event.currentTarget.src =
+                          "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+                      }}
+
+                      alt="previous"
+                      src={previewImg}
+                    />
+                  </label>
+                </div>
                 {validations.length > 0 &&
                   submitted === true &&
-                  imageValidate && (
-                    <div className="update_trail_error">
-                      Please enter a valid url image
+                  !previewImg && (
+                    <div className="create_trail_error">
+                      Please add an image file
                     </div>
                   )}
+                {/* {validations.length > 0 &&
+                        submitted === true &&
+                        imageValidate && (
+                          <div className="update_trail_error">
+                            Please enter a valid url image
+                          </div>
+                        )} */}
               </div>
               {/* {validations.length > 0 && submitted === true && (
               <div className="update_trail_error">
@@ -475,7 +536,7 @@ function UpdateTrail() {
                 ))}
               </div>
             )} */}
-              <div className="update_trail_inputs_div">
+              <div className="update_trail_inputs_button_div">
                 <button
                   className="update_trail_button_form"
                   type="submit"
