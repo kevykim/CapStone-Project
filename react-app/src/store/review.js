@@ -107,10 +107,18 @@ export const thunkGetCurrentReview = () => async dispatch => {
 }
 
 export const thunkUpdateTrailReview = (payload) => async dispatch => {
+    const {id, trailId, stars, review, reviewImg } = payload;
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("trailId", trailId);
+    formData.append("stars", stars);
+    formData.append("review", review);
+    formData.append("reviewImg", reviewImg);
     const response = await fetch(`/api/reviews/${payload.id}`, {
         method: "PUT",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(payload)
+        // headers: {"Content-Type": "application/json"},
+        // body: JSON.stringify(payload)
+        body:formData
     });
     if(response.ok) {
         const data = await response.json()
