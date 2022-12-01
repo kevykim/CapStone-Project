@@ -15,7 +15,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [profileImg, setProfileImg] = useState('');
+  // const [profileImg, setProfileImg] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ const SignUpForm = () => {
     e.preventDefault();
 
       if (password === confirmPassword) {
-        const data = await dispatch(signUp(username, firstName, lastName, email, password, profileImg));
+        const data = await dispatch(signUp(username, firstName, lastName, email, password));
         if (data) {
           setErrors(data)
         }
@@ -54,9 +54,9 @@ const SignUpForm = () => {
     setConfirmPassword(e.target.value);
   }
 
-  const updateProfileImg = (e) => {
-    setProfileImg(e.target.value);
-  }
+  // const updateProfileImg = (e) => {
+  //   setProfileImg(e.target.value);
+  // }
 
 
   if (user) {
@@ -451,7 +451,7 @@ const SignUpForm = () => {
               <div className='sign_up_error'>Please enter a password</div>
             )} */}
           </div>
-          <div className="sign_up_inputs_div">
+          {/* <div className="sign_up_inputs_div">
             <div className="sign_up_label_div">
               <div>Profile Image (Optional)</div>
             </div>
@@ -466,7 +466,7 @@ const SignUpForm = () => {
             {errors.includes("Please enter a valid URL.") && (
               <div className="sign_up_error">Please enter a valid URL</div>
             )}
-          </div>
+          </div> */}
           <div className="sign_up_inputs_div">
             <button className="sign_up_button_form" type="submit">
               Sign Up

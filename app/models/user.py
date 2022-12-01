@@ -2,6 +2,7 @@ from app.models import trail
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from datetime import date
 
 
 class User(db.Model, UserMixin):
@@ -14,6 +15,8 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(1000), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
     profileImg = db.Column(db.String(255))
+    createdAt = db.Column(db.String(255), nullable=False, default=date.today())
+    updatedAt = db.Column(db.String(255), nullable=False, default=date.today())
 
     # Relationships
     trails = db.relationship('Trail', back_populates='users')
@@ -38,5 +41,7 @@ class User(db.Model, UserMixin):
             'firstName': self.firstName,
             'lastName': self.lastName,
             'email': self.email,
+            'createdAt': self.createdAt,
+            'updatedAt': self.updatedAt,
             'profileImg': self.profileImg
         }

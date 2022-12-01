@@ -26,6 +26,8 @@ import Intermediate from './components/Pages/intermediate';
 import BlackDiamond from './components/Pages/blackdiamond';
 import DoubleBlackDiamond from './components/Pages/doubleblackdiamond';
 import PageNotFound from './components/PageNotFound';
+import ProfilePage from './components/auth/ProfilePage';
+import ProfileEdit from './components/auth/ProfileEdit';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -54,6 +56,12 @@ function App() {
         </Route>
         <Route exact path="/signup">
           <SignUpForm />
+        </Route>
+        <Route exact path='/profile/:firstName/edit'>
+          <ProfileEdit />
+        </Route>
+        <Route exact path='/profile/:firstName'>
+          <ProfilePage />
         </Route>
         <Route exact path="/trails/new">
           <CreateTrail />

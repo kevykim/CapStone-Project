@@ -121,6 +121,7 @@ input[type=file] {
         justify-content: center;
         align-items: center;
         position: relative;
+        overflow: hidden;
 }
 
 .create_trail_image_input img {
@@ -149,7 +150,7 @@ input[type=file] {
     position: absolute;
     top: 0px;
         border-radius: 4px;
-        transition: .5s ease-in-out;
+        /* transition: .5s ease-in-out; */
 }
 
 
