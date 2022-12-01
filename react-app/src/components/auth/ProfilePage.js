@@ -66,6 +66,11 @@ function ProfilePage() {
 
     }
 
+     const options = {
+       month: "long",
+       year: "numeric",
+     };
+
     //  const addImage = (event) => {
     //    if (event.target.files.length === 1) {
     //      let file = event.target.files[0];
@@ -91,10 +96,6 @@ function ProfilePage() {
                 {`${user?.firstName} ${user?.lastName}`}
               </div>
             </div>
-            <button className="profile_edit_button" onClick={onClick}>
-              {" "}
-              Edit Profile
-            </button>
           </div>
           {/* {showProfileForm === true && (
             <div className="profile_inner_divs">
@@ -261,54 +262,66 @@ function ProfilePage() {
             </div>
           )} */}
 
-            <div className="profile_inner_divs">
-              <div className="profile_left_div">
-                <div className="profile_header">Profile</div>
-                <div className="profile_top_main">
-                  <div className="profile_image_div">
-                    <img
-                      className="profile_image"
-                      src={!user?.profileImg ? defaultImg : user?.profileImg}
-                      alt="profile-pic"
-                      onError={(event) => {
-                        event.currentTarget.src =
-                          "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
-                      }}
-                    />
-                    <div className="profile_image_member_text">
-                      <div>Member Since</div>
-                      <div>Date</div>
+          <div className="profile_inner_divs">
+            <div className="profile_left_div">
+              <div className="profile_header">
+                <div>Profile</div>
+                <button className="profile_edit_button" onClick={onClick}>
+                  {" "}
+                  Edit Profile
+                </button>
+              </div>
+              <div className="profile_top_main">
+                <div className="profile_image_div">
+                  <img
+                    className="profile_image"
+                    src={!user?.profileImg ? defaultImg : user?.profileImg}
+                    alt="profile-pic"
+                    onError={(event) => {
+                      event.currentTarget.src =
+                        "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                    }}
+                  />
+                  <div className="profile_image_member_text">
+                    <div className='profile_image_member_firsttext' >Member Since</div>
+                    <div className='profile_image_member_secondtext'>
+                      {new Date(user?.createdAt).toLocaleDateString(
+                        undefined,
+                        options
+                      )}
                     </div>
-                  </div>
-                  <div className="profile_mainnames_div">
-                    <div className="profile_mainnames_firstlasttext">
-                      {" "}
-                      {`${user?.firstName} ${user?.lastName}`}{" "}
-                    </div>
-                    <div className="profile_mainnames_username">
-                      Username : {user?.username}{" "}
-                    </div>
-                    <div className="profile_mainnames_border"></div>
                   </div>
                 </div>
-                <div className="profile_recent_activity">Recent Activity</div>
-              </div>
-              <div className="profile_right_div">
-                <div className="profile_right_inners">
-                  <div className="profile_right_text">Contribute</div>
-                  <div className="profile_right_navlink_div">
-                    <i className="fa-solid fa-circle-plus"></i> &nbsp;
-                    <NavLink
-                      className="profile_right_navlink"
-                      exact
-                      to="/trails/new"
-                    >
-                      Add new trail
-                    </NavLink>
+                <div className="profile_mainnames_div">
+                  <div className="profile_mainnames_firstlasttext">
+                    {" "}
+                    {`${user?.firstName} ${user?.lastName}`}{" "}
                   </div>
+                  <div className="profile_mainnames_username">
+                    Username : {user?.username}{" "}
+                  </div>
+                  <div className="profile_mainnames_border"></div>
+                </div>
+              </div>
+              <div className="profile_recent_activity">Recent Activity</div>
+              <div></div>
+            </div>
+            <div className="profile_right_div">
+              <div className="profile_right_inners">
+                <div className="profile_right_text">Contribute</div>
+                <div className="profile_right_navlink_div">
+                  <i className="fa-solid fa-circle-plus"></i> &nbsp;
+                  <NavLink
+                    className="profile_right_navlink"
+                    exact
+                    to="/trails/new"
+                  >
+                    Add new trail
+                  </NavLink>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     );

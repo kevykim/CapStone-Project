@@ -65,6 +65,9 @@
 }
 
 .profile_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 20pt;
     font-family: "Roboto-Regular";
     border-bottom: 1px solid rgb(204, 204, 204);
@@ -91,6 +94,19 @@
     font-family: "Roboto-Regular";
     text-align: center;
 }
+
+.profile_image_member_firsttext {
+    font-family: "Roboto-Bold";
+    color: rgb(62, 62, 62);
+    font-size: 10pt;
+}
+
+.profile_image_member_secondtext {
+    font-family: "Roboto-Regular";
+    color: rgb(62, 62, 62);
+    font-size: 9pt;
+}
+
 
 .profile_inner_divs {
     display: flex;
