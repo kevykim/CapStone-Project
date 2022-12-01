@@ -101,10 +101,23 @@ export const thunkGetSingleTrail = (id) => async dispatch => {
 };
 
 export const thunkUpdateTrail = (payload) => async dispatch => {
+    const {name, country, state, resort, difficulty, description, length, elevation, routeType, previewImg} = payload
+    const formData = new FormData()
+    formData.append("name", name);
+    formData.append("country", country);
+    formData.append("state", state);
+    formData.append("resort", resort);
+    formData.append("difficulty", difficulty);
+    formData.append("description", description);
+    formData.append("length", length);
+    formData.append("elevation", elevation);
+    formData.append("routeType", routeType);
+    formData.append("previewImg", previewImg);
   const response = await fetch(`/api/trails/${payload.id}`, {
     method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
+    // headers: { "Content-Type": "application/json" },
+    // body: JSON.stringify(payload)
+    body: formData
   });
   if (response.ok) {
     const data = await response.json();

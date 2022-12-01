@@ -1,14 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useDispatch} from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { thunkUpdateTrailReview } from "../../store/review";
 
 function UpdateReview({ setShowModal, review }) {
   const dispatch = useDispatch();
-  const { id } = useParams();
   const history = useHistory();
-
-  const trail = useSelector((state) => state.trail[id]);
 
   const [stars, setStars] = useState(review.stars);
   const [reviews, setReviews] = useState(review.review);
@@ -58,16 +55,27 @@ function UpdateReview({ setShowModal, review }) {
     }
   };
 
+  const addImage = (event) => {
+    if (event.target.files.length === 1) {
+      let file = event.target.files[0];
+      const src = String(URL.createObjectURL(file));
+      const previewImage = document.getElementById("updatedreview");
+      previewImage.src = src;
+      document.getElementById("previousreview").style["display"] = "none";
+      setReviewImg(file);
+    }
+  };
+
   // let ratings = [1, 2, 3, 4, 5];
 
   //IMAGE VALIDATION
-  const imageValidate =
-    (!reviewImg.endsWith(".jpg") &&
-      !reviewImg.endsWith(".png") &&
-      !reviewImg.endsWith(".jpeg") &&
-      !reviewImg.endsWith(".svg") &&
-      !reviewImg.endsWith(".gif")) ||
-    (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
+  // const imageValidate =
+  //   (!reviewImg.endsWith(".jpg") &&
+  //     !reviewImg.endsWith(".png") &&
+  //     !reviewImg.endsWith(".jpeg") &&
+  //     !reviewImg.endsWith(".svg") &&
+  //     !reviewImg.endsWith(".gif")) ||
+  //   (!reviewImg.startsWith("http://") && !reviewImg.startsWith("https://"));
 
   // const imageValidate =
   //   (!reviewImg.includes(".jpg") &&
@@ -85,11 +93,11 @@ function UpdateReview({ setShowModal, review }) {
             X
           </button>
         </div>
-        <div className="update_review_trail_name_header">{trail?.name}</div>
+        <div className="update_review_trail_name_header">{review?.trailname}</div>
         <div className="update_review_inner">
           <div className="update_review_inner_div">
             <div className="update_review_label_div">
-              <div style={{marginBottom:'15px'}}>Stars</div>
+              <div style={{ marginBottom: "15px" }}>Stars</div>
               {validations.length > 0 &&
                 submitted === true &&
                 (stars <= 0 || stars > 5) && (
@@ -168,36 +176,72 @@ function UpdateReview({ setShowModal, review }) {
                 </div>
               )}
           </div>
-          <div className="update_review_inner_div_image">
-            <div className="update_review_label_div">
+          <div className="update_review_image_div">
+            <div className="update_review_inner_div_image">
+              {/* <div className="update_review_label_div"> */}
               <div>Review Image (Optional)</div>
               {/* {reviewImg.length > 0 &&
                   submitted === true &&
                   imageValidate && (
                     <div className="update_review_error">&nbsp;*</div>
                   )} */}
+              {/* </div> */}
             </div>
-            <input
-              type="text"
-              name="reviewImg"
-              placeholder="Share a picture of your experience."
-              value={reviewImg}
-              onChange={(event) => setReviewImg(event.target.value)}
-              className="update_review_input_image"
-            />
-            {reviewImg.length > 0 && submitted === true && imageValidate && (
-              <div className="update_review_error">
-                Please enter a valid url image
+            <label className="update_review_image_input">
+              <input
+                type="file"
+                accept="image/*"
+                placeholder="Share a picture of your experience."
+                // value={reviewImg}
+                onChange={addImage}
+                // className="update_review_input_image"
+              />
+              <div className="update_review_imageselect_text">
+                Select Image File
               </div>
-            )}
+              <i
+                style={{
+                  color: "rgb(60, 103, 148)",
+                  zIndex: 1,
+                  textShadow: "0.5px 1px 2.5px  white",
+                }}
+                className="fa-solid fa-camera fa-xl"
+              ></i>
+              <img
+                id="updatedreview"
+                // onError="this.style.display='none'"
+                onError={(event) => {
+                  event.currentTarget.src =
+                    "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+                }}
+                alt="review"
+                src=""
+              />
+              <img
+                id="previousreview"
+                // onError="this.style.display='none'"
+                onError={(event) => {
+                  event.currentTarget.src =
+                    "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
+                }}
+                alt="previousreview"
+                src={reviewImg}
+              />
+            </label>
           </div>
+
+          {/* {reviewImg.length > 0 && submitted === true && imageValidate && (
+              <div className="update_review_error">
+              Please enter a valid url image
+              </div>
+            )} */}
           {/* {validations.length > 0 && submitted && (
             <div>
-              {validations.map((error, i) => (
-                <div key={i}>{error}</div>
+            {validations.map((error, i) => (
+              <div key={i}>{error}</div>
               ))}
-            </div>
-          )} */}
+              </div>
+            )} */}
           <div className="update_review_submit">
             <button
               type="submit"

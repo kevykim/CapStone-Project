@@ -72,7 +72,7 @@ function Review() {
             </div>
           </div>
         ) : (
-          <div classname="my_review_box_main">
+          <div className="my_review_box_main">
             {currentReviewOwned.map((review, i) => (
               <div
                 style={{
@@ -82,7 +82,7 @@ function Review() {
                   marginLeft: "25px",
                   marginBottom: "25px",
                 }}
-                classname="my_review_box_main"
+                className="my_review_box_main"
                 key={i}
               >
                 <div className="my_review_box_main_firstline">

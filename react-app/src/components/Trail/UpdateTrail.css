@@ -7,12 +7,13 @@
 
 .update_trail_form {
     width: 1100px;
-        height: 1300px;
+        height: 1350px;
         display: flex;
         flex-direction: row;
         border-right: 1px solid rgb(205, 201, 200);
         border-left: 1px solid rgb(205, 201, 200);
         border-bottom: 1px solid rgb(205, 201, 200);
+
 }
 
 .update_trail_top_text {
@@ -72,6 +73,18 @@
     cursor: pointer;
 }
 
+.update_trail_button_form:hover {
+    opacity: 0.7;
+}
+
+.update_trail_inputs_button_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 110px;
+    padding: 0px 15px;
+}
+
 
 .update_trail_error {
     color: red;
@@ -86,4 +99,69 @@
 
 .update_trail_label_div {
     display: flex;
+}
+
+
+
+input[type=file] {
+    display: none;
+}
+
+.update_trail_image_div {
+    display: flex;
+
+}
+
+.update_trail_image_input {
+    height: 101px;
+    width: 390px;
+    /* border-radius: 4px; */
+    margin: 4px 0px;
+    padding: 10px 16px;
+    /* border: 0.5px solid lightgrey; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.update_trail_image_input img {
+    width: 100%;
+        height: 100%;
+        display: block;
+    transition: transform 0.5s;
+}
+
+.update_trail_image_input:hover img {
+    transform: scale(1.09);
+}
+
+.update_trail_imageselect_text {
+    z-index: 1;
+    color: white;
+    height: 40px;
+    text-shadow: 1px 1.5px 1px black;
+}
+
+#updated {
+    width: 390px;
+    height: 100px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    border-radius: 4px;
+}
+
+
+
+#previous {
+    width: 391px;
+    height: 100px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    border-radius: 4px;
 }

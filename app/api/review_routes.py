@@ -16,28 +16,29 @@ review_routes = Blueprint('reviews', __name__)
 @review_routes.route('/trails/<int:id>', methods=["POST"])
 @login_required
 def create_review(id):
+    reviewform = ReviewForm()
+    reviewform['csrf_token'].data = request.cookies['csrf_token']
+
     if "reviewImg" not in request.files:
-        return {"errors": "image required"}, 400
+        url = reviewform.data['reviewImg']
+    else:
+        image = request.files["reviewImg"]
 
-    image = request.files["reviewImg"]
-
-    if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
+        if not allowed_file(image.filename):
+            return {"errors": "file type not permitted"}, 400
     
-    image.filename = get_unique_filename(image.filename)
+        image.filename = get_unique_filename(image.filename)
 
-    upload = upload_file_to_s3(image)
+        upload = upload_file_to_s3(image)
 
-    if "url" not in upload:
+        if "url" not in upload:
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
         # so we send back that error message
-        return upload, 400
+            return upload, 400
 
-    url = upload["url"]
+        url = upload["url"]
 
-    reviewform = ReviewForm()
-    reviewform['csrf_token'].data = request.cookies['csrf_token']
     if reviewform.validate_on_submit():
         created_review = Review(
             trailId = id,
@@ -89,13 +90,33 @@ def get_currentuser_review():
 def update_review(id):
     reviewform = ReviewForm()
     reviewform['csrf_token'].data = request.cookies['csrf_token']
+
+    if "reviewImg" not in request.files:
+        url = reviewform.data['reviewImg']
+    else:
+        image = request.files["reviewImg"]
+
+        if not allowed_file(image.filename):
+            return {"errors": "file type not permitted"}, 400
+    
+        image.filename = get_unique_filename(image.filename)
+
+        upload = upload_file_to_s3(image)
+
+        if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+            return upload, 400
+
+        url = upload["url"]
     updated_review = Review.query.get(id)
     if updated_review is None:
         return {'errors': f'Review {id} not found'}, 404
     if reviewform.validate_on_submit():
         updated_review.review = reviewform.data['review']
         updated_review.stars = reviewform.data['stars']
-        updated_review.reviewImg = reviewform.data['reviewImg']
+        updated_review.reviewImg = url
         updated_review.updatedAt = date.today()
         db.session.commit()
         return updated_review.to_dict()

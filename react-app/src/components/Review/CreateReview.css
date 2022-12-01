@@ -142,8 +142,7 @@
     height: 170px;
 }
 
-.create_review_inner_div_image {
-}
+
 
 .create_review_input_image {
     width: 430px;
@@ -220,6 +219,18 @@ input[type=file] {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
+}
+
+.create_review_image_input img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.create_review_image_input:hover img {
+    transform: scale(1.09);
 }
 
 
@@ -237,9 +248,5 @@ input[type=file] {
     position: absolute;
     top: 0px;
     border-radius: 4px;
-    transition: .5s ease-in-out;
-}
-
-#review:hover {
-    opacity: 0.7;
+    /* transition: .5s ease-in-out; */
 }
