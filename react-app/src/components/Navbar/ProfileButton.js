@@ -42,12 +42,18 @@ function ProfileButton({ user }) {
           className="profile_img_main"
           src={!user?.profileImg ? defaultImg : user?.profileImg}
           alt="profile-pic"
-          onError={event => {event.currentTarget.src =
-            "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png"}}
+          onError={(event) => {
+            event.currentTarget.src =
+              "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+          }}
         />
         {showMenu && user && (
           <div className="profile-dropdown">
-            <div className="profile_dropdown_box">{user.username}</div>
+            <div className="profile_dropdown_box">
+              <NavLink className="profile_dropdown_navlink" exact to={`/profile/${user.firstName}}`}>
+                Profile
+              </NavLink>
+            </div>
             <div className="profile_dropdown_box">
               <NavLink className="profile_dropdown_navlink" exact to="/trails">
                 Trails
@@ -67,7 +73,7 @@ function ProfileButton({ user }) {
                 New trail
               </NavLink>
             </div>
-            <div >
+            <div>
               <button className="log_out_button" onClick={logOut}>
                 Log Out
               </button>

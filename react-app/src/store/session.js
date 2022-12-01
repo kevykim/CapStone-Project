@@ -1,11 +1,17 @@
 // constants
 const SET_USER = 'session/SET_USER';
+// const EDIT_USER = 'session/EDIT_USER'
 const REMOVE_USER = 'session/REMOVE_USER';
 
 const setUser = (user) => ({
   type: SET_USER,
   payload: user
 });
+
+// const editUser = (user) => ({
+//   type: EDIT_USER,
+//   payload: user
+// })
 
 const removeUser = () => ({
   type: REMOVE_USER,
@@ -88,8 +94,33 @@ export const logout = () => async (dispatch) => {
   }
 };
 
+export const thunkEditUser = (payload) => async dispatch => {
+  const {id, firstName, lastName, profileImg} = payload
+  const formData = new FormData()
+  formData.append('firstName', firstName)
+  formData.append("lastName", lastName)
+  formData.append('profileImg', profileImg)
+  const response = await fetch(`/api/auth/profile/${id}` , {
+    method: "PUT",
+    body: formData
+  })
 
-export const signUp = (username, firstName, lastName, email, password, profileImg) => async (dispatch) => {
+   if (response.ok) {
+     const data = await response.json();
+     dispatch(setUser(data));
+     return null;
+   } else if (response.status < 500) {
+     const data = await response.json();
+     if (data.errors) {
+       return data.errors;
+     }
+   } else {
+     return ["An error occurred. Please try again."];
+   }
+}
+
+
+export const signUp = (username, firstName, lastName, email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
@@ -101,7 +132,7 @@ export const signUp = (username, firstName, lastName, email, password, profileIm
       lastName,
       email,
       password,
-      profileImg
+      // profileImg
     }),
   });
   
