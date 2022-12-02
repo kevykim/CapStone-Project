@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { thunkEditUser } from "../../store/session";
 
@@ -21,6 +21,16 @@ const [lastName, setLastName] = useState(user?.lastName);
 const [profileImg, setProfileImg] = useState(user?.profileImg);
 const [errors, setErrors] = useState([]);
 const [imageLoading, setImageLoading] = useState(false)
+
+
+useEffect(() => {
+  let error = []
+  if(firstName.length === 0) error.push('Please enter a first name.')
+  if (lastName.length === 0) error.push("Please enter a last name");
+  if (firstName.length > 15) error.push('First name must be less than 15 characters');  
+  if (lastName.length > 15) error.push("Last name must be less than 15 characters");
+  setErrors(error)
+},[firstName.length, lastName.length])
 
 // const saveClick = (event) => {
 //   event.preventDefault();
@@ -44,14 +54,21 @@ const onSubmit = async (event) => {
     const data = await res.json()
     if (data && data.errors) setErrors(data.errors)
   })
-  history.push(`/profile/${user?.firstName}%7D`);
-  return updatedUserData
+  if (errors.length === 0) {
+    history.push(`/profile/${user?.firstName}%7D`);
+    return updatedUserData
+  }
      
+  if (errors.length > 0) {
+    setImageLoading(false);
+  
+  }
 
 //   if (updatedUserData) {
 //     // setShowProfileForm(!showProfileForm);
 //   }
 };
+
 
 
 
@@ -66,6 +83,11 @@ if (actualUser !== user?.id) {
 const onClick = (event) => {
     history.push(`/profile/${user?.firstName}%7D`);
 
+};
+
+const options = {
+  month: "long",
+  year: "numeric",
 };
 
 const addImage = (event) => {
@@ -95,14 +117,16 @@ let defaultImg =
               {`${user?.firstName} ${user?.lastName}`}
             </div>
           </div>
-          <button className="profile_edit_button" onClick={onClick}>
-            {" "}
-            Edit Profile
-          </button>
         </div>
         <div className="profile_inner_divs">
           <div className="profile_left_div">
-            <div className="profile_header">Profile</div>
+            <div className="profile_header">
+              <div>Profile</div>
+              <button className="profile_edit_button" onClick={onClick}>
+                {" "}
+                Edit Profile
+              </button>
+            </div>
             <form className="profile_top_main" onSubmit={onSubmit}>
               <div className="profile_inputs_div">
                 <div className="profile_inputs_label_div">
@@ -148,8 +172,15 @@ let defaultImg =
                   <div className="profile_error">Please add an image file</div>
                 )}
                 <div className="profile_image_member_text">
-                  <div>Member Since</div>
-                  <div>Date</div>
+                  <div className="profile_image_member_firsttext">
+                    Member Since
+                  </div>
+                  <div className="profile_image_member_secondtext">
+                    {new Date(user?.createdAt).toLocaleDateString(
+                      undefined,
+                      options
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="profile_inputs_main_div">
@@ -223,7 +254,11 @@ let defaultImg =
                 </div>
                 <div className="profile_buttons_div">
                   <div>
-                    <button disabled={errors.length > 0 && submitted} className="profile_buttons_save" type="submit">
+                    <button
+                      disabled={errors.length > 0 && submitted}
+                      className="profile_buttons_save"
+                      type="submit"
+                    >
                       Save
                     </button>
                   </div>
@@ -237,7 +272,11 @@ let defaultImg =
                     </button>
                   </div>
                 </div>
-                {imageLoading && <p style={{textAlign:'center', marginTop:'5px'}}>loading...</p>}
+                {imageLoading && (
+                  <p style={{ textAlign: "center", marginTop: "5px" }}>
+                    loading...
+                  </p>
+                )}
               </div>
             </form>
           </div>
