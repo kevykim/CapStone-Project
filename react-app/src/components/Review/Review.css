@@ -3,12 +3,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    min-height: 1100px;
 }
 
 .my_review_inner_div {
     width: 1100px;
-    height: 100%;
+    min-height: 1100px;
     border-right: 1px solid rgb(205, 201, 200);
      border-left: 1px solid rgb(205, 201, 200);
     border-bottom: 1px solid rgb(205, 201, 200);
@@ -29,9 +29,8 @@
 }
 
 .my_review_header {
-    margin-top: 10px;
     height: 50px;
-    border: 1px solid rgb(205, 201, 200);
+    border-bottom: 1px solid rgb(205, 201, 200);
     font-size: 16pt;
     display: flex;
     align-items: flex-end;
