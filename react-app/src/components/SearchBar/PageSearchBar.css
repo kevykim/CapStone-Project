@@ -4,7 +4,7 @@
     align-items: center;
     font-family: 'Roboto-Regular';
     outline: none;
-    z-index: 11;
+    z-index: 13;
     position: relative;
 }
 
@@ -17,7 +17,7 @@
     border-radius: 10px;
     font-family: 'Roboto-Regular';
     outline: none;
-    z-index: 1;
+    z-index: 13;
     font-size: 9pt;
 
 }
@@ -33,7 +33,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 13;
 }
 
 
