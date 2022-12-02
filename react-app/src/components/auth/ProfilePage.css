@@ -16,9 +16,11 @@
 
 .profile_inner {
     width: 1100px;
-    border: 1px solid rgb(205, 201, 200);
-    margin-top: 10px;
-    height: 1100px;
+    border-left:1px solid rgb(205, 201, 200);
+    border-right: 1px solid rgb(205, 201, 200);
+    border-bottom: 1px solid rgb(205, 201, 200);
+    min-height: 1100px;
+
 }
 
 .profile_error {
@@ -31,6 +33,7 @@
     justify-content: center;
     align-items: center;
     width: 550px;
+    height: 300px;
     margin-top: 15px;
 }
 
@@ -210,7 +213,7 @@
 .profile_right_div {
     background: rgb(243, 242, 243);
     width: 250px;
-    height: 1043px;
+    min-height: 1100px;
 }
 
 .profile_right_inners {
@@ -268,10 +271,74 @@
 
 
 
+.profile_recent_review_main {
+    padding: 10px;
+}
+
+.profile_recent_profilepic_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile_recent_profilepic {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+}
+
+.profile_recent_review_div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(204, 204, 204);
+    width: 500px;
+    height: 70px;
+    background: rgb(224, 238, 240);
+    padding: 15px 15px 15px 30px;
+    margin-left: 15px;
+    border-radius: 20px;
+}
+
+.profile_recent_review_inner {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}   
+
+.profile_recent_review_secondinner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile_recent_review_you {
+    color: rgb(60, 103, 148);
+        font-family: 'Roboto-Bold';
+}
+
+.profile_recent_review_ital {
+    font-style: italic;
+    font-size: 9pt;
+    color: rgb(137, 132, 113);
+
+}
 
 
+.profile_recent_navlink {
+    text-decoration: none;
+    color: rgb(60, 103, 148);
+    font-family: 'Roboto-Bold';
+}
 
+.profile_recent_navlink:hover {
+    text-decoration: underline;
+}
 
+.profile_recent_date_text {
+    font-size: 9pt;
+        color: rgb(137, 132, 113);
+        margin-left: 5px;
+}
 
 
 
