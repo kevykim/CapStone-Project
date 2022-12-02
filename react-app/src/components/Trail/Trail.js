@@ -97,7 +97,8 @@ function Trails() {
                 flexDirection: "row",
                 justifyContent: "center",
                 flexWrap: "wrap",
-                alignItems: "center"
+                alignItems: "center",
+                width:'100%'
               }}
             >
               {currentTrailOwned.map((trail, i) => (
