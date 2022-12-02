@@ -1,6 +1,7 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, NavLink } from 'react-router-dom';
-
+import { useEffect } from 'react';
+import { thunkGetCurrentReview } from '../../store/review';
 import './ProfilePage.css'
 
 
@@ -11,7 +12,14 @@ function ProfilePage() {
       const actualUser = user?.id;
 
     const history = useHistory()
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+      dispatch(thunkGetCurrentReview())
+    }, [dispatch])
+
+    const currentReview = useSelector(state => state.review)
+    const currentReviewArr = Object.values(currentReview)
 
     // const [showProfileForm, setShowProfileForm] = useState(false)
     // const [submitted, setSubmitted] = useState(false);
@@ -283,8 +291,10 @@ function ProfilePage() {
                     }}
                   />
                   <div className="profile_image_member_text">
-                    <div className='profile_image_member_firsttext' >Member Since</div>
-                    <div className='profile_image_member_secondtext'>
+                    <div className="profile_image_member_firsttext">
+                      Member Since
+                    </div>
+                    <div className="profile_image_member_secondtext">
                       {new Date(user?.createdAt).toLocaleDateString(
                         undefined,
                         options
@@ -304,7 +314,45 @@ function ProfilePage() {
                 </div>
               </div>
               <div className="profile_recent_activity">Recent Activity</div>
-              <div></div>
+              {currentReviewArr.map((review, i) => (
+                <div className="profile_recent_review_main" key={i}>
+                  <div className="profile_recent_review_div">
+                        <div className='profile_recent_profilepic_div'>
+                      <div>
+                      <img
+                        className="profile_recent_profilepic"
+                        src={!user?.profileImg ? defaultImg : user?.profileImg}
+                        alt="profile-pic"
+                        onError={(event) => {
+                          event.currentTarget.src =
+                            "https://www.pngkit.com/png/full/128-1280585_user-icon-fa-fa-user-circle.png";
+                        }}
+                      />
+                      </div>
+                          <div className="profile_recent_review_inner">
+                        <div className='profile_recent_review_secondinner'>
+                      <div className="profile_recent_review_you">
+                        You&nbsp;
+                      </div>
+                      <div className="profile_recent_review_ital">
+                        reviewed&nbsp;&nbsp;
+                      </div>
+                      <div>
+                        <NavLink
+                          className="profile_recent_navlink"
+                          exact
+                          to={`/trails/${review.trailId}`}
+                          >
+                          {review.trailname}
+                        </NavLink>
+                      </div>
+                      </div>
+                      <div className='profile_recent_date_text'>{review.createdAt}</div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
             <div className="profile_right_div">
               <div className="profile_right_inners">
