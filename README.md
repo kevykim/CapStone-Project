@@ -27,6 +27,7 @@ WinterTrails is a web-application clone inspired by [AllTrails](https://www.allt
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 # Run Locally
 1. Clone the application
@@ -70,7 +71,6 @@ WinterTrails is a web-application clone inspired by [AllTrails](https://www.allt
 <img src='https://i.imgur.com/5XjUnF1.gif'>
 
 # Future Focus
-- Add a search bar where users can look up by the name of a trail, state, or country.
 - Add google maps for users to keep track of where they are and see other trails nearby.
 - Add weather api so that users can see the weather conditions within a specific trail.
 - Work on community feature where all users can meet and post comments/pictures in their own community page.
