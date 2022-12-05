@@ -9,6 +9,7 @@ class Trail(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(40), nullable=False)
+    city = db.Column(db.String(75), nullable=False)
     country = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100), nullable=False)
     resort = db.Column(db.String(100), nullable=False)
@@ -38,6 +39,7 @@ class Trail(db.Model):
         return {
             'id': self.id,
             'name': self.name,
+            'city': self.city,
             'country': self.country,
             'state': self.state,
             'resort': self.resort,

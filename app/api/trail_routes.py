@@ -40,6 +40,7 @@ def create_trail():
     if trailform.validate_on_submit():
         created_trail = Trail(
             name = trailform.data['name'],
+            city = trailform.data['city'],
             country = trailform.data['country'],
             state = trailform.data['state'],
             resort = trailform.data['resort'],
@@ -118,6 +119,7 @@ def update_trail(id):
         return {'errors': 'Trail not found'}, 404
     if trailform.validate_on_submit():
         updated_trail.name = trailform.data['name']
+        updated_trail.city = trailform.data['city']
         updated_trail.country = trailform.data['country']
         updated_trail.state = trailform.data['state']
         updated_trail.resort = trailform.data['resort']

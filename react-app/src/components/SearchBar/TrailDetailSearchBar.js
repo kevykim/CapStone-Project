@@ -23,7 +23,8 @@ function TrailDetailSearchBar() {
        trailsArr.forEach((trail, i) => {
         if (
           trail["name"].toLowerCase().includes(word.toLowerCase()) ||
-          trail["resort"].toLowerCase().includes(word.toLowerCase())
+          trail["resort"].toLowerCase().includes(word.toLowerCase()) ||
+          trail["city"].toLowerCase().includes(word.toLowerCase())
         ) {
           arr.push(trail);
         }
@@ -88,7 +89,7 @@ function TrailDetailSearchBar() {
                       </div>
                       <div className="traildetailsearchbar_dropmenu_text_div">
                         <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -99,7 +100,7 @@ function TrailDetailSearchBar() {
                       </div>
                       <div className="traildetailsearchbar_dropmenu_text_div">
                         <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -110,7 +111,7 @@ function TrailDetailSearchBar() {
                       </div>
                       <div className="traildetailsearchbar_dropmenu_text_div">
                         <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -121,7 +122,7 @@ function TrailDetailSearchBar() {
                       </div>
                       <div className="traildetailsearchbar_dropmenu_text_div">
                         <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -132,7 +133,7 @@ function TrailDetailSearchBar() {
                       </div>
                       <div className="traildetailsearchbar_dropmenu_text_div">
                         <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}

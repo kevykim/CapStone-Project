@@ -23,7 +23,8 @@ function SearchBar() {
        trailsArr.forEach((trail, i) => {
         if (
           trail["name"].toLowerCase().includes(word.toLowerCase()) ||
-          trail["resort"].toLowerCase().includes(word.toLowerCase())
+          trail["resort"].toLowerCase().includes(word.toLowerCase()) ||
+          trail["city"].toLowerCase().includes(word.toLowerCase())
         ) {
           arr.push(trail);
         }
@@ -91,7 +92,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -102,7 +103,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small"> {`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -113,7 +114,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -124,7 +125,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -135,7 +136,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}

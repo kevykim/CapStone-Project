@@ -101,9 +101,10 @@ export const thunkGetSingleTrail = (id) => async dispatch => {
 };
 
 export const thunkUpdateTrail = (payload) => async dispatch => {
-    const {name, country, state, resort, difficulty, description, length, elevation, routeType, previewImg} = payload
+    const {name, city, country, state, resort, difficulty, description, length, elevation, routeType, previewImg} = payload
     const formData = new FormData()
     formData.append("name", name);
+    formData.append("city", city);
     formData.append("country", country);
     formData.append("state", state);
     formData.append("resort", resort);
