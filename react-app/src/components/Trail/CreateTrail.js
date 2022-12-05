@@ -13,6 +13,7 @@ function CreateTrail() {
     const user = useSelector(state => state.session.user)
 
     const [name, setName] = useState('')
+    const [city, setCity] = useState('')
     const [country, setCountry] = useState('')
     const [state, setState] = useState('')
     const [resort, setResort] = useState('')
@@ -28,6 +29,7 @@ function CreateTrail() {
     useEffect(() => {
         let errors = []
         if(name?.length < 5 || name?.length >= 41) errors.push("Trail name must be between 5 to 40 characters");
+        if(city?.length <= 0 || city?.length >= 76) errors.push('Please enter a city less than 75 characters')
         if(!country) errors.push('Please select a country')
         if(!state) errors.push('Please select a state')
         if(!resort) errors.push('Please select a resort')
@@ -57,7 +59,7 @@ function CreateTrail() {
         if(!previewImg) errors.push('Please add an image file.')
         setValidations(errors)
 
-    }, [dispatch, name, country, state, resort, difficulty, description, length, elevation, routeType, previewImg])
+    }, [dispatch, name, city, country, state, resort, difficulty, description, length, elevation, routeType, previewImg])
 
     const onSubmit = async event => {
         event.preventDefault()
@@ -66,6 +68,7 @@ function CreateTrail() {
         const formData = new FormData()
 
         formData.append('name', name)
+        formData.append('city', city)
         formData.append('country', country)
         formData.append("state", state)
         formData.append('resort', resort)
@@ -197,6 +200,31 @@ function CreateTrail() {
                     (name?.length < 5 || name?.length >= 41) && (
                       <div className="create_trail_error">
                         Trail name must be between 5 to 40 characters
+                      </div>
+                    )}
+                </div>
+                <div className="create_trail_inputs_div">
+                  <div className="create_trail_label_div">
+                    <div>City</div>
+                    {validations.length > 0 &&
+                      submitted === true &&
+                      (!city || city?.length >= 75) && (
+                        <div className="create_trail_error">&nbsp;*</div>
+                      )}
+                  </div>
+                  <input
+                    name="city"
+                    type="text"
+                    placeholder="City"
+                    value={city}
+                    onChange={(event) => setCity(event.target.value)}
+                    className="create_trail_inputs"
+                  />
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    (city?.length <= 0 || city?.length >= 76) && (
+                      <div className="create_trail_error">
+                        Please enter a city less than 75 characters
                       </div>
                     )}
                 </div>
@@ -468,11 +496,15 @@ function CreateTrail() {
                         // value={previewImg}
                         onChange={addImage}
                       />
-                      <div className='create_trail_imageselect_text'>
+                      <div className="create_trail_imageselect_text">
                         Select Image File
                       </div>
                       <i
-                        style={{ color: "rgb(60, 103, 148)", zIndex: 1, textShadow:'0.5px 1px 2.5px  white' }}
+                        style={{
+                          color: "rgb(60, 103, 148)",
+                          zIndex: 1,
+                          textShadow: "0.5px 1px 2.5px  white",
+                        }}
                         className="fa-solid fa-camera fa-xl"
                       ></i>
                       <img
@@ -482,8 +514,8 @@ function CreateTrail() {
                           event.currentTarget.src =
                             "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
                         }}
-                        alt='preview'
-                        src=''
+                        alt="preview"
+                        src=""
                       />
                     </label>
                   </div>
