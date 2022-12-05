@@ -22,6 +22,7 @@ function UpdateTrail() {
   const user = useSelector((state) => state.session.user);
 
   const [name, setName] = useState(oldTrail?.name);
+  const [city, setCity] = useState(oldTrail?.city);
   const [country, setCountry] = useState(oldTrail?.country);
   const [state, setState] = useState(oldTrail?.state);
   const [resort, setResort] = useState(oldTrail?.resort);
@@ -38,6 +39,7 @@ function UpdateTrail() {
     let errors = [];
     if (name?.length < 5 || name?.length >= 41)
       errors.push("Trail name must be between 5 to 40 characters");
+    if (city?.length <= 0 || city?.length >= 76) errors.push("Please enter a city less than 75 characters");
     if (!country) errors.push("Please select a country");
     if (!state) errors.push("Please select a state");
     if (!resort) errors.push("Please select a resort");
@@ -74,6 +76,7 @@ function UpdateTrail() {
   }, [
     dispatch,
     name,
+    city,
     country,
     state,
     resort,
@@ -92,6 +95,7 @@ function UpdateTrail() {
      const payload = {
        id,
        name,
+       city,
        country,
        state,
        resort,
@@ -214,6 +218,31 @@ function UpdateTrail() {
                   (name?.length < 5 || name?.length >= 41) && (
                     <div className="update_trail_error">
                       Trail name must be between 5 to 40 characters
+                    </div>
+                  )}
+              </div>
+              <div className="update_trail_inputs_div">
+                <div className="update_trail_label_div">
+                  <div>City</div>
+                  {validations.length > 0 &&
+                    submitted === true &&
+                    (!city || city?.length >= 75) && (
+                      <div className="update_trail_error">&nbsp;*</div>
+                    )}
+                </div>
+                <input
+                  name="city"
+                  type="text"
+                  placeholder="City"
+                  value={city}
+                  onChange={(event) => setCity(event.target.value)}
+                  className="update_trail_inputs"
+                />
+                {validations.length > 0 &&
+                  submitted === true &&
+                  (city?.length <= 0 || city?.length >= 76) && (
+                    <div className="update_trail_error">
+                      Please enter a city less than 75 characters
                     </div>
                   )}
               </div>
@@ -489,7 +518,7 @@ function UpdateTrail() {
                       }}
                       className="fa-solid fa-camera fa-xl"
                     ></i>
-                    
+
                     <img
                       id="updated"
                       // onError="this.style.display='none'"
@@ -497,18 +526,16 @@ function UpdateTrail() {
                         event.currentTarget.src =
                           "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
                       }}
-
                       alt="actual"
-                      src=''
+                      src=""
                     />
-                    <img  
-                    id="previous"
+                    <img
+                      id="previous"
                       // onError="this.style.display='none'"
                       onError={(event) => {
                         event.currentTarget.src =
                           "https://images.pexels.com/photos/7165180/pexels-photo-7165180.jpeg";
                       }}
-
                       alt="previous"
                       src={previewImg}
                     />
