@@ -76,7 +76,7 @@
 }
 
 .photo_modal_image {
-    object-fit: fill;
+    object-fit: cover;
     width: 700px;
     height: 450px;
     border-radius: 5px;
