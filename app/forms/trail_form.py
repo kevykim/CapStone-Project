@@ -15,6 +15,11 @@ def descriptionchecker(form, field):
     if len(description) < 20 or len(description) >= 501 :
         raise ValidationError('Trail description must be between 20 to 500 characters')
 
+def citychecker(form, field):
+    city = field.data
+    if (len(city) <= 0 or len(city) >= 76):
+        raise ValidationError("Please enter a city less than 75 characters")
+
 # def elevationchecker(form, field):
 #     elevation = field.data
 #     if float(elevation) % 1 != 0:
@@ -39,7 +44,7 @@ routeType_choices = ["All-mountain", "Park", "Powder", "Free-ride"]
 
 class TrailForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
-    city = StringField('city', validators=[DataRequired(message="Please enter a city")])
+    city = StringField('city', validators=[DataRequired(message="Please enter a city"), citychecker])
     country = SelectField('country', choices = country_choices, validators=[DataRequired(message='Please select a country.')])
     state = SelectField('state', choices = state_choices, validators=[DataRequired(message='Please select a state.')])
     resort = SelectField('resort', choices = resort_choices, validators=[DataRequired('Please select a resort.')])
