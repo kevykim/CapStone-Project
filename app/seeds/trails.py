@@ -5,6 +5,7 @@ def seed_trails():
     # BOREAL TAHOE
     boreal1 = Trail(
         name = "Ponderosa",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -20,6 +21,7 @@ def seed_trails():
     )
     boreal2 = Trail(
         name = "Tamarack",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -35,6 +37,7 @@ def seed_trails():
     )
     boreal3 = Trail(
         name = "Sunrise Blvd",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -50,6 +53,7 @@ def seed_trails():
     )
     boreal4 = Trail(
         name = "Mariposa",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -65,6 +69,7 @@ def seed_trails():
     )
     boreal5 = Trail(
         name = "Juniper",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -80,6 +85,7 @@ def seed_trails():
     )
     boreal6 = Trail(
         name = "Kiss A Bear",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -95,6 +101,7 @@ def seed_trails():
     )
     boreal7 = Trail(
         name = "Prospector",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -110,6 +117,7 @@ def seed_trails():
     )
     boreal8 = Trail(
         name = "South 40",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -125,6 +133,7 @@ def seed_trails():
     )
     boreal9 = Trail(
         name = "Chukker",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -140,6 +149,7 @@ def seed_trails():
     )
     boreal10 = Trail(
         name = "Klondike",
+        city = 'Soda Springs',
         country = "United States of America",
         state = "California", 
         resort = "Boreal Mountain Resort",
@@ -156,6 +166,7 @@ def seed_trails():
     # HEAVENLY TAHOE
     heavenly1 = Trail(
         name = "Killerbrew Canyon",
+        city = 'South Lake Tahoe',
         country = "United States of America",
         state = "California", 
         resort = "Heavenly Lake Tahoe",
@@ -171,6 +182,7 @@ def seed_trails():
     )
     heavenly2 = Trail(
         name = "Milky Way Bowl",
+        city = 'South Lake Tahoe',
         country = "United States of America",
         state = "California", 
         resort = "Heavenly Lake Tahoe",
@@ -186,6 +198,7 @@ def seed_trails():
     )
     heavenly3 = Trail(
         name = "Ridge Run",
+        city = 'South Lake Tahoe',
         country = "United States of America",
         state = "California", 
         resort = "Heavenly Lake Tahoe",
@@ -201,6 +214,7 @@ def seed_trails():
     )
     heavenly4 = Trail(
         name = "The Face",
+        city = 'South Lake Tahoe',
         country = "United States of America",
         state = "California", 
         resort = "Heavenly Lake Tahoe",
@@ -216,6 +230,7 @@ def seed_trails():
     )
     heavenly5 = Trail(
         name = "East Bowl",
+        city = 'South Lake Tahoe',
         country = "United States of America",
         state = "California", 
         resort = "Heavenly Lake Tahoe",
@@ -231,6 +246,7 @@ def seed_trails():
     )
     mammoth1 = Trail(
         name = "Snake Run",
+        city = 'Mammoth Lakes',
         country = "United States of America",
         state = "California", 
         resort = "Mammoth Mountain",
@@ -246,6 +262,7 @@ def seed_trails():
     )
     mammoth2 = Trail(
         name = "Jibs & More",
+        city = 'Mammoth Lakes',
         country = "United States of America",
         state = "California", 
         resort = "Mammoth Mountain",
@@ -261,6 +278,7 @@ def seed_trails():
     )
     mammoth3 = Trail(
         name = "Sesame Street",
+        city = 'Mammoth Lakes',
         country = "United States of America",
         state = "California", 
         resort = "Mammoth Mountain",
@@ -276,6 +294,7 @@ def seed_trails():
     )
     mammoth4 = Trail(
         name = "Hangman's Hollow",
+        city = 'Mammoth Lakes',
         country = "United States of America",
         state = "California", 
         resort = "Mammoth Mountain",
@@ -291,6 +310,7 @@ def seed_trails():
     )
     mammoth5 = Trail(
         name = "Monument",
+        city = 'Mammoth Lakes',
         country = "United States of America",
         state = "California", 
         resort = "Mammoth Mountain",
@@ -306,6 +326,7 @@ def seed_trails():
     )
     bear1 = Trail(
         name = "Central Park",
+        city = 'Big Bear Lake',
         country = "United States of America",
         state = "California", 
         resort = "Bear Mountain",
@@ -321,6 +342,7 @@ def seed_trails():
     )
     bear2 = Trail(
         name = "Easy Street",
+        city = 'Big Bear Lake',
         country = "United States of America",
         state = "California", 
         resort = "Bear Mountain",
@@ -336,6 +358,7 @@ def seed_trails():
     )
     bear3 = Trail(
         name = "Amusement Park",
+        city = 'Big Bear Lake',
         country = "United States of America",
         state = "California", 
         resort = "Bear Mountain",
@@ -351,6 +374,7 @@ def seed_trails():
     )
     bear4 = Trail(
         name = "Express Way",
+        city = 'Big Bear Lake',
         country = "United States of America",
         state = "California", 
         resort = "Bear Mountain",
@@ -366,6 +390,7 @@ def seed_trails():
     )
     bear5 = Trail(
         name = "Inspiration",
+        city = 'Big Bear Lake',
         country = "United States of America",
         state = "California", 
         resort = "Bear Mountain",
@@ -381,6 +406,7 @@ def seed_trails():
     )
     mthigh1 = Trail(
         name = "Vertigo",
+        city = 'Wrightwood',
         country = "United States of America",
         state = "California", 
         resort = "Mountain High",
@@ -396,6 +422,7 @@ def seed_trails():
     )
     mthigh2 = Trail(
         name = "Silverspur",
+        city = 'Wrightwood',
         country = "United States of America",
         state = "California", 
         resort = "Mountain High",
@@ -411,6 +438,7 @@ def seed_trails():
     )
     mthigh3 = Trail(
         name = "Conquest",
+        city = 'Wrightwood',
         country = "United States of America",
         state = "California", 
         resort = "Mountain High",
@@ -426,6 +454,7 @@ def seed_trails():
     )
     mthigh4 = Trail(
         name = "Sunnyside",
+        city = 'Wrightwood',
         country = "United States of America",
         state = "California", 
         resort = "Mountain High",
@@ -441,6 +470,7 @@ def seed_trails():
     )
     mthigh5 = Trail(
         name = "Cruiser",
+        city = 'Wrightwood',
         country = "United States of America",
         state = "California", 
         resort = "Mountain High",

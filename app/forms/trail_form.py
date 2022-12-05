@@ -39,6 +39,7 @@ routeType_choices = ["All-mountain", "Park", "Powder", "Free-ride"]
 
 class TrailForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
+    city = StringField('city', validators=[DataRequired(message="Please enter a city")])
     country = SelectField('country', choices = country_choices, validators=[DataRequired(message='Please select a country.')])
     state = SelectField('state', choices = state_choices, validators=[DataRequired(message='Please select a state.')])
     resort = SelectField('resort', choices = resort_choices, validators=[DataRequired('Please select a resort.')])
