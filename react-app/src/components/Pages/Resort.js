@@ -90,9 +90,52 @@ function Resort() {
                 Mountain High
               </NavLink>
             </div>
-            {/* <div>Mammoth</div>
-            <div>Big Bear</div>
-            <div>Mountain High</div> */}
+            <div className="pages_navlink_div">
+              <NavLink className="pages_navlink" exact to="/Mount Hood Meadows">
+                <img
+                  className="pages_image"
+                  src="http://theatlasheart.com/wp-content/uploads/2016/01/04-IMG_5491.jpg"
+                  alt="mthood"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "http://theatlasheart.com/wp-content/uploads/2016/01/04-IMG_5491.jpg";
+                  }}
+                ></img>
+                Mount Hood Meadows
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink
+                className="pages_navlink"
+                exact
+                to="/Timberline Summit Pass"
+              >
+                <img
+                  className="pages_image"
+                  src="https://pbs.twimg.com/media/FJkOKGtVIAE7AqC?format=jpg&name=large"
+                  alt="timberline"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://pbs.twimg.com/media/FJkOKGtVIAE7AqC?format=jpg&name=large";
+                  }}
+                ></img>
+                Timberline Summit Pass
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink className="pages_navlink" exact to="/Mount Bachelor">
+                <img
+                  className="pages_image"
+                  src="https://www.powderhounds.com/site/DefaultSite/filesystem/images/USA/MtBachelor/FacilitiesServices/04.jpg"
+                  alt="mtbachelor"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://www.powderhounds.com/site/DefaultSite/filesystem/images/USA/MtBachelor/FacilitiesServices/04.jpg";
+                  }}
+                ></img>
+                Mount Bachelor
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

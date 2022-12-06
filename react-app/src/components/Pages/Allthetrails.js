@@ -31,6 +31,18 @@ function Allthetrails() {
          (trail) => trail.resort === "Mountain High"
        );
 
+       const MtHoodFilter = trailArr.filter(
+         (trail) => trail.resort === "Mount Hood Meadows"
+       );
+
+       const TimberlineFilter = trailArr.filter(
+         (trail) => trail.resort === "Timberline Summit Pass"
+       );
+
+       const BachelorFilter = trailArr.filter(
+         (trail) => trail.resort === "Mount Bachelor"
+       );
+
     useEffect(() => {
         dispatch(thunkGetTrail())
     }, [dispatch])
@@ -98,6 +110,48 @@ function Allthetrails() {
           <div className="pages_navlink_divy">
             <div className="pages_resort_header">Mountain High</div>
             {mthighFilter.map((trail, i) => (
+              <div className="pages_navlink_div" key={i}>
+                <NavLink
+                  className="pages_navlink"
+                  exact
+                  to={`/trails/${trail?.id}`}
+                >
+                  {trail.name}
+                </NavLink>
+              </div>
+            ))}
+          </div>
+          <div className="pages_navlink_divy">
+            <div className="pages_resort_header">Mount Hood Meadows</div>
+            {MtHoodFilter.map((trail, i) => (
+              <div className="pages_navlink_div" key={i}>
+                <NavLink
+                  className="pages_navlink"
+                  exact
+                  to={`/trails/${trail?.id}`}
+                >
+                  {trail.name}
+                </NavLink>
+              </div>
+            ))}
+          </div>
+          <div className="pages_navlink_divy">
+            <div className="pages_resort_header">Timberline Summit Pass</div>
+            {TimberlineFilter.map((trail, i) => (
+              <div className="pages_navlink_div" key={i}>
+                <NavLink
+                  className="pages_navlink"
+                  exact
+                  to={`/trails/${trail?.id}`}
+                >
+                  {trail.name}
+                </NavLink>
+              </div>
+            ))}
+          </div>
+          <div className="pages_navlink_divy">
+            <div className="pages_resort_header">Mount Bachelor</div>
+            {BachelorFilter.map((trail, i) => (
               <div className="pages_navlink_div" key={i}>
                 <NavLink
                   className="pages_navlink"
