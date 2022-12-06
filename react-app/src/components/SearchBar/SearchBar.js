@@ -140,6 +140,39 @@ function SearchBar() {
                       </div>
                     </div>
                   )}
+                  {trail["resort"] === "Mount Hood Meadows" && (
+                    <div className="searchbar_dropmenu_text">
+                      <div className="searchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="searchbar_dropmenu_text_div">
+                        <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Timberline Summit Pass" && (
+                    <div className="searchbar_dropmenu_text">
+                      <div className="searchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="searchbar_dropmenu_text_div">
+                        <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Mount Bachelor" && (
+                    <div className="searchbar_dropmenu_text">
+                      <div className="searchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="searchbar_dropmenu_text_div">
+                        <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </NavLink>
             ))}
