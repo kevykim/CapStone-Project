@@ -30,15 +30,19 @@ def seed_users():
     hope = User(
         username='AznxHopex', firstName='Hope', lastName='Kim', email='hope314@yahoo.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/female_woman_avatar_portrait_1-512.png', createdAt = date(2022, 5, 1),
         updatedAt = date.today())
+        #MTMEADOW
     peter = User(
         username='Spiderman321', firstName='Peter', lastName='Parker', email='therealspiderguy@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/indian_man_male_person-512.png', createdAt = date(2022, 1, 12),
         updatedAt = date.today())
+        #TIMBERLINE
     ron = User(
         username='Lagavulin501', firstName='Ron', lastName='Swanson', email='steakisthebest@mail.net', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/old_man_male_portrait-512.png', createdAt = date(2022, 2, 21),
         updatedAt = date.today())
+        #MTBACHELOR
     corey = User(
         username='Radsk8ter', firstName='Corey', lastName='Birch', email='birchwall@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/punk_man_person_avatar-512.png', createdAt = date(2022, 9, 26),
         updatedAt = date.today())
+        
     eddy = User(
         username='thebesteddy', firstName='Eddy', lastName='Smith', email='cartonnetworkyyy@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/boy_person_avatar_kid-512.png', createdAt = date(2022, 6, 19),
         updatedAt = date.today())

@@ -34,9 +34,9 @@ def citychecker(form, field):
 
 country_choices = ["United States of America"]
 
-state_choices = ["California"]
+state_choices = ["California", "Oregon"]
 
-resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe", "Mammoth Mountain", "Bear Mountain", "Mountain High"]
+resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe", "Mammoth Mountain", "Bear Mountain", "Mountain High", 'Mount Hood Meadows', 'Timberline Summit Pass', "Mount Bachelor"]
 
 difficulty_choices = ["Beginner", "Intermediate", "Black Diamond", "Double Black Diamond"]
 
