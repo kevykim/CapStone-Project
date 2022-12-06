@@ -118,15 +118,15 @@ function UpdateTrail() {
 
   let country_choices = ["United States of America"];
 
-  let state_choices = ["California"];
+  let state_choices = ["California", "Oregon"];
 
-  let resort_choices = [
-    "Boreal Mountain Resort",
-    "Heavenly Lake Tahoe",
-    "Mammoth Mountain",
-    "Bear Mountain",
-    "Mountain High",
-  ];
+  // let resort_choices = [
+  //   "Boreal Mountain Resort",
+  //   "Heavenly Lake Tahoe",
+  //   "Mammoth Mountain",
+  //   "Bear Mountain",
+  //   "Mountain High",
+  // ];
 
   let difficulty_choices = [
     "Beginner",
@@ -318,11 +318,22 @@ function UpdateTrail() {
                   <option value="" disabled>
                     Select a resort
                   </option>
-                  {resort_choices.map((resort, i) => (
-                    <option key={i} value={resort}>
-                      {resort}
-                    </option>
-                  ))}
+                  {state === "California" && (
+                      <>
+                        <option value={'Boreal Mountain Resort'}>Boreal Mountain Resort</option>
+                        <option value={'Heavenly Lake Tahoe'}>Heavenly Lake Tahoe</option>
+                        <option value={'Mammoth Mountain'}>Mammoth Mountain</option>
+                        <option value={'Bear Mountain'}>Bear Mountain</option>
+                        <option value={'Mountain High'}>Mountain High</option>
+                      </>
+                    )}
+                    {state === "Oregon" && (
+                      <>
+                        <option value={'Mount Hood Meadows'}>Mount Hood Meadows</option>
+                        <option value={'Timberline Summit Pass'}> Timberline Summit Pass</option>
+                        <option value={"Mount Bachelor"}>Mount Bachelor</option>
+                      </>
+                    )}
                 </select>
                 {validations.length > 0 && submitted === true && !resort && (
                   <div className="update_trail_error">

@@ -115,9 +115,6 @@ const dispatch = useDispatch()
                 Mountain High
               </NavLink>
             </div>
-            {/* <div>Mammoth</div>
-            <div>Big Bear</div>
-            <div>Mountain High</div> */}
           </div>
         </div>
       </div>

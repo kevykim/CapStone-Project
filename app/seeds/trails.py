@@ -484,8 +484,247 @@ def seed_trails():
         createdAt = date(2022, 3, 3),
         updatedAt = date.today()
     )
+    hoodmeadows1 = Trail(
+        name = 'Super Bowl',
+        city = 'Mount Hood',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Hood Meadows', 
+        difficulty = 'Double Black Diamond',
+        description = "One of Mount Hood's three ski areas is Mount Hood Meadows Ski & Snowboard Resort. Although Timberline Lodge could be popular in the spring and summer, Mount Hood Meadows offers the best range of year-round skiing terrain. Skiers and snowboarders may access 2,150 skiable acres in about 90 minutes from Portland. At Mount Hood Meadows, variety is crucial. There are excellent trees and glades for skiing and snowboarding, as well as a ton of family- and beginner-friendly access points.",
+        length = 0.7,
+        elevation = 8900,
+        routeType = 'All-mountain',
+        previewImg = 'https://i.ytimg.com/vi/5uNLqmnrPmA/maxresdefault.jpg',
+        userId = 6,
+        createdAt = date(2022, 12, 4), 
+        updatedAt = date.today()
+    )
+    hoodmeadows2 = Trail(
+        name = 'Pluto',
+        city = 'Mount Hood',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Hood Meadows', 
+        difficulty = 'Double Black Diamond',
+        description = "One of Mount Hood's three ski areas is Mount Hood Meadows Ski & Snowboard Resort. Although Timberline Lodge could be popular in the spring and summer, Mount Hood Meadows offers the best range of year-round skiing terrain. Skiers and snowboarders may access 2,150 skiable acres in about 90 minutes from Portland. At Mount Hood Meadows, variety is crucial. There are excellent trees and glades for skiing and snowboarding, as well as a ton of family- and beginner-friendly access points.",
+        length = 0.5,
+        elevation = 8000,
+        routeType = 'All-mountain',
+        previewImg = 'https://static.rootsrated.com/image/upload/s--z_ovV7wQ--/t_rr_large_traditional/x7kr2okwowuyscohzayr.jpg',
+        userId = 6,
+        createdAt = date(2022, 12, 4), 
+        updatedAt = date.today()
+    )
+    hoodmeadows3 = Trail(
+        name = 'Heather Canyon',
+        city = 'Mount Hood',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Hood Meadows', 
+        difficulty = 'Double Black Diamond',
+        description = "One of Mount Hood's three ski areas is Mount Hood Meadows Ski & Snowboard Resort. Although Timberline Lodge could be popular in the spring and summer, Mount Hood Meadows offers the best range of year-round skiing terrain. Skiers and snowboarders may access 2,150 skiable acres in about 90 minutes from Portland. At Mount Hood Meadows, variety is crucial. There are excellent trees and glades for skiing and snowboarding, as well as a ton of family- and beginner-friendly access points.",
+        length = 1.2,
+        elevation = 8800,
+        routeType = 'Powder',
+        previewImg = 'https://snowbrains.com/wp-content/uploads/2013/11/MtHoodMeadows2009.jpg',
+        userId = 6,
+        createdAt = date(2022, 12, 4), 
+        updatedAt = date.today()
+    )
+    hoodmeadows4 = Trail(
+        name = 'Conan Bowl',
+        city = 'Mount Hood',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Hood Meadows', 
+        difficulty = 'Double Black Diamond',
+        description = "One of Mount Hood's three ski areas is Mount Hood Meadows Ski & Snowboard Resort. Although Timberline Lodge could be popular in the spring and summer, Mount Hood Meadows offers the best range of year-round skiing terrain. Skiers and snowboarders may access 2,150 skiable acres in about 90 minutes from Portland. At Mount Hood Meadows, variety is crucial. There are excellent trees and glades for skiing and snowboarding, as well as a ton of family- and beginner-friendly access points.",
+        length = 0.9,
+        elevation = 8500,
+        routeType = 'Powder',
+        previewImg = 'https://www.oregonlive.com/resizer/_Du-NwzYdXWab4PKuEjetJMg5sA=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/UKYKF3B6BBDDBDM5WFOTI37YOY.jpg',
+        userId = 6,
+        createdAt = date(2022, 12, 4), 
+        updatedAt = date.today()
+    )
+    hoodmeadows5 = Trail(
+        name = 'Twilight Bowl',
+        city = 'Mount Hood',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Hood Meadows', 
+        difficulty = 'Double Black Diamond',
+        description = "One of Mount Hood's three ski areas is Mount Hood Meadows Ski & Snowboard Resort. Although Timberline Lodge could be popular in the spring and summer, Mount Hood Meadows offers the best range of year-round skiing terrain. Skiers and snowboarders may access 2,150 skiable acres in about 90 minutes from Portland. At Mount Hood Meadows, variety is crucial. There are excellent trees and glades for skiing and snowboarding, as well as a ton of family- and beginner-friendly access points.",
+        length = 1.3,
+        elevation = 8700,
+        routeType = 'All-mountain',
+        previewImg = 'https://skinorthamerica100.com/wp-content/uploads/2017/09/32096522123_e8689472fc_o-1024x768.jpg',
+        userId = 6,
+        createdAt = date(2022, 12, 4), 
+        updatedAt = date.today()
+    )
+    timberline1 = Trail(
+        name = "Coffel's Run",
+        city = 'Government Camp',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Timberline Summit Pass',
+        difficulty = 'Intermediate',
+        description = "At Timberline Lodge Ski Area, you can ski and snowboard all year long and enjoy some of the only lift-accessed glacier skiing in the US. On a clear day, Mount Hood's majestic magnificence will greet you as you approach the old ski lodge. In the slushy spring and summer, skiers and snowboarders from all over the world flock to Palmer Snowfield for the fantastic terrain parks and the riding.",
+        length = 0.7,
+        elevation = 7000,
+        routeType = 'Free-ride',
+        previewImg = 'https://www.dcski.com/images/article_photos/2021/1620617308_gapjkwbsqctb.jpg',
+        userId = 7,
+        createdAt = date(2022, 11, 30),
+        updatedAt = date.today()
+    )
+    timberline2 = Trail(
+        name = "Kip's Run",
+        city = 'Government Camp',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Timberline Summit Pass',
+        difficulty = 'Intermediate',
+        description = "At Timberline Lodge Ski Area, you can ski and snowboard all year long and enjoy some of the only lift-accessed glacier skiing in the US. On a clear day, Mount Hood's majestic magnificence will greet you as you approach the old ski lodge. In the slushy spring and summer, skiers and snowboarders from all over the world flock to Palmer Snowfield for the fantastic terrain parks and the riding.",
+        length = 0.8,
+        elevation = 7000,
+        routeType = 'Free-ride',
+        previewImg = 'https://images.squarespace-cdn.com/content/v1/5e7a324590664f18b1bfea0c/1640300766232-0TCC83TGC02JM09SV1H5/timberlinelodgepalmerpost.png',
+        userId = 7,
+        createdAt = date(2022, 11, 30),
+        updatedAt = date.today()
+    )
+    timberline3 = Trail(
+        name = "Gordo's Mile",
+        city = 'Government Camp',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Timberline Summit Pass',
+        difficulty = 'Intermediate',
+        description = "At Timberline Lodge Ski Area, you can ski and snowboard all year long and enjoy some of the only lift-accessed glacier skiing in the US. On a clear day, Mount Hood's majestic magnificence will greet you as you approach the old ski lodge. In the slushy spring and summer, skiers and snowboarders from all over the world flock to Palmer Snowfield for the fantastic terrain parks and the riding.",
+        length = 1,
+        elevation = 7000,
+        routeType = 'Free-ride',
+        previewImg = 'https://cloudfront-us-east-1.images.arcpublishing.com/opb/YLPG5ETZB5ESXB6QBPOJWALRTE.jpg',
+        userId = 7,
+        createdAt = date(2022, 11, 30),
+        updatedAt = date.today()
+    )
+    timberline4 = Trail(
+        name = 'Otto Lang',
+        city = 'Government Camp',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Timberline Summit Pass',
+        difficulty = 'Intermediate',
+        description = "At Timberline Lodge Ski Area, you can ski and snowboard all year long and enjoy some of the only lift-accessed glacier skiing in the US. On a clear day, Mount Hood's majestic magnificence will greet you as you approach the old ski lodge. In the slushy spring and summer, skiers and snowboarders from all over the world flock to Palmer Snowfield for the fantastic terrain parks and the riding.",
+        length = 1.3,
+        elevation = 7000,
+        routeType = 'Free-ride',
+        previewImg = 'https://traveloregon.com/wp-content/uploads/2017/12/2020_car-free-mt-hood_pc-timberline_01.jpg',
+        userId = 7,
+        createdAt = date(2022, 11, 30),
+        updatedAt = date.today()
+    )
+    timberline5 = Trail(
+        name = "Norm's",
+        city = 'Government Camp',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Timberline Summit Pass',
+        difficulty = 'Intermediate',
+        description = "At Timberline Lodge Ski Area, you can ski and snowboard all year long and enjoy some of the only lift-accessed glacier skiing in the US. On a clear day, Mount Hood's majestic magnificence will greet you as you approach the old ski lodge. In the slushy spring and summer, skiers and snowboarders from all over the world flock to Palmer Snowfield for the fantastic terrain parks and the riding.",
+        length = 1.1,
+        elevation = 6700,
+        routeType = 'Free-ride',
+        previewImg = 'http://snowbrains.com/wp-content/uploads/2018/05/Open-Resorts-10.jpg',
+        userId = 7,
+        createdAt = date(2022, 11, 30),
+        updatedAt = date.today()
+    )
+    bachelor1 = Trail(
+        name = 'Sunshine',
+        city = 'Bend',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Bachelor', 
+        difficulty = 'Beginner',
+        description = "Mt. Bachelor is a strong contender for the #1 slot on your resort must-see list. Off the peak, the ski area extends over 4,318 acres, with a vertical drop of 3,365 feet. A ski area's size alone doesn't make it great; it takes a diversity of terrain, including trees, chutes, and other natural features. Mt. Bachelor has something to offer both families and beginners as well as advanced skiers and snowboarders.",
+        length = 0.7,
+        elevation = 6000,
+        routeType = 'Park',
+        previewImg = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Pine_Marten_Express.JPG',
+        userId = 8,
+        createdAt = date(2022, 9, 18),
+        updatedAt = date.today()
+    )
+    bachelor2 = Trail(
+        name = 'Milky Way',
+        city = 'Bend',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Bachelor', 
+        difficulty = 'Beginner',
+        description = "Mt. Bachelor is a strong contender for the #1 slot on your resort must-see list. Off the peak, the ski area extends over 4,318 acres, with a vertical drop of 3,365 feet. A ski area's size alone doesn't make it great; it takes a diversity of terrain, including trees, chutes, and other natural features. Mt. Bachelor has something to offer both families and beginners as well as advanced skiers and snowboarders.",
+        length = 0.6,
+        elevation = 5900,
+        routeType = 'Park',
+        previewImg = 'https://www.gannett-cdn.com/-mm-/61866bd7251feea2f3f94c2119941ae1f9ce176e/c=0-374-2014-1512/local/-/media/2017/11/14/Salem/Salem/636462632444328361-MtBachelor-WedNov14-1.JPG',
+        userId = 8,
+        createdAt = date(2022, 9, 18),
+        updatedAt = date.today()
+    )
+    bachelor3 = Trail(
+        name = 'Home Run',
+        city = 'Bend',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Bachelor', 
+        difficulty = 'Beginner',
+        description = "Mt. Bachelor is a strong contender for the #1 slot on your resort must-see list. Off the peak, the ski area extends over 4,318 acres, with a vertical drop of 3,365 feet. A ski area's size alone doesn't make it great; it takes a diversity of terrain, including trees, chutes, and other natural features. Mt. Bachelor has something to offer both families and beginners as well as advanced skiers and snowboarders.",
+        length = 0.9,
+        elevation = 6100,
+        routeType = 'Free-ride',
+        previewImg = 'https://sunriverlodging.com/wp-content/uploads/2020/11/mt-bachelor-parking-reservations.jpg',
+        userId = 8,
+        createdAt = date(2022, 9, 18),
+        updatedAt = date.today()
+    )
+    bachelor4 = Trail(
+        name = 'Midway',
+        city = 'Bend',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Bachelor', 
+        difficulty = 'Beginner',
+        description = "Mt. Bachelor is a strong contender for the #1 slot on your resort must-see list. Off the peak, the ski area extends over 4,318 acres, with a vertical drop of 3,365 feet. A ski area's size alone doesn't make it great; it takes a diversity of terrain, including trees, chutes, and other natural features. Mt. Bachelor has something to offer both families and beginners as well as advanced skiers and snowboarders.",
+        length = 1.1,
+        elevation = 6200,
+        routeType = 'Free-ride',
+        previewImg = 'https://arrivednow.com/wp-content/uploads/2018/07/Mt.-Bachelor-Ski-Area.jpg',
+        userId = 8,
+        createdAt = date(2022, 9, 18),
+        updatedAt = date.today()
+    )
+    bachelor5 = Trail(
+        name = 'Leeway',
+        city = 'Bend',
+        country = "United States of America",
+        state = 'Oregon',
+        resort = 'Mount Bachelor', 
+        difficulty = 'Beginner',
+        description = "Mt. Bachelor is a strong contender for the #1 slot on your resort must-see list. Off the peak, the ski area extends over 4,318 acres, with a vertical drop of 3,365 feet. A ski area's size alone doesn't make it great; it takes a diversity of terrain, including trees, chutes, and other natural features. Mt. Bachelor has something to offer both families and beginners as well as advanced skiers and snowboarders.",
+        length = 1.2,
+        elevation = 6300,
+        routeType = 'Powder',
+        previewImg = 'https://a.espncdn.com/photo/2013/0419/as_ski_mtbachelor.jpg',
+        userId = 8,
+        createdAt = date(2022, 9, 18),
+        updatedAt = date.today()
+    )
 
-    
     db.session.add(boreal1)
     db.session.add(boreal2)
     db.session.add(boreal3)
@@ -516,6 +755,21 @@ def seed_trails():
     db.session.add(mthigh3)
     db.session.add(mthigh4)
     db.session.add(mthigh5)
+    db.session.add(hoodmeadows1)
+    db.session.add(hoodmeadows2)
+    db.session.add(hoodmeadows3)
+    db.session.add(hoodmeadows4)
+    db.session.add(hoodmeadows5)
+    db.session.add(timberline1)
+    db.session.add(timberline2)
+    db.session.add(timberline3)
+    db.session.add(timberline4)
+    db.session.add(timberline5)
+    db.session.add(bachelor1)
+    db.session.add(bachelor2)
+    db.session.add(bachelor3)
+    db.session.add(bachelor4)
+    db.session.add(bachelor5)
 
 
 

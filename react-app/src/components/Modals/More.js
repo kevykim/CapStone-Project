@@ -138,6 +138,78 @@ return (
             <div>&nbsp;for more info...</div>
           </div>
         </div>
+      ) : trail?.resort === "Mount Hood Meadows" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://static.evo.com/content/travel-guides/oregon/meadows_trailmap.jpg"
+            alt="mthood"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://static.evo.com/content/travel-guides/oregon/meadows_trailmap.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.skihood.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Mount Hood Meadows
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Timberline Summit Pass" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://static.evo.com/content/travel-guides/oregon/timberline_trailmap.jpg"
+            alt="timberline"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://static.evo.com/content/travel-guides/oregon/timberline_trailmap.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.timberlinelodge.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Timberline Summit Pass
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Mount Bachelor" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://static.evo.com/content/travel-guides/oregon/bachelor_trailmap.jpg"
+            alt="bachelor"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://static.evo.com/content/travel-guides/oregon/bachelor_trailmap.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.mtbachelor.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Mount Bachelor
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
       ) : (
         <div></div>
       )}
