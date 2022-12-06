@@ -28,6 +28,10 @@ import DoubleBlackDiamond from './components/Pages/doubleblackdiamond';
 import PageNotFound from './components/PageNotFound';
 import ProfilePage from './components/auth/ProfilePage';
 import ProfileEdit from './components/auth/ProfileEdit';
+import Oregon from './components/Pages/Oregon/Oregon';
+import MountHood from './components/Pages/Oregon/MountHood';
+import Timberline from './components/Pages/Oregon/Timberline';
+import Bachelor from './components/Pages/Oregon/Bachelor';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -104,6 +108,18 @@ function App() {
         </Route>
         <Route exact path='/Mountain High'>
           <Mthigh />
+        </Route>
+        <Route exact path ='/Oregon'>
+          <Oregon />
+        </Route>
+        <Route exact path='/Mount Hood Meadows'>
+          <MountHood />
+        </Route>
+        <Route exact path='/Timberline Summit Pass'>
+          <Timberline />
+        </Route>
+        <Route exact path='/Mount Bachelor'>
+          <Bachelor />
         </Route>
         <Route exact path='/beginner'>
           <Beginner />

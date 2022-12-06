@@ -7,8 +7,9 @@
 
 .pagenotfound_inner {
     width: 1100px;
-    border: 1px solid rgb(205, 201, 200);
-    margin-top: 10px;
+    border-left: 1px solid rgb(205, 201, 200);
+    border-right: 1px solid rgb(205, 201, 200);
+    border-bottom: 1px solid rgb(205, 201, 200);
     height: 900px;
     position: relative;
     z-index: 10;
