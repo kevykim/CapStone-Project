@@ -16,14 +16,14 @@ function USA() {
     <div className="pages_main">
       <div className="page_inner">
         <div className="pages_detail_top_main">
-        <div className="pages_detail_top_text">
-          <div className="pages_detail_nonnavlink">
-            United States of America
+          <div className="pages_detail_top_text">
+            <div className="pages_detail_nonnavlink">
+              United States of America
+            </div>
           </div>
-        </div>
-        <div>
-          < TrailDetailSearchBar />
-        </div>
+          <div>
+            <TrailDetailSearchBar />
+          </div>
         </div>
         <div className="pages_header">United States of America</div>
         <div className="pages_inner_div">
@@ -39,6 +39,20 @@ function USA() {
                 }}
               ></img>
               California
+            </NavLink>
+          </div>
+          <div className="pages_navlink_div">
+            <NavLink className="pages_navlink" exact to="/Oregon">
+              <img
+                className="pages_image"
+                src="https://www.nationsonline.org/maps/USA/Oregon_map-L.jpg"
+                alt="boreal"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://www.nationsonline.org/maps/USA/Oregon_map-L.jpg";
+                }}
+              ></img>
+              Oregon
             </NavLink>
           </div>
         </div>
