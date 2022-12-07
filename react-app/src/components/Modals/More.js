@@ -282,6 +282,78 @@ return (
             <div>&nbsp;for more info...</div>
           </div>
         </div>
+      ) : trail?.resort === "Crystal Mountain" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://static.evo.com/content/team/kimmyfasani/crystal_mountain_trail_map.jpg"
+            alt="crystal"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://static.evo.com/content/team/kimmyfasani/crystal_mountain_trail_map.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.crystalmountainresort.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Crystal Mountain
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Stevens Pass" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://www.snow-forecast.com/pistemaps/Stevens-Pass_pistemap.jpg?1601557175"
+            alt="stevens"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://www.snow-forecast.com/pistemaps/Stevens-Pass_pistemap.jpg?1601557175";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.stevenspass.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Stevens Pass
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Mount Baker" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://skimap.org/data/191/2200/1508699227.jpg"
+            alt="baker"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://skimap.org/data/191/2200/1508699227.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.mtbaker.us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Mount Baker
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
       ) : (
         <div></div>
       )}

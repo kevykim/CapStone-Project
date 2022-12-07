@@ -178,6 +178,48 @@ function Resort() {
                 Hunter Mountain
               </NavLink>
             </div>
+            <div className="pages_navlink_div">
+              <NavLink className="pages_navlink" exact to="/Crystal Mountain">
+                <img
+                  className="pages_image"
+                  src="https://www.powderhounds.com/site/DefaultSite/filesystem/images/USA/CrystalMountain/Overview/13.jpg"
+                  alt="crystal"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://www.powderhounds.com/site/DefaultSite/filesystem/images/USA/CrystalMountain/Overview/13.jpg";
+                  }}
+                ></img>
+                Crystal Mountain
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink className="pages_navlink" exact to="/Stevens Pass">
+                <img
+                  className="pages_image"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Stevens_Pass_Signs_2700px.jpg"
+                  alt="steven"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Stevens_Pass_Signs_2700px.jpg";
+                  }}
+                ></img>
+                Stevens Pass
+              </NavLink>
+            </div>
+            <div className="pages_navlink_div">
+              <NavLink className="pages_navlink" exact to="/Mount Baker">
+                <img
+                  className="pages_image"
+                  src="https://live.staticflickr.com/1492/24178680742_e28066cdaa_b.jpg"
+                  alt="baker"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://live.staticflickr.com/1492/24178680742_e28066cdaa_b.jpg";
+                  }}
+                ></img>
+                Mount Baker
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

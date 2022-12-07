@@ -36,6 +36,10 @@ import NewYork from './components/Pages/NewYork/NewYork';
 import Gore from './components/Pages/NewYork/Gore';
 import Hunter from './components/Pages/NewYork/Hunter';
 import Windham from './components/Pages/NewYork/Windham';
+import Washington from './components/Pages/Washington/Washington';
+import Baker from './components/Pages/Washington/Baker';
+import Crystal from './components/Pages/Washington/Crystal';
+import Stevens from './components/Pages/Washington/Stevens';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -136,6 +140,18 @@ function App() {
         </Route>
         <Route exact path = '/Hunter Mountain'>
           <Hunter />
+        </Route>
+        <Route exact path = '/Washington'>
+          <Washington />
+        </Route>
+        <Route exact path = '/Crystal Mountain'>
+          <Crystal />
+        </Route>
+        <Route exact path = '/Stevens Pass'>
+          <Stevens />
+        </Route>
+        <Route exact path = '/Mount Baker'>
+          <Baker />
         </Route>
         <Route exact path='/beginner'>
           <Beginner />

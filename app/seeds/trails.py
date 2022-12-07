@@ -967,6 +967,248 @@ def seed_trails():
         updatedAt = date.today()
     )
 
+    # Washington
+    crystal1 = Trail(
+        name = 'Three Way Exit',
+        city = 'Pierce County',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Crystal Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "One of Washington State's top ski and snowboard destinations is Crystal Mountain Resort. On a clear day, the Crystal Mountain gondola offers a breathtaking view of Mt. Rainier, and there are 2,600 skiable acres you may choose from to return to the base. With a top elevation of over 6,800 feet, Crystal's high elevation provides the light snow that snowboarders and skiers in Washington seek.",
+        length = 0.8,
+        elevation = 6700,
+        routeType = 'Powder',
+        previewImg = 'https://bestofthenorthwest.com/wp-content/uploads/2016/11/CrystalMountain.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 10),
+        updatedAt = date.today()
+    )
+    crystal2 = Trail(
+        name = 'Boxcar Cornice',
+        city = 'Pierce County',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Crystal Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "One of Washington State's top ski and snowboard destinations is Crystal Mountain Resort. On a clear day, the Crystal Mountain gondola offers a breathtaking view of Mt. Rainier, and there are 2,600 skiable acres you may choose from to return to the base. With a top elevation of over 6,800 feet, Crystal's high elevation provides the light snow that snowboarders and skiers in Washington seek.",
+        length = 0.6,
+        elevation = 6759,
+        routeType = 'Powder',
+        previewImg = 'https://media.bizj.us/view/img/4545491/crystal-20140323131743*1200xx9067-5100-0-0.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 10),
+        updatedAt = date.today()
+    )
+    crystal3 = Trail(
+        name = 'Hamburger',
+        city = 'Pierce County',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Crystal Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "One of Washington State's top ski and snowboard destinations is Crystal Mountain Resort. On a clear day, the Crystal Mountain gondola offers a breathtaking view of Mt. Rainier, and there are 2,600 skiable acres you may choose from to return to the base. With a top elevation of over 6,800 feet, Crystal's high elevation provides the light snow that snowboarders and skiers in Washington seek.",
+        length = 0.4,
+        elevation = 6600,
+        routeType = 'Powder',
+        previewImg = 'https://familyskitrips.com/wp-content/uploads/2018/01/5crystal-mountain.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 10),
+        updatedAt = date.today()
+    )
+    crystal4 = Trail(
+        name = "Double OO's Right",
+        city = 'Pierce County',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Crystal Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "One of Washington State's top ski and snowboard destinations is Crystal Mountain Resort. On a clear day, the Crystal Mountain gondola offers a breathtaking view of Mt. Rainier, and there are 2,600 skiable acres you may choose from to return to the base. With a top elevation of over 6,800 feet, Crystal's high elevation provides the light snow that snowboarders and skiers in Washington seek.",
+        length = 0.8,
+        elevation = 7000,
+        routeType = 'Powder',
+        previewImg = 'https://gripped.com/wp-content/uploads/2021/12/Crystal-Mountain.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 10),
+        updatedAt = date.today()
+    )
+    crystal5 = Trail(
+        name = 'Employee Housing',
+        city = 'Pierce County',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Crystal Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "One of Washington State's top ski and snowboard destinations is Crystal Mountain Resort. On a clear day, the Crystal Mountain gondola offers a breathtaking view of Mt. Rainier, and there are 2,600 skiable acres you may choose from to return to the base. With a top elevation of over 6,800 feet, Crystal's high elevation provides the light snow that snowboarders and skiers in Washington seek.",
+        length = 1.1,
+        elevation = 6000,
+        routeType = 'Powder',
+        previewImg = 'https://static.rootsrated.com/image/upload/s--e6GxJKtV--/t_rr_large_natural/jbj8g7ns0hki5jkgrezb.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 10),
+        updatedAt = date.today()
+    )
+    stevens1 = Trail(
+        name = 'Wildkatz',
+        city = 'Skykomish',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Stevens Pass',
+        difficulty = 'Double Black Diamond',
+        description = 'Despite being one of the best and busiest ski areas in Washington State, Stevens Pass Ski and Snowboard Resort yet retains a small-town character. The conditions in Stevens Pass, which are often cooler and drier than those in some other ski and snowboard regions in the state, result in light, high-quality snow because of its location near the crest of the cascades.',
+        length = 1.1,
+        elevation = 4500,
+        routeType = 'All-mountain',
+        previewImg = 'https://www.heraldnet.com/wp-content/uploads/2020/08/22541613_web1_L6-191218-StevensPassOpen-FS.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    stevens2 = Trail(
+        name = 'Little Tree',
+        city = 'Skykomish',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Stevens Pass',
+        difficulty = 'Double Black Diamond',
+        description = 'Despite being one of the best and busiest ski areas in Washington State, Stevens Pass Ski and Snowboard Resort yet retains a small-town character. The conditions in Stevens Pass, which are often cooler and drier than those in some other ski and snowboard regions in the state, result in light, high-quality snow because of its location near the crest of the cascades.',
+        length = 0.6,
+        elevation = 4700,
+        routeType = 'All-mountain',
+        previewImg = 'https://l.icdbcdn.com/oh/375e4ed5-3707-4052-b396-8d9a9ebfc693.jpg?w=2080',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    stevens3 = Trail(
+        name = 'Rock Garden',
+        city = 'Skykomish',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Stevens Pass',
+        difficulty = 'Double Black Diamond',
+        description = 'Despite being one of the best and busiest ski areas in Washington State, Stevens Pass Ski and Snowboard Resort yet retains a small-town character. The conditions in Stevens Pass, which are often cooler and drier than those in some other ski and snowboard regions in the state, result in light, high-quality snow because of its location near the crest of the cascades.',
+        length = 0.6,
+        elevation = 4500,
+        routeType = 'All-mountain',
+        previewImg = 'http://skinorthamerica100.com/wp-content/uploads/2018/01/17059489198_caf7abe12c_o-1024x768.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    stevens4 = Trail(
+        name = 'Cloud 9',
+        city = 'Skykomish',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Stevens Pass',
+        difficulty = 'Double Black Diamond',
+        description = 'Despite being one of the best and busiest ski areas in Washington State, Stevens Pass Ski and Snowboard Resort yet retains a small-town character. The conditions in Stevens Pass, which are often cooler and drier than those in some other ski and snowboard regions in the state, result in light, high-quality snow because of its location near the crest of the cascades.',
+        length = 0.7,
+        elevation = 4400,
+        routeType = 'All-mountain',
+        previewImg = 'https://res.cloudinary.com/sagacity/image/upload/c_crop,h_3000,w_4500,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1200/SouthernCross-Courtesy-of-Stevens-Pass_RGB_wlafy9.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    stevens5 = Trail(
+        name = 'Bobby Chute',
+        city = 'Skykomish',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Stevens Pass',
+        difficulty = 'Double Black Diamond',
+        description = 'Despite being one of the best and busiest ski areas in Washington State, Stevens Pass Ski and Snowboard Resort yet retains a small-town character. The conditions in Stevens Pass, which are often cooler and drier than those in some other ski and snowboard regions in the state, result in light, high-quality snow because of its location near the crest of the cascades.',
+        length = 0.8,
+        elevation = 4600,
+        routeType = 'All-mountain',
+        previewImg = 'https://snowbrains.com/wp-content/uploads/2020/12/stevens-pass.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    baker1 = Trail(
+        name = 'Gunners Bowl',
+        city = 'Deming',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Mount Baker',
+        difficulty = 'Double Black Diamond',
+        description = "One of the first ski resorts in the nation to permit snowboarding was Mount Baker Ski and Snowboard Resort, which cemented its place in snowboarding history and culture. While more established ski slopes undoubtedly have more amenities, Mt. Baker is solely focused on providing some of the best powder skiing and snowboarding in the world. You won't find massive base lodges and hotels there.",
+        length = 0.6,
+        elevation = 5000,
+        routeType = 'Powder',
+        previewImg = 'https://www.skimag.com/wp-content/uploads/2020/02/ski0120-ind-02-baker.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    baker2 = Trail(
+        name = 'The-Chute',
+        city = 'Deming',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Mount Baker',
+        difficulty = 'Double Black Diamond',
+        description = "One of the first ski resorts in the nation to permit snowboarding was Mount Baker Ski and Snowboard Resort, which cemented its place in snowboarding history and culture. While more established ski slopes undoubtedly have more amenities, Mt. Baker is solely focused on providing some of the best powder skiing and snowboarding in the world. You won't find massive base lodges and hotels there.",
+        length = 1.1,
+        elevation = 5100,
+        routeType = 'Powder',
+        previewImg = 'https://www.snowater.org/wp-content/uploads/2016/11/Home-5.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    baker3 = Trail(
+        name = 'Easy Money',
+        city = 'Deming',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Mount Baker',
+        difficulty = 'Intermediate',
+        description = "One of the first ski resorts in the nation to permit snowboarding was Mount Baker Ski and Snowboard Resort, which cemented its place in snowboarding history and culture. While more established ski slopes undoubtedly have more amenities, Mt. Baker is solely focused on providing some of the best powder skiing and snowboarding in the world. You won't find massive base lodges and hotels there.",
+        length = 0.5,
+        elevation = 4900,
+        routeType = 'Park',
+        previewImg = 'https://www.mtbaker.us/wp-content/uploads/2022/01/HM_HPWeb11422.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    baker4 = Trail(
+        name = 'Nose Dive',
+        city = 'Deming',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Mount Baker',
+        difficulty = 'Intermediate',
+        description = "One of the first ski resorts in the nation to permit snowboarding was Mount Baker Ski and Snowboard Resort, which cemented its place in snowboarding history and culture. While more established ski slopes undoubtedly have more amenities, Mt. Baker is solely focused on providing some of the best powder skiing and snowboarding in the world. You won't find massive base lodges and hotels there.",
+        length = 0.7,
+        elevation = 4700,
+        routeType = 'Park',
+        previewImg = 'http://snowbrains.com/wp-content/uploads/2016/12/IMG_0743.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    baker5 = Trail(
+        name = 'Oh Zone',
+        city = 'Deming',
+        country = 'United States of America',
+        state = 'Washington',
+        resort = 'Mount Baker',
+        difficulty = 'Intermediate',
+        description = "One of the first ski resorts in the nation to permit snowboarding was Mount Baker Ski and Snowboard Resort, which cemented its place in snowboarding history and culture. While more established ski slopes undoubtedly have more amenities, Mt. Baker is solely focused on providing some of the best powder skiing and snowboarding in the world. You won't find massive base lodges and hotels there.",
+        length = 0.6,
+        elevation = 5000,
+        routeType = 'Park',
+        previewImg = 'https://thumb.spokesman.com/3PS054bAkOcr9DTpJuSRDmsNhqk=/2500x0/media.spokesman.com/photos/2021/01/05/5ff4d75caf2aa.hires.jpg',
+        userId = 10,
+        createdAt = date(2022, 6, 25),
+        updatedAt = date.today()
+    )
+    
 
 
 
@@ -1281,9 +1523,21 @@ def seed_trails():
     db.session.add(hunter3)
     db.session.add(hunter4)
     db.session.add(hunter5)
-
-
-
+    db.session.add(crystal1)
+    db.session.add(crystal2)
+    db.session.add(crystal3)
+    db.session.add(crystal4)
+    db.session.add(crystal5)
+    db.session.add(stevens1)
+    db.session.add(stevens2)
+    db.session.add(stevens3)
+    db.session.add(stevens4)
+    db.session.add(stevens5)
+    db.session.add(baker1)
+    db.session.add(baker2)
+    db.session.add(baker3)
+    db.session.add(baker4)
+    db.session.add(baker5)
 
 
 
