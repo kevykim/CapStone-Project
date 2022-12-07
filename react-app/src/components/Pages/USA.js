@@ -32,7 +32,7 @@ function USA() {
               <img
                 className="pages_image"
                 src="https://www.nationsonline.org/maps/USA/California_map.jpg"
-                alt="boreal"
+                alt="california"
                 onError={(e) => {
                   e.currentTarget.src =
                     "https://www.nationsonline.org/maps/USA/California_map.jpg";
@@ -46,13 +46,27 @@ function USA() {
               <img
                 className="pages_image"
                 src="https://www.nationsonline.org/maps/USA/Oregon_map-L.jpg"
-                alt="boreal"
+                alt="oregon"
                 onError={(e) => {
                   e.currentTarget.src =
                     "https://www.nationsonline.org/maps/USA/Oregon_map-L.jpg";
                 }}
               ></img>
               Oregon
+            </NavLink>
+          </div>
+          <div className="pages_navlink_div">
+            <NavLink className="pages_navlink" exact to="/New York">
+              <img
+                className="pages_image"
+                src="https://www.nationsonline.org/maps/USA/New_York_map-L.jpg"
+                alt="newyork"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://www.nationsonline.org/maps/USA/New_York_map-L.jpg";
+                }}
+              ></img>
+              New York
             </NavLink>
           </div>
         </div>
