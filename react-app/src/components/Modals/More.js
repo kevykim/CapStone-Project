@@ -210,6 +210,78 @@ return (
             <div>&nbsp;for more info...</div>
           </div>
         </div>
+      ) : trail?.resort === "Gore Mountain" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://skimap.org/data/320/2109/1428957338.jpg"
+            alt="gore"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://skimap.org/data/320/2109/1428957338.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://goremountain.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Gore Mountain
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Windham Mountain" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://res.cloudinary.com/liftopia/image/upload/c_fit,d_defaults:default_logo_1.png,f_auto,h_980,q_auto,w_980/v1/production/trail_maps/be32e2e8b344ce11569423353ff69ad4.jpg"
+            alt="windham"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://res.cloudinary.com/liftopia/image/upload/c_fit,d_defaults:default_logo_1.png,f_auto,h_980,q_auto,w_980/v1/production/trail_maps/be32e2e8b344ce11569423353ff69ad4.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.windhammountain.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Windham Mountain
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
+      ) : trail?.resort === "Hunter Mountain" ? (
+        <div className="more_modal_img_div">
+          <img
+            className="more_modal_heavenly_img"
+            src="https://s3.onthesnow.com/images/trailmaps/new-york/hunter-mountain/xlarge.jpg"
+            alt="hunter"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://s3.onthesnow.com/images/trailmaps/new-york/hunter-mountain/xlarge.jpg";
+            }}
+          />
+          <div className="more_modal_moreinfo">
+            <div>Check out&nbsp;</div>
+            <a
+              href="https://www.huntermtn.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more_modal_alink"
+            >
+              Hunter Mountain
+            </a>
+            <div>&nbsp;for more info...</div>
+          </div>
+        </div>
       ) : (
         <div></div>
       )}

@@ -107,7 +107,7 @@ function CreateTrail() {
 
     let country_choices = ["United States of America"];
 
-    let state_choices = ["California", "Oregon"];
+    let state_choices = ["California", "Oregon", "New York"];
 
     // let resort_choices = ["Boreal Mountain Resort", "Heavenly Lake Tahoe", "Mammoth Mountain", "Bear Mountain", "Mountain High"];
 
@@ -319,6 +319,13 @@ function CreateTrail() {
                         <option value={'Mount Hood Meadows'}>Mount Hood Meadows</option>
                         <option value={'Timberline Summit Pass'}> Timberline Summit Pass</option>
                         <option value={"Mount Bachelor"}>Mount Bachelor</option>
+                      </>
+                    )}
+                    {state === "New York" && (
+                      <>
+                      <option value={'Gore Mountain'}>Gore Mountain</option>
+                      <option value={'Windham Mountain'}>Windham Mountain</option>
+                      <option value={'Hunter Mountain'}>Hunter Mountain</option>
                       </>
                     )}
                   </select>

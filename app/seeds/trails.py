@@ -725,6 +725,502 @@ def seed_trails():
         updatedAt = date.today()
     )
 
+    # NEW YORK
+    gore1 = Trail(
+        name = 'Topridge',
+        city = 'North Creek',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Gore Mountain',
+        difficulty = 'Black Diamond',
+        description = 'Located in North Creek, New York, Gore Mountain is an alpine ski resort atop Gore Mountain in the Adirondack Mountains. Skiers travel to the mountain from all over the east in the winter because it is such a popular location. The Capital District metro region is about an hour away from this ski area, which is the biggest in the state of New York.',
+        length = 1.2,
+        elevation = 3100,
+        routeType = 'Free-ride',
+        previewImg = 'https://www.ultimate-ski.com/wp-content/uploads/jsonimage/Gore_Mountain_Ski_Resort-%C2%A9Gore_Mountain_Ski_Resort-1543x569.jpg',
+        userId = 9,
+        createdAt = date(2022, 5, 10),
+        updatedAt = date.today()
+    )
+    gore2 = Trail(
+        name = 'Fairview',
+        city = 'North Creek',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Gore Mountain',
+        difficulty = 'Black Diamond',
+        description = 'Located in North Creek, New York, Gore Mountain is an alpine ski resort atop Gore Mountain in the Adirondack Mountains. Skiers travel to the mountain from all over the east in the winter because it is such a popular location. The Capital District metro region is about an hour away from this ski area, which is the biggest in the state of New York.',
+        length = 0.5,
+        elevation = 3200,
+        routeType = 'Free-ride',
+        previewImg = 'https://www.adirondackexplorer.org/wp-content/uploads/2021/01/GoreMountain_MikeLynch-9.jpg',
+        userId = 9,
+        createdAt = date(2022, 5, 10),
+        updatedAt = date.today()
+    )
+    gore3 = Trail(
+        name = 'Hullabaloo',
+        city = 'North Creek',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Gore Mountain',
+        difficulty = 'Black Diamond',
+        description = 'Located in North Creek, New York, Gore Mountain is an alpine ski resort atop Gore Mountain in the Adirondack Mountains. Skiers travel to the mountain from all over the east in the winter because it is such a popular location. The Capital District metro region is about an hour away from this ski area, which is the biggest in the state of New York.',
+        length = 0.7,
+        elevation = 3400,
+        routeType = 'Park',
+        previewImg = 'https://pbs.twimg.com/media/EQ14j9AWoAEmXIo.jpg:large',
+        userId = 9,
+        createdAt = date(2022, 5, 10),
+        updatedAt = date.today()
+    )
+    gore4 = Trail(
+        name = 'Darby Woods',
+        city = 'North Creek',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Gore Mountain',
+        difficulty = 'Black Diamond',
+        description = 'Located in North Creek, New York, Gore Mountain is an alpine ski resort atop Gore Mountain in the Adirondack Mountains. Skiers travel to the mountain from all over the east in the winter because it is such a popular location. The Capital District metro region is about an hour away from this ski area, which is the biggest in the state of New York.',
+        length = 0.6,
+        elevation = 3350,
+        routeType = 'Powder',
+        previewImg = 'https://theislandnow.com/wp-content/uploads/2018/03/Gore_3919e-030318e2-c-Laini-Miranda.jpg',
+        userId = 9,
+        createdAt = date(2022, 5, 10),
+        updatedAt = date.today()
+    )
+    gore5 = Trail(
+        name = 'Open Pit',
+        city = 'North Creek',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Gore Mountain',
+        difficulty = 'Black Diamond',
+        description = 'Located in North Creek, New York, Gore Mountain is an alpine ski resort atop Gore Mountain in the Adirondack Mountains. Skiers travel to the mountain from all over the east in the winter because it is such a popular location. The Capital District metro region is about an hour away from this ski area, which is the biggest in the state of New York.',
+        length = 0.8,
+        elevation = 3450,
+        routeType = 'All-mountain',
+        previewImg = 'https://theislandnow.com/wp-content/uploads/2021/03/NYS-Ski_022121_143e2c-Karen-Rubin-GoreMtn.jpg',
+        userId = 9,
+        createdAt = date(2022, 5, 10),
+        updatedAt = date.today()
+    )
+    windham1 = Trail(
+        name = 'Why Not',
+        city = 'Windham',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Windham Mountain',
+        difficulty = 'Black Diamond',
+        description = "Windham Mountain is more than just a ski area in New York! Windham Mountain, located just over two hours from the New York metropolitan area, is proud to be the region's top year-round outdoor lifestyle destination. It combines the small-town charm of the Catskills with a modern atmosphere. A high-speed, six-passenger Doppelmayr chairlift and RFID lift technology that shortens lift lines were implemented last year.",
+        length = 1.2,
+        elevation = 3100,
+        routeType = 'Free-ride',
+        previewImg = 'https://s3-media0.fl.yelpcdn.com/bphoto/pB-UaEjd3NVIxLF__-_iqQ/o.jpg',
+        userId = 9,
+        createdAt = date(2022, 2, 11),
+        updatedAt = date.today()
+    )
+    windham2 = Trail(
+        name = "Wing'n It",
+        city = 'Windham',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Windham Mountain',
+        difficulty = 'Black Diamond',
+        description = "Windham Mountain is more than just a ski area in New York! Windham Mountain, located just over two hours from the New York metropolitan area, is proud to be the region's top year-round outdoor lifestyle destination. It combines the small-town charm of the Catskills with a modern atmosphere. A high-speed, six-passenger Doppelmayr chairlift and RFID lift technology that shortens lift lines were implemented last year.",
+        length = 1.4,
+        elevation = 3100,
+        routeType = 'Free-ride',
+        previewImg = 'https://www.behindthescenesnyc.com/wp-content/uploads/2017/08/Day-Trips-and-Travel-Windham-Mountain-Blue-Skies.jpg',
+        userId = 9,
+        createdAt = date(2022, 2, 11),
+        updatedAt = date.today()
+    )
+    windham3 = Trail(
+        name = 'Wicked',
+        city = 'Windham',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Windham Mountain',
+        difficulty = 'Black Diamond',
+        description = "Windham Mountain is more than just a ski area in New York! Windham Mountain, located just over two hours from the New York metropolitan area, is proud to be the region's top year-round outdoor lifestyle destination. It combines the small-town charm of the Catskills with a modern atmosphere. A high-speed, six-passenger Doppelmayr chairlift and RFID lift technology that shortens lift lines were implemented last year.",
+        length = 1.5,
+        elevation = 3100,
+        routeType = 'Free-ride',
+        previewImg = 'https://www.behindthescenesnyc.com/wp-content/uploads/2017/08/Day-Trips-and-Travel-Windham-Mountain-Professional-Skier.jpg',
+        userId = 9,
+        createdAt = date(2022, 2, 11),
+        updatedAt = date.today()
+    )
+    windham4 = Trail(
+        name = 'World Cup',
+        city = 'Windham',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Windham Mountain',
+        difficulty = 'Black Diamond',
+        description = "Windham Mountain is more than just a ski area in New York! Windham Mountain, located just over two hours from the New York metropolitan area, is proud to be the region's top year-round outdoor lifestyle destination. It combines the small-town charm of the Catskills with a modern atmosphere. A high-speed, six-passenger Doppelmayr chairlift and RFID lift technology that shortens lift lines were implemented last year.",
+        length = 1.4,
+        elevation = 3100,
+        routeType = 'Free-ride',
+        previewImg = 'https://urbansherpatravel.com/images/photos/windham7.jpg',
+        userId = 9,
+        createdAt = date(2022, 2, 11),
+        updatedAt = date.today()
+    )
+    windham5 = Trail(
+        name = 'Wildcat',
+        city = 'Windham',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Windham Mountain',
+        difficulty = 'Black Diamond',
+        description = "Windham Mountain is more than just a ski area in New York! Windham Mountain, located just over two hours from the New York metropolitan area, is proud to be the region's top year-round outdoor lifestyle destination. It combines the small-town charm of the Catskills with a modern atmosphere. A high-speed, six-passenger Doppelmayr chairlift and RFID lift technology that shortens lift lines were implemented last year.",
+        length = 1.1,
+        elevation = 3100,
+        routeType = 'Powder',
+        previewImg = 'https://i.ytimg.com/vi/op-2URpfIBk/maxresdefault.jpg',
+        userId = 9,
+        createdAt = date(2022, 2, 11),
+        updatedAt = date.today()
+    )
+    hunter1 = Trail(
+        name = "Racer's Edge",
+        city = 'Hunter',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Hunter Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "In the town of Hunter, New York, in Greene County, New York—three hours northwest of New York City—is the ski resort known as Hunter Mountain. A 1,600-foot vertical plunge can be found there. The management of Hunter Mountain has made great use of snowmaking facilities since it first opened in the late 1950s.",
+        length = 0.8,
+        elevation = 3400,
+        routeType = 'Free-ride',
+        previewImg = 'https://urbansherpatravel.com/images/photos/hunter2.jpg',
+        userId = 9,
+        createdAt = date(2022, 3, 21),
+        updatedAt = date.today()
+    )
+    hunter2 = Trail(
+        name = 'Lower-K27',
+        city = 'Hunter',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Hunter Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "In the town of Hunter, New York, in Greene County, New York—three hours northwest of New York City—is the ski resort known as Hunter Mountain. A 1,600-foot vertical plunge can be found there. The management of Hunter Mountain has made great use of snowmaking facilities since it first opened in the late 1950s.",
+        length = 1.1,
+        elevation = 3100,
+        routeType = 'Powder',
+        previewImg = 'https://snowbrains.com/wp-content/uploads/2021/11/hunter.jpeg',
+        userId = 9,
+        createdAt = date(2022, 3, 21),
+        updatedAt = date.today()
+    )
+    hunter3 = Trail(
+        name = "Clair's Way",
+        city = 'Hunter',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Hunter Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "In the town of Hunter, New York, in Greene County, New York—three hours northwest of New York City—is the ski resort known as Hunter Mountain. A 1,600-foot vertical plunge can be found there. The management of Hunter Mountain has made great use of snowmaking facilities since it first opened in the late 1950s.",
+        length = 1.3,
+        elevation = 3200,
+        routeType = 'Park',
+        previewImg = 'https://live.staticflickr.com/5306/5577630317_0f450bf456_b.jpg',
+        userId = 9,
+        createdAt = date(2022, 3, 21),
+        updatedAt = date.today()
+    )
+    hunter4 = Trail(
+        name = 'Westway',
+        city = 'Hunter',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Hunter Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "In the town of Hunter, New York, in Greene County, New York—three hours northwest of New York City—is the ski resort known as Hunter Mountain. A 1,600-foot vertical plunge can be found there. The management of Hunter Mountain has made great use of snowmaking facilities since it first opened in the late 1950s.",
+        length = 1.4,
+        elevation = 3300,
+        routeType = 'Free-ride',
+        previewImg = 'https://live.staticflickr.com/5144/5578215192_e442f6251f_b.jpg',
+        userId = 9,
+        createdAt = date(2022, 3, 21),
+        updatedAt = date.today()
+    )
+    hunter5 = Trail(
+        name = 'Annapurna',
+        city = 'Hunter',
+        country = 'United States of America',
+        state = 'New York',
+        resort = 'Hunter Mountain',
+        difficulty = 'Double Black Diamond',
+        description = "In the town of Hunter, New York, in Greene County, New York—three hours northwest of New York City—is the ski resort known as Hunter Mountain. A 1,600-foot vertical plunge can be found there. The management of Hunter Mountain has made great use of snowmaking facilities since it first opened in the late 1950s.",
+        length = 1.7,
+        elevation = 4000,
+        routeType = 'All-mountain',
+        previewImg = 'https://nyskiblog.com/wp-content/uploads/2009/12/HunterMtn.jpg',
+        userId = 9,
+        createdAt = date(2022, 3, 21),
+        updatedAt = date.today()
+    )
+
+
+
+
+    #CANADA
+    #WHISTLER
+    # whistler1 = Trail(
+    #     name = '',
+    #     city = 'Whistler',
+    #     country = 'Canada',
+    #     state = 'British Columbia',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 5, 10),
+    #     updatedAt = date.today()
+    # )
+    # whistler2 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = 'Canada',
+    #     state = 'British Columbia',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 5, 10),
+    #     updatedAt = date.today()
+    # )
+    # whistler3 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = 'Canada',
+    #     state = 'British Columbia',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 5, 10),
+    #     updatedAt = date.today()
+    # )
+    # whistler4 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = 'Canada',
+    #     state = 'British Columbia',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 5, 10),
+    #     updatedAt = date.today()
+    # )
+    # whistler5 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = 'Canada',
+    #     state = 'British Columbia',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 5, 10),
+    #     updatedAt = date.today()
+    # )
+
+    #powderking
+    # powderking1 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # powderking2 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # powderking3 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # powderking4 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # powderking5 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+
+    #Sun Peaks
+    # sunpeaks1 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # sunpeaks2 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # sunpeaks3 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # sunpeaks4 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+    # sunpeaks5 = Trail(
+    #     name = '',
+    #     city = '',
+    #     country = '',
+    #     state = '',
+    #     resort = '',
+    #     difficulty = '',
+    #     description = '',
+    #     length = ,
+    #     elevation = ,
+    #     routeType = '',
+    #     previewImg = '',
+    #     userId = ,
+    #     createdAt = date(2022, 1, 21),
+    #     updatedAt = date.today()
+    # )
+
+
+
+
+
     db.session.add(boreal1)
     db.session.add(boreal2)
     db.session.add(boreal3)
@@ -770,7 +1266,21 @@ def seed_trails():
     db.session.add(bachelor3)
     db.session.add(bachelor4)
     db.session.add(bachelor5)
-
+    db.session.add(gore1)
+    db.session.add(gore2)
+    db.session.add(gore3)
+    db.session.add(gore4)
+    db.session.add(gore5)
+    db.session.add(windham1)
+    db.session.add(windham2)
+    db.session.add(windham3)
+    db.session.add(windham4)
+    db.session.add(windham5)
+    db.session.add(hunter1)
+    db.session.add(hunter2)
+    db.session.add(hunter3)
+    db.session.add(hunter4)
+    db.session.add(hunter5)
 
 
 
