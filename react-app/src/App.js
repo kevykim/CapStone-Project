@@ -32,6 +32,10 @@ import Oregon from './components/Pages/Oregon/Oregon';
 import MountHood from './components/Pages/Oregon/MountHood';
 import Timberline from './components/Pages/Oregon/Timberline';
 import Bachelor from './components/Pages/Oregon/Bachelor';
+import NewYork from './components/Pages/NewYork/NewYork';
+import Gore from './components/Pages/NewYork/Gore';
+import Hunter from './components/Pages/NewYork/Hunter';
+import Windham from './components/Pages/NewYork/Windham';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -120,6 +124,18 @@ function App() {
         </Route>
         <Route exact path='/Mount Bachelor'>
           <Bachelor />
+        </Route>
+        <Route exact path = '/New York'>
+          <NewYork />
+        </Route>
+        <Route exact path = '/Gore Mountain'>
+          <Gore />
+        </Route>
+        <Route exact path = '/Windham Mountain'>
+          <Windham />
+        </Route>
+        <Route exact path = '/Hunter Mountain'>
+          <Hunter />
         </Route>
         <Route exact path='/beginner'>
           <Beginner />
