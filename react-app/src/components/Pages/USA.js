@@ -42,6 +42,20 @@ function USA() {
             </NavLink>
           </div>
           <div className="pages_navlink_div">
+            <NavLink className="pages_navlink" exact to="/New York">
+              <img
+                className="pages_image"
+                src="https://www.nationsonline.org/maps/USA/New_York_map-L.jpg"
+                alt="newyork"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://www.nationsonline.org/maps/USA/New_York_map-L.jpg";
+                }}
+              ></img>
+              New York
+            </NavLink>
+          </div>
+          <div className="pages_navlink_div">
             <NavLink className="pages_navlink" exact to="/Oregon">
               <img
                 className="pages_image"
@@ -56,17 +70,17 @@ function USA() {
             </NavLink>
           </div>
           <div className="pages_navlink_div">
-            <NavLink className="pages_navlink" exact to="/New York">
+            <NavLink className="pages_navlink" exact to="/Washington">
               <img
                 className="pages_image"
-                src="https://www.nationsonline.org/maps/USA/New_York_map-L.jpg"
-                alt="newyork"
+                src="https://www.nationsonline.org/maps/USA/Washington_map-L.jpg"
+                alt="washington"
                 onError={(e) => {
                   e.currentTarget.src =
-                    "https://www.nationsonline.org/maps/USA/New_York_map-L.jpg";
+                    "https://www.nationsonline.org/maps/USA/Washington_map-L.jpg";
                 }}
               ></img>
-              New York
+              Washington
             </NavLink>
           </div>
         </div>

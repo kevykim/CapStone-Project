@@ -44,7 +44,7 @@ def seed_users():
         username='Radsk8ter', firstName='Corey', lastName='Birch', email='birchwall@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/punk_man_person_avatar-512.png', createdAt = date(2022, 9, 26),
         updatedAt = date.today())
 
-        
+        #Crystal, Stevens, MtBaker
     eddy = User(
         username='thebesteddy', firstName='Eddy', lastName='Smith', email='cartonnetworkyyy@mail.com', password='password2', profileImg='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/boy_person_avatar_kid-512.png', createdAt = date(2022, 6, 19),
         updatedAt = date.today())
