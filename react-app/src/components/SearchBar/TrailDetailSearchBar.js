@@ -24,7 +24,8 @@ function TrailDetailSearchBar() {
         if (
           trail["name"].toLowerCase().includes(word.toLowerCase()) ||
           trail["resort"].toLowerCase().includes(word.toLowerCase()) ||
-          trail["city"].toLowerCase().includes(word.toLowerCase())
+          trail["city"].toLowerCase().includes(word.toLowerCase()) ||
+          trail["state"].toLowerCase().includes(word.toLowerCase())
         ) {
           arr.push(trail);
         }
@@ -160,6 +161,39 @@ function TrailDetailSearchBar() {
                     </div>
                   )}
                   {trail["resort"] === "Mount Bachelor" && (
+                    <div className="traildetailsearchbar_dropmenu_text">
+                      <div className="traildetailsearchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="traildetailsearchbar_dropmenu_text_div">
+                        <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Gore Mountain" && (
+                    <div className="traildetailsearchbar_dropmenu_text">
+                      <div className="traildetailsearchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="traildetailsearchbar_dropmenu_text_div">
+                        <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Windham Mountain" && (
+                    <div className="traildetailsearchbar_dropmenu_text">
+                      <div className="traildetailsearchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="traildetailsearchbar_dropmenu_text_div">
+                        <div className="traildetailsearchbar_dropmenu_text_big">{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="traildetailsearchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Hunter Mountain" && (
                     <div className="traildetailsearchbar_dropmenu_text">
                       <div className="traildetailsearchbar_dropdown_icons">
                         <i className="fa-brands fa-pagelines fa-xl"></i>

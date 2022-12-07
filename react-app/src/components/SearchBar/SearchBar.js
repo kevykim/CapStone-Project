@@ -24,7 +24,8 @@ function SearchBar() {
         if (
           trail["name"].toLowerCase().includes(word.toLowerCase()) ||
           trail["resort"].toLowerCase().includes(word.toLowerCase()) ||
-          trail["city"].toLowerCase().includes(word.toLowerCase())
+          trail["city"].toLowerCase().includes(word.toLowerCase()) ||
+          trail["state"].toLowerCase().includes(word.toLowerCase())
         ) {
           arr.push(trail);
         }
@@ -92,7 +93,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -103,7 +104,10 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small"> {`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">
+                          {" "}
+                          {`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -114,7 +118,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -125,7 +129,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -136,7 +140,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -147,7 +151,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -158,7 +162,7 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
@@ -169,7 +173,40 @@ function SearchBar() {
                       </div>
                       <div className="searchbar_dropmenu_text_div">
                         <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
-                        <div className="searchbar_dropmenu_text_small">{`${trail['city']}, ${trail["state"]}, ${trail["country"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Gore Mountain" && (
+                    <div className="searchbar_dropmenu_text">
+                      <div className="searchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="searchbar_dropmenu_text_div">
+                        <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Windham Mountain" && (
+                    <div className="searchbar_dropmenu_text">
+                      <div className="searchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="searchbar_dropmenu_text_div">
+                        <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
+                      </div>
+                    </div>
+                  )}
+                  {trail["resort"] === "Hunter Mountain" && (
+                    <div className="searchbar_dropmenu_text">
+                      <div className="searchbar_dropdown_icons">
+                        <i className="fa-brands fa-pagelines fa-xl"></i>
+                      </div>
+                      <div className="searchbar_dropmenu_text_div">
+                        <div>{`${trail["name"]}, ${trail["resort"]}`}</div>
+                        <div className="searchbar_dropmenu_text_small">{`${trail["city"]}, ${trail["state"]}, ${trail["country"]}`}</div>
                       </div>
                     </div>
                   )}
