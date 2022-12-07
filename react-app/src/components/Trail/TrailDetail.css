@@ -392,6 +392,10 @@
 
 .trail_detail_sidebar_inner {
     padding: 15px;
+    display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 }
 
 .trail_detail_near_text {
