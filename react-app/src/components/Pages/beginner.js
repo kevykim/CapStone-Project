@@ -12,7 +12,7 @@ function Beginner() {
     const trailArr = Object.values(trail)
 
     const beginnerFilter = trailArr.filter((trail) => trail.difficulty === "Beginner")
-    // console.log(beginnerFilter)
+  
 
     useEffect(() => {
         dispatch(thunkGetTrail())
