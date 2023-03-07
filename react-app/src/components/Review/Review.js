@@ -22,7 +22,7 @@ function Review() {
     dispatch(thunkGetCurrentTrail());
     dispatch(thunkGetCurrentReview());
   }, [dispatch]);
-  // console.log(currentReviewsArr)
+
 
   if (!user) history.push("/");
 
