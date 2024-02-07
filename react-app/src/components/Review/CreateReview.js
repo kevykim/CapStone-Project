@@ -13,7 +13,6 @@ function CreateReview({ setShowModal, user }) {
   const history = useHistory();
 
   const trail = useSelector((state) => state.trail[id]);
-  // console.log(trail.userId)
 
   const [stars, setStars] = useState("");
   const [reviews, setReviews] = useState("");

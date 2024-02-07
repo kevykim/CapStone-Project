@@ -12,8 +12,6 @@ function Photos({trail, setShowModal}) {
     const imagesArr = trail.reviews.map(reviews => reviews.reviewImg)
     const httpsfilter = imagesArr.filter(image => image.includes('https'))
     const httpfilter = imagesArr.filter(image => image.includes('http'))
-    // console.log(httpfilter)
-    // console.log(imagefilter)
         const closeModal = (event) => {
             setShowModal(false)
         }

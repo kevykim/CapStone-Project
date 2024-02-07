@@ -37,8 +37,7 @@ const LoginForm = () => {
     return <Redirect to='/' />;
   }
 
-  // console.log(errors.includes("Email provided not found."));
-  // console.log(errors)
+  
 
   return (
     <div className="log_in_main">

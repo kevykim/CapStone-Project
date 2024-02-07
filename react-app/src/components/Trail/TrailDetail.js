@@ -28,11 +28,9 @@ function TrailDetail() {
     const trailsNear = everyTrailArr.filter(trails => trails.resort === trail?.resort)
 
     // const trailfilter = everyTrailArr.filter(trails => trails.id === Number(id))
-    // console.log(trailfilter[0])
 
     // AVERAGE STAR
     // const wholeAverage = Math.round(trail?.averagestar)
-    // console.log(wholeAverage)
 
      const allReviews = reviewArr.map((review) => review.stars);
      let sum = 0;
@@ -46,7 +44,6 @@ function TrailDetail() {
      if (!average) {
         average = 0
      }
-    //  console.log(average)
 
     useEffect(() => {
       dispatch(thunkGetSingleTrail(id))

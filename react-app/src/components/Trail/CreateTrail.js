@@ -80,7 +80,6 @@ function CreateTrail() {
         formData.append('previewImg', previewImg)
 
         let createdTrailData = await dispatch(thunkCreateTrail(formData))
-        // console.log(formData)
         if (createdTrailData) 
         history.push(`/trails/${createdTrailData.id}`)
 
@@ -92,7 +91,6 @@ function CreateTrail() {
         const src = String(URL.createObjectURL(file))
         const previewImage = document.getElementById('preview')
         previewImage.src = src
-        // console.log(image)
         setPreviewImg(file)
       }
     }
@@ -102,7 +100,6 @@ function CreateTrail() {
         history.push('/')
     }
 
-    // console.log(typeof (length))
  
 
     let country_choices = ["United States of America"];
@@ -122,7 +119,6 @@ function CreateTrail() {
     let routeType_choices = ["All-mountain", "Park", "Powder", "Free-ride"];
 
     // const validate = validations.map(error => error) 
-    // console.log(validate)
 
       //  validations.length > 0 && submitted === true && (
       //    <div className="create_trail_error">

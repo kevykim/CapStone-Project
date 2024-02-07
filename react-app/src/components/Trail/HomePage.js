@@ -26,7 +26,6 @@ function HomePage() {
     const highestRevewTrails = trailArr
       .filter((trail) => trail.averagestar > 4)
       .slice(0, 4);
-    // console.log(highestRevewTrails)
 
 
     const recentTrail = trailArr.slice().reverse().slice(0,4);
