@@ -46,7 +46,7 @@ export const thunkDemoUser = (email, password) => async (dispatch) => {
       password: "password2",
     }),
   });
-  // console.log(response, "thunk");
+  
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data));
