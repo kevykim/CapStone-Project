@@ -15,10 +15,9 @@ function UpdateTrail() {
 
   const trail = useSelector((state) => state.trail);
   const trailArr = Object.values(trail);
-  // console.log(trailArr)
 
   const oldTrail = trailArr.find((trails) => Number(trails.id) === Number(id));
-  // console.log(oldTrail)
+
   const user = useSelector((state) => state.session.user);
 
   const [name, setName] = useState(oldTrail?.name);
